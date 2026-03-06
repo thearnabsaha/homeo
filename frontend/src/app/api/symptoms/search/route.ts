@@ -1,59 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
-import { symptomsData } from "@/data/loader";
+import { symptomSearchIndex } from "@/data/loader";
+
+const CACHE_HEADERS = {
+  "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600",
+};
 
 export function GET(request: NextRequest) {
-  const query = (request.nextUrl.searchParams.get("q") || "")
-    .toLowerCase()
-    .trim();
+  const query = (request.nextUrl.searchParams.get("q") || "").toLowerCase().trim();
 
   if (!query || query.length < 2) {
-    return NextResponse.json({ results: [] });
+    return NextResponse.json({ results: [] }, { headers: CACHE_HEADERS });
   }
 
-  type Result = {
-    id: string;
-    name: string;
-    type: string;
-    chapter: string;
-    parent?: string;
-  };
-  const results: Result[] = [];
-
-  for (const ch of symptomsData.chapters) {
-    if (ch.name.toLowerCase().includes(query)) {
+  const results = [];
+  for (const entry of symptomSearchIndex) {
+    if (entry.nameLower.includes(query)) {
       results.push({
-        id: ch.id,
-        name: ch.name,
-        type: "chapter",
-        chapter: ch.name,
+        id: entry.id,
+        name: entry.name,
+        type: entry.type,
+        chapter: entry.chapter,
+        parent: entry.parent,
       });
-    }
-    for (const sym of ch.symptoms) {
-      if (sym.name.toLowerCase().includes(query)) {
-        results.push({
-          id: sym.id,
-          name: sym.name,
-          type: "symptom",
-          chapter: ch.name,
-        });
-      }
-      const sub = (sym as { subSymptoms?: { id: string; name: string }[] })
-        .subSymptoms;
-      if (sub) {
-        for (const s of sub) {
-          if (s.name.toLowerCase().includes(query)) {
-            results.push({
-              id: s.id,
-              name: s.name,
-              type: "subSymptom",
-              chapter: ch.name,
-              parent: sym.name,
-            });
-          }
-        }
-      }
+      if (results.length >= 75) break;
     }
   }
 
-  return NextResponse.json({ results: results.slice(0, 75) });
+  return NextResponse.json({ results }, { headers: CACHE_HEADERS });
 }

@@ -1,6 +1,18 @@
 const API_BASE = "/api";
 
+const getCache = new Map<string, { data: unknown; ts: number }>();
+const GET_CACHE_TTL = 60_000;
+
 async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> {
+  const isGet = !options?.method || options.method === "GET";
+
+  if (isGet) {
+    const cached = getCache.get(endpoint);
+    if (cached && Date.now() - cached.ts < GET_CACHE_TTL) {
+      return cached.data as T;
+    }
+  }
+
   const res = await fetch(`${API_BASE}${endpoint}`, {
     headers: { "Content-Type": "application/json" },
     ...options,
@@ -11,7 +23,17 @@ async function fetchAPI<T>(endpoint: string, options?: RequestInit): Promise<T> 
     throw new Error(error.error || `HTTP ${res.status}`);
   }
 
-  return res.json();
+  const data = await res.json();
+
+  if (isGet) {
+    getCache.set(endpoint, { data, ts: Date.now() });
+    if (getCache.size > 200) {
+      const oldest = getCache.keys().next().value;
+      if (oldest) getCache.delete(oldest);
+    }
+  }
+
+  return data as T;
 }
 
 export interface Chapter {

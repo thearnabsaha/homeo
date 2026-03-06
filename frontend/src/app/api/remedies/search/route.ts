@@ -1,29 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
-import { remediesData } from "@/data/loader";
+import { remedySearchIndex } from "@/data/loader";
+
+const CACHE_HEADERS = {
+  "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600",
+};
 
 export function GET(request: NextRequest) {
-  const query = (request.nextUrl.searchParams.get("q") || "")
-    .toLowerCase()
-    .trim();
+  const query = (request.nextUrl.searchParams.get("q") || "").toLowerCase().trim();
 
   if (!query || query.length < 2) {
-    return NextResponse.json({ results: [] });
+    return NextResponse.json({ results: [] }, { headers: CACHE_HEADERS });
   }
 
-  const results = remediesData.remedies
-    .filter(
-      (r) =>
-        r.name.toLowerCase().includes(query) ||
-        r.abbr.toLowerCase().includes(query) ||
-        r.description.toLowerCase().includes(query)
-    )
-    .slice(0, 50)
-    .map((r) => ({
-      id: r.id,
-      name: r.name,
-      abbr: r.abbr,
-      description: r.description.substring(0, 100) + "...",
-    }));
+  const results = [];
+  for (const entry of remedySearchIndex) {
+    if (entry.lower.includes(query) || entry.abbrLower.includes(query) || entry.descLower.includes(query)) {
+      results.push({
+        id: entry.r.id,
+        name: entry.r.name,
+        abbr: entry.r.abbr,
+        description: entry.r.description.substring(0, 100) + "...",
+      });
+      if (results.length >= 50) break;
+    }
+  }
 
-  return NextResponse.json({ results });
+  return NextResponse.json({ results }, { headers: CACHE_HEADERS });
 }

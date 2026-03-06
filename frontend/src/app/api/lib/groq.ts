@@ -1,4 +1,4 @@
-import { remediesData, rubrics } from "@/data/loader";
+import { remediesData, rubrics, remedyById } from "@/data/loader";
 
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
@@ -215,7 +215,7 @@ function generateFallbackResponse(input: string) {
       "আপনার লক্ষণগুলি বিশ্লেষণ করে কেন্টের রেপার্টরি থেকে মিলে যাওয়া ওষুধ খুঁজে পেয়েছি।",
     remedies: sorted
       .map(([remedyId, score]) => {
-        const remedy = remediesData.remedies.find((r) => r.id === remedyId);
+        const remedy = remedyById.get(remedyId);
         if (!remedy) return null;
         const confidence = Math.min(
           95,
