@@ -36,7 +36,6 @@ export default function ExplorerPage() {
   const handleSelectChapter = useCallback((id: string) => {
     setActiveChapter(id);
     setSelectedSymptomId(id);
-    setSidebarOpen(false);
   }, [setActiveChapter, setSelectedSymptomId]);
 
   const handleSelectSymptom = useCallback((id: string) => {

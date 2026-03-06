@@ -305,18 +305,30 @@ function RecommendationCard({
       {/* Alternatives */}
       {alternativeRemedies?.length > 0 && (
         <div className="p-3 rounded-xl bg-background border border-border">
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-3">
             <Activity className="h-3.5 w-3.5 text-muted-foreground" />
-            <span className="text-xs font-medium text-muted-foreground">{t("consult.alternatives")}</span>
+            <span className="text-xs font-medium text-muted-foreground">
+              {t("consult.alternatives")} ({toBengaliNum(alternativeRemedies.length, language)})
+            </span>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {alternativeRemedies.map((r, i) => (
-              <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-card border border-border">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs font-medium truncate">{r.name}</span>
-                  <Badge variant="secondary" className="text-[10px] shrink-0">{r.abbr}</Badge>
+              <div key={i} className="flex items-center gap-2 p-2 rounded-lg bg-card border border-border">
+                <span className="text-[10px] font-bold text-muted-foreground w-5 text-center shrink-0">
+                  {toBengaliNum(i + 2, language)}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs font-medium truncate">{r.name}</span>
+                    <Badge variant="secondary" className="text-[10px] shrink-0">{r.abbr}</Badge>
+                  </div>
+                  {r.brief && (
+                    <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-1">{r.brief}</p>
+                  )}
                 </div>
-                <span className="text-[10px] text-muted-foreground ml-2 shrink-0">{toBengaliNum(r.confidence, language)}%</span>
+                <div className="shrink-0 w-10 text-right">
+                  <span className="text-[10px] font-medium text-muted-foreground">{toBengaliNum(r.confidence, language)}%</span>
+                </div>
               </div>
             ))}
           </div>
