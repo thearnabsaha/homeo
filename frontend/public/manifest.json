@@ -1,25 +1,28 @@
 {
-  "name": "রিপার্টরি এআই - কৃত্রিম বুদ্ধিমত্তা-চালিত হোমিওপ্যাথিক রেপার্টরি",
+  "name": "রিপার্টরি এআই - হোমিওপ্যাথিক রেপার্টরি",
   "short_name": "রিপার্টরি এআই",
-  "description": "কেন্টের রেপার্টরি ভিত্তিক কৃত্রিম বুদ্ধিমত্তা-চালিত হোমিওপ্যাথিক লক্ষণ বিশ্লেষণ এবং ওষুধের পরামর্শ",
+  "description": "কৃত্রিম বুদ্ধিমত্তা-চালিত হোমিওপ্যাথিক লক্ষণ বিশ্লেষণ ও ওষুধের পরামর্শ",
   "lang": "bn",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "any",
+  "orientation": "portrait",
+  "categories": ["health", "medical"],
   "icons": [
     {
       "src": "/icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }
