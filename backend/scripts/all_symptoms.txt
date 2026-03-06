@@ -1,0 +1,2577 @@
+=== Mind ===
+  mind-fear | Fear
+    mind-fear-death | Fear of death
+    mind-fear-darkness | Fear of darkness
+    mind-fear-alone | Fear of being alone
+    mind-fear-crowd | Fear of crowd
+    mind-fear-disease | Fear of disease
+    mind-fear-future | Fear of future
+    mind-fear-insanity | Fear of insanity
+    mind-fear-night | Fear at night
+    mind-fear-poverty | Fear of poverty
+    mind-fear-water | Fear of water (hydrophobia)
+    mind-fear-strangers | Fear of strangers
+    mind-fear-thunder | Fear of thunderstorm
+    mind-fear-height | Fear of high places
+    mind-fear-misfortune | Fear of misfortune
+    mind-fear-morning | Fear in the morning
+    mind-fear-evening | Fear in the evening
+    mind-fear-ghosts | Fear of ghosts
+    mind-fear-animals | Fear of animals
+    mind-fear-evil | Fear of evil
+    mind-fear-robbers | Fear of robbers
+    mind-fear-narrow-place | Fear of narrow places (claustrophobia)
+    mind-fear-falling | Fear of falling
+    mind-fear-fire | Fear of fire
+    mind-fear-poisoned | Fear of being poisoned
+    mind-fear-flying | Fear of flying
+    mind-fear-dogs | Fear of dogs
+    mind-fear-cancer | Fear of cancer
+    mind-fear-examination | Fear of examination
+    mind-fear-blood | Fear of blood
+    mind-fear-closed-spaces | Fear of closed spaces
+    mind-fear-insects | Fear of insects
+    mind-fear-failure | Fear of failure
+  mind-anxiety | Anxiety
+    mind-anxiety-morning | Anxiety in morning
+    mind-anxiety-evening | Anxiety in evening
+    mind-anxiety-night | Anxiety at night
+    mind-anxiety-health | Anxiety about health
+    mind-anxiety-future | Anxiety about future
+    mind-anxiety-conscience | Anxiety of conscience
+    mind-anxiety-fever | Anxiety during fever
+    mind-anxiety-eating | Anxiety after eating
+    mind-anxiety-waking | Anxiety on waking
+    mind-anxiety-children | Anxiety about children
+    mind-anxiety-walking | Anxiety while walking
+    mind-anxiety-chill | Anxiety during chill
+    mind-anxiety-flatus | Anxiety from flatus
+    mind-anxiety-menses | Anxiety during menses
+    mind-anxiety-salvation | Anxiety about salvation
+    mind-anxiety-anticipation | Anticipatory anxiety
+    mind-anxiety-performance | Performance anxiety
+    mind-anxiety-stomach | Anxiety felt in stomach
+    mind-anxiety-chest | Anxiety felt in chest
+    mind-anxiety-night-3am | Anxiety at 3 AM
+  mind-anger | Anger, irascibility
+    mind-anger-violent | Anger violent
+    mind-anger-trifles | Anger from trifles
+    mind-anger-trembling | Anger with trembling
+    mind-anger-morning | Anger in morning
+    mind-anger-contradiction | Anger from contradiction
+    mind-anger-ailments-from | Ailments from anger
+    mind-anger-suppressed | Anger suppressed
+    mind-anger-evening | Anger in the evening
+    mind-anger-children | Anger outbursts in children
+    mind-anger-silent | Silent suppressed anger
+  mind-restlessness | Restlessness
+    mind-restlessness-night | Restlessness at night
+    mind-restlessness-anxious | Anxious restlessness
+    mind-restlessness-fever | Restlessness during fever
+    mind-restlessness-midnight | Restlessness after midnight
+    mind-restlessness-bed | Restlessness tossing in bed
+    mind-restlessness-internal | Internal restlessness
+    mind-restlessness-anxiety | Anxious restlessness
+  mind-sadness | Sadness, depression, melancholy
+    mind-sadness-morning | Sadness in morning
+    mind-sadness-evening | Sadness in evening
+    mind-sadness-alone | Sadness when alone
+    mind-sadness-menses | Sadness during menses
+    mind-sadness-music | Sadness from music
+    mind-sadness-perspiration | Sadness during perspiration
+    mind-sadness-menopause | Sadness at menopause
+    mind-sadness-puberty | Sadness at puberty
+    mind-sadness-loss-loved-one | Sadness from loss of loved one
+  mind-irritability | Irritability
+    mind-irritability-morning | Irritability in morning
+    mind-irritability-headache | Irritability during headache
+    mind-irritability-children | Irritability in children
+    mind-irritability-chill | Irritability during chill
+    mind-irritability-menses | Irritability during menses
+    mind-irritability-eating | Irritability after eating
+    mind-irritability-noise | Irritability from noise
+    mind-irritability-coition | Irritability after coition
+    mind-irritability-pain | Irritability from pain
+  mind-delirium | Delirium
+    mind-delirium-night | Delirium at night
+    mind-delirium-fever | Delirium during fever
+    mind-delirium-violent | Delirium violent, raging
+    mind-delirium-muttering | Delirium muttering
+    mind-delirium-loquacious | Delirium loquacious
+    mind-delirium-sleep | Delirium on closing eyes to sleep
+  mind-confusion | Confusion of mind
+    mind-confusion-morning | Confusion in morning
+    mind-confusion-waking | Confusion on waking
+    mind-confusion-eating | Confusion after eating
+    mind-confusion-identity | Confusion about identity
+    mind-confusion-mental-exertion | Confusion from mental exertion
+    mind-confusion-elderly | Mental confusion in elderly
+  mind-weeping | Weeping, crying
+    mind-weeping-causeless | Weeping without cause
+    mind-weeping-consolation-agg | Weeping worse from consolation
+    mind-weeping-alternating-laughter | Weeping alternating with laughter
+    mind-weeping-menses | Weeping during menses
+    mind-weeping-sleep | Weeping during sleep
+    mind-weeping-music | Weeping from music
+    mind-weeping-anger | Weeping from anger
+  mind-concentration | Concentration difficult
+    mind-concentration-reading | Cannot concentrate while reading
+    mind-concentration-studying | Cannot concentrate while studying
+    mind-concentration-children | Concentration poor in children
+  mind-memory | Memory weakness
+    mind-memory-names | Forgets names
+    mind-memory-words | Forgets words while speaking
+    mind-memory-sudden | Sudden loss of memory
+    mind-memory-mental-exertion | Memory loss from mental exertion
+  mind-delusions | Delusions, imaginations
+    mind-delusions-pursued | Delusions of being pursued
+    mind-delusions-sick | Delusion that he is sick
+    mind-delusions-dead | Delusion that he is dead
+    mind-delusions-watched | Delusion that he is being watched
+    mind-delusions-animals | Delusion of animals
+    mind-delusions-grandeur | Delusions of grandeur
+    mind-delusions-body-distorted | Delusion body is distorted
+    mind-delusions-dead-persons | Delusion of dead persons
+  mind-indifference | Indifference, apathy
+    mind-indifference-everything | Indifference to everything
+    mind-indifference-loved-ones | Indifference to loved ones
+    mind-indifference-fever | Indifference during fever
+  mind-jealousy | Jealousy
+    mind-jealousy-rage | Jealousy with rage
+    mind-jealousy-sibling | Sibling jealousy
+  mind-suspicious | Suspicious, mistrustful
+    mind-suspicious-friends | Suspicious of friends
+  mind-timidity | Timidity, shyness
+    mind-timidity-public | Timidity in public
+  mind-insanity | Insanity, mania
+    mind-mania-rage | Mania with rage
+    mind-mania-erotic | Erotic mania
+    mind-mania-religious | Religious mania
+  mind-dullness | Dullness, sluggishness
+    mind-dullness-morning | Dullness in morning
+    mind-dullness-eating | Dullness after eating
+  mind-excitement | Excitement, excitable
+    mind-excitement-nervous | Nervous excitement
+    mind-excitement-evening | Excitement in evening
+  mind-grief | Grief, ailments from
+    mind-grief-silent | Silent grief
+    mind-grief-ailments | Ailments from grief
+  mind-homesickness | Homesickness
+  mind-hurry | Hurry, haste
+  mind-impatience | Impatience
+  mind-loathing-life | Loathing of life
+    mind-suicidal | Suicidal disposition
+  mind-sensitive | Sensitive, oversensitive
+    mind-sensitive-noise | Sensitive to noise
+    mind-sensitive-light | Sensitive to light
+    mind-sensitive-music | Sensitive to music
+    mind-sensitive-odors | Sensitive to odors
+    mind-sensitive-pain | Oversensitivity to pain
+    mind-sensitive-criticism | Sensitivity to criticism
+  mind-starting | Starting, startled
+    mind-starting-sleep | Starting from sleep
+    mind-starting-noise | Starting from noise
+  mind-stupefaction | Stupefaction
+    mind-stupefaction-headache | Stupefaction with headache
+  mind-unconsciousness | Unconsciousness, fainting
+    mind-unconsciousness-vertigo | Unconsciousness during vertigo
+    mind-unconsciousness-pain | Unconsciousness from pain
+=== Vertigo ===
+  vertigo-morning | Vertigo in morning
+    vertigo-morning-rising | Vertigo in morning on rising
+    vertigo-morning-bed | Vertigo in morning in bed
+  vertigo-evening | Vertigo in evening
+  vertigo-looking-down | Vertigo looking downward
+  vertigo-looking-up | Vertigo looking upward
+  vertigo-motion | Vertigo from motion
+    vertigo-motion-head | Vertigo from motion of head
+    vertigo-motion-quick | Vertigo from quick motion
+  vertigo-rising | Vertigo on rising from bed/sitting
+    vertigo-rising-stooping | Vertigo on rising from stooping
+    vertigo-rising-seat | Vertigo on rising from seat
+  vertigo-nausea | Vertigo with nausea
+    vertigo-nausea-vomiting | Vertigo with nausea and vomiting
+  vertigo-walking | Vertigo while walking
+    vertigo-walking-open-air | Vertigo walking in open air
+  vertigo-turning-head | Vertigo on turning the head
+  vertigo-stoop | Vertigo on stooping
+  vertigo-close-eyes | Vertigo on closing eyes
+  vertigo-meniere | Vertigo (Meniere's type)
+  vertigo-headache | Vertigo with headache
+  vertigo-objects-turning | Vertigo, objects seem to turn in a circle
+  vertigo-lying | Vertigo while lying
+  vertigo-high-places | Vertigo in high places
+  vertigo-elderly | Vertigo in elderly
+=== Head ===
+  head-pain | Headache (cephalalgia)
+    head-pain-throbbing | Throbbing headache
+    head-pain-congestive | Congestive headache
+    head-pain-pressing | Pressing headache
+    head-pain-stitching | Stitching headache
+    head-pain-burning | Burning headache
+    head-pain-bursting | Bursting headache
+    head-pain-splitting | Splitting headache
+    head-pain-drawing | Drawing headache
+    head-pain-dull | Dull headache
+    head-pain-boring | Boring headache
+    head-pain-nail-like | Nail-like headache (clavus)
+    head-pain-tearing | Tearing headache
+    head-pain-shooting | Shooting headache
+    head-pain-sore-bruised | Sore bruised headache
+    head-pain-tension | Tension headache
+    head-pain-cluster | Cluster headache
+    head-pain-sinus | Sinus headache
+    head-pain-hormonal | Hormonal headache
+    head-pain-rebound | Rebound/medication headache
+    head-pain-ice-cream | Headache from ice cream (brain freeze)
+    head-pain-menstrual | Menstrual headache
+    head-pain-hangover | Hangover headache
+  head-pain-location | Headache by location
+    head-pain-forehead | Frontal headache
+    head-pain-occiput | Occipital headache
+    head-pain-temples | Temporal headache
+    head-pain-vertex | Vertex headache (top of head)
+    head-pain-sides | One-sided headache (hemicrania)
+    head-pain-right | Right-sided headache
+    head-pain-left | Left-sided headache
+    head-pain-eyes-above | Headache above eyes
+    head-pain-band | Band-like headache
+  head-pain-cause | Headache by cause
+    head-pain-sun | Headache from sun exposure
+    head-pain-mental-exertion | Headache from mental exertion
+    head-pain-stooping | Headache from stooping
+    head-pain-coughing | Headache from coughing
+    head-pain-noise | Headache from noise
+    head-pain-motion | Headache from motion
+    head-pain-cold | Headache from cold
+    head-pain-reading | Headache from reading
+    head-pain-fasting | Headache from fasting
+    head-pain-menses | Headache during/before menses
+    head-pain-alcohol | Headache from alcohol
+    head-pain-injury | Headache from injury
+    head-pain-eyestrain | Headache from eyestrain
+    head-pain-emotional | Headache from emotions
+  head-congestion | Congestion of head
+    head-congestion-morning | Congestion of head in morning
+    head-congestion-heat | Congestion with heat of head
+    head-congestion-mental-exertion | Congestion from mental exertion
+    head-congestion-sun | Congestion from sun exposure
+    head-congestion-alcohol | Congestion from alcohol
+    head-congestion-suppressed-menses | Congestion from suppressed menses
+  head-heaviness | Heaviness of head
+    head-heaviness-forehead | Heaviness in forehead
+    head-heaviness-morning | Heaviness in morning
+  head-heat | Heat of head
+    head-heat-burning | Burning heat of head
+    head-heat-cold-feet | Heat of head with cold feet
+  head-pulsation | Pulsation in head
+    head-pulsation-temples | Pulsation in temples
+    head-pulsation-vertex | Pulsation at vertex
+  head-dandruff | Dandruff, scaling of scalp
+    head-dandruff-dry | Dry dandruff
+    head-dandruff-oily | Oily/greasy dandruff
+    head-dandruff-itching | Dandruff with intense itching
+  head-hair-falling | Hair falling out (alopecia)
+    head-hair-falling-spots | Hair falling in spots (alopecia areata)
+    head-hair-falling-childbirth | Hair loss after childbirth
+    head-hair-falling-grief | Hair falling from grief
+    head-hair-falling-patches | Hair falling in patches (alopecia areata)
+    head-hair-gray-early | Premature graying of hair
+  head-eruptions | Eruptions on scalp
+    head-eruptions-crusts | Crusts/scabs on scalp
+    head-eruptions-eczema | Eczema of scalp
+    head-eruptions-pimples | Pimples on scalp
+  head-perspiration | Perspiration of scalp
+    head-perspiration-night | Perspiration of scalp at night
+    head-perspiration-sleep | Perspiration of scalp during sleep
+  head-coldness | Coldness of head
+  head-numbness | Numbness of head
+  head-shaking | Shaking sensation in head
+  head-constriction | Constriction of head
+    head-constriction-band | Constriction as if band around head
+  head-fullness | Fullness sensation in head
+  head-itching-scalp | Itching of scalp
+  head-motions | Motions of head involuntary
+  head-migraine | Migraine
+    head-migraine-aura | Migraine with aura
+    head-migraine-nausea | Migraine with nausea/vomiting
+    head-migraine-periodic | Periodic migraine
+    head-migraine-menses | Migraine during menses
+    head-migraine-right | Right-sided migraine
+    head-migraine-left | Left-sided migraine
+    head-migraine-weekend | Weekend migraine
+    head-migraine-stress | Migraine from stress
+    head-migraine-food | Migraine from food triggers
+=== Eye ===
+  eye-inflammation | Inflammation of eyes (ophthalmia)
+    eye-inflammation-conjunctivitis | Conjunctivitis
+    eye-inflammation-scrofulous | Scrofulous ophthalmia
+    eye-inflammation-catarrhal | Catarrhal ophthalmia
+    eye-inflammation-newborn | Ophthalmia neonatorum
+    eye-inflammation-allergic | Allergic eye inflammation
+    eye-inflammation-chronic | Chronic eye inflammation
+  eye-pain | Pain in eyes
+    eye-pain-burning | Burning pain in eyes
+    eye-pain-pressing | Pressing pain in eyes
+    eye-pain-stitching | Stitching pain in eyes
+    eye-pain-reading | Pain from reading
+    eye-pain-light | Pain from light
+    eye-pain-aching | Aching pain in eyes
+    eye-pain-screen | Eye strain from screens
+  eye-discharge | Discharge from eyes
+    eye-discharge-purulent | Purulent discharge
+    eye-discharge-yellow | Yellow discharge
+    eye-discharge-acrid | Acrid, excoriating discharge
+  eye-lachrymation | Lachrymation (watering eyes)
+    eye-lachrymation-cold-air | Lachrymation in cold air
+    eye-lachrymation-wind | Lachrymation in wind
+    eye-lachrymation-cough | Lachrymation during cough
+    eye-lachrymation-reading | Lachrymation while reading
+  eye-photophobia | Photophobia (light sensitivity)
+    eye-photophobia-artificial | Photophobia from artificial light
+    eye-photophobia-sunlight | Photophobia from sunlight
+  eye-redness | Redness of eyes
+  eye-swelling | Swelling of eyelids
+    eye-swelling-upper | Swelling of upper lids
+    eye-swelling-lower | Swelling of lower lids
+  eye-itching | Itching of eyes
+  eye-stye | Stye (hordeolum)
+    eye-stye-recurrent | Recurrent styes
+    eye-stye-upper | Stye on upper lid
+    eye-stye-lower | Stye on lower lid
+  eye-cataract | Cataract
+    eye-cataract-senile | Senile cataract
+    eye-cataract-traumatic | Traumatic cataract
+    eye-cataract-diabetic | Diabetic cataract
+  eye-glaucoma | Glaucoma
+  eye-dryness | Dryness of eyes
+    eye-dryness-contact-lens | Dry eyes from contact lenses
+    eye-dryness-screen | Dry eyes from screen use
+    eye-dryness-menopause | Dry eyes at menopause
+  eye-twitching | Twitching of eyelids
+  eye-dilated-pupils | Pupils dilated
+  eye-contracted-pupils | Pupils contracted
+  eye-heaviness-lids | Heaviness of eyelids
+  eye-ptosis | Ptosis (drooping eyelid)
+=== Vision ===
+  vision-dim | Dim vision
+    vision-dim-reading | Dim vision while reading
+    vision-dim-headache | Dim vision with headache
+  vision-blurred | Blurred vision
+  vision-double | Double vision (diplopia)
+  vision-flickering | Flickering, zigzag vision
+  vision-colors-before-eyes | Colors before eyes
+    vision-colors-black-spots | Black spots before eyes
+    vision-colors-sparks | Sparks before eyes
+    vision-colors-halo | Halo around lights
+  vision-loss | Loss of vision
+    vision-loss-sudden | Sudden loss of vision
+    vision-loss-exertion | Loss of vision from exertion
+  vision-weak | Weak vision
+  vision-myopia | Short-sightedness (myopia)
+  vision-hypermetropia | Far-sightedness
+=== Ear ===
+  ear-pain | Earache (otalgia)
+    ear-pain-right | Earache right side
+    ear-pain-left | Earache left side
+    ear-pain-stitching | Stitching earache
+    ear-pain-tearing | Tearing earache
+    ear-pain-night | Earache at night
+    ear-pain-wind | Earache from wind
+    ear-pain-cold | Earache from cold
+    ear-pain-behind | Pain behind ear
+    ear-pain-cold-wind | Ear pain from cold wind
+    ear-pain-swimming | Ear pain after swimming
+    ear-pain-teething | Ear pain during teething
+    ear-pain-referred-throat | Ear pain referred from throat
+  ear-discharge | Discharge from ear (otorrhoea)
+    ear-discharge-offensive | Offensive ear discharge
+    ear-discharge-purulent | Purulent ear discharge
+    ear-discharge-bloody | Bloody ear discharge
+    ear-discharge-yellow | Yellow ear discharge
+    ear-discharge-chronic | Chronic ear discharge
+    ear-discharge-after-measles | Ear discharge after measles
+  ear-inflammation | Inflammation of ear (otitis)
+    ear-inflammation-media | Otitis media
+    ear-inflammation-externa | Otitis externa
+    ear-inflammation-chronic | Chronic otitis
+  ear-noises | Noises in ear (tinnitus)
+    ear-noises-ringing | Ringing in ears
+    ear-noises-buzzing | Buzzing in ears
+    ear-noises-roaring | Roaring in ears
+    ear-noises-humming | Humming in ears
+    ear-noises-singing | Singing in ears
+    ear-noises-pulsating | Pulsating noise in ear
+    ear-noises-waterfall | Waterfall-like noise in ear
+  ear-hearing-impaired | Hearing impaired
+    ear-hearing-impaired-old-age | Deafness in old age
+    ear-hearing-impaired-catarrh | Deafness from catarrh
+    ear-hearing-impaired-wax | Deafness from wax
+  ear-itching | Itching in ears
+  ear-wax-excessive | Excessive ear wax
+  ear-eustachian-tube | Eustachian tube catarrh
+  ear-stopped-sensation | Sensation of ear stopped
+  ear-swelling | Swelling of ear
+=== Nose ===
+  nose-coryza | Coryza (common cold)
+    nose-coryza-fluent | Fluent coryza
+    nose-coryza-dry | Dry coryza (stuffed nose)
+    nose-coryza-alternating | Alternating fluent and dry
+    nose-coryza-annual | Annual coryza (hay fever)
+    nose-coryza-open-air | Coryza in open air
+    nose-coryza-warm-room | Coryza in warm room
+  nose-discharge | Nasal discharge
+    nose-discharge-watery | Watery discharge
+    nose-discharge-thick | Thick discharge
+    nose-discharge-yellow | Yellow discharge
+    nose-discharge-green | Green discharge
+    nose-discharge-bloody | Bloody discharge
+    nose-discharge-offensive | Offensive discharge
+    nose-discharge-crusts | Crusts in nose
+    nose-discharge-post-nasal | Post-nasal drip
+    nose-discharge-thick-yellow | Thick yellow discharge
+    nose-discharge-watery-burning | Watery burning discharge
+    nose-discharge-bloody-crusts | Bloody crusts in nose
+  nose-obstruction | Obstruction of nose
+    nose-obstruction-night | Obstruction at night
+    nose-obstruction-alternating | Obstruction alternating sides
+    nose-obstruction-chronic | Chronic nasal obstruction
+    nose-obstruction-children | Nasal obstruction in infants
+    nose-obstruction-one-side | One-sided nasal obstruction
+    nose-obstruction-newborn | Nasal obstruction in newborn
+    nose-obstruction-polyps | Obstruction from nasal polyps
+  nose-sneezing | Sneezing
+    nose-sneezing-frequent | Frequent sneezing
+    nose-sneezing-violent | Violent sneezing
+    nose-sneezing-morning | Sneezing in morning
+    nose-sneezing-hay-fever | Sneezing from hay fever
+    nose-sneezing-dust | Sneezing from dust
+    nose-sneezing-sunlight | Sneezing from sunlight
+  nose-epistaxis | Epistaxis (nosebleed)
+    nose-epistaxis-morning | Nosebleed in morning
+    nose-epistaxis-blowing | Nosebleed from blowing nose
+    nose-epistaxis-headache | Nosebleed with headache
+    nose-epistaxis-children | Nosebleed in children
+    nose-epistaxis-profuse | Profuse nosebleed
+    nose-epistaxis-pregnancy | Nosebleed in pregnancy
+  nose-smell-lost | Loss of smell (anosmia)
+  nose-smell-sensitive | Sensitive smell
+  nose-polyps | Nasal polyps
+  nose-sinusitis | Sinusitis
+    nose-sinusitis-frontal | Frontal sinusitis
+    nose-sinusitis-maxillary | Maxillary sinusitis
+    nose-sinusitis-chronic | Chronic sinusitis
+  nose-dryness | Dryness of nose
+  nose-swelling | Swelling of nose
+  nose-pain | Pain in nose
+    nose-pain-root | Pain at root of nose
+    nose-pain-bones | Pain in nasal bones
+=== Face ===
+  face-pain | Face pain (prosopalgia)
+    face-pain-neuralgia | Facial neuralgia (trigeminal)
+    face-pain-right | Face pain right side
+    face-pain-left | Face pain left side
+    face-pain-jaw | Pain in jaw
+    face-pain-cold-agg | Face pain worse from cold
+    face-pain-trigeminal | Trigeminal pain
+    face-pain-dental | Face pain from dental issues
+    face-pain-tmj | Face pain from TMJ
+  face-swelling | Swelling of face
+    face-swelling-oedematous | Oedematous swelling of face
+    face-swelling-one-sided | One-sided swelling
+    face-swelling-allergic | Allergic facial swelling
+    face-swelling-dental | Facial swelling from dental abscess
+  face-eruptions | Eruptions on face
+    face-eruptions-acne | Acne on face
+    face-eruptions-eczema | Eczema on face
+    face-eruptions-herpes | Herpes on lips/face
+    face-eruptions-pimples | Pimples on face
+    face-eruptions-chin | Eruptions on chin
+    face-eruptions-forehead | Eruptions on forehead
+  face-discoloration | Discoloration of face
+    face-red | Red face
+    face-pale | Pale face
+    face-yellow | Yellow face (jaundice)
+    face-cyanotic | Bluish face
+    face-earthy | Earthy complexion
+  face-lips-cracked | Cracked lips
+    face-lips-dry | Dry lips
+    face-lips-bleeding | Bleeding lips
+  face-twitching | Twitching of facial muscles
+  face-lockjaw | Lockjaw (trismus)
+  face-paralysis | Facial paralysis (Bell's palsy)
+    face-paralysis-right | Facial paralysis right side
+    face-paralysis-left | Facial paralysis left side
+    face-paralysis-cold | Facial paralysis from cold
+  face-perspiration | Perspiration on face
+  face-heat | Heat of face
+  face-mumps | Mumps (parotitis)
+=== Mouth ===
+  mouth-aphthae | Aphthae (mouth ulcers)
+    mouth-aphthae-tongue | Ulcers on tongue
+    mouth-aphthae-gums | Ulcers on gums
+    mouth-aphthae-children | Mouth ulcers in children
+    mouth-aphthae-burning | Burning mouth ulcers
+  mouth-taste | Taste complaints
+    mouth-taste-bitter | Bitter taste
+    mouth-taste-metallic | Metallic taste
+    mouth-taste-sour | Sour taste
+    mouth-taste-salty | Salty taste
+    mouth-taste-sweetish | Sweetish taste
+    mouth-taste-lost | Loss of taste
+    mouth-taste-putrid | Putrid taste
+    mouth-taste-loss | Loss of taste
+    mouth-taste-sweet | Sweet taste in mouth
+  mouth-dryness | Dryness of mouth
+    mouth-dryness-night | Dryness at night
+    mouth-dryness-thirst | Dryness with thirst
+    mouth-dryness-without-thirst | Dryness without thirst
+    mouth-dryness-medication | Dry mouth from medication
+    mouth-dryness-diabetes | Dry mouth in diabetes
+  mouth-salivation | Salivation excessive
+    mouth-salivation-sleep | Salivation during sleep
+    mouth-salivation-nausea | Salivation with nausea
+  mouth-bleeding-gums | Bleeding gums
+    mouth-bleeding-gums-easily | Gums bleed easily
+    mouth-bleeding-gums-touch | Gums bleed on touch
+  mouth-tongue-coated | Coated tongue
+    mouth-tongue-white | White-coated tongue
+    mouth-tongue-yellow | Yellow-coated tongue
+    mouth-tongue-thick | Thick-coated tongue
+  mouth-breath-offensive | Offensive breath (halitosis)
+  mouth-swelling-gums | Swelling of gums
+  mouth-tongue-swelling | Swelling of tongue
+  mouth-speech-difficult | Speech difficult
+    mouth-speech-stammering | Stammering
+  mouth-numbness | Numbness of tongue/mouth
+  mouth-thrush | Thrush (candida)
+=== Teeth ===
+  teeth-pain | Toothache
+    teeth-pain-night | Toothache at night
+    teeth-pain-cold | Toothache from cold
+    teeth-pain-warm | Toothache from warmth
+    teeth-pain-touch | Toothache from touch
+    teeth-pain-pulling | Pulling toothache
+    teeth-pain-tearing | Tearing toothache
+    teeth-pain-throbbing | Throbbing toothache
+    teeth-pain-nervous | Nervous toothache
+    teeth-pain-pregnancy | Toothache during pregnancy
+    teeth-pain-extraction-after | Pain after tooth extraction
+    teeth-pain-cold-drinks | Toothache from cold drinks
+    teeth-pain-hot-drinks | Toothache from hot drinks
+  teeth-caries | Decay of teeth
+    teeth-caries-rapid | Rapid decay of teeth
+    teeth-caries-children | Premature decay in children
+  teeth-dentition | Dentition difficult
+    teeth-dentition-slow | Slow dentition
+    teeth-dentition-diarrhea | Diarrhea during dentition
+    teeth-dentition-fever | Fever during dentition
+  teeth-grinding | Grinding of teeth (bruxism)
+    teeth-grinding-sleep | Grinding during sleep
+  teeth-looseness | Looseness of teeth
+  teeth-sordes | Sordes on teeth
+  teeth-sensitivity | Sensitivity of teeth
+    teeth-sensitivity-cold | Teeth sensitive to cold
+    teeth-sensitivity-touch | Teeth sensitive to touch
+=== Throat ===
+  throat-pain | Sore throat
+    throat-pain-swallowing | Pain on swallowing
+    throat-pain-burning | Burning sore throat
+    throat-pain-stitching | Stitching sore throat
+    throat-pain-right | Sore throat right side
+    throat-pain-left | Sore throat left side
+    throat-pain-morning | Sore throat in morning
+    throat-pain-warm-drinks-amel | Sore throat better warm drinks
+    throat-pain-cold-drinks-amel | Sore throat better cold drinks
+    throat-pain-empty-swallowing | Pain worse empty swallowing
+  throat-inflammation | Inflammation of throat
+    throat-inflammation-tonsillitis | Tonsillitis
+    throat-inflammation-pharyngitis | Pharyngitis
+    throat-inflammation-recurrent | Recurrent tonsillitis
+  throat-dryness | Dryness of throat
+    throat-dryness-ac | Dry throat from air conditioning
+    throat-dryness-mouth-breathing | Dry throat from mouth breathing
+  throat-mucus | Mucus in throat
+    throat-mucus-tenacious | Tenacious mucus in throat
+    throat-mucus-morning | Mucus in throat in morning
+  throat-swelling | Swelling of throat
+    throat-swelling-tonsils | Swelling of tonsils
+    throat-swelling-uvula | Swelling of uvula
+  throat-lump-sensation | Lump sensation in throat (globus)
+  throat-choking | Choking, constriction
+  throat-hawk-disposition | Hawking, disposition to
+  throat-redness | Redness of throat
+  throat-spasm | Spasm of throat
+  throat-ulceration | Ulceration of throat
+=== External Throat ===
+  ext-throat-goitre | Goitre
+    ext-throat-goitre-exophthalmic | Exophthalmic goitre
+  ext-throat-swelling-glands | Swelling of cervical glands
+    ext-throat-swelling-glands-hard | Hard swelling of cervical glands
+  ext-throat-torticollis | Torticollis (wry neck)
+  ext-throat-stiffness | Stiffness of neck
+  ext-throat-pain | Pain in external throat
+  ext-throat-tension | Tension in neck
+=== Stomach ===
+  stomach-nausea | Nausea
+    stomach-nausea-morning | Nausea in morning
+    stomach-nausea-pregnancy | Nausea of pregnancy
+    stomach-nausea-eating | Nausea after eating
+    stomach-nausea-smell-food | Nausea from smell of food
+    stomach-nausea-headache | Nausea with headache
+    stomach-nausea-motion | Nausea from motion (motion sickness)
+    stomach-nausea-constant | Constant nausea
+    stomach-nausea-riding | Nausea from riding in vehicle
+    stomach-nausea-anxiety | Nausea from anxiety
+    stomach-nausea-medication | Nausea from medication
+    stomach-nausea-chemotherapy | Nausea from chemotherapy
+    stomach-nausea-post-op | Post-operative nausea
+  stomach-vomiting | Vomiting
+    stomach-vomiting-bile | Vomiting of bile
+    stomach-vomiting-food | Vomiting of food
+    stomach-vomiting-blood | Vomiting of blood
+    stomach-vomiting-pregnancy | Vomiting of pregnancy
+    stomach-vomiting-mucus | Vomiting of mucus
+    stomach-vomiting-drinking | Vomiting after drinking
+    stomach-vomiting-cough | Vomiting from coughing
+    stomach-vomiting-night | Vomiting at night
+    stomach-vomiting-sour | Vomiting of sour fluid
+    stomach-vomiting-undigested | Vomiting of undigested food
+  stomach-pain | Stomach pain (gastralgia)
+    stomach-pain-burning | Burning stomach pain
+    stomach-pain-cramping | Cramping stomach pain
+    stomach-pain-pressing | Pressing stomach pain
+    stomach-pain-eating | Stomach pain after eating
+    stomach-pain-empty | Pain when stomach is empty
+    stomach-pain-cutting | Cutting stomach pain
+    stomach-pain-stitching | Stitching stomach pain
+    stomach-pain-sore | Sore bruised stomach pain
+    stomach-pain-ulcer | Stomach pain from ulcer
+    stomach-pain-spasmodic | Spasmodic stomach pain
+  stomach-heartburn | Heartburn
+    stomach-heartburn-eating | Heartburn after eating
+    stomach-heartburn-pregnancy | Heartburn during pregnancy
+    stomach-heartburn-spicy | Heartburn from spicy food
+  stomach-appetite | Appetite disorders
+    stomach-appetite-increased | Increased appetite
+    stomach-appetite-diminished | Diminished appetite
+    stomach-appetite-ravenous | Ravenous appetite
+    stomach-appetite-wanting | Loss of appetite
+    stomach-appetite-diminished-morning | No appetite in morning
+    stomach-appetite-eating-distaste | Distaste for food
+  stomach-thirst | Thirst
+    stomach-thirst-extreme | Extreme thirst
+    stomach-thirst-small-sips | Thirst for small sips
+    stomach-thirst-cold-water | Thirst for cold water
+    stomach-thirstless | Thirstlessness
+    stomach-thirst-large-quantity | Thirst for large quantities
+    stomach-thirst-ice-cold | Thirst for ice-cold water
+  stomach-eructations | Eructations (belching)
+    stomach-eructations-sour | Sour eructations
+    stomach-eructations-bitter | Bitter eructations
+    stomach-eructations-empty | Empty eructations
+    stomach-eructations-food | Eructations tasting of food
+  stomach-hiccough | Hiccough
+    stomach-hiccough-eating | Hiccough after eating
+    stomach-hiccough-persistent | Persistent hiccough
+  stomach-indigestion | Indigestion (dyspepsia)
+    stomach-indigestion-fatty-food | Indigestion from fatty food
+    stomach-indigestion-chronic | Chronic indigestion
+  stomach-distension | Distension of stomach
+  stomach-emptiness | Emptiness sensation
+    stomach-emptiness-eating-not-relieved | Emptiness not relieved by eating
+  stomach-fullness | Fullness sensation
+  stomach-waterbrash | Waterbrash
+  stomach-aversion-food | Aversion to food
+    stomach-aversion-meat | Aversion to meat
+    stomach-aversion-fat | Aversion to fat
+    stomach-aversion-milk | Aversion to milk
+  stomach-desires | Desires (cravings)
+    stomach-desires-sweets | Craving for sweets
+    stomach-desires-salt | Craving for salt
+    stomach-desires-sour | Craving for sour things
+    stomach-desires-cold-drinks | Craving for cold drinks
+    stomach-desires-ice | Craving for ice
+    stomach-desires-spicy | Craving for spicy food
+  stomach-gastritis | Gastritis
+    stomach-gastritis-acute | Acute gastritis
+    stomach-gastritis-chronic | Chronic gastritis
+    stomach-gastritis-alcoholic | Alcoholic gastritis
+    stomach-gastritis-erosive | Erosive gastritis
+  stomach-ulcer | Gastric ulcer
+    stomach-ulcer-peptic | Peptic ulcer
+    stomach-ulcer-duodenal | Duodenal ulcer
+  stomach-acidity | Acidity, hyperacidity
+=== Abdomen ===
+  abdomen-pain | Abdominal pain
+    abdomen-pain-cramping | Cramping abdominal pain
+    abdomen-pain-burning | Burning abdominal pain
+    abdomen-pain-cutting | Cutting abdominal pain
+    abdomen-pain-stitching | Stitching abdominal pain
+    abdomen-pain-colicky | Colicky pain
+    abdomen-pain-sore | Sore abdominal pain
+    abdomen-pain-right-iliac | Pain in right iliac region
+    abdomen-pain-left-iliac | Pain in left iliac region
+    abdomen-pain-umbilical | Pain around umbilicus
+    abdomen-pain-hypogastric | Pain in lower abdomen
+    abdomen-pain-flatus-amel | Pain better from passing flatus
+    abdomen-pain-bending-double-amel | Pain better bending double
+  abdomen-distension | Distension, bloating
+    abdomen-distension-eating | Bloating after eating
+    abdomen-distension-flatus | Bloating from trapped gas
+    abdomen-distension-tympanitic | Tympanitic distension
+    abdomen-distension-gas | Abdominal distension from gas
+    abdomen-distension-after-eating | Distension after eating little
+  abdomen-flatulence | Flatulence
+    abdomen-flatulence-obstructed | Obstructed flatulence
+    abdomen-flatulence-offensive | Offensive flatulence
+    abdomen-flatulence-loud | Loud flatulence
+    abdomen-flatulence-trapped | Trapped wind
+    abdomen-flatulence-bloating | Flatulence with bloating
+  abdomen-liver | Liver complaints
+    abdomen-liver-enlarged | Enlarged liver
+    abdomen-liver-pain | Pain in liver region
+    abdomen-liver-cirrhosis | Cirrhosis of liver
+    abdomen-liver-jaundice | Jaundice
+    abdomen-liver-fatty | Fatty liver
+    abdomen-liver-hepatitis | Hepatitis
+  abdomen-spleen | Spleen complaints
+    abdomen-spleen-enlarged | Enlarged spleen
+    abdomen-spleen-pain | Pain in spleen
+  abdomen-hernia | Hernia
+    abdomen-hernia-inguinal | Inguinal hernia
+    abdomen-hernia-umbilical | Umbilical hernia
+    abdomen-hernia-hiatal | Hiatal hernia
+    abdomen-hernia-umbilical-children | Umbilical hernia in children
+  abdomen-rumbling | Rumbling, gurgling
+  abdomen-inflammation | Inflammation (peritonitis)
+  abdomen-ascites | Ascites (fluid in abdomen)
+  abdomen-appendicitis | Appendicitis
+    abdomen-appendicitis-chronic | Chronic appendicitis tendency
+  abdomen-gallstones | Gallstones (biliary colic)
+    abdomen-gallstones-colic | Gallstone colic
+    abdomen-gallstones-nausea | Gallstones with nausea
+    abdomen-gallstones-jaundice | Gallstones with jaundice
+=== Rectum ===
+  rectum-constipation | Constipation
+    rectum-constipation-chronic | Chronic constipation
+    rectum-constipation-ineffectual-urging | Ineffectual urging to stool
+    rectum-constipation-alternating-diarrhoea | Alternating constipation and diarrhoea
+    rectum-constipation-pregnancy | Constipation during pregnancy
+    rectum-constipation-travel | Constipation from travel/change
+    rectum-constipation-children | Constipation in children
+    rectum-constipation-elderly | Constipation in elderly
+    rectum-constipation-sedentary | Constipation from sedentary habits
+    rectum-constipation-infants | Constipation in infants
+  rectum-diarrhoea | Diarrhoea
+    rectum-diarrhoea-morning | Morning diarrhoea
+    rectum-diarrhoea-night | Diarrhoea at night
+    rectum-diarrhoea-painless | Painless diarrhoea
+    rectum-diarrhoea-watery | Watery diarrhoea
+    rectum-diarrhoea-bloody | Bloody diarrhoea (dysentery)
+    rectum-diarrhoea-dentition | Diarrhoea during dentition
+    rectum-diarrhoea-anxiety | Diarrhoea from anxiety/fright
+    rectum-diarrhoea-cold | Diarrhoea from cold
+    rectum-diarrhoea-fruit | Diarrhoea from fruit
+    rectum-diarrhoea-chronic | Chronic diarrhoea
+    rectum-diarrhoea-mucus | Diarrhea with mucus
+    rectum-diarrhoea-travel | Traveler's diarrhea
+  rectum-hemorrhoids | Hemorrhoids (piles)
+    rectum-hemorrhoids-bleeding | Bleeding hemorrhoids
+    rectum-hemorrhoids-external | External hemorrhoids
+    rectum-hemorrhoids-internal | Internal hemorrhoids
+    rectum-hemorrhoids-painful | Painful hemorrhoids
+    rectum-hemorrhoids-pregnancy | Hemorrhoids during pregnancy
+    rectum-hemorrhoids-protruding | Protruding hemorrhoids
+    rectum-hemorrhoids-postpartum | Postpartum hemorrhoids
+    rectum-hemorrhoids-thrombosed | Thrombosed hemorrhoids
+  rectum-fissure | Anal fissure
+    rectum-fissure-chronic | Chronic anal fissure
+    rectum-fissure-bleeding | Anal fissure with bleeding
+  rectum-fistula | Anal fistula
+  rectum-itching | Itching of anus
+    rectum-itching-worms | Itching from worms
+    rectum-itching-hemorrhoids | Anal itching from hemorrhoids
+  rectum-prolapse | Prolapse of rectum
+    rectum-prolapse-children | Rectal prolapse in children
+    rectum-prolapse-pregnancy | Rectal prolapse in pregnancy
+  rectum-pain | Pain in rectum
+    rectum-pain-stool-during | Pain during stool
+    rectum-pain-stool-after | Pain after stool
+    rectum-pain-burning | Burning pain in rectum
+  rectum-involuntary-stool | Involuntary stool
+  rectum-worms | Worms (parasites)
+    rectum-worms-pinworm | Pinworms
+    rectum-worms-round | Roundworms
+    rectum-worms-tape | Tapeworms
+=== Stool ===
+  stool-hard | Hard stool
+    stool-hard-dry | Hard dry stool
+    stool-hard-balls | Stool in hard balls
+    stool-hard-large | Stool large and hard
+  stool-loose | Loose/soft stool
+  stool-bloody | Bloody stool
+  stool-mucous | Mucous stool
+  stool-offensive | Offensive stool
+  stool-color | Stool color abnormal
+    stool-color-green | Green stool
+    stool-color-yellow | Yellow stool
+    stool-color-white | White/clay stool
+    stool-color-black | Black stool
+  stool-undigested | Undigested food in stool
+  stool-frothy | Frothy stool
+=== Urinary Organs ===
+  urinary-frequent | Frequent urination
+    urinary-frequent-night | Frequent urination at night (nocturia)
+    urinary-frequent-cold-weather | Frequent urination in cold weather
+    urinary-frequent-pregnancy | Frequent urination in pregnancy
+    urinary-frequent-diabetes | Frequent urination in diabetes
+    urinary-frequent-prostate | Frequent urination from prostate
+  urinary-burning | Burning urination
+    urinary-burning-before | Burning before urination
+    urinary-burning-during | Burning during urination
+    urinary-burning-after | Burning after urination
+    urinary-burning-start | Burning at start of urination
+    urinary-burning-end | Burning at end of urination
+  urinary-retention | Retention of urine
+    urinary-retention-newborn | Retention in newborns
+    urinary-retention-cold | Retention from cold
+  urinary-incontinence | Incontinence of urine
+    urinary-incontinence-cough | Incontinence from coughing
+    urinary-incontinence-night | Bedwetting (enuresis)
+    urinary-incontinence-old-age | Incontinence in old age
+    urinary-incontinence-children | Bedwetting in children
+    urinary-incontinence-stress | Stress incontinence
+    urinary-incontinence-elderly | Incontinence in elderly
+  urinary-kidney-stones | Kidney stones (renal calculi)
+    urinary-kidney-stones-right | Right kidney stones
+    urinary-kidney-stones-left | Left kidney stones
+    urinary-kidney-stones-colic | Renal colic
+    urinary-kidney-stones-uric-acid | Uric acid stones
+    urinary-kidney-stones-recurrent | Recurrent kidney stones
+  urinary-kidney-pain | Pain in kidneys
+    urinary-kidney-pain-stitching | Stitching pain in kidneys
+    urinary-kidney-pain-sore | Sore pain in kidneys
+  urinary-kidney-inflammation | Nephritis (kidney inflammation)
+  urinary-bladder-cystitis | Cystitis (bladder infection)
+    urinary-bladder-cystitis-acute | Acute cystitis
+    urinary-bladder-cystitis-chronic | Chronic cystitis
+    urinary-bladder-cystitis-honeymoon | Honeymoon cystitis
+    urinary-cystitis-honeymoon | Honeymoon cystitis
+    urinary-cystitis-interstitial | Interstitial cystitis
+    urinary-cystitis-catheter | Cystitis after catheterization
+  urinary-bladder-irritable | Irritable bladder
+  urinary-urging | Urging to urinate
+    urinary-urging-frequent | Frequent urging
+    urinary-urging-ineffectual | Ineffectual urging
+  urinary-prostate | Prostate complaints
+    urinary-prostate-enlarged | Enlarged prostate (BPH)
+    urinary-prostate-inflammation | Prostatitis
+    urinary-prostate-dribbling | Dribbling from prostate
+  urinary-urine-color | Urine abnormal color
+    urinary-urine-dark | Dark urine
+    urinary-urine-red | Red/bloody urine
+    urinary-urine-cloudy | Cloudy urine
+  urinary-urine-sediment | Sediment in urine
+    urinary-urine-sediment-sandy | Sandy sediment (red sand)
+  urinary-urine-albumin | Albuminuria
+  urinary-urine-sugar | Glycosuria (sugar in urine)
+=== Male Genitalia ===
+  male-impotence | Impotence (erectile dysfunction)
+    male-impotence-sexual-excess | Impotence from sexual excess
+    male-impotence-old-age | Impotence in old age
+    male-impotence-mental | Impotence from mental causes
+    male-impotence-psychological | Psychogenic impotence
+    male-impotence-premature-ejac | Premature ejaculation
+    male-impotence-age | Age-related impotence
+  male-emissions | Seminal emissions
+    male-emissions-night | Nocturnal emissions
+    male-emissions-frequent | Frequent emissions
+    male-emissions-weakness | Emissions with weakness
+  male-hydrocele | Hydrocele
+  male-varicocele | Varicocele
+  male-orchitis | Orchitis (testicular inflammation)
+  male-pain-testes | Pain in testes
+    male-pain-testes-right | Pain in right testis
+    male-pain-testes-drawing | Drawing pain in testes
+  male-itching | Itching of genitalia
+  male-swelling | Swelling of genitalia
+  male-desire-excessive | Sexual desire excessive
+  male-desire-diminished | Sexual desire diminished
+  male-gonorrhea | Gonorrhoea
+=== Female Genitalia ===
+  female-menses-irregular | Irregular menses
+    female-menses-early | Menses too early
+    female-menses-late | Menses too late
+    female-menses-scanty | Scanty menses
+    female-menses-profuse | Profuse menses (menorrhagia)
+    female-menses-painful | Painful menses (dysmenorrhea)
+    female-menses-absent | Absent menses (amenorrhea)
+    female-menses-suppressed | Suppressed menses
+    female-menses-prolonged | Prolonged menses
+    female-menses-dark | Dark/clotted menses
+    female-menses-bright-red | Bright red menses
+    female-menses-frequent | Too frequent menses (<21 days)
+  female-leucorrhea | Leucorrhoea (white discharge)
+    female-leucorrhea-acrid | Acrid leucorrhoea
+    female-leucorrhea-thick | Thick leucorrhoea
+    female-leucorrhea-yellow | Yellow leucorrhoea
+    female-leucorrhea-offensive | Offensive leucorrhoea
+    female-leucorrhea-greenish | Greenish leucorrhoea
+  female-metrorrhagia | Uterine bleeding between periods
+  female-uterus-prolapse | Uterine prolapse
+    female-uterus-prolapse-bearing-down | Bearing down sensation
+  female-ovarian-pain | Ovarian pain
+    female-ovarian-pain-right | Right ovarian pain
+    female-ovarian-pain-left | Left ovarian pain
+  female-ovarian-cyst | Ovarian cyst
+  female-fibroids | Uterine fibroids
+  female-pcos | Polycystic ovaries
+  female-menopause | Menopausal complaints
+    female-menopause-hot-flushes | Hot flushes of menopause
+    female-menopause-mood | Mood changes of menopause
+    female-menopause-sweating | Night sweats of menopause
+    female-menopause-osteoporosis | Menopausal osteoporosis risk
+    female-menopause-depression | Menopausal depression
+    female-menopause-dryness | Menopausal vaginal dryness
+    female-menopause-weight | Weight gain at menopause
+  female-pregnancy | Pregnancy complaints
+    female-pregnancy-nausea | Morning sickness
+    female-pregnancy-vomiting | Vomiting of pregnancy
+    female-pregnancy-hemorrhoids | Hemorrhoids of pregnancy
+    female-pregnancy-varicose | Varicose veins of pregnancy
+    female-pregnancy-backache | Backache of pregnancy
+    female-pregnancy-anemia | Anemia during pregnancy
+    female-pregnancy-gestational-diabetes | Gestational diabetes
+    female-pregnancy-preeclampsia | Preeclampsia
+    female-pregnancy-threatened-abortion | Threatened miscarriage
+    female-pregnancy-placenta-previa | Placenta previa support
+  female-lactation | Lactation disorders
+    female-lactation-deficient | Deficient milk
+    female-lactation-excessive | Excessive milk
+    female-lactation-mastitis | Mastitis
+  female-itching-vulva | Itching of vulva
+  female-vaginismus | Vaginismus
+  female-endometriosis | Endometriosis
+    female-endometriosis-adhesions | Endometriosis with adhesions
+    female-endometriosis-infertility | Endometriosis-related infertility
+=== Larynx and Trachea ===
+  larynx-hoarseness | Hoarseness of voice
+    larynx-hoarseness-morning | Hoarseness in morning
+    larynx-hoarseness-overuse | Hoarseness from overuse
+    larynx-hoarseness-cold | Hoarseness from cold
+    larynx-hoarseness-painless | Painless hoarseness
+  larynx-voice-lost | Loss of voice (aphonia)
+    larynx-voice-lost-singers | Loss of voice in singers
+  larynx-laryngitis | Laryngitis
+    larynx-laryngitis-chronic | Chronic laryngitis
+  larynx-croup | Croup
+    larynx-croup-membranous | Membranous croup
+    larynx-croup-spasmodic | Spasmodic croup
+  larynx-tickling | Tickling in larynx
+  larynx-rawness | Rawness in larynx
+  larynx-mucus | Mucus in larynx/trachea
+  larynx-constriction | Constriction of larynx
+  larynx-pain | Pain in larynx
+  larynx-dryness | Dryness of larynx
+=== Respiration ===
+  resp-asthma | Asthma
+    resp-asthma-night | Asthma at night
+    resp-asthma-humid | Asthma in humid weather
+    resp-asthma-children | Asthma in children
+    resp-asthma-allergic | Allergic asthma
+    resp-asthma-cold-air | Asthma from cold air
+    resp-asthma-elderly | Asthma in elderly
+    resp-asthma-spasmodic | Spasmodic asthma
+    resp-asthma-dust | Asthma from dust
+  resp-dyspnoea | Difficult breathing (dyspnoea)
+    resp-dyspnoea-exertion | Dyspnoea on exertion
+    resp-dyspnoea-lying | Dyspnoea lying down (orthopnoea)
+    resp-dyspnoea-ascending | Dyspnoea on ascending
+    resp-dyspnoea-night | Dyspnoea at night
+  resp-wheezing | Wheezing
+  resp-rattling | Rattling in chest
+  resp-sighing | Sighing respiration
+  resp-arrested | Arrested breathing
+  resp-deep | Desire to breathe deeply
+  resp-slow | Slow respiration
+  resp-snoring | Snoring
+=== Cough ===
+  cough-dry | Dry cough
+    cough-dry-night | Dry cough at night
+    cough-dry-tickling | Dry tickling cough
+    cough-dry-painful | Dry painful cough
+    cough-dry-irritating | Dry irritating cough
+    cough-dry-constant | Constant dry cough
+    cough-dry-cold-air | Dry cough from cold air
+    cough-dry-talking | Dry cough from talking
+  cough-loose | Loose cough (rattling)
+    cough-loose-cannot-raise | Loose cough but cannot raise phlegm
+  cough-spasmodic | Spasmodic cough
+    cough-spasmodic-night | Spasmodic cough at night
+    cough-spasmodic-whooping | Whooping cough
+    cough-spasmodic-vomiting | Spasmodic cough with vomiting
+  cough-barking | Barking cough
+  cough-suffocative | Suffocative cough
+  cough-morning | Cough in morning
+  cough-evening | Cough in evening
+  cough-eating | Cough after eating
+  cough-lying | Cough when lying down
+  cough-talking | Cough from talking
+  cough-deep | Deep cough
+  cough-hacking | Hacking cough
+=== Expectoration ===
+  expect-yellow | Yellow expectoration
+  expect-green | Green expectoration
+  expect-bloody | Bloody expectoration (haemoptysis)
+    expect-bloody-bright | Bright red expectoration
+  expect-thick | Thick expectoration
+  expect-stringy | Stringy, ropy expectoration
+  expect-offensive | Offensive expectoration
+  expect-salty | Salty expectoration
+  expect-copious | Copious expectoration
+  expect-difficult | Difficult expectoration
+  expect-taste | Taste of expectoration
+    expect-taste-sweetish | Sweetish taste
+    expect-taste-putrid | Putrid taste
+=== Chest ===
+  chest-pain | Chest pain
+    chest-pain-stitching | Stitching chest pain
+    chest-pain-burning | Burning chest pain
+    chest-pain-pressing | Pressing chest pain
+    chest-pain-sides | Pain in sides of chest
+    chest-pain-sternum | Pain behind sternum
+    chest-pain-cough | Chest pain from coughing
+    chest-pain-heart-region | Pain in heart region
+    chest-pain-sore | Sore pain in chest
+    chest-pain-costochondral | Costochondral junction pain
+    chest-pain-breathing | Chest pain worse breathing
+    chest-pain-exertion | Chest pain on exertion
+  chest-palpitation | Palpitation of heart
+    chest-palpitation-anxiety | Palpitation with anxiety
+    chest-palpitation-exertion | Palpitation from exertion
+    chest-palpitation-lying | Palpitation lying on left side
+    chest-palpitation-night | Palpitation at night
+    chest-palpitation-ascending | Palpitation on ascending stairs
+    chest-palpitation-menses | Palpitation during menses
+    chest-palpitation-tumultuous | Tumultuous palpitation
+    chest-palpitation-menopause | Palpitation at menopause
+    chest-palpitation-coffee | Palpitation from coffee
+  chest-constriction | Constriction of chest
+    chest-constriction-heart | Constriction around heart
+  chest-oppression | Oppression of chest
+    chest-oppression-ascending | Oppression on ascending
+    chest-oppression-anxiety | Chest oppression from anxiety
+    chest-oppression-eating | Chest oppression after eating
+  chest-inflammation-lungs | Pneumonia
+    chest-pneumonia-right | Right-sided pneumonia
+    chest-pneumonia-left | Left-sided pneumonia
+    chest-pneumonia-neglected | Neglected pneumonia
+  chest-bronchitis | Bronchitis
+    chest-bronchitis-acute | Acute bronchitis
+    chest-bronchitis-chronic | Chronic bronchitis
+    chest-bronchitis-children | Bronchitis in children
+  chest-pleurisy | Pleurisy
+  chest-hemorrhage-lungs | Lung hemorrhage
+  chest-angina-pectoris | Angina pectoris
+    chest-angina-exertion | Angina from exertion
+    chest-angina-radiating-arm | Angina radiating to left arm
+  chest-heart-weakness | Weakness of heart
+  chest-phthisis | Tuberculosis of lungs
+  chest-mammae-pain | Pain in mammae/breasts
+    chest-mammae-pain-menses | Breast pain before menses
+  chest-tumors-mammae | Breast tumors/lumps
+  chest-fullness | Fullness in chest
+  chest-weakness | Weakness of chest
+=== Back ===
+  back-pain | Back pain
+    back-pain-cervical | Cervical (neck) pain
+    back-pain-dorsal | Dorsal (upper back) pain
+    back-pain-lumbar | Lumbar (lower back) pain
+    back-pain-sacral | Sacral pain
+    back-pain-coccyx | Coccyx pain
+    back-pain-stitching | Stitching back pain
+    back-pain-aching | Aching back pain
+    back-pain-burning | Burning back pain
+    back-pain-sitting | Back pain from sitting
+    back-pain-standing | Back pain from standing
+    back-pain-morning | Back pain in morning
+    back-pain-motion-amel | Back pain better from motion
+    back-pain-motion-agg | Back pain worse from motion
+    back-pain-menses | Back pain during menses
+    back-pain-pregnancy | Back pain during pregnancy
+  back-stiffness | Stiffness of back
+    back-stiffness-cervical | Stiffness of neck
+    back-stiffness-lumbar | Stiffness of lumbar region
+    back-stiffness-rising | Stiffness on rising
+    back-stiffness-cold | Back stiffness from cold
+    back-stiffness-desk | Back stiffness from desk work
+  back-weakness | Weakness of back
+    back-weakness-lumbar | Weakness of lumbar region
+  back-tension | Tension in back
+    back-tension-cervical | Tension in neck
+  back-spasms | Spasms of back
+    back-opisthotonos | Opisthotonos
+  back-curvature | Curvature of spine (scoliosis)
+  back-sciatica | Sciatica
+    back-sciatica-right | Right-sided sciatica
+    back-sciatica-left | Left-sided sciatica
+    back-sciatica-sitting-agg | Sciatica worse sitting
+    back-sciatica-motion-amel | Sciatica better from motion
+    back-sciatica-pregnancy | Sciatica in pregnancy
+    back-sciatica-disc | Sciatica from disc herniation
+    back-sciatica-chronic | Chronic sciatica
+  back-coldness | Coldness of back
+  back-heat | Heat of back
+  back-perspiration | Perspiration on back
+=== Extremities ===
+  ext-pain | Pain in extremities
+    ext-pain-joints | Joint pain (arthralgia)
+    ext-pain-shoulder | Shoulder pain
+    ext-pain-elbow | Elbow pain
+    ext-pain-wrist | Wrist pain
+    ext-pain-fingers | Finger pain
+    ext-pain-hip | Hip pain
+    ext-pain-knee | Knee pain
+    ext-pain-ankle | Ankle pain
+    ext-pain-heel | Heel pain
+    ext-pain-toes | Toe pain
+    ext-pain-rheumatic | Rheumatic pain
+    ext-pain-gouty | Gouty pain
+    ext-pain-wandering | Wandering pains
+    ext-pain-plantar-fascia | Plantar fascia pain
+    ext-pain-frozen-shoulder | Frozen shoulder pain
+    ext-pain-tennis-elbow | Tennis elbow pain
+    ext-pain-carpal-tunnel | Carpal tunnel pain
+  ext-swelling | Swelling of extremities
+    ext-swelling-joints | Swelling of joints
+    ext-swelling-knee | Swelling of knee
+    ext-swelling-feet | Swelling of feet/ankles
+    ext-swelling-hands | Swelling of hands
+    ext-swelling-ankle-pregnancy | Ankle swelling in pregnancy
+    ext-swelling-knee-arthritis | Knee swelling from arthritis
+    ext-swelling-feet-heart | Feet swelling from heart disease
+  ext-stiffness | Stiffness of extremities
+    ext-stiffness-morning | Stiffness in morning
+    ext-stiffness-joints | Stiffness of joints
+  ext-numbness | Numbness of extremities
+    ext-numbness-fingers | Numbness of fingers
+    ext-numbness-hands | Numbness of hands
+    ext-numbness-feet | Numbness of feet
+    ext-numbness-legs | Numbness of legs
+    ext-numbness-hands-morning | Hands numb in morning
+    ext-numbness-carpal-tunnel | Numbness from carpal tunnel
+    ext-numbness-diabetic | Diabetic numbness in feet
+  ext-cramps | Cramps in extremities
+    ext-cramps-calves | Cramps in calves
+    ext-cramps-feet | Cramps in soles/feet
+    ext-cramps-toes | Cramps in toes
+    ext-cramps-hands | Cramps in hands
+    ext-cramps-pregnancy | Leg cramps in pregnancy
+    ext-cramps-writing | Writer's cramp
+    ext-cramps-swimming | Cramps while swimming
+  ext-weakness | Weakness of extremities
+    ext-weakness-lower-limbs | Weakness of lower limbs
+    ext-weakness-upper-limbs | Weakness of upper limbs
+    ext-weakness-legs-climbing | Weakness of legs climbing stairs
+    ext-weakness-hands-grip | Weak grip strength
+  ext-trembling | Trembling of extremities
+    ext-trembling-hands | Trembling of hands
+    ext-trembling-legs | Trembling of legs
+    ext-trembling-elderly | Trembling in elderly
+  ext-coldness | Coldness of extremities
+    ext-coldness-hands | Cold hands
+    ext-coldness-feet | Cold feet
+    ext-coldness-tips | Cold fingertips
+    ext-coldness-raynaud | Cold extremities (Raynaud's)
+    ext-coldness-feet-bed | Cold feet in bed
+  ext-tingling | Tingling in extremities
+  ext-restlessness | Restlessness of limbs
+    ext-restlessness-legs | Restless legs
+    ext-restlessness-legs-night | Restless legs at night (in bed)
+    ext-restlessness-sitting | Restless legs while sitting
+  ext-paralysis | Paralysis of extremities
+  ext-varicose-veins | Varicose veins
+    ext-varicose-veins-pregnancy | Varicose veins in pregnancy
+  ext-corns | Corns
+    ext-corns-painful | Painful corns
+  ext-bunion | Bunion
+  ext-gout | Gout
+    ext-gout-big-toe | Gout of big toe
+    ext-gout-chronic | Chronic gout
+  ext-arthritis | Arthritis
+    ext-arthritis-rheumatoid | Rheumatoid arthritis
+    ext-arthritis-osteo | Osteoarthritis
+    ext-arthritis-deformans | Arthritis deformans
+    ext-arthritis-psoriatic | Psoriatic arthritis
+    ext-arthritis-reactive | Reactive arthritis
+    ext-arthritis-juvenile | Juvenile arthritis
+    ext-arthritis-hip | Hip arthritis
+    ext-arthritis-finger | Finger joint arthritis
+    ext-arthritis-weather | Arthritis worse in weather change
+  ext-carpal-tunnel | Carpal tunnel syndrome
+  ext-ganglion | Ganglion
+  ext-nails | Nail complaints
+    ext-nails-brittle | Brittle nails
+    ext-nails-discolored | Discolored nails
+    ext-nails-ingrowing | Ingrowing toenails
+    ext-nails-fungus | Fungal nails
+  ext-chilblains | Chilblains
+=== Sleep ===
+  sleep-insomnia | Insomnia (sleeplessness)
+    sleep-insomnia-thoughts | Insomnia from thoughts
+    sleep-insomnia-anxiety | Insomnia from anxiety
+    sleep-insomnia-pain | Insomnia from pain
+    sleep-insomnia-midnight-after | Wakefulness after midnight
+    sleep-insomnia-coffee | Insomnia from coffee
+    sleep-insomnia-overwork | Insomnia from overwork
+    sleep-insomnia-elderly | Insomnia in elderly
+    sleep-insomnia-children | Insomnia in children
+    sleep-insomnia-jetlag | Insomnia from jet lag
+    sleep-insomnia-shift-work | Insomnia from shift work
+  sleep-drowsiness | Drowsiness
+    sleep-drowsiness-afternoon | Drowsiness in afternoon
+    sleep-drowsiness-eating | Drowsiness after eating
+  sleep-dreams | Dreams
+    sleep-dreams-frightful | Frightful dreams
+    sleep-dreams-vivid | Vivid dreams
+    sleep-dreams-death | Dreams of death
+    sleep-dreams-falling | Dreams of falling
+    sleep-dreams-animals | Dreams of animals
+    sleep-dreams-prophetic | Prophetic dreams
+  sleep-restless | Restless sleep
+  sleep-starting | Starting from sleep
+  sleep-position | Sleep position
+    sleep-position-back | Sleeps on back
+    sleep-position-abdomen | Sleeps on abdomen
+    sleep-position-left | Can only sleep on left side
+  sleep-unrefreshing | Unrefreshing sleep
+  sleep-yawning | Yawning frequent
+  sleep-talking | Talking during sleep
+  sleep-grinding-teeth | Grinding teeth during sleep
+  sleep-walking | Sleepwalking
+  sleep-night-terrors | Night terrors in children
+=== Chill ===
+  chill-shaking | Shaking chill
+    chill-shaking-violent | Violent shaking chill
+  chill-time | Chill at specific time
+    chill-morning | Chill in morning
+    chill-afternoon | Chill in afternoon
+    chill-evening | Chill in evening
+    chill-night | Chill at night
+  chill-one-sided | Chill one-sided
+  chill-warm-room | Chill in warm room
+  chill-drinking | Chill after drinking
+  chill-internal | Internal chill
+  chill-periodical | Periodical chill (malarial)
+  chill-beginning-extremities | Chill beginning in extremities
+=== Fever ===
+  fever-high | High fever
+    fever-high-sudden | Sudden high fever
+    fever-high-continuous | Continuous high fever
+  fever-intermittent | Intermittent fever
+    fever-intermittent-malaria | Malarial fever
+    fever-intermittent-weekly | Weekly intermittent fever
+    fever-intermittent-quinine | Fever after quinine suppression
+  fever-remittent | Remittent fever
+  fever-hectic | Hectic fever
+  fever-inflammatory | Inflammatory fever
+  fever-afternoon | Fever in afternoon
+  fever-night | Fever at night
+  fever-dry-heat | Dry heat without sweat
+  fever-burning-heat | Burning heat
+  fever-typhoid | Typhoid fever
+  fever-eruptive | Eruptive fevers (measles, chickenpox)
+  fever-dengue | Dengue-type fever
+=== Perspiration ===
+  persp-profuse | Profuse perspiration
+    persp-profuse-exertion | Profuse sweat from slight exertion
+    persp-profuse-eating | Profuse sweat while eating
+    persp-profuse-anxiety | Profuse sweat from anxiety
+  persp-night | Night sweats
+    persp-night-debilitating | Debilitating night sweats
+  persp-offensive | Offensive perspiration
+    persp-offensive-feet | Offensive foot sweat
+    persp-offensive-axillae | Offensive axillary sweat
+  persp-cold | Cold perspiration
+  persp-one-sided | One-sided perspiration
+  persp-staining | Perspiration staining clothes
+    persp-staining-yellow | Yellow staining perspiration
+  persp-suppressed | Suppressed perspiration
+  persp-oily | Oily perspiration
+  persp-covered-parts | Perspiration on covered parts
+  persp-uncovered-parts | Perspiration on uncovered parts
+=== Skin ===
+  skin-eruptions | Eruptions
+    skin-eruptions-eczema | Eczema
+    skin-eruptions-psoriasis | Psoriasis
+    skin-eruptions-urticaria | Urticaria (hives)
+    skin-eruptions-herpes | Herpes
+    skin-eruptions-boils | Boils (furuncles)
+    skin-eruptions-carbuncles | Carbuncles
+    skin-eruptions-pimples | Pimples/acne
+    skin-eruptions-vesicular | Vesicular eruptions
+    skin-eruptions-pustular | Pustular eruptions
+    skin-eruptions-crusty | Crusty eruptions
+    skin-eruptions-scaly | Scaly eruptions
+    skin-eruptions-moist | Moist/weeping eruptions
+    skin-eruptions-burning | Burning eruptions
+    skin-eruptions-itching | Itching eruptions
+    skin-eruptions-rash | Rash
+    skin-eruptions-diaper | Diaper rash
+    skin-eruptions-contact | Contact dermatitis
+    skin-eruptions-seborrheic | Seborrheic dermatitis
+    skin-eruptions-pityriasis | Pityriasis rosea
+    skin-eruptions-scabies | Scabies
+    skin-eruptions-chicken-pox | Chicken pox rash
+    skin-eruptions-measles | Measles rash
+    skin-eruptions-impetigo | Impetigo
+    skin-eruptions-molluscum | Molluscum contagiosum
+  skin-itching | Itching of skin
+    skin-itching-night | Itching at night
+    skin-itching-warmth | Itching from warmth
+    skin-itching-scratching-amel | Itching better scratching
+    skin-itching-scratching-agg | Itching worse scratching
+    skin-itching-undressing | Itching on undressing
+    skin-itching-senile | Senile pruritus
+    skin-itching-diabetes | Itching in diabetes
+    skin-itching-liver | Itching from liver disease
+  skin-ulcers | Ulcers
+    skin-ulcers-varicose | Varicose ulcers
+    skin-ulcers-indolent | Indolent ulcers
+    skin-ulcers-deep | Deep ulcers
+    skin-ulcers-offensive | Offensive ulcers
+    skin-ulcers-diabetic | Diabetic ulcers
+    skin-ulcers-bedsore | Bedsores / pressure ulcers
+  skin-warts | Warts
+    skin-warts-flat | Flat warts
+    skin-warts-pedunculated | Pedunculated warts
+    skin-warts-horny | Horny warts
+    skin-warts-bleeding | Bleeding warts
+    skin-warts-genital | Genital warts
+    skin-warts-plantar | Plantar warts
+    skin-warts-filiform | Filiform warts
+  skin-dryness | Dryness of skin
+    skin-dryness-winter | Skin dryness worse in winter
+    skin-dryness-cracking | Dry cracking skin
+    skin-dryness-elderly | Dry skin in elderly
+  skin-burning | Burning of skin
+  skin-discoloration | Discoloration
+    skin-discoloration-spots | Spots/patches
+    skin-discoloration-liver-spots | Liver spots
+    skin-discoloration-vitiligo | Vitiligo
+    skin-discoloration-chloasma | Chloasma / melasma
+  skin-erysipelas | Erysipelas
+  skin-fungal | Fungal skin infections
+    skin-fungal-ringworm | Ringworm
+    skin-fungal-tinea | Tinea (athlete's foot)
+  skin-abscess | Abscess
+    skin-abscess-recurrent | Recurrent abscesses
+  skin-scars | Keloid/scar complaints
+  skin-cracks | Cracks/fissures of skin
+    skin-cracks-hands | Cracked hands
+    skin-cracks-feet | Cracked feet (heels)
+  skin-coldness | Coldness of skin
+  skin-gangrene | Gangrene
+  skin-sensitive | Skin sensitive to touch
+=== Generalities ===
+  gen-weakness | Weakness, prostration
+    gen-weakness-morning | Weakness in morning
+    gen-weakness-exertion | Weakness from slight exertion
+    gen-weakness-diarrhoea | Weakness after diarrhoea
+    gen-weakness-fever | Weakness during fever
+    gen-weakness-menses | Weakness during menses
+    gen-weakness-nervous | Nervous weakness
+    gen-weakness-sudden | Sudden weakness
+    gen-weakness-post-illness | Weakness after illness
+    gen-weakness-post-surgery | Weakness after surgery
+    gen-weakness-chronic-fatigue | Chronic fatigue weakness
+  gen-faintness | Faintness, fainting
+    gen-faintness-pain | Faintness from pain
+    gen-faintness-warm-room | Faintness in warm room
+    gen-faintness-crowd | Faintness in a crowd
+    gen-faintness-standing | Faintness from standing
+  gen-trembling | Trembling
+    gen-trembling-anxiety | Trembling from anxiety
+    gen-trembling-anger | Trembling from anger
+  gen-convulsions | Convulsions
+    gen-convulsions-children | Convulsions in children
+    gen-convulsions-fever | Convulsions from fever
+    gen-convulsions-epileptic | Epileptic convulsions
+    gen-convulsions-febrile-child | Febrile convulsions in children
+  gen-inflammation | Inflammation (general)
+  gen-oedema | Swelling, oedema
+    gen-oedema-dropsical | Dropsical swelling
+  gen-anemia | Anemia
+    gen-anemia-hemorrhage | Anemia after hemorrhage
+    gen-anemia-iron-deficiency | Iron deficiency anemia
+    gen-anemia-pregnancy | Anemia of pregnancy
+    gen-anemia-chronic-disease | Anemia of chronic disease
+  gen-cold-sensitive | Sensitivity to cold
+    gen-cold-agg | Complaints worse from cold
+    gen-cold-wet-agg | Complaints worse in cold wet weather
+  gen-heat-sensitive | Sensitivity to heat
+    gen-heat-agg | Complaints worse from heat
+    gen-warm-room-agg | Complaints worse in warm room
+    gen-summer-agg | Complaints worse in summer
+  gen-touch-sensitive | Sensitive to touch
+  gen-motion-worse | Worse from motion
+  gen-rest-worse | Worse from rest
+  gen-motion-better | Better from motion
+  gen-rest-better | Better from rest
+  gen-food-agg | Food aggravation
+    gen-food-fatty-agg | Worse from fatty food
+    gen-food-milk-agg | Worse from milk
+    gen-food-cold-agg | Worse from cold food/drink
+    gen-food-warm-amel | Better from warm food/drink
+  gen-right-sided | Right-sided complaints
+  gen-left-sided | Left-sided complaints
+  gen-periodicity | Periodicity of complaints
+    gen-periodic-daily | Daily periodicity of symptoms
+    gen-periodic-weekly | Weekly periodicity
+    gen-periodic-annual | Annual periodicity
+  gen-emaciation | Emaciation
+    gen-emaciation-eating-well | Emaciation despite eating well
+  gen-obesity | Obesity
+    gen-obesity-childhood | Childhood obesity
+    gen-obesity-thyroid | Obesity from thyroid disorder
+  gen-hemorrhage | Hemorrhage tendency
+    gen-hemorrhage-bright | Bright red hemorrhage
+    gen-hemorrhage-dark | Dark hemorrhage
+  gen-injuries | Injuries
+    gen-injuries-bruises | Bruises, contusions
+    gen-injuries-sprains | Sprains, strains
+    gen-injuries-wounds | Wounds
+    gen-injuries-bones | Bone injuries, fractures
+    gen-injuries-nerves | Nerve injuries
+    gen-injuries-head | Head injuries / concussion
+    gen-injuries-burns | Burns and scalds
+    gen-injuries-bites | Animal/insect bites
+    gen-injuries-nerve | Nerve injuries
+    gen-injuries-tendon | Tendon injuries
+    gen-injuries-bone | Bone injuries/fractures
+  gen-vaccination-effects | Ill effects of vaccination
+  gen-diabetes | Diabetes mellitus
+    gen-diabetes-thirst | Diabetes with excessive thirst
+    gen-diabetes-weakness | Diabetes with weakness
+    gen-diabetes-polyuria | Diabetes with polyuria
+    gen-diabetes-gangrene | Diabetic gangrene
+  gen-cancerous | Cancerous affections
+  gen-convalescence | Slow convalescence
+    gen-conval-slow | Slow convalescence
+    gen-conval-relapse | Tendency to relapse
+  gen-suppuration | Tendency to suppuration
+  gen-septic | Septic conditions
+=== Hearing ===
+  hearing-impaired | Hearing impaired
+    hearing-impaired-catarrh | From catarrh
+    hearing-impaired-nerve | Nerve deafness
+  hearing-acute | Hearing acute/oversensitive
+    hearing-acute-noise | Sensitive to noise
+    hearing-acute-music | Sensitive to music
+  hearing-illusions | Illusions of hearing
+  hearing-lost | Lost hearing (deafness)
+=== Urine ===
+  urine-color-dark | Dark urine
+  urine-color-red | Red/blood in urine
+  urine-color-milky | Milky urine
+  urine-odor-strong | Strong-smelling urine
+  urine-sediment-red-sand | Red sand in urine
+  urine-albumin | Albumin in urine
+  urine-sugar | Sugar in urine
+  urine-copious | Copious urine (polyuria)
+  urine-scanty | Scanty urine (oliguria)
+  urine-cloudy | Cloudy urine
+=== Bladder ===
+  bladder-cystitis | Cystitis
+    bladder-cystitis-acute | Acute cystitis
+    bladder-cystitis-chronic | Chronic cystitis
+  bladder-retention | Retention of urine
+  bladder-urging | Urging to urinate
+    bladder-urging-frequent | Frequent urging
+    bladder-urging-ineffectual | Ineffectual urging
+  bladder-incontinence | Incontinence
+    bladder-incontinence-night | Night incontinence (enuresis)
+    bladder-incontinence-cough | Incontinence from coughing/sneezing
+  bladder-tenesmus | Tenesmus of bladder
+  bladder-pain | Bladder pain
+  bladder-spasm | Spasm of bladder
+=== Urethra ===
+  urethra-discharge | Urethral discharge
+    urethra-discharge-purulent | Purulent discharge
+    urethra-discharge-gleety | Gleety discharge
+  urethra-burning | Burning in urethra
+    urethra-burning-urination | Burning during urination
+  urethra-pain | Pain in urethra
+  urethra-stricture | Urethral stricture
+  urethra-itching | Itching in urethra
+=== Kidneys ===
+  kidneys-pain | Kidney pain
+    kidneys-pain-stitching | Stitching kidney pain
+    kidneys-pain-aching | Aching kidney pain
+    kidneys-pain-walking | Kidney pain while walking
+  kidneys-inflammation | Nephritis
+    kidneys-inflammation-acute | Acute nephritis
+    kidneys-inflammation-chronic | Chronic nephritis
+  kidneys-stones | Kidney stones
+    kidneys-stones-right | Right kidney stones
+    kidneys-stones-left | Left kidney stones
+    kidneys-stones-colic | Renal colic
+    kidneys-stones-uric | Uric acid stones
+    kidneys-stones-phosphate | Phosphate stones
+  kidneys-suppression | Suppression of urine
+  kidneys-addison | Addison's disease
+=== Immune System & Allergies ===
+  immune-allergy | Allergies (general)
+    immune-allergy-dust | Dust allergy
+    immune-allergy-pollen | Pollen allergy
+    immune-allergy-food | Food allergy
+    immune-allergy-animal | Animal dander allergy
+    immune-allergy-drug | Drug allergy
+    immune-allergy-mold | Mold allergy
+    immune-allergy-seasonal | Seasonal allergy
+    immune-allergy-skin | Contact allergic dermatitis
+    immune-allergy-chemical | Chemical sensitivity (MCS)
+    immune-allergy-insect-sting | Insect sting allergy
+    immune-allergy-latex | Latex allergy
+    immune-allergy-penicillin | Penicillin allergy
+    immune-allergy-shellfish | Shellfish allergy
+  immune-hay-fever | Hay fever (allergic rhinitis)
+    immune-hay-fever-spring | Spring hay fever
+    immune-hay-fever-autumn | Autumn hay fever
+    immune-hay-fever-eyes | Hay fever with itchy eyes
+    immune-hay-fever-asthma | Hay fever with asthma
+    immune-hay-fever-perennial | Perennial allergic rhinitis
+  immune-autoimmune | Autoimmune conditions
+    immune-lupus | Lupus (SLE)
+    immune-hashimoto | Hashimoto's thyroiditis
+    immune-ms | Multiple sclerosis
+    immune-ra | Rheumatoid arthritis
+    immune-psoriatic-arthritis | Psoriatic arthritis
+    immune-crohn | Crohn's disease
+    immune-ulcerative-colitis | Ulcerative colitis
+    immune-celiac-autoimmune | Celiac disease (autoimmune)
+    immune-vitiligo-autoimmune | Autoimmune vitiligo
+    immune-alopecia-autoimmune | Autoimmune alopecia
+    immune-sarcoidosis | Sarcoidosis
+  immune-low-immunity | Low immunity / frequent infections
+    immune-recurrent-cold | Recurrent colds
+    immune-recurrent-throat | Recurrent throat infections
+    immune-post-illness | Slow recovery after illness
+    immune-post-antibiotic | Low immunity after antibiotics
+    immune-post-steroid | Low immunity after steroids
+  immune-urticaria | Urticaria (hives)
+    immune-urticaria-acute | Acute urticaria
+    immune-urticaria-chronic | Chronic urticaria
+    immune-urticaria-cold | Urticaria from cold
+    immune-urticaria-heat | Urticaria from heat
+    immune-urticaria-exercise | Urticaria from exercise
+    immune-urticaria-food | Urticaria from food
+    immune-urticaria-stress | Urticaria from stress
+    immune-urticaria-sun | Solar urticaria
+  immune-anaphylaxis | Anaphylactic tendency
+=== Endocrine & Hormonal ===
+  endo-thyroid | Thyroid disorders
+    endo-hypothyroid | Hypothyroidism
+    endo-hyperthyroid | Hyperthyroidism
+    endo-goitre-simple | Simple goitre
+    endo-goitre-nodular | Nodular goitre
+    endo-thyroid-nodule | Thyroid nodules
+    endo-graves | Graves' disease
+    endo-thyroiditis-postpartum | Postpartum thyroiditis
+    endo-thyroid-weight-gain | Weight gain from hypothyroidism
+    endo-thyroid-antibodies | Thyroid antibodies elevated
+    endo-thyroid-cancer-support | Thyroid cancer supportive care
+  endo-diabetes | Diabetes
+    endo-diabetes-type2 | Type 2 diabetes
+    endo-diabetes-neuropathy | Diabetic neuropathy
+    endo-diabetes-retinopathy | Diabetic retinopathy
+    endo-diabetes-nephropathy | Diabetic nephropathy
+    endo-diabetes-foot-ulcer | Diabetic foot ulcer
+    endo-pre-diabetes | Pre-diabetes / insulin resistance
+    endo-diabetes-gestational | Gestational diabetes
+    endo-diabetes-polydipsia | Diabetes with excessive thirst
+    endo-diabetes-wound-healing | Diabetes with poor wound healing
+  endo-adrenal | Adrenal disorders
+    endo-adrenal-fatigue | Adrenal fatigue
+    endo-addison | Addison's disease
+    endo-cushing | Cushing's syndrome
+    endo-adrenal-stress | Adrenal stress response
+  endo-pcos | PCOS (Polycystic ovarian syndrome)
+    endo-pcos-acne | PCOS with acne
+    endo-pcos-hair-growth | PCOS with hirsutism
+    endo-pcos-irregular-menses | PCOS with irregular menses
+    endo-pcos-weight-gain | PCOS with weight gain
+    endo-pcos-infertility | PCOS with infertility
+    endo-pcos-hair-loss | PCOS with hair loss
+    endo-pcos-depression | PCOS with depression
+    endo-pcos-insulin-resistance | PCOS with insulin resistance
+  endo-growth-disorders | Growth disorders
+    endo-dwarfism | Dwarfism / delayed growth
+    endo-gigantism | Excessive growth
+    endo-precocious-puberty | Precocious puberty
+    endo-delayed-puberty | Delayed puberty
+  endo-obesity-hormonal | Hormonal obesity
+    endo-metabolic-syndrome | Metabolic syndrome
+=== Nervous System & Neurology ===
+  nerv-neuralgia | Neuralgia
+    nerv-trigeminal | Trigeminal neuralgia
+    nerv-intercostal | Intercostal neuralgia
+    nerv-occipital | Occipital neuralgia
+    nerv-post-herpetic | Post-herpetic neuralgia
+    nerv-glossopharyngeal | Glossopharyngeal neuralgia
+    nerv-neuralgia-dental | Dental neuralgia
+    nerv-neuralgia-weather | Neuralgia worse in weather change
+  nerv-neuropathy | Peripheral neuropathy
+    nerv-neuropathy-diabetic | Diabetic neuropathy
+    nerv-neuropathy-alcoholic | Alcoholic neuropathy
+    nerv-neuropathy-tingling | Neuropathy with tingling
+    nerv-neuropathy-burning | Neuropathy with burning
+    nerv-neuropathy-numbness | Neuropathy with numbness
+    nerv-neuropathy-chemotherapy | Chemotherapy-induced neuropathy
+    nerv-neuropathy-b12 | Neuropathy from B12 deficiency
+  nerv-epilepsy | Epilepsy
+    nerv-epilepsy-grand-mal | Grand mal seizures
+    nerv-epilepsy-petit-mal | Petit mal (absence seizures)
+    nerv-epilepsy-aura | Epilepsy with aura
+    nerv-epilepsy-nocturnal | Nocturnal epilepsy
+    nerv-epilepsy-fright | Epilepsy from fright
+    nerv-epilepsy-menstrual | Catamenial epilepsy
+    nerv-epilepsy-febrile | Febrile seizures in children
+    nerv-epilepsy-head-injury | Epilepsy from head injury
+  nerv-parkinson | Parkinson's disease
+    nerv-parkinson-tremor | Parkinsonian tremor
+    nerv-parkinson-rigidity | Parkinsonian rigidity
+    nerv-parkinson-gait | Parkinsonian gait
+    nerv-parkinson-drooling | Parkinson's with drooling
+  nerv-ms | Multiple sclerosis
+    nerv-ms-optic-neuritis | Optic neuritis
+    nerv-ms-numbness | MS with numbness
+    nerv-ms-fatigue | MS with fatigue
+  nerv-bells-palsy | Bell's palsy
+    nerv-bells-palsy-right | Bell's palsy right side
+    nerv-bells-palsy-left | Bell's palsy left side
+    nerv-bells-palsy-cold | Bell's palsy from cold exposure
+    nerv-bells-palsy-pregnancy | Bell's palsy in pregnancy
+  nerv-stroke | Stroke / Cerebrovascular
+    nerv-stroke-right | Right-sided paralysis
+    nerv-stroke-left | Left-sided paralysis
+    nerv-stroke-speech | Post-stroke speech difficulty
+    nerv-stroke-memory | Post-stroke memory problems
+    nerv-stroke-depression | Post-stroke depression
+  nerv-migraine-chronic | Chronic migraine
+    nerv-migraine-cluster | Cluster headache
+    nerv-migraine-tension | Tension headache
+    nerv-migraine-hormonal | Hormonal migraine
+    nerv-migraine-sinus | Sinus headache
+    nerv-migraine-cervicogenic | Cervicogenic headache
+    nerv-migraine-medication-overuse | Medication-overuse headache
+    nerv-migraine-vestibular | Vestibular migraine
+  nerv-tourette | Tourette syndrome / Tics
+    nerv-tics-motor | Motor tics
+    nerv-tics-vocal | Vocal tics
+  nerv-essential-tremor | Essential tremor
+  nerv-tinnitus | Tinnitus
+    nerv-tinnitus-ringing | Ringing tinnitus
+    nerv-tinnitus-buzzing | Buzzing tinnitus
+    nerv-tinnitus-pulsatile | Pulsatile tinnitus
+    nerv-tinnitus-meniere | Tinnitus with Meniere's
+    nerv-tinnitus-ear-wax | Tinnitus from ear wax
+    nerv-tinnitus-medication | Tinnitus from medication
+    nerv-tinnitus-high-pitched | High-pitched tinnitus
+    nerv-tinnitus-low-hum | Low humming tinnitus
+  nerv-vertigo-chronic | Chronic vertigo / BPPV
+    nerv-bppv | Benign positional vertigo
+    nerv-labyrinthitis | Labyrinthitis
+    nerv-vestibular | Vestibular neuritis
+    nerv-vertigo-cervical | Cervical vertigo
+  nerv-chorea | Chorea
+  nerv-restless-legs | Restless leg syndrome
+    nerv-rls-night | Restless legs at night
+    nerv-rls-pregnancy | Restless legs in pregnancy
+    nerv-rls-iron-deficiency | RLS from iron deficiency
+=== Mental Health & Psychiatry ===
+  mh-depression | Depression
+    mh-depression-grief | Depression from grief
+    mh-depression-postpartum | Postpartum depression
+    mh-depression-seasonal | Seasonal affective disorder
+    mh-depression-chronic | Chronic depression
+    mh-depression-elderly | Depression in elderly
+    mh-depression-bipolar | Bipolar depression
+    mh-depression-suicidal | Depression with suicidal ideation
+    mh-depression-anxiety | Depression with anxiety
+    mh-depression-teens | Depression in teenagers
+    mh-depression-financial | Depression from financial loss
+    mh-depression-menopausal | Menopausal depression
+  mh-anxiety-disorder | Anxiety disorders
+    mh-gad | Generalized anxiety disorder (GAD)
+    mh-panic-disorder | Panic disorder
+    mh-panic-attack | Panic attacks
+    mh-social-phobia | Social phobia / social anxiety
+    mh-agoraphobia | Agoraphobia
+    mh-stage-fright | Performance anxiety / stage fright
+    mh-health-anxiety | Health anxiety (hypochondria)
+    mh-separation-anxiety | Separation anxiety
+    mh-anxiety-children | Anxiety in children
+    mh-anxiety-exam | Examination anxiety
+    mh-anxiety-morning-waking | Anxiety on waking in morning
+    mh-anxiety-nighttime | Anxiety worse at night
+    mh-anxiety-crowded | Anxiety in crowded places
+  mh-ocd | OCD (Obsessive-compulsive disorder)
+    mh-ocd-washing | OCD washing/cleaning compulsion
+    mh-ocd-checking | OCD checking compulsion
+    mh-ocd-intrusive | OCD with intrusive thoughts
+    mh-ocd-counting | OCD counting compulsion
+    mh-ocd-symmetry | OCD symmetry obsession
+  mh-ptsd | PTSD (Post-traumatic stress)
+    mh-ptsd-flashbacks | PTSD with flashbacks
+    mh-ptsd-nightmares | PTSD with nightmares
+    mh-ptsd-hypervigilance | PTSD with hypervigilance
+    mh-ptsd-childhood | Childhood PTSD
+  mh-adhd | ADHD
+    mh-adhd-children | ADHD in children
+    mh-adhd-inattentive | ADHD inattentive type
+    mh-adhd-hyperactive | ADHD hyperactive type
+    mh-adhd-adult | Adult ADHD
+    mh-adhd-combined | ADHD combined type
+  mh-autism | Autism spectrum disorder
+    mh-autism-children | Autism in children
+    mh-asperger | Asperger's syndrome
+  mh-phobias | Specific phobias
+    mh-phobia-flying | Fear of flying
+    mh-phobia-spiders | Fear of spiders
+    mh-phobia-blood | Fear of blood/needles
+    mh-phobia-dogs | Fear of dogs
+    mh-claustrophobia | Claustrophobia
+    mh-acrophobia | Acrophobia (fear of heights)
+    mh-phobia-water | Fear of water (hydrophobia)
+    mh-phobia-storms | Fear of thunderstorms
+  mh-eating-disorder | Eating disorders
+    mh-anorexia | Anorexia nervosa
+    mh-bulimia | Bulimia nervosa
+    mh-binge-eating | Binge eating disorder
+    mh-overeating-comfort | Comfort eating / emotional eating
+  mh-insomnia-chronic | Chronic insomnia
+    mh-insomnia-stress | Insomnia from stress
+    mh-insomnia-grief | Insomnia from grief
+    mh-insomnia-menopause | Insomnia of menopause
+    mh-insomnia-anxiety-3am | Waking at 3 AM with anxiety
+    mh-insomnia-overwork | Insomnia from mental overwork
+  mh-addiction | Addiction / substance dependence
+    mh-addiction-alcohol | Alcohol dependence
+    mh-addiction-tobacco | Tobacco dependence
+    mh-addiction-drug | Drug dependence
+    mh-addiction-food | Food addiction
+    mh-addiction-screen | Screen/internet addiction
+  mh-burnout | Burnout / chronic fatigue
+    mh-cfs | Chronic fatigue syndrome
+    mh-fibromyalgia | Fibromyalgia
+    mh-burnout-work | Work-related burnout
+    mh-cfs-post-viral | Post-viral chronic fatigue
+    mh-fibromyalgia-weather | Fibromyalgia worse in weather changes
+  mh-grief | Grief and bereavement
+    mh-grief-acute | Acute grief
+    mh-grief-prolonged | Prolonged/complicated grief
+    mh-grief-heartbreak | Heartbreak / disappointed love
+    mh-grief-children | Grief in children
+    mh-grief-pet-loss | Grief from loss of pet
+=== Cardiovascular System ===
+  cv-hypertension | Hypertension (high blood pressure)
+    cv-hypertension-essential | Essential hypertension
+    cv-hypertension-renal | Renal hypertension
+    cv-hypertension-headache | Hypertension with headache
+    cv-hypertension-anxiety | Hypertension from anxiety
+    cv-hypertension-pregnancy | Pregnancy-induced hypertension
+    cv-hypertension-white-coat | White coat hypertension
+    cv-hypertension-elderly | Hypertension in elderly
+    cv-hypertension-stress | Stress-induced hypertension
+    cv-hypertension-salt-sensitive | Salt-sensitive hypertension
+  cv-hypotension | Hypotension (low blood pressure)
+    cv-hypotension-orthostatic | Orthostatic hypotension
+    cv-hypotension-chronic | Chronic low blood pressure
+  cv-arrhythmia | Heart arrhythmia
+    cv-afib | Atrial fibrillation
+    cv-tachycardia | Tachycardia
+    cv-bradycardia | Bradycardia
+    cv-extrasystole | Extrasystole / missed beats
+    cv-arrhythmia-anxiety | Arrhythmia from anxiety
+    cv-arrhythmia-caffeine | Arrhythmia from caffeine
+    cv-arrhythmia-thyroid | Arrhythmia from thyroid
+    cv-arrhythmia-menopause | Arrhythmia at menopause
+  cv-arteriosclerosis | Arteriosclerosis
+    cv-atherosclerosis | Atherosclerosis
+    cv-cholesterol-high | High cholesterol
+    cv-triglycerides-high | High triglycerides
+    cv-peripheral-arterial | Peripheral arterial disease
+  cv-raynaud | Raynaud's phenomenon
+  cv-dvt | Deep vein thrombosis
+  cv-phlebitis | Phlebitis
+  cv-varicose-ulcer | Varicose ulcers
+  cv-aneurysm | Aneurysm tendency
+  cv-heart-valve | Heart valve disease
+    cv-mitral-valve | Mitral valve disease
+    cv-aortic-valve | Aortic valve disease
+    cv-heart-murmur | Heart murmur
+=== Gastrointestinal Conditions ===
+  gi-ibs | Irritable bowel syndrome (IBS)
+    gi-ibs-diarrhea | IBS with diarrhea
+    gi-ibs-constipation | IBS with constipation
+    gi-ibs-alternating | IBS alternating type
+    gi-ibs-bloating | IBS with bloating
+    gi-ibs-stress | IBS triggered by stress
+    gi-ibs-mucus | IBS with mucus in stool
+    gi-ibs-morning-rush | IBS with morning rush
+    gi-ibs-post-meal | IBS worse after meals
+    gi-ibs-flatulence | IBS with excessive flatulence
+    gi-ibs-anxiety-related | IBS triggered by anxiety
+    gi-ibs-gas-offensive | IBS with offensive gas
+  gi-gerd | GERD / Acid reflux
+    gi-gerd-night | Acid reflux at night
+    gi-gerd-chronic | Chronic GERD
+    gi-gerd-pregnancy | GERD in pregnancy
+    gi-gerd-water-brash | GERD with water brash
+  gi-crohn | Crohn's disease
+    gi-crohn-abdominal | Crohn's with abdominal pain
+    gi-crohn-diarrhea | Crohn's with diarrhea
+    gi-crohn-fistula | Crohn's with fistulae
+    gi-crohn-weight-loss | Crohn's with weight loss
+  gi-colitis | Ulcerative colitis
+    gi-colitis-bloody | Colitis with bloody stool
+    gi-colitis-tenesmus | Colitis with tenesmus
+    gi-colitis-mucus | Colitis with mucus
+  gi-celiac | Celiac disease / gluten intolerance
+    gi-celiac-diarrhea | Celiac with chronic diarrhea
+    gi-celiac-bloating | Celiac with bloating
+    gi-celiac-weight-loss | Celiac with weight loss
+    gi-celiac-anemia | Celiac with anemia
+  gi-diverticulitis | Diverticulitis
+  gi-gastroenteritis | Gastroenteritis
+    gi-gastro-viral | Viral gastroenteritis
+    gi-gastro-food-poisoning | Food poisoning
+    gi-gastro-traveler | Traveler's diarrhea
+    gi-gastro-children | Gastroenteritis in children
+    gi-gastro-rotavirus | Rotavirus gastroenteritis
+  gi-lactose-intolerance | Lactose intolerance
+  gi-food-intolerance | Food intolerance
+  gi-candida | Candida / gut dysbiosis
+  gi-sibo | SIBO
+=== Musculoskeletal & Orthopedic ===
+  msk-frozen-shoulder | Frozen shoulder
+    msk-frozen-shoulder-right | Right frozen shoulder
+    msk-frozen-shoulder-left | Left frozen shoulder
+    msk-frozen-shoulder-post-injury | Frozen shoulder after injury
+  msk-tennis-elbow | Tennis elbow (epicondylitis)
+  msk-carpal-tunnel | Carpal tunnel syndrome
+    msk-carpal-tunnel-numbness | CTS with numbness
+    msk-carpal-tunnel-pregnancy | CTS in pregnancy
+    msk-carpal-tunnel-tingling | CTS with tingling fingers
+  msk-plantar-fasciitis | Plantar fasciitis
+    msk-plantar-morning | Plantar fasciitis worse mornings
+    msk-heel-spur | Heel spur
+    msk-plantar-chronic | Chronic plantar fasciitis
+  msk-fibromyalgia | Fibromyalgia
+    msk-fibro-tender-points | Fibromyalgia with tender points
+    msk-fibro-fatigue | Fibromyalgia with fatigue
+    msk-fibro-fog | Fibromyalgia with brain fog
+    msk-fibro-sleep | Fibromyalgia with disturbed sleep
+  msk-osteoporosis | Osteoporosis
+    msk-osteoporosis-postmenopausal | Postmenopausal osteoporosis
+    msk-osteoporosis-fracture | Osteoporotic fractures
+    msk-osteoporosis-steroid | Steroid-induced osteoporosis
+  msk-ankylosing-spondylitis | Ankylosing spondylitis
+  msk-bursitis | Bursitis
+    msk-bursitis-shoulder | Shoulder bursitis
+    msk-bursitis-knee | Knee bursitis
+    msk-bursitis-hip | Hip bursitis
+    msk-bursitis-elbow | Elbow bursitis
+    msk-bursitis-trochanteric | Trochanteric bursitis
+  msk-tendonitis | Tendonitis
+    msk-achilles | Achilles tendonitis
+    msk-tendonitis-rotator | Rotator cuff tendonitis
+    msk-tendonitis-wrist | Wrist tendonitis
+    msk-tendonitis-patellar | Patellar tendonitis
+  msk-disc-prolapse | Disc prolapse / herniation
+    msk-disc-lumbar | Lumbar disc herniation
+    msk-disc-cervical | Cervical disc herniation
+    msk-disc-thoracic | Thoracic disc herniation
+    msk-disc-sciatica | Disc prolapse with sciatica
+  msk-whiplash | Whiplash injury
+  msk-spondylosis | Cervical/lumbar spondylosis
+    msk-spondylosis-cervical | Cervical spondylosis
+    msk-spondylosis-lumbar | Lumbar spondylosis
+    msk-spondylosis-thoracic | Thoracic spondylosis
+  msk-costochondritis | Costochondritis
+  msk-tmj | TMJ disorder
+=== Dermatology (Skin Diseases) ===
+  derm-acne | Acne
+    derm-acne-vulgaris | Acne vulgaris
+    derm-acne-cystic | Cystic acne
+    derm-acne-rosacea | Acne rosacea
+    derm-acne-hormonal | Hormonal acne
+    derm-acne-back | Back acne
+    derm-acne-scars | Acne scars
+    derm-acne-forehead | Acne on forehead
+    derm-acne-chin | Acne on chin
+    derm-acne-chest | Acne on chest
+    derm-acne-shoulders | Acne on shoulders
+  derm-psoriasis | Psoriasis
+    derm-psoriasis-scalp | Scalp psoriasis
+    derm-psoriasis-guttate | Guttate psoriasis
+    derm-psoriasis-plaque | Plaque psoriasis
+    derm-psoriasis-nail | Nail psoriasis
+    derm-psoriasis-inverse | Inverse psoriasis
+    derm-psoriasis-palmar | Palmar psoriasis
+    derm-psoriasis-elbow | Psoriasis on elbows
+    derm-psoriasis-knee | Psoriasis on knees
+    derm-psoriasis-winter | Psoriasis worse in winter
+    derm-psoriasis-stress | Psoriasis flare from stress
+  derm-eczema | Eczema / Atopic dermatitis
+    derm-eczema-hands | Hand eczema
+    derm-eczema-face | Facial eczema
+    derm-eczema-flexures | Flexural eczema
+    derm-eczema-children | Infantile eczema
+    derm-eczema-seborrheic | Seborrheic dermatitis
+    derm-eczema-nummular | Nummular eczema
+    derm-eczema-weeping | Weeping eczema
+    derm-eczema-dry | Dry eczema
+    derm-eczema-scalp | Eczema on scalp
+    derm-eczema-eyelids | Eczema on eyelids
+    derm-eczema-ear | Eczema behind ears
+    derm-eczema-ankle | Eczema around ankles
+  derm-vitiligo | Vitiligo
+    derm-vitiligo-spreading | Spreading vitiligo
+    derm-vitiligo-face | Vitiligo on face
+    derm-vitiligo-hands | Vitiligo on hands
+  derm-lichen-planus | Lichen planus
+    derm-lichen-oral | Oral lichen planus
+    derm-lichen-skin | Cutaneous lichen planus
+    derm-lichen-nail | Lichen planus on nails
+    derm-lichen-genital | Genital lichen planus
+  derm-herpes-simplex | Herpes simplex
+    derm-cold-sore | Cold sores (HSV-1)
+    derm-herpes-genital | Genital herpes (HSV-2)
+    derm-herpes-recurrent | Recurrent herpes
+    derm-herpes-lip | Herpes on lips
+    derm-herpes-nose | Herpes on nose
+  derm-shingles | Shingles (Herpes zoster)
+    derm-shingles-pain | Shingles with severe pain
+    derm-shingles-post-herpetic | Post-herpetic neuralgia
+    derm-shingles-face | Shingles on face
+  derm-fungal | Fungal infections
+    derm-ringworm-body | Ringworm (body)
+    derm-ringworm-scalp | Ringworm (scalp)
+    derm-athlete-foot | Athlete's foot
+    derm-jock-itch | Jock itch
+    derm-nail-fungus | Nail fungus (onychomycosis)
+    derm-candida-skin | Cutaneous candidiasis
+    derm-fungal-intertrigo | Intertrigo (fungal skin fold)
+    derm-fungal-groin | Fungal infection groin (tinea cruris)
+  derm-urticaria-skin | Urticaria (skin)
+  derm-keloid | Keloid / hypertrophic scars
+  derm-melasma | Melasma / chloasma
+  derm-alopecia | Alopecia (hair loss)
+    derm-alopecia-areata | Alopecia areata
+    derm-alopecia-male | Male pattern baldness
+    derm-alopecia-female | Female hair thinning
+    derm-alopecia-postpartum | Postpartum hair loss
+    derm-alopecia-chemotherapy | Hair loss from chemotherapy
+    derm-alopecia-stress | Hair loss from stress (telogen effluvium)
+  derm-hyperhidrosis | Hyperhidrosis (excessive sweating)
+    derm-hyperhidrosis-palms | Sweaty palms
+    derm-hyperhidrosis-feet | Sweaty feet
+    derm-hyperhidrosis-axillae | Axillary hyperhidrosis
+    derm-hyperhidrosis-night | Night sweats
+=== Pediatrics (Children) ===
+  ped-colic | Infantile colic
+    ped-colic-evening | Colic worse evening
+    ped-colic-after-feed | Colic after feeding
+    ped-colic-carried-amel | Colic better when carried
+    ped-colic-gas | Colic with gas distension
+    ped-colic-breastfed | Colic in breastfed infants
+    ped-colic-formula-fed | Colic in formula-fed infants
+  ped-teething | Teething problems
+    ped-teething-fever | Teething with fever
+    ped-teething-diarrhea | Teething with diarrhea
+    ped-teething-irritable | Teething with irritability
+    ped-teething-delayed | Delayed teething
+    ped-teething-sleepless | Teething with sleeplessness
+  ped-bedwetting | Bedwetting (enuresis)
+    ped-bedwetting-deep-sleep | Bedwetting during deep sleep
+    ped-bedwetting-emotional | Bedwetting from emotional causes
+    ped-bedwetting-habitual | Habitual bedwetting
+  ped-growth-issues | Growth and development issues
+    ped-failure-to-thrive | Failure to thrive
+    ped-slow-walking | Late walking
+    ped-slow-talking | Late talking
+    ped-delayed-milestones | Delayed developmental milestones
+    ped-delayed-fontanelle | Open fontanelle after 18 months
+  ped-recurrent-infections | Recurrent childhood infections
+    ped-recurrent-otitis | Recurrent ear infections
+    ped-recurrent-tonsils | Recurrent tonsillitis
+    ped-recurrent-cold | Recurrent colds in children
+    ped-recurrent-cough | Recurrent cough in children
+    ped-recurrent-bronchiolitis | Recurrent bronchiolitis
+    ped-recurrent-sinusitis | Recurrent sinusitis in children
+    ped-recurrent-uti | Recurrent UTI in children
+  ped-worms | Worm infestations
+    ped-pinworm | Pinworm infestation
+    ped-roundworm | Roundworm infestation
+    ped-tapeworm | Tapeworm infestation
+  ped-chicken-pox | Chicken pox
+  ped-measles | Measles
+  ped-mumps | Mumps
+  ped-whooping-cough | Whooping cough (pertussis)
+  ped-diaper-rash | Diaper rash / nappy rash
+  ped-cradle-cap | Cradle cap
+  ped-night-terrors | Night terrors
+    ped-night-terrors-screaming | Night terrors with screaming
+    ped-night-terrors-sweating | Night terrors with sweating
+  ped-school-phobia | School phobia / school refusal
+=== Ophthalmology (Eye Diseases) ===
+  oph-conjunctivitis | Conjunctivitis types
+    oph-conj-allergic | Allergic conjunctivitis
+    oph-conj-bacterial | Bacterial conjunctivitis
+    oph-conj-viral | Viral conjunctivitis
+    oph-conj-newborn | Neonatal conjunctivitis
+    oph-conj-chronic | Chronic conjunctivitis
+  oph-dry-eye | Dry eye syndrome
+  oph-blepharitis | Blepharitis
+  oph-chalazion | Chalazion / meibomian cyst
+  oph-macular-degeneration | Macular degeneration
+  oph-retinopathy | Retinopathy
+  oph-floaters | Eye floaters
+  oph-eye-strain | Digital eye strain
+  oph-pinguecula | Pinguecula / pterygium
+=== Dental & Oral Health ===
+  dental-abscess | Dental abscess
+    dental-abscess-acute | Acute dental abscess
+    dental-abscess-chronic | Chronic dental abscess
+  dental-gingivitis | Gingivitis / gum disease
+    dental-periodontitis | Periodontitis
+    dental-receding-gums | Receding gums
+    dental-gum-bleeding-brushing | Gum bleeding while brushing
+  dental-wisdom-teeth | Wisdom teeth problems
+  dental-root-canal | Root canal pain
+  dental-dry-socket | Dry socket after extraction
+  dental-tmj | TMJ disorder
+    dental-tmj-clicking | TMJ with clicking
+    dental-tmj-pain | TMJ with pain
+    dental-tmj-lockjaw | TMJ with lockjaw
+  dental-canker-sores | Canker sores / aphthous ulcers
+    dental-canker-recurrent | Recurrent canker sores
+    dental-canker-stress | Canker sores from stress
+  dental-halitosis | Halitosis (bad breath)
+  dental-bruxism | Bruxism (teeth grinding)
+=== ENT (Ear, Nose, Throat) Conditions ===
+  ent-sinusitis-chronic | Chronic sinusitis
+    ent-sinusitis-frontal-chronic | Chronic frontal sinusitis
+    ent-sinusitis-maxillary-chronic | Chronic maxillary sinusitis
+    ent-sinusitis-ethmoid | Ethmoid sinusitis
+    ent-sinusitis-sphenoid | Sphenoid sinusitis
+    ent-sinusitis-polyps | Sinusitis with polyps
+    ent-sinusitis-fungal | Fungal sinusitis
+  ent-nasal-polyps | Nasal polyps
+    ent-nasal-polyps-recurrent | Recurrent nasal polyps
+    ent-nasal-polyps-bilateral | Bilateral nasal polyps
+  ent-deviated-septum | Deviated nasal septum effects
+  ent-adenoids | Enlarged adenoids
+    ent-adenoids-children | Adenoids in children
+    ent-adenoids-snoring | Adenoids with snoring
+    ent-adenoids-mouth-breathing | Adenoids with mouth breathing
+  ent-post-nasal-drip | Post-nasal drip
+  ent-otitis-media-chronic | Chronic otitis media
+    ent-glue-ear | Glue ear (secretory otitis)
+  ent-meniere | Meniere's disease
+    ent-meniere-vertigo | Meniere's with vertigo
+    ent-meniere-hearing-loss | Meniere's with hearing loss
+    ent-meniere-tinnitus | Meniere's with tinnitus
+    ent-meniere-nausea | Meniere's with nausea
+  ent-strep-throat | Strep throat
+  ent-laryngitis-chronic | Chronic laryngitis
+    ent-voice-overuse | Voice loss from overuse
+    ent-singer-node | Singer's nodes
+  ent-sleep-apnea | Sleep apnea / snoring
+    ent-sleep-apnea-obstructive | Obstructive sleep apnea
+    ent-snoring-habitual | Habitual snoring
+    ent-sleep-apnea-central | Central sleep apnea
+=== Sexual Health & Fertility ===
+  sx-erectile-dysfunction | Erectile dysfunction
+    sx-ed-psychogenic | Psychogenic ED
+    sx-ed-organic | Organic ED
+    sx-ed-age-related | Age-related ED
+    sx-ed-diabetes | ED from diabetes
+    sx-ed-medication | ED from medication
+  sx-premature-ejaculation | Premature ejaculation
+    sx-pe-anxiety | PE from performance anxiety
+  sx-low-libido | Low libido
+    sx-low-libido-male | Low libido in males
+    sx-low-libido-female | Low libido in females
+    sx-low-libido-menopause | Low libido in menopause
+    sx-low-libido-medication | Low libido from medication
+    sx-low-libido-stress | Low libido from stress
+  sx-infertility | Infertility
+    sx-infertility-male | Male infertility
+    sx-infertility-female | Female infertility
+    sx-infertility-unexplained | Unexplained infertility
+    sx-habitual-abortion | Habitual miscarriage
+    sx-infertility-pcos | Infertility from PCOS
+    sx-infertility-endometriosis | Infertility from endometriosis
+  sx-sti | Sexually transmitted infections
+    sx-genital-warts | Genital warts (HPV)
+    sx-genital-herpes | Genital herpes
+    sx-gonorrhea | Gonorrhea
+    sx-chlamydia | Chlamydia
+    sx-sti-syphilis | Syphilitic miasm effects
+  sx-vaginismus | Vaginismus
+  sx-vulvodynia | Vulvodynia
+  sx-balanitis | Balanitis
+=== Oncology Support ===
+  onc-support | Cancer supportive care
+    onc-chemo-side-effects | Chemotherapy side effects
+    onc-radiation-effects | Radiation therapy effects
+    onc-nausea-chemo | Nausea from chemotherapy
+    onc-fatigue-cancer | Cancer-related fatigue
+    onc-pain-cancer | Cancer pain management
+    onc-hair-loss-chemo | Hair loss from chemotherapy
+    onc-mouth-ulcers-chemo | Mouth ulcers from chemotherapy
+    onc-appetite-loss | Loss of appetite in cancer
+  onc-tumors-benign | Benign tumors
+    onc-lipoma | Lipoma
+    onc-fibroma | Fibroma
+    onc-polyp | Polyps (general)
+    onc-ganglion-cyst | Ganglion cyst
+  onc-cyst | Cysts
+    onc-cyst-sebaceous | Sebaceous cyst
+    onc-cyst-ovarian | Ovarian cyst
+    onc-cyst-breast | Breast cyst
+    onc-cyst-kidney | Kidney cyst
+    onc-cyst-thyroid | Thyroid cyst
+=== Geriatrics (Elderly Care) ===
+  ger-dementia | Dementia / cognitive decline
+    ger-alzheimer | Alzheimer's type
+    ger-vascular-dementia | Vascular dementia
+    ger-memory-decline | Age-related memory decline
+    ger-dementia-lewy-body | Lewy body dementia
+    ger-dementia-aggression | Dementia with aggression
+    ger-dementia-wandering | Dementia with wandering
+  ger-prostate-bph | BPH (benign prostatic hyperplasia)
+    ger-bph-dribbling | BPH with dribbling
+    ger-bph-frequency | BPH with frequency
+    ger-bph-retention | BPH with retention
+    ger-bph-nocturia | BPH with nocturia
+  ger-incontinence-elderly | Urinary incontinence in elderly
+  ger-falls | Tendency to falls
+  ger-senile-pruritus | Senile pruritus (itching)
+  ger-insomnia-elderly | Insomnia in elderly
+  ger-debility | General debility of old age
+    ger-debility-after-flu | Debility after influenza
+  ger-constipation-elderly | Chronic constipation in elderly
+=== Infectious Diseases ===
+  inf-influenza | Influenza (flu)
+    inf-flu-bone-pain | Flu with bone-breaking pain
+    inf-flu-gastric | Gastric flu
+    inf-flu-lingering | Lingering effects of flu
+    inf-flu-stomach | Stomach flu
+  inf-covid | COVID-19 / post-COVID
+    inf-covid-acute | Acute COVID infection
+    inf-long-covid | Long COVID syndrome
+    inf-covid-anosmia | Loss of smell/taste post-COVID
+    inf-covid-fatigue | Post-COVID fatigue
+    inf-covid-brain-fog | Post-COVID brain fog
+    inf-covid-cough | Post-COVID persistent cough
+    inf-covid-joints | Post-COVID joint pain
+    inf-covid-chest-tightness | Post-COVID chest tightness
+  inf-malaria | Malaria
+    inf-malaria-tertian | Tertian malaria
+    inf-malaria-quartan | Quartan malaria
+  inf-dengue | Dengue fever
+    inf-dengue-bone-pain | Dengue with bone pain
+    inf-dengue-hemorrhagic | Dengue hemorrhagic
+  inf-typhoid | Typhoid fever
+  inf-uti | Urinary tract infection
+    inf-uti-recurrent | Recurrent UTI
+    inf-uti-honeymoon | Honeymoon UTI
+    inf-uti-pregnancy | UTI in pregnancy
+    inf-uti-male | UTI in males
+  inf-mrsa | MRSA infections
+  inf-mononucleosis | Mononucleosis (glandular fever)
+  inf-hepatitis | Hepatitis
+    inf-hepatitis-a | Hepatitis A
+    inf-hepatitis-b | Hepatitis B
+    inf-hepatitis-c | Hepatitis C
+=== Pregnancy & Childbirth ===
+  preg-morning-sickness | Morning sickness
+    preg-nausea-smell | Nausea from smell of food
+    preg-nausea-motion | Nausea from any motion
+    preg-nausea-constant | Constant nausea all day
+    preg-hyperemesis | Hyperemesis gravidarum
+    preg-nausea-sight-food | Nausea at sight of food
+    preg-nausea-evening | Nausea worse in evening
+  preg-backache | Pregnancy backache
+    preg-backache-sacral | Sacral pain in pregnancy
+    preg-backache-sciatica | Sciatica during pregnancy
+    preg-backache-coccyx | Coccyx pain in pregnancy
+  preg-edema | Pregnancy edema
+    preg-edema-feet | Swollen feet in pregnancy
+    preg-edema-hands | Swollen hands in pregnancy
+  preg-labor | Labor & delivery
+    preg-labor-false | False labor pains
+    preg-labor-slow | Slow/inefficient labor
+    preg-labor-back | Back labor
+    preg-afterpains | Afterpains
+    preg-labor-precipitous | Precipitous labor
+  preg-breastfeeding | Breastfeeding issues
+    preg-mastitis | Mastitis
+    preg-blocked-duct | Blocked milk duct
+    preg-low-milk | Low milk supply
+    preg-engorgement | Breast engorgement
+    preg-nipple-cracked | Cracked nipples
+    preg-oversupply | Oversupply of breast milk
+  preg-varicose | Varicose veins in pregnancy
+  preg-hemorrhoids | Hemorrhoids in pregnancy
+  preg-heartburn | Heartburn in pregnancy
+=== Hematology (Blood Disorders) ===
+  hema-anemia-types | Anemia types
+    hema-iron-def | Iron deficiency anemia
+    hema-b12-def | B12 deficiency anemia
+    hema-folate-def | Folate deficiency anemia
+    hema-hemolytic | Hemolytic anemia
+    hema-sickle-cell | Sickle cell disease support
+    hema-anemia-pregnancy | Anemia in pregnancy
+  hema-bleeding | Bleeding disorders
+    hema-easy-bruising | Easy bruising
+    hema-epistaxis-recurrent | Recurrent nosebleeds
+    hema-purpura | Purpura (ITP)
+    hema-gum-bleeding-spontaneous | Spontaneous gum bleeding
+    hema-heavy-periods | Heavy menstrual bleeding (menorrhagia)
+  hema-clotting | Clotting disorders
+    hema-thrombosis-tendency | Tendency to thrombosis
+=== Sports Medicine & Injuries ===
+  sport-strain | Muscle strains
+    sport-strain-hamstring | Hamstring strain
+    sport-strain-calf | Calf muscle strain
+    sport-strain-groin | Groin strain
+    sport-strain-back | Back muscle strain
+    sport-strain-neck | Neck strain
+    sport-strain-shoulder | Shoulder strain
+  sport-sprain | Ligament sprains
+    sport-sprain-ankle | Ankle sprain
+    sport-sprain-knee | Knee ligament sprain
+    sport-sprain-wrist | Wrist sprain
+  sport-fracture | Fracture support
+    sport-fracture-healing | Slow fracture healing
+    sport-fracture-pain | Fracture pain
+    sport-stress-fracture | Stress fracture
+  sport-concussion | Concussion
+    sport-concussion-headache | Post-concussion headache
+    sport-concussion-dizziness | Post-concussion dizziness
+  sport-overuse | Overuse injuries
+    sport-shin-splints | Shin splints
+    sport-runners-knee | Runner's knee
+    sport-it-band | IT band syndrome
+    sport-golfers-elbow | Golfer's elbow
+    sport-swimmers-shoulder | Swimmer's shoulder
+=== First Aid & Acute Conditions ===
+  fa-burns | Burns
+    fa-burns-minor | Minor burns (1st degree)
+    fa-burns-blisters | Burns with blisters
+    fa-burns-sunburn | Sunburn
+    fa-burns-chemical | Chemical burns
+  fa-bites | Bites & stings
+    fa-bee-sting | Bee/wasp sting
+    fa-mosquito-bite | Mosquito bite reaction
+    fa-spider-bite | Spider bite
+    fa-dog-bite | Dog bite
+    fa-snake-bite | Snake bite support
+    fa-tick-bite | Tick bite
+    fa-jellyfish-sting | Jellyfish sting
+  fa-wounds | Wounds & cuts
+    fa-wounds-laceration | Laceration
+    fa-wounds-puncture | Puncture wound
+    fa-wounds-infected | Infected wound
+    fa-wounds-slow-healing | Slow healing wound
+    fa-wounds-splinter | Splinter/foreign body in wound
+  fa-bruises | Bruises & contusions
+    fa-bruise-deep | Deep bruising
+    fa-bruise-eye | Black eye
+  fa-shock | Shock / emotional trauma
+    fa-shock-fright | Shock from fright
+    fa-shock-bad-news | Shock from bad news
+  fa-heatstroke | Heat exhaustion / heatstroke
+  fa-frostbite | Frostbite / chilblains
+    fa-chilblains | Chilblains
+  fa-nosebleed | Acute nosebleed
+  fa-fainting | Fainting / syncope
+  fa-travel-sickness | Travel / motion sickness
+    fa-car-sickness | Car sickness
+    fa-sea-sickness | Sea sickness
+    fa-air-sickness | Air sickness
+    fa-train-sickness | Train sickness
+=== Constitutional Types ===
+  const-calc-type | Calcarea carbonica type
+    const-calc-slow | Slow and sluggish constitution
+    const-calc-obese | Fair, flabby, obese tendency
+    const-calc-sweaty-head | Head sweats during sleep
+  const-phos-type | Phosphorus type
+    const-phos-tall-thin | Tall, thin, fair constitution
+    const-phos-sympathetic | Very sympathetic nature
+    const-phos-thirst-cold | Craving ice-cold drinks
+  const-sulph-type | Sulphur type
+    const-sulph-philosopher | Philosophical/ragged philosopher
+    const-sulph-hot | Very hot patient
+    const-sulph-11am-hunger | Sinking feeling at 11 AM
+    const-sulph-standing | Worse standing
+  const-lyc-type | Lycopodium type
+    const-lyc-4pm-8pm | Aggravation 4-8 PM
+    const-lyc-anticipation | Anticipatory anxiety
+    const-lyc-right-sided | Right-sided complaints
+    const-lyc-bloating | Bloating after eating
+  const-nat-m-type | Natrum muriaticum type
+    const-nat-m-grief | Ailments from grief (silent)
+    const-nat-m-salt | Salt craving
+    const-nat-m-consolation-agg | Worse from consolation
+    const-nat-m-sun | Worse from sun
+  const-puls-type | Pulsatilla type
+    const-puls-changeable | Changeable symptoms
+    const-puls-weepy | Weepy, clingy disposition
+    const-puls-thirstless | Thirstless despite fever
+    const-puls-open-air | Better open air
+  const-nux-type | Nux vomica type
+    const-nux-type-a | Type-A personality
+    const-nux-overindulgence | Effects of overindulgence
+    const-nux-chilly | Very chilly person
+    const-nux-morning | Worse in morning
+  const-ars-type | Arsenicum album type
+    const-ars-fastidious | Fastidious/perfectionist
+    const-ars-anxious | Anxious about health
+    const-ars-restless | Restless despite weakness
+    const-ars-midnight | Worse at midnight
+=== Respiratory (Advanced) ===
+  resp-pleurisy | Pleurisy
+    resp-pleurisy-dry | Dry pleurisy
+    resp-pleurisy-effusion | Pleurisy with effusion
+  resp-pulmonary-fibrosis | Pulmonary fibrosis support
+  resp-sarcoidosis | Sarcoidosis support
+  resp-pleural-effusion | Pleural effusion
+  resp-croup | Croup
+    resp-croup-midnight | Croup worse at midnight
+    resp-croup-barking | Barking cough of croup
+  resp-bronchiolitis | Bronchiolitis in infants
+=== Liver & Gallbladder ===
+  lgb-gallstones | Gallstones (cholelithiasis)
+    lgb-gallstone-colic | Gallstone colic
+    lgb-gallstone-chronic | Chronic gallstone disease
+    lgb-gallstone-post-meal | Gallstone pain after fatty food
+    lgb-gallstone-recurrent | Recurrent gallstones
+  lgb-cholecystitis | Cholecystitis
+    lgb-cholecystitis-acute | Acute cholecystitis
+    lgb-cholecystitis-chronic | Chronic cholecystitis
+  lgb-fatty-liver | Non-alcoholic fatty liver
+    lgb-nafld | NAFLD
+    lgb-nash | NASH (steatohepatitis)
+    lgb-fatty-liver-alcoholic | Alcoholic fatty liver
+  lgb-hepatomegaly | Enlarged liver
+  lgb-jaundice | Jaundice
+    lgb-jaundice-newborn | Neonatal jaundice
+    lgb-jaundice-obstructive | Obstructive jaundice
+    lgb-jaundice-hepatic | Hepatic jaundice
+=== Renal (Kidney Advanced) ===
+  renal-nephrotic | Nephrotic syndrome
+    renal-nephrotic-edema | Nephrotic edema
+    renal-nephrotic-proteinuria | Proteinuria
+  renal-nephritis | Nephritis
+    renal-glomerulonephritis | Glomerulonephritis
+    renal-pyelonephritis | Pyelonephritis
+  renal-ckd | Chronic kidney disease support
+    renal-ckd-early | Early CKD management
+    renal-ckd-dialysis-support | Dialysis support
+  renal-polycystic | Polycystic kidney disease
+  renal-renal-colic | Renal colic
+    renal-colic-left | Left renal colic
+    renal-colic-right | Right renal colic
+    renal-colic-nausea | Renal colic with nausea/vomiting
+=== Wound Healing & Recovery ===
+  wh-post-surgical | Post-surgical recovery
+    wh-post-op-pain | Post-operative pain
+    wh-post-op-nausea | Post-operative nausea
+    wh-post-op-constipation | Post-operative constipation
+    wh-post-op-adhesion | Post-operative adhesions
+    wh-post-op-infection | Post-operative wound infection
+  wh-keloid-prevention | Keloid/scar prevention
+  wh-abscess-general | Abscess formation
+    wh-abscess-recurrent | Recurrent abscesses
+    wh-abscess-boil | Boils (furuncles)
+    wh-abscess-carbuncle | Carbuncle
+    wh-abscess-dental | Dental abscess
+    wh-abscess-pilonidal | Pilonidal abscess
+=== Metabolism & Nutrition ===
+  meta-gout-advanced | Gout (advanced)
+    meta-gout-big-toe | Gout in big toe
+    meta-gout-knee-ankle | Gout in knee/ankle
+    meta-gout-chronic | Chronic tophaceous gout
+    meta-uric-acid-high | High uric acid
+    meta-gout-diet-triggered | Gout from dietary excess
+  meta-cholesterol-adv | Dyslipidemia
+    meta-cholesterol-ldl | High LDL cholesterol
+    meta-cholesterol-triglyc | High triglycerides
+  meta-vitamin-def | Vitamin deficiencies
+    meta-vit-d-def | Vitamin D deficiency
+    meta-vit-b12-def | Vitamin B12 deficiency
+    meta-iron-def | Iron deficiency
+    meta-calcium-def | Calcium deficiency
+    meta-zinc-def | Zinc deficiency
+  meta-rickets | Rickets
+  meta-scurvy | Scurvy tendency
+=== Connective Tissue Disorders ===
+  ct-sjogren | Sjogren's syndrome
+    ct-sjogren-dry-eyes | Sjogren's dry eyes
+    ct-sjogren-dry-mouth | Sjogren's dry mouth
+    ct-sjogren-joint-pain | Sjogren with joint pain
+  ct-scleroderma | Scleroderma support
+  ct-polymyalgia | Polymyalgia rheumatica
+    ct-polymyalgia-shoulders | Polymyalgia in shoulders
+    ct-polymyalgia-hips | Polymyalgia in hips
+  ct-vasculitis | Vasculitis
+  ct-ehlers-danlos | Ehlers-Danlos / hypermobility
+=== Travel Health ===
+  travel-jet-lag | Jet lag
+    travel-jet-lag-east | Jet lag flying east
+    travel-jet-lag-west | Jet lag flying west
+  travel-diarrhea | Traveler's diarrhea
+    travel-diarrhea-water | Diarrhea from contaminated water
+    travel-diarrhea-food | Diarrhea from local food
+    travel-diarrhea-ice | Diarrhea from ice in drinks
+  travel-altitude | Altitude sickness
+    travel-altitude-headache | Altitude headache
+    travel-altitude-nausea | Altitude nausea
+  travel-malaria-prev | Malaria prevention support
+  travel-sunstroke | Sunstroke
+=== Environmental Medicine ===
+  env-emf-sensitivity | EMF sensitivity
+  env-chemical-sensitivity | Multiple chemical sensitivity
+    env-perfume-sensitivity | Sensitivity to perfumes
+    env-paint-fumes | Sensitivity to paint fumes
+  env-sick-building | Sick building syndrome
+  env-mold-exposure | Mold exposure effects
+    env-mold-respiratory | Respiratory effects of mold
+    env-mold-fatigue | Fatigue from mold exposure
+  env-weather-sensitivity | Weather sensitivity
+    env-weather-storm | Symptoms before storms
+    env-weather-damp | Symptoms worse in damp weather
+    env-weather-cold-dry | Symptoms worse in cold dry weather
+    env-weather-barometric | Symptoms from barometric pressure change
+=== Palliative & Supportive Care ===
+  pall-pain | Pain management
+    pall-pain-chronic | Chronic pain management
+    pall-pain-neuropathic | Neuropathic pain
+    pall-pain-bone | Bone pain
+    pall-pain-phantom | Phantom limb pain
+  pall-nausea | Palliative nausea
+    pall-nausea-medication | Nausea from medication
+    pall-nausea-morphine | Nausea from morphine
+  pall-anxiety-end | End-of-life anxiety
+  pall-restlessness-terminal | Terminal restlessness
+=== Vaccine-Related Effects ===
+  vax-adverse-general | General vaccine adverse effects
+    vax-fever-post | Post-vaccination fever
+    vax-injection-site | Injection site pain/swelling
+    vax-fatigue-post | Post-vaccination fatigue
+    vax-headache-post | Post-vaccination headache
+  vax-never-well-since | Never well since vaccination
+    vax-nws-general | General decline since vaccination
+=== Miasmatic Conditions ===
+  miasm-psora | Psoric miasm
+    miasm-psora-skin | Psoric skin conditions
+    miasm-psora-functional | Psoric functional disorders
+    miasm-psora-deficiency | Psoric deficiency states
+    miasm-psora-allergy | Psoric allergic tendency
+  miasm-sycosis | Sycotic miasm
+    miasm-sycosis-growths | Sycotic growths/warts
+    miasm-sycosis-excess | Sycotic excess/hypertrophy
+    miasm-sycosis-joints | Sycotic joint deposits
+  miasm-syphilitic | Syphilitic miasm
+    miasm-syphilitic-destruction | Syphilitic tissue destruction
+    miasm-syphilitic-night | Syphilitic night aggravation
+  miasm-tubercular | Tubercular miasm
+    miasm-tubercular-changeability | Tubercular changeability
+    miasm-tubercular-travel | Desire to travel (tubercular)
+=== Emotional & Psychological Trauma ===
+  et-abuse | Effects of abuse
+    et-abuse-emotional | Effects of emotional abuse
+    et-abuse-physical | Effects of physical abuse
+    et-abuse-childhood | Childhood abuse effects
+    et-abuse-neglect | Effects of neglect
+  et-humiliation | Effects of humiliation
+    et-humiliation-public | Public humiliation effects
+  et-anger-suppressed | Suppressed anger effects
+    et-anger-suppressed-disease | Disease from suppressed anger
+  et-mortification | Mortification / wounded pride
+  et-disappointment | Chronic disappointment effects
+  et-fright-long-lasting | Long-lasting effects of fright
+  et-anticipation-chronic | Chronic anticipatory anxiety
+=== Detoxification & Drainage ===
+  detox-drug-effects | Effects of conventional drugs
+    detox-antibiotic-effects | Side effects of antibiotics
+    detox-steroid-effects | Side effects of steroids
+    detox-nsaid-effects | Side effects of NSAIDs
+    detox-chemo-effects | Side effects of chemotherapy
+    detox-oral-contraceptive | Effects of oral contraceptives
+    detox-antidepressant | Effects of antidepressant withdrawal
+  detox-heavy-metal | Heavy metal exposure
+    detox-mercury | Mercury exposure effects
+    detox-lead | Lead exposure effects
+    detox-arsenic | Arsenic exposure effects
+  detox-liver-drainage | Liver drainage support
+  detox-kidney-drainage | Kidney drainage support
+=== Nosodes & Prophylaxis ===
+  nos-influenzinum | Influenzinum indications
+    nos-flu-prevention | Flu prevention
+  nos-oscillococcinum | Oscillococcinum indications
+  nos-tuberculinum | Tuberculinum indications
+    nos-tub-recurrent-cold | Recurrent colds needing Tub
+  nos-medorrhinum | Medorrhinum indications
+    nos-med-asthma | Asthma needing Medorrhinum
+    nos-med-night-owl | Better at night (Medorrhinum)
+=== Lymphatic System ===
+  lymph-swollen-nodes | Lymphadenopathy
+    lymph-cervical | Cervical lymphadenopathy
+    lymph-inguinal | Inguinal lymphadenopathy
+    lymph-axillary | Axillary lymphadenopathy
+    lymph-mesenteric | Mesenteric lymphadenopathy
+  lymph-lymphedema | Lymphedema
+    lymph-lymphedema-arm | Arm lymphedema (post-surgery)
+    lymph-lymphedema-leg | Leg lymphedema
+  lymph-tonsils-adenoids | Tonsillar/adenoid hypertrophy
+=== Substance Abuse Recovery ===
+  sa-alcohol | Alcohol addiction recovery
+    sa-alcohol-craving | Alcohol craving
+    sa-alcohol-withdrawal | Alcohol withdrawal support
+    sa-alcohol-hangover | Hangover
+    sa-alcohol-liver | Alcoholic liver damage
+    sa-alcohol-delirium | Delirium tremens
+  sa-tobacco | Tobacco cessation
+    sa-tobacco-craving | Tobacco craving
+    sa-tobacco-withdrawal | Tobacco withdrawal effects
+  sa-cannabis | Cannabis effects
+  sa-caffeine | Caffeine overuse effects
+=== Healthy Aging & Longevity ===
+  age-vitality | Declining vitality
+    age-premature-aging | Premature aging
+    age-slow-recovery | Slow recovery from illness in elderly
+    age-reduced-stamina | Reduced physical stamina
+  age-cognitive | Cognitive decline
+    age-brain-fog | Brain fog in elderly
+    age-forgetfulness | Age-related forgetfulness
+    age-word-finding | Word-finding difficulty
+  age-joint-degeneration | Joint degeneration
+    age-osteoarthritis-hip | Hip osteoarthritis
+    age-osteoarthritis-knee | Knee osteoarthritis
+    age-osteoarthritis-spine | Spinal osteoarthritis
+    age-osteoarthritis-hand | Hand osteoarthritis
+  age-vision-decline | Age-related vision decline
+    age-cataract | Cataract
+    age-macular-degen | Age-related macular degeneration
+    age-presbyopia | Presbyopia
+  age-hearing-loss | Age-related hearing loss
+    age-hearing-loss-gradual | Gradual hearing loss
+  age-sarcopenia | Sarcopenia (muscle loss)

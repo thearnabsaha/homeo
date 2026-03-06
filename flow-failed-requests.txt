@@ -1,0 +1,31 @@
+[
+  {
+    "type": "http_error",
+    "url": "http://localhost:3000/api/symptoms/mind",
+    "status": 500,
+    "statusText": "Internal Server Error"
+  },
+  {
+    "type": "http_error",
+    "url": "http://localhost:3000/api/symptoms/mind",
+    "status": 500,
+    "statusText": "Internal Server Error"
+  },
+  {
+    "type": "request_failed",
+    "url": "http://localhost:3000/explorer?_rsc=q0dsb",
+    "failure": "net::ERR_ABORTED"
+  },
+  {
+    "type": "http_error",
+    "url": "http://localhost:3000/api/remedies/acon",
+    "status": 500,
+    "statusText": "Internal Server Error"
+  },
+  {
+    "type": "http_error",
+    "url": "http://localhost:3000/api/remedies/acon",
+    "status": 500,
+    "statusText": "Internal Server Error"
+  }
+]
