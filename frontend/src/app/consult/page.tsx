@@ -1,0 +1,352 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import {
+  Send,
+  Loader2,
+  RotateCcw,
+  ArrowLeft,
+  Stethoscope,
+  CheckCircle2,
+  AlertTriangle,
+  Pill,
+  Activity,
+  ClipboardList,
+  ShieldAlert,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ConfidenceBar } from "@/components/ConfidenceBar";
+import { VoiceInput } from "@/components/VoiceInput";
+import { useTranslation } from "@/i18n/useTranslation";
+import { api, type ConsultResponse } from "@/lib/api";
+import { toBengaliNum } from "@/i18n/dataTranslations";
+
+interface ChatMsg {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  data?: ConsultResponse;
+}
+
+export default function ConsultPage() {
+  const { t, language } = useTranslation();
+  const [messages, setMessages] = useState<ChatMsg[]>([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [stage, setStage] = useState<string>("gathering");
+  const [symptoms, setSymptoms] = useState<string[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([
+        {
+          id: "welcome",
+          role: "assistant",
+          content: t("consult.welcome"),
+        },
+      ]);
+    } else {
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === "welcome" ? { ...m, content: t("consult.welcome") } : m
+        )
+      );
+    }
+  }, [t, messages.length]);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, loading]);
+
+  const sendMessage = async (text: string) => {
+    const trimmed = text.trim();
+    if (!trimmed || loading) return;
+
+    const userMsg: ChatMsg = {
+      id: Date.now().toString(),
+      role: "user",
+      content: trimmed,
+    };
+
+    const newMessages = [...messages, userMsg];
+    setMessages(newMessages);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const history = newMessages
+        .filter((m) => m.id !== "welcome")
+        .map((m) => ({ role: m.role, content: m.content }));
+
+      const response = await api.consult(history, language);
+
+      setStage(response.stage || "gathering");
+      if (response.symptomsCollected?.length) {
+        setSymptoms(response.symptomsCollected);
+      }
+
+      const assistantMsg: ChatMsg = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: response.message,
+        data: response,
+      };
+      setMessages((prev) => [...prev, assistantMsg]);
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: t("chat.error"),
+        },
+      ]);
+    }
+
+    setLoading(false);
+    setTimeout(() => inputRef.current?.focus(), 100);
+  };
+
+  const resetConsultation = () => {
+    setMessages([]);
+    setStage("gathering");
+    setSymptoms([]);
+    setInput("");
+  };
+
+  const stageLabel =
+    stage === "recommendation"
+      ? t("consult.recommendation")
+      : stage === "analyzing"
+      ? t("consult.analyzing")
+      : t("consult.gathering");
+
+  const stageColor =
+    stage === "recommendation"
+      ? "text-green-400"
+      : stage === "analyzing"
+      ? "text-yellow-400"
+      : "text-blue-400";
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Top bar */}
+      <div className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
+        <div className="flex items-center gap-3 px-4 h-14 max-w-4xl mx-auto w-full">
+          <Link href="/" className="text-muted-foreground hover:text-foreground">
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+          <Stethoscope className="h-5 w-5 text-muted-foreground" />
+          <div className="flex-1 min-w-0">
+            <h1 className="text-sm font-semibold truncate">{t("consult.title")}</h1>
+            <div className="flex items-center gap-2">
+              <div className={`h-1.5 w-1.5 rounded-full ${stageColor} bg-current`} />
+              <span className={`text-[10px] ${stageColor}`}>{stageLabel}</span>
+            </div>
+          </div>
+          <Button variant="ghost" size="sm" onClick={resetConsultation} className="gap-1.5 text-xs">
+            <RotateCcw className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{t("consult.newConsult")}</span>
+          </Button>
+        </div>
+      </div>
+
+      {/* Messages area */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto">
+        <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
+          {/* Symptoms sidebar (mobile: top, desktop: inline) */}
+          {symptoms.length > 0 && (
+            <div className="p-3 rounded-lg border border-border bg-card animate-fade-in">
+              <div className="flex items-center gap-2 mb-2">
+                <ClipboardList className="h-3.5 w-3.5 text-muted-foreground" />
+                <span className="text-xs font-medium text-muted-foreground">
+                  {t("consult.symptomsCollected")}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {symptoms.map((s, i) => (
+                  <Badge key={i} variant="secondary" className="text-[10px]">
+                    {s}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} animate-slide-up`}
+            >
+              <div
+                className={`max-w-[90%] md:max-w-[75%] rounded-2xl px-4 py-3 ${
+                  msg.role === "user"
+                    ? "bg-foreground text-background rounded-br-md"
+                    : "bg-card border border-border rounded-bl-md"
+                }`}
+              >
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+
+                {/* Recommendation card */}
+                {msg.data?.recommendation && (
+                  <RecommendationCard data={msg.data.recommendation} t={t} language={language} />
+                )}
+              </div>
+            </div>
+          ))}
+
+          {loading && (
+            <div className="flex justify-start animate-slide-up">
+              <div className="bg-card border border-border rounded-2xl rounded-bl-md px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">{t("consult.thinking")}</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Input area */}
+      <div className="border-t border-border bg-background/95 backdrop-blur">
+        <div className="max-w-4xl mx-auto px-4 py-3">
+          <div className="flex items-end gap-2">
+            <div className="flex-1 relative">
+              <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage(input);
+                  }
+                }}
+                placeholder={t("consult.placeholder")}
+                className="w-full resize-none rounded-xl border border-border bg-card px-4 py-3 pr-12 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring min-h-[48px] max-h-[120px]"
+                rows={1}
+                disabled={loading}
+              />
+              <div className="absolute right-2 bottom-2">
+                <VoiceInput onResult={(text) => sendMessage(text)} />
+              </div>
+            </div>
+            <Button
+              onClick={() => sendMessage(input)}
+              disabled={!input.trim() || loading}
+              className="h-12 w-12 rounded-xl shrink-0"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </div>
+          <p className="text-[10px] text-muted-foreground/50 text-center mt-2">
+            {t("consult.disclaimer")}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RecommendationCard({
+  data,
+  t,
+  language,
+}: {
+  data: NonNullable<ConsultResponse["recommendation"]>;
+  t: (k: string) => string;
+  language: string;
+}) {
+  const { primaryRemedy, alternativeRemedies, generalAdvice, whenToSeekHelp } = data;
+
+  return (
+    <div className="mt-4 space-y-4">
+      {/* Primary remedy */}
+      <div className="p-4 rounded-xl bg-background border border-green-900/30">
+        <div className="flex items-center gap-2 mb-3">
+          <CheckCircle2 className="h-4 w-4 text-green-400" />
+          <span className="text-xs font-semibold text-green-400 uppercase tracking-wider">
+            {t("consult.primaryRemedy")}
+          </span>
+        </div>
+        <div className="flex items-center gap-2 mb-2">
+          <Pill className="h-5 w-5 text-foreground" />
+          <span className="text-lg font-bold">{primaryRemedy.name}</span>
+          <Badge variant="secondary">{primaryRemedy.abbr}</Badge>
+        </div>
+        <ConfidenceBar value={primaryRemedy.confidence} className="mb-3" />
+        <p className="text-sm text-muted-foreground leading-relaxed mb-3">{primaryRemedy.explanation}</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="p-2 rounded-lg bg-card border border-border">
+            <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t("consult.dosage")}</span>
+            <p className="text-xs mt-1">{primaryRemedy.dosage}</p>
+          </div>
+          {primaryRemedy.keyIndications?.length > 0 && (
+            <div className="p-2 rounded-lg bg-card border border-border">
+              <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t("consult.keyIndications")}</span>
+              <div className="flex flex-wrap gap-1 mt-1">
+                {primaryRemedy.keyIndications.map((ind, i) => (
+                  <Badge key={i} variant="secondary" className="text-[10px]">{ind}</Badge>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Alternatives */}
+      {alternativeRemedies?.length > 0 && (
+        <div className="p-3 rounded-xl bg-background border border-border">
+          <div className="flex items-center gap-2 mb-2">
+            <Activity className="h-3.5 w-3.5 text-muted-foreground" />
+            <span className="text-xs font-medium text-muted-foreground">{t("consult.alternatives")}</span>
+          </div>
+          <div className="space-y-2">
+            {alternativeRemedies.map((r, i) => (
+              <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-card border border-border">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="text-xs font-medium truncate">{r.name}</span>
+                  <Badge variant="secondary" className="text-[10px] shrink-0">{r.abbr}</Badge>
+                </div>
+                <span className="text-[10px] text-muted-foreground ml-2 shrink-0">{toBengaliNum(r.confidence, language)}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Advice */}
+      {generalAdvice && (
+        <div className="p-3 rounded-xl bg-background border border-border">
+          <span className="text-xs font-medium text-muted-foreground">{t("consult.generalAdvice")}</span>
+          <p className="text-xs mt-1 text-muted-foreground leading-relaxed">{generalAdvice}</p>
+        </div>
+      )}
+
+      {/* When to seek help */}
+      {whenToSeekHelp && (
+        <div className="p-3 rounded-xl bg-background border border-yellow-900/30">
+          <div className="flex items-center gap-2 mb-1">
+            <ShieldAlert className="h-3.5 w-3.5 text-yellow-400" />
+            <span className="text-xs font-medium text-yellow-400">{t("consult.whenToSeek")}</span>
+          </div>
+          <p className="text-xs text-muted-foreground leading-relaxed">{whenToSeekHelp}</p>
+        </div>
+      )}
+
+      {/* Disclaimer */}
+      <div className="flex items-start gap-2 p-3 rounded-xl bg-background border border-border">
+        <AlertTriangle className="h-3.5 w-3.5 text-muted-foreground mt-0.5 shrink-0" />
+        <p className="text-[10px] text-muted-foreground leading-relaxed">{t("consult.disclaimer")}</p>
+      </div>
+    </div>
+  );
+}

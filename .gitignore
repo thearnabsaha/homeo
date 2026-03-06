@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build
+.next/
+out/
+build/
+
+# Environment
+.env
+.env.local
+.env*.local
+backend/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp verification files
+verify-*.png
+verify-*.txt
+verify-*.js
+
+# Backend temp script outputs
+backend/scripts/scrapedRemedies.json
+backend/scripts/missingRemedies.json
+backend/scripts/remedyTranslationBlock.txt
+
+# PDFs and large files
+*.pdf
+
+# Cursor internal
+.cursor/
