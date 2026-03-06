@@ -18,7 +18,7 @@ export function Header({ onToggleSidebar, onSelectSymptom, onSelectRemedy }: Hea
 
   return (
     <header className="sticky top-0 z-40 h-14 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-full items-center gap-2 sm:gap-4 px-2 sm:px-4">
+      <div className="flex h-full items-center gap-2 px-2 sm:px-4">
         <Button
           variant="ghost"
           size="icon"
@@ -35,14 +35,14 @@ export function Header({ onToggleSidebar, onSelectSymptom, onSelectRemedy }: Hea
           <span className="font-semibold text-sm hidden sm:inline">{t("app.name")}</span>
         </div>
 
-        <div className="flex-1 flex justify-center min-w-0">
+        <div className="flex-1 flex justify-center min-w-0 px-1">
           <SearchBar
             onSelectSymptom={onSelectSymptom}
             onSelectRemedy={onSelectRemedy}
           />
         </div>
 
-        <div className="flex items-center gap-1 shrink-0">
+        <div className="flex items-center gap-0.5 shrink-0">
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>

@@ -16109,6 +16109,642 @@
         "worse": [],
         "better": []
       }
+    },
+    {
+      "id": "ambr",
+      "name": "Ambra Grisea",
+      "abbr": "Ambr.",
+      "description": "A remedy for nervous, excitable persons with extreme sensitivity. Great remedy for old age complaints, premature aging, nervousness, and weakness. Key for embarrassment, shyness, and bashfulness.",
+      "commonSymptoms": [
+        "Nervousness",
+        "Insomnia from worry",
+        "Premature aging",
+        "Constipation",
+        "Cough with eructations",
+        "Embarrassment",
+        "Numbness"
+      ],
+      "modalities": {
+        "worse": [
+          "Presence of strangers",
+          "Music",
+          "Warm room",
+          "Morning"
+        ],
+        "better": [
+          "Open air",
+          "Cold drinks",
+          "Slow motion",
+          "After sleep"
+        ]
+      },
+      "dosage": "6C to 30C potency, 3-4 times daily"
+    },
+    {
+      "id": "arg-met",
+      "name": "Argentum Metallicum",
+      "abbr": "Arg-met.",
+      "description": "Affects joints, cartilages, and mucous membranes. Important for laryngeal and joint affections. Loss of voice in professional singers. Valuable for cartilage and bone diseases.",
+      "commonSymptoms": [
+        "Hoarseness",
+        "Joint pain",
+        "Cartilage inflammation",
+        "Loss of voice",
+        "Thick mucus",
+        "Seminal emissions",
+        "Bruised feeling in joints"
+      ],
+      "modalities": {
+        "worse": [
+          "Touch",
+          "Noon",
+          "Cold damp weather"
+        ],
+        "better": [
+          "Open air",
+          "Coffee",
+          "Wrapping up"
+        ]
+      },
+      "dosage": "6C to 30C potency, 2-3 times daily"
+    },
+    {
+      "id": "bell-p",
+      "name": "Bellis Perennis",
+      "abbr": "Bell-p.",
+      "description": "The Daisy. Acts upon muscular fibers of blood vessels. Great remedy for injuries to deeper tissues after major surgical work. Excellent for trauma, sprains, and bruises of deeper tissues.",
+      "commonSymptoms": [
+        "Deep tissue bruising",
+        "Injuries from blows",
+        "Venous congestion",
+        "Swelling",
+        "Muscular soreness",
+        "Cold tumor",
+        "Exudations"
+      ],
+      "modalities": {
+        "worse": [
+          "Hot bath",
+          "Warm bed",
+          "Left side",
+          "Cold wind"
+        ],
+        "better": [
+          "Continued motion",
+          "Cold",
+          "Eating"
+        ]
+      },
+      "dosage": "3X to 30C potency, 3 times daily"
+    },
+    {
+      "id": "carb-an",
+      "name": "Carbo Animalis",
+      "abbr": "Carb-an.",
+      "description": "Animal charcoal. Particularly adapted to old, weakened persons with venous congestion. Glands indurated with burning. Important for glandular enlargements and old age ailments.",
+      "commonSymptoms": [
+        "Glandular swelling",
+        "Venous congestion",
+        "Hearing difficulty",
+        "Copper-colored nose",
+        "Weakness",
+        "Night sweats",
+        "Burning pains"
+      ],
+      "modalities": {
+        "worse": [
+          "After shaving",
+          "Damp weather",
+          "Cold air",
+          "Night"
+        ],
+        "better": [
+          "Warmth",
+          "Rest"
+        ]
+      },
+      "dosage": "6C to 30C potency, 2-3 times daily"
+    },
+    {
+      "id": "carbn-s",
+      "name": "Carboneum Sulphuratum",
+      "abbr": "Carbn-s.",
+      "description": "Carbon bisulphide. Acts on nerves causing marked anesthesia. Important for neuritis, impaired vision, and chronic alcoholism effects. Affects peripheral nerves powerfully.",
+      "commonSymptoms": [
+        "Neuritis",
+        "Impaired vision",
+        "Anesthesia",
+        "Chronic alcoholism",
+        "Impotence",
+        "Trembling",
+        "Mental dullness"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Night",
+          "Pressure"
+        ],
+        "better": [
+          "Open air",
+          "Rest"
+        ]
+      },
+      "dosage": "6C to 30C potency, 2-3 times daily"
+    },
+    {
+      "id": "carc",
+      "name": "Carcinosinum",
+      "abbr": "Carc.",
+      "description": "A nosode of great importance. Highly sensitive, refined persons with strong family history of cancer or tuberculosis. Perfectionism and deep sense of duty. Critical for chronic ailments.",
+      "commonSymptoms": [
+        "Insomnia",
+        "Perfectionism",
+        "Chronic fatigue",
+        "Recurrent infections",
+        "Sensitivity to reprimand",
+        "Love of thunderstorms",
+        "Desire to travel"
+      ],
+      "modalities": {
+        "worse": [
+          "Consolation",
+          "2-4 AM",
+          "Sea air"
+        ],
+        "better": [
+          "Dancing",
+          "Music",
+          "Short sleep",
+          "Thunderstorms"
+        ]
+      },
+      "dosage": "200C to 1M potency, infrequent doses"
+    },
+    {
+      "id": "chen-a",
+      "name": "Chenopodium Anthelminticum",
+      "abbr": "Chen-a.",
+      "description": "Wormseed. Specific for deafness related to auditory nerve affections. Acts on the auditory nerve and respiratory organs. Important for hearing disorders.",
+      "commonSymptoms": [
+        "Deafness",
+        "Tinnitus",
+        "Auditory nerve affections",
+        "Worms",
+        "Respiratory catarrh",
+        "Right-sided hearing loss",
+        "Buzzing in ears"
+      ],
+      "modalities": {
+        "worse": [
+          "Noise",
+          "Touch",
+          "Right side"
+        ],
+        "better": [
+          "Open air",
+          "Rest"
+        ]
+      },
+      "dosage": "3X to 30C potency, 3 times daily"
+    },
+    {
+      "id": "chim",
+      "name": "Chimaphila Umbellata",
+      "abbr": "Chim.",
+      "description": "Pipsissewa. Acts principally on kidneys and urinary tract. Important for prostate gland enlargement and chronic urinary problems. Valuable for urinary sediment.",
+      "commonSymptoms": [
+        "Prostate enlargement",
+        "Urinary retention",
+        "Kidney stones",
+        "Catarrh of bladder",
+        "Must strain to urinate",
+        "Mucus in urine",
+        "Urinary sediment"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold damp weather",
+          "Sitting on cold stones"
+        ],
+        "better": [
+          "Warmth",
+          "Walking"
+        ]
+      },
+      "dosage": "6C to 30C potency, 3 times daily"
+    },
+    {
+      "id": "equis-h",
+      "name": "Equisetum Hyemale",
+      "abbr": "Equis.",
+      "description": "Scouring rush. Acts principally on urinary organs. Severe dull pain in bladder not relieved by urination. Enuresis in children. Important for bladder irritation.",
+      "commonSymptoms": [
+        "Enuresis",
+        "Bladder irritation",
+        "Urinary incontinence",
+        "Kidney pain",
+        "Frequent urination",
+        "Dull pain in bladder",
+        "Night bedwetting"
+      ],
+      "modalities": {
+        "worse": [
+          "Right side",
+          "Touch",
+          "Pressure",
+          "Sitting"
+        ],
+        "better": [
+          "Continued motion",
+          "Afternoon"
+        ]
+      },
+      "dosage": "6C to 30C potency, 3 times daily"
+    },
+    {
+      "id": "pareir",
+      "name": "Pareira Brava",
+      "abbr": "Pareir.",
+      "description": "Virgin vine. Acts on urinary organs specifically. Renal colic and bladder problems. Must go on hands and knees to urinate. Violent pain in glans penis while straining to urinate.",
+      "commonSymptoms": [
+        "Renal colic",
+        "Urinary obstruction",
+        "Bladder catarrh",
+        "Must kneel to urinate",
+        "Thick mucus in urine",
+        "Prostate problems",
+        "Constant urging"
+      ],
+      "modalities": {
+        "worse": [
+          "Night",
+          "Cold",
+          "Morning"
+        ],
+        "better": [
+          "Warmth",
+          "Rest"
+        ]
+      },
+      "dosage": "6C to 30C potency, 3 times daily"
+    },
+    {
+      "id": "tril-p",
+      "name": "Trillium Pendulum",
+      "abbr": "Tril.",
+      "description": "Beth root. A great hemorrhagic remedy. Profuse hemorrhage from uterus, nose, lungs, and bowels. Particularly useful in menorrhagia and threatened abortion.",
+      "commonSymptoms": [
+        "Menorrhagia",
+        "Uterine hemorrhage",
+        "Nosebleed",
+        "Flooding",
+        "Threatened abortion",
+        "Hip joint pain",
+        "Profuse bright red bleeding"
+      ],
+      "modalities": {
+        "worse": [
+          "Motion",
+          "Standing",
+          "Exertion"
+        ],
+        "better": [
+          "Tight bandaging",
+          "Rest",
+          "Quiet"
+        ]
+      },
+      "dosage": "3X to 30C potency, 3 times daily"
+    },
+    {
+      "id": "zinc-val",
+      "name": "Zincum Valerianicum",
+      "abbr": "Zinc-val.",
+      "description": "Valerianate of zinc. Great remedy for neuralgia, especially facial and ovarian. Hysterical and nervous conditions. Restless legs with insomnia.",
+      "commonSymptoms": [
+        "Facial neuralgia",
+        "Ovarian neuralgia",
+        "Insomnia",
+        "Restless legs",
+        "Hysteria",
+        "Nervous exhaustion",
+        "Twitching"
+      ],
+      "modalities": {
+        "worse": [
+          "Night",
+          "Noise",
+          "Touch"
+        ],
+        "better": [
+          "Walking",
+          "Open air",
+          "Warmth"
+        ]
+      },
+      "dosage": "6C to 30C potency, 3 times daily"
+    },
+    {
+      "id": "androc",
+      "name": "Andrographis Paniculata",
+      "abbr": "Androc.",
+      "description": "Kalmegh - widely used in Indian homeopathy for liver disorders, fever, and digestive complaints. A bitter tonic with powerful hepatoprotective action.",
+      "commonSymptoms": [
+        "Liver disorders",
+        "Jaundice",
+        "Fever",
+        "Digestive weakness",
+        "Loss of appetite",
+        "Bitter taste",
+        "General debility"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Damp weather",
+          "Morning"
+        ],
+        "better": [
+          "Warmth",
+          "Rest",
+          "After eating"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "abrom-a",
+      "name": "Abroma Augusta",
+      "abbr": "Abrom-a.",
+      "description": "Devil cotton - very important in Indian homeopathy for diabetes mellitus and menstrual disorders. Widely used for albuminuria and excessive thirst.",
+      "commonSymptoms": [
+        "Diabetes mellitus",
+        "Albuminuria",
+        "Menstrual irregularity",
+        "Excessive thirst",
+        "Frequent urination",
+        "Weakness",
+        "Mouth dryness"
+      ],
+      "modalities": {
+        "worse": [
+          "Night",
+          "Cold"
+        ],
+        "better": [
+          "Warmth",
+          "Rest"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "gymne-s",
+      "name": "Gymnema Sylvestre",
+      "abbr": "Gymne-s.",
+      "description": "Gurmar - destroys sugar taste. Very important in Indian practice for diabetes. Used extensively for glycosuria and sugar regulation in homeopathy.",
+      "commonSymptoms": [
+        "Diabetes",
+        "Sugar in urine",
+        "Loss of sugar taste",
+        "Excessive hunger",
+        "Frequent urination",
+        "Weight loss",
+        "Weakness"
+      ],
+      "modalities": {
+        "worse": [
+          "Sweets",
+          "Evening"
+        ],
+        "better": [
+          "Open air",
+          "Moderate diet"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "term-a",
+      "name": "Terminalia Arjuna",
+      "abbr": "Term-a.",
+      "description": "Arjuna - the primary Indian cardiac tonic in homeopathy. Strengthens heart muscle, reduces angina, and helps cardiac debility. Extremely popular in Indian practice.",
+      "commonSymptoms": [
+        "Cardiac weakness",
+        "Angina pectoris",
+        "Palpitation",
+        "Cardiac dropsy",
+        "Hypertension",
+        "Chest pain",
+        "Breathlessness on exertion"
+      ],
+      "modalities": {
+        "worse": [
+          "Exertion",
+          "Night",
+          "Lying down"
+        ],
+        "better": [
+          "Rest",
+          "Fresh air"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "term-c",
+      "name": "Terminalia Chebula",
+      "abbr": "Term-c.",
+      "description": "Haritaki - one of Triphala herbs. Very popular in Indian homeopathy for constipation, eye problems, and chronic digestive disorders. A great rejuvenating remedy.",
+      "commonSymptoms": [
+        "Chronic constipation",
+        "Eye disorders",
+        "Indigestion",
+        "Sore throat",
+        "Cough",
+        "Skin diseases",
+        "General debility"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Night",
+          "After eating"
+        ],
+        "better": [
+          "Warmth",
+          "Hot drinks",
+          "Morning"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "withania",
+      "name": "Withania Somnifera",
+      "abbr": "With.",
+      "description": "Ashwagandha - the great Indian adaptogen in homeopathy. Used for debility, stress, nervous exhaustion, and low vitality. Widely prescribed in India for general weakness.",
+      "commonSymptoms": [
+        "Nervous exhaustion",
+        "Debility",
+        "Insomnia",
+        "Low libido",
+        "Anxiety",
+        "Weakness after illness",
+        "Poor concentration"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Overwork",
+          "Night"
+        ],
+        "better": [
+          "Warmth",
+          "Rest",
+          "Milk"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "syz-c",
+      "name": "Syzygium Cumini",
+      "abbr": "Syz-c.",
+      "description": "Jamun - the Indian blackberry. One of the most important Indian homeopathic remedies for diabetes. Reduces sugar in urine and controls blood sugar levels.",
+      "commonSymptoms": [
+        "Diabetes mellitus",
+        "Glycosuria",
+        "Excessive thirst",
+        "Excessive urination",
+        "Old ulcers",
+        "Prickly heat",
+        "Weakness"
+      ],
+      "modalities": {
+        "worse": [
+          "Night",
+          "Cold",
+          "Sweets"
+        ],
+        "better": [
+          "Warmth",
+          "Moderate eating"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "tinos-c",
+      "name": "Tinospora Cordifolia",
+      "abbr": "Tinos.",
+      "description": "Giloy/Guduchi - extremely important in Indian traditional and homeopathic medicine for fever, immunity boosting, liver protection, and chronic debility.",
+      "commonSymptoms": [
+        "Chronic fever",
+        "Liver disorders",
+        "Low immunity",
+        "General weakness",
+        "Gout",
+        "Jaundice",
+        "Digestive complaints"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Rainy season"
+        ],
+        "better": [
+          "Warmth",
+          "Rest",
+          "Hot drinks"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "curc-l",
+      "name": "Curcuma Longa",
+      "abbr": "Curc.",
+      "description": "Turmeric - used in Indian homeopathy for liver complaints, skin disorders, and inflammatory conditions. Anti-inflammatory and hepatoprotective properties.",
+      "commonSymptoms": [
+        "Liver enlargement",
+        "Jaundice",
+        "Skin diseases",
+        "Joint pain",
+        "Inflammation",
+        "Wounds",
+        "Digestive disorders"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold",
+          "Damp",
+          "Night"
+        ],
+        "better": [
+          "Warmth",
+          "Dry weather",
+          "Movement"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "adhat-v",
+      "name": "Adhatoda Vasica",
+      "abbr": "Adhat.",
+      "description": "Vasaka/Adulsa - one of the most important Indian cough remedies. Highly effective for bronchitis, asthma, and all respiratory conditions with cough. Widely used across India.",
+      "commonSymptoms": [
+        "Bronchitis",
+        "Asthma",
+        "Spasmodic cough",
+        "Hemoptysis",
+        "Tuberculosis",
+        "Chest congestion",
+        "Whooping cough"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold air",
+          "Night",
+          "Dust"
+        ],
+        "better": [
+          "Warm room",
+          "Rest",
+          "Hot drinks"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
+    },
+    {
+      "id": "bael",
+      "name": "Aegle Marmelos",
+      "abbr": "Bael.",
+      "description": "Bael fruit - very popular in Indian homeopathy for chronic diarrhea, dysentery, and digestive disorders. Also useful for mucous colitis and intestinal complaints.",
+      "commonSymptoms": [
+        "Chronic diarrhea",
+        "Dysentery",
+        "Mucous colitis",
+        "Hemorrhoids",
+        "Digestive weakness",
+        "Alternating diarrhea and constipation",
+        "Intestinal catarrh"
+      ],
+      "modalities": {
+        "worse": [
+          "Cold drinks",
+          "Morning",
+          "After eating"
+        ],
+        "better": [
+          "Warmth",
+          "Hot drinks",
+          "Resting"
+        ]
+      },
+      "dosage": "Q to 6C potency, 3 times daily"
     }
   ],
   "lastUpdated": "2026-03-05T22:53:42.655Z",

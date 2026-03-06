@@ -99,7 +99,7 @@ export default function LandingPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full max-w-lg animate-fade-in">
               {[
-                { val: n("711+"), label: t("landing.stats1") },
+                { val: n("734+"), label: t("landing.stats1") },
                 { val: n("2500+"), label: t("landing.stats2") },
                 { val: n("75"), label: t("landing.stats3") },
                 { val: n("2"), label: t("landing.stats4") },
