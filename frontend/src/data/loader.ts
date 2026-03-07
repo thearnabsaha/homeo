@@ -1,6 +1,7 @@
 import symptomsJson from "./symptoms.json";
 import remediesJson from "./remedies.json";
 import rubricsJson from "./rubrics.json";
+import { translateData, bnToEn } from "@/i18n/dataTranslations";
 
 export type SymptomsData = typeof symptomsJson;
 export type RemediesData = typeof remediesJson;
@@ -10,7 +11,6 @@ export const symptomsData: SymptomsData = symptomsJson;
 export const remediesData: RemediesData = remediesJson;
 export const rubrics: RubricsData = rubricsJson as unknown as RubricsData;
 
-// Pre-built O(1) lookup maps - computed once at module load, reused across requests
 export const remedyById = new Map<string, (typeof remediesJson.remedies)[number]>();
 for (const r of remediesData.remedies) {
   remedyById.set(r.id, r);
@@ -34,7 +34,6 @@ for (const ch of symptomsData.chapters) {
   }
 }
 
-// Reverse index: remedyId -> symptomIds (pre-computed for remedy detail pages)
 export const remedyToSymptoms = new Map<string, string[]>();
 for (const [symId, entries] of Object.entries(rubrics)) {
   if (!Array.isArray(entries)) continue;
@@ -48,27 +47,30 @@ for (const [symId, entries] of Object.entries(rubrics)) {
   }
 }
 
-// Pre-built search index: lowercased name -> remedy for fast search
-export const remedySearchIndex: { lower: string; abbrLower: string; descLower: string; r: (typeof remediesJson.remedies)[number] }[] =
+// Search indexes with Bengali translations for bilingual search
+export const remedySearchIndex: { lower: string; abbrLower: string; descLower: string; bnLower: string; r: (typeof remediesJson.remedies)[number] }[] =
   remediesData.remedies.map(r => ({
     lower: r.name.toLowerCase(),
     abbrLower: r.abbr.toLowerCase(),
     descLower: r.description.toLowerCase(),
+    bnLower: translateData(r.name, "bn").toLowerCase(),
     r,
   }));
 
-// Pre-built symptom search entries
-export type SymptomSearchEntry = { id: string; name: string; nameLower: string; type: string; chapter: string; parent?: string };
+export type SymptomSearchEntry = { id: string; name: string; nameLower: string; bnLower: string; type: string; chapter: string; parent?: string };
 export const symptomSearchIndex: SymptomSearchEntry[] = [];
 for (const ch of symptomsData.chapters) {
-  symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), type: "chapter", chapter: ch.name });
+  symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), bnLower: translateData(ch.name, "bn").toLowerCase(), type: "chapter", chapter: ch.name });
   for (const sym of ch.symptoms) {
-    symptomSearchIndex.push({ id: sym.id, name: sym.name, nameLower: sym.name.toLowerCase(), type: "symptom", chapter: ch.name });
+    symptomSearchIndex.push({ id: sym.id, name: sym.name, nameLower: sym.name.toLowerCase(), bnLower: translateData(sym.name, "bn").toLowerCase(), type: "symptom", chapter: ch.name });
     const subs = (sym as { subSymptoms?: { id: string; name: string }[] }).subSymptoms;
     if (subs) {
       for (const s of subs) {
-        symptomSearchIndex.push({ id: s.id, name: s.name, nameLower: s.name.toLowerCase(), type: "subSymptom", chapter: ch.name, parent: sym.name });
+        symptomSearchIndex.push({ id: s.id, name: s.name, nameLower: s.name.toLowerCase(), bnLower: translateData(s.name, "bn").toLowerCase(), type: "subSymptom", chapter: ch.name, parent: sym.name });
       }
     }
   }
 }
+
+// Bengali to English reverse lookup for search queries
+export { bnToEn };

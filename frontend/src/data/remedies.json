@@ -5912,37 +5912,6 @@
       }
     },
     {
-      "id": "tril",
-      "name": "Trillium Pendulum",
-      "abbr": "Tril.",
-      "description": "Uterine hemorrhage. Profuse bright red blood. Sensation of hip joints coming apart. Metrorrhagia at menopause. Flooding at climacteric.",
-      "dosage": "30C for uterine hemorrhage",
-      "commonSymptoms": [
-        "female-metrorrhagia",
-        "female-menses-profuse",
-        "female-menopause",
-        "gen-hemorrhage-bright",
-        "gen-weakness",
-        "ext-pain-hip"
-      ],
-      "modalities": {
-        "worse": [
-          "Motion",
-          "Exertion",
-          "Climacteric",
-          "Every two weeks",
-          "Sneezing",
-          "Coughing"
-        ],
-        "better": [
-          "Tight bandaging",
-          "Rest",
-          "Cool air",
-          "Dark room"
-        ]
-      }
-    },
-    {
       "id": "verat-v",
       "name": "Veratrum Viride",
       "abbr": "Verat-v.",

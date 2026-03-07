@@ -2285,6 +2285,22 @@
     {
       "remedyId": "calc-sil",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 3
+    },
+    {
+      "remedyId": "withania",
+      "grade": 2
+    },
+    {
+      "remedyId": "carc",
+      "grade": 3
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
     }
   ],
   "mind-anxiety-morning": [
@@ -4917,6 +4933,10 @@
     {
       "remedyId": "lact-v",
       "grade": 1
+    },
+    {
+      "remedyId": "carc",
+      "grade": 2
     }
   ],
   "mind-restlessness-night": [
@@ -9061,6 +9081,10 @@
     {
       "remedyId": "ichth",
       "grade": 1
+    },
+    {
+      "remedyId": "withania",
+      "grade": 2
     }
   ],
   "mind-concentration-reading": [
@@ -11167,6 +11191,10 @@
     {
       "remedyId": "meli",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 3
     }
   ],
   "mind-timidity-public": [
@@ -11663,6 +11691,18 @@
     {
       "remedyId": "meli",
       "grade": 1
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 2
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
+    },
+    {
+      "remedyId": "withania",
+      "grade": 3
     }
   ],
   "mind-dullness-morning": [
@@ -12935,6 +12975,10 @@
     {
       "remedyId": "bov",
       "grade": 1
+    },
+    {
+      "remedyId": "carc",
+      "grade": 3
     }
   ],
   "mind-sensitive-noise": [
@@ -24849,6 +24893,10 @@
     {
       "remedyId": "nux-v",
       "grade": 1
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
     }
   ],
   "eye-pain": [
@@ -27831,6 +27879,10 @@
     {
       "remedyId": "santin",
       "grade": 3
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
     }
   ],
   "eye-dilated-pupils": [
@@ -28273,6 +28325,10 @@
     {
       "remedyId": "nux-v",
       "grade": 1
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 2
     }
   ],
   "vision-dim-reading": [
@@ -29611,6 +29667,10 @@
     {
       "remedyId": "lim",
       "grade": 3
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 2
     }
   ],
   "nose-sinusitis": [
@@ -30049,6 +30109,10 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 3
     }
   ],
   "throat-pain": [
@@ -30785,6 +30849,10 @@
     {
       "remedyId": "xero",
       "grade": 3
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
     }
   ],
   "rectum-diarrhoea": [
@@ -30981,6 +31049,10 @@
     {
       "remedyId": "casc",
       "grade": 1
+    },
+    {
+      "remedyId": "bael",
+      "grade": 2
     }
   ],
   "urinary-kidney-stones": [
@@ -31473,6 +31545,18 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "term-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "adhat-v",
+      "grade": 3
     }
   ],
   "resp-dyspnoea": [
@@ -31555,6 +31639,10 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "term-a",
+      "grade": 2
     }
   ],
   "cough-dry": [
@@ -31648,6 +31736,18 @@
     },
     {
       "remedyId": "chlf",
+      "grade": 3
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "adhat-v",
       "grade": 3
     }
   ],
@@ -31759,6 +31859,10 @@
     {
       "remedyId": "passi",
       "grade": 3
+    },
+    {
+      "remedyId": "adhat-v",
+      "grade": 3
     }
   ],
   "chest-palpitation": [
@@ -31861,6 +31965,10 @@
     {
       "remedyId": "all-s",
       "grade": 1
+    },
+    {
+      "remedyId": "term-a",
+      "grade": 3
     }
   ],
   "chest-angina-pectoris": [
@@ -31966,6 +32074,10 @@
     },
     {
       "remedyId": "lat-m",
+      "grade": 3
+    },
+    {
+      "remedyId": "term-a",
       "grade": 3
     }
   ],
@@ -32158,6 +32270,10 @@
     },
     {
       "remedyId": "am-p",
+      "grade": 3
+    },
+    {
+      "remedyId": "adhat-v",
       "grade": 3
     }
   ],
@@ -32601,6 +32717,10 @@
     {
       "remedyId": "benz-ac",
       "grade": 1
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
     }
   ],
   "skin-eruptions-eczema": [
@@ -33293,6 +33413,14 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 2
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 3
     }
   ],
   "gen-injuries-sprains": [
@@ -33375,6 +33503,10 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 3
     }
   ],
   "gen-diabetes": [
@@ -33831,6 +33963,18 @@
     {
       "remedyId": "puls",
       "grade": 1
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 3
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 3
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 3
     }
   ],
   "endo-pcos": [
@@ -36993,6 +37137,10 @@
     {
       "remedyId": "sil",
       "grade": 1
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 3
     }
   ],
   "ear-noises-roaring": [
@@ -40921,6 +41069,10 @@
     {
       "remedyId": "sep",
       "grade": 1
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 2
     }
   ],
   "nose-epistaxis-pregnancy": [
@@ -45211,6 +45363,10 @@
     {
       "remedyId": "calc",
       "grade": 1
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
     }
   ],
   "mouth-taste-metallic": [
@@ -49919,6 +50075,10 @@
     {
       "remedyId": "hep",
       "grade": 1
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
     }
   ],
   "throat-pain-stitching": [
@@ -50515,6 +50675,10 @@
     {
       "remedyId": "arum-d",
       "grade": 1
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "throat-inflammation-pharyngitis": [
@@ -52087,6 +52251,10 @@
     {
       "remedyId": "bry",
       "grade": 1
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 3
     }
   ],
   "ext-throat-swelling-glands-hard": [
@@ -55497,6 +55665,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 2
     }
   ],
   "stomach-appetite-wanting": [
@@ -55571,6 +55743,10 @@
     {
       "remedyId": "sep",
       "grade": 1
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
     }
   ],
   "stomach-appetite-diminished-morning": [
@@ -55879,6 +56055,14 @@
     {
       "remedyId": "carb-v",
       "grade": 1
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
     }
   ],
   "stomach-thirst-small-sips": [
@@ -56935,6 +57119,14 @@
     {
       "remedyId": "arge",
       "grade": 1
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
+    },
+    {
+      "remedyId": "bael",
+      "grade": 2
     }
   ],
   "stomach-indigestion-fatty-food": [
@@ -57075,6 +57267,26 @@
     {
       "remedyId": "bell",
       "grade": 1
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
+    },
+    {
+      "remedyId": "bael",
+      "grade": 2
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "stomach-distension": [
@@ -59095,6 +59307,10 @@
     {
       "remedyId": "acon",
       "grade": 1
+    },
+    {
+      "remedyId": "bael",
+      "grade": 3
     }
   ],
   "abdomen-pain-burning": [
@@ -60419,6 +60635,10 @@
     {
       "remedyId": "aran",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 1
     }
   ],
   "abdomen-flatulence-obstructed": [
@@ -60879,6 +61099,18 @@
     {
       "remedyId": "ptel",
       "grade": 3
+    },
+    {
+      "remedyId": "androc",
+      "grade": 3
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 3
     }
   ],
   "abdomen-liver-enlarged": [
@@ -61179,6 +61411,18 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "androc",
+      "grade": 3
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "abdomen-liver-fatty": [
@@ -62665,6 +62909,10 @@
     {
       "remedyId": "merc",
       "grade": 1
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 3
     }
   ],
   "rectum-constipation-ineffectual-urging": [
@@ -63591,6 +63839,10 @@
     {
       "remedyId": "puls",
       "grade": 1
+    },
+    {
+      "remedyId": "bael",
+      "grade": 3
     }
   ],
   "rectum-diarrhoea-dentition": [
@@ -63921,6 +64173,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "bael",
+      "grade": 3
     }
   ],
   "rectum-diarrhoea-mucus": [
@@ -65901,6 +66157,10 @@
     {
       "remedyId": "casc",
       "grade": 1
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 2
     }
   ],
   "rectum-worms-pinworm": [
@@ -67383,6 +67643,30 @@
     {
       "remedyId": "ery-a",
       "grade": 1
+    },
+    {
+      "remedyId": "equis-h",
+      "grade": 3
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 2
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 3
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 2
     }
   ],
   "urinary-frequent-night": [
@@ -68255,6 +68539,14 @@
     {
       "remedyId": "chim",
       "grade": 3
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 2
     }
   ],
   "urinary-retention-newborn": [
@@ -68629,6 +68921,14 @@
     {
       "remedyId": "bell",
       "grade": 1
+    },
+    {
+      "remedyId": "equis-h",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 3
     }
   ],
   "urinary-incontinence-old-age": [
@@ -69119,6 +69419,10 @@
     {
       "remedyId": "calc",
       "grade": 1
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 3
     }
   ],
   "urinary-kidney-stones-uric-acid": [
@@ -70413,6 +70717,14 @@
     {
       "remedyId": "tritic",
       "grade": 1
+    },
+    {
+      "remedyId": "chim",
+      "grade": 3
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 2
     }
   ],
   "urinary-prostate-enlarged": [
@@ -71153,6 +71465,10 @@
     {
       "remedyId": "am-be",
       "grade": 1
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 3
     }
   ],
   "urinary-urine-sugar": [
@@ -71461,6 +71777,10 @@
     {
       "remedyId": "nux-v",
       "grade": 1
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 2
     }
   ],
   "male-impotence-mental": [
@@ -72897,6 +73217,10 @@
     {
       "remedyId": "eupi",
       "grade": 1
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 3
     }
   ],
   "female-menses-early": [
@@ -73177,6 +73501,10 @@
     {
       "remedyId": "kali-c",
       "grade": 1
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 3
     }
   ],
   "female-menses-absent": [
@@ -75899,6 +76227,10 @@
     {
       "remedyId": "lach",
       "grade": 1
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 3
     }
   ],
   "female-pregnancy-placenta-previa": [
@@ -76673,6 +77005,10 @@
     {
       "remedyId": "acon",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 3
     }
   ],
   "larynx-hoarseness-morning": [
@@ -77027,6 +77363,10 @@
     {
       "remedyId": "bry",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 3
     }
   ],
   "larynx-voice-lost-singers": [
@@ -77187,6 +77527,10 @@
     {
       "remedyId": "kali-c",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 3
     }
   ],
   "larynx-laryngitis-chronic": [
@@ -79623,6 +79967,18 @@
     {
       "remedyId": "dros",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "adhat-v",
+      "grade": 3
     }
   ],
   "cough-dry-cold-air": [
@@ -80043,6 +80399,10 @@
     {
       "remedyId": "ip",
       "grade": 1
+    },
+    {
+      "remedyId": "adhat-v",
+      "grade": 2
     }
   ],
   "cough-spasmodic-vomiting": [
@@ -83417,6 +83777,10 @@
     {
       "remedyId": "nat-ar",
       "grade": 3
+    },
+    {
+      "remedyId": "adhat-v",
+      "grade": 3
     }
   ],
   "chest-oppression-ascending": [
@@ -84250,6 +84614,14 @@
     },
     {
       "remedyId": "silphu",
+      "grade": 2
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 3
+    },
+    {
+      "remedyId": "adhat-v",
       "grade": 2
     }
   ],
@@ -87911,6 +88283,10 @@
     {
       "remedyId": "elat",
       "grade": 3
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 3
     }
   ],
   "ext-pain-joints": [
@@ -87977,6 +88353,14 @@
     {
       "remedyId": "bell",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 3
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "ext-pain-shoulder": [
@@ -88363,6 +88747,10 @@
     {
       "remedyId": "sil",
       "grade": 1
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 2
     }
   ],
   "ext-pain-knee": [
@@ -89231,6 +89619,10 @@
     {
       "remedyId": "arund",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 2
     }
   ],
   "ext-swelling-joints": [
@@ -89441,6 +89833,10 @@
     {
       "remedyId": "kali-c",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 2
     }
   ],
   "ext-swelling-hands": [
@@ -89917,6 +90313,14 @@
     {
       "remedyId": "graph",
       "grade": 1
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 3
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "ext-stiffness-joints": [
@@ -90151,6 +90555,14 @@
     {
       "remedyId": "ars",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 3
     }
   ],
   "ext-numbness-hands": [
@@ -90447,6 +90859,14 @@
     {
       "remedyId": "graph",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 3
     }
   ],
   "ext-numbness-carpal-tunnel": [
@@ -92595,6 +93015,10 @@
     {
       "remedyId": "led",
       "grade": 1
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 3
     }
   ],
   "ext-restlessness-legs-night": [
@@ -92907,6 +93331,14 @@
     {
       "remedyId": "mangi",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 2
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 3
     }
   ],
   "ext-varicose-veins-pregnancy": [
@@ -94705,6 +95137,22 @@
     {
       "remedyId": "apoc",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 3
+    },
+    {
+      "remedyId": "carc",
+      "grade": 3
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
+    },
+    {
+      "remedyId": "withania",
+      "grade": 2
     }
   ],
   "sleep-insomnia-thoughts": [
@@ -98471,6 +98919,10 @@
     {
       "remedyId": "meny",
       "grade": 3
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 3
     }
   ],
   "fever-intermittent-malaria": [
@@ -99319,6 +99771,10 @@
     {
       "remedyId": "pyrog",
       "grade": 2
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
     }
   ],
   "fever-typhoid": [
@@ -99955,6 +100411,10 @@
     {
       "remedyId": "lup",
       "grade": 3
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
     }
   ],
   "persp-night-debilitating": [
@@ -100901,6 +101361,14 @@
     {
       "remedyId": "naph",
       "grade": 3
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "skin-eruptions-herpes": [
@@ -101753,6 +102221,10 @@
     {
       "remedyId": "bell",
       "grade": 1
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
     }
   ],
   "skin-eruptions-diaper": [
@@ -102485,6 +102957,14 @@
     {
       "remedyId": "cur",
       "grade": 3
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "skin-itching-night": [
@@ -103163,6 +103643,10 @@
     {
       "remedyId": "euph-l",
       "grade": 3
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
     }
   ],
   "skin-ulcers-varicose": [
@@ -106527,6 +107011,30 @@
     {
       "remedyId": "ars",
       "grade": 1
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 2
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "withania",
+      "grade": 3
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
     }
   ],
   "gen-weakness-post-surgery": [
@@ -106671,6 +107179,18 @@
     {
       "remedyId": "nux-v",
       "grade": 1
+    },
+    {
+      "remedyId": "carc",
+      "grade": 3
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
+    },
+    {
+      "remedyId": "withania",
+      "grade": 3
     }
   ],
   "gen-faintness": [
@@ -107107,6 +107627,14 @@
     {
       "remedyId": "bell",
       "grade": 1
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 2
+    },
+    {
+      "remedyId": "zinc-val",
+      "grade": 2
     }
   ],
   "gen-trembling-anxiety": [
@@ -107597,6 +108125,14 @@
     {
       "remedyId": "tarent-c",
       "grade": 3
+    },
+    {
+      "remedyId": "arg-met",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "gen-oedema": [
@@ -107737,6 +108273,10 @@
     {
       "remedyId": "lach",
       "grade": 1
+    },
+    {
+      "remedyId": "term-a",
+      "grade": 2
     }
   ],
   "gen-anemia-hemorrhage": [
@@ -108423,6 +108963,10 @@
     {
       "remedyId": "sep",
       "grade": 1
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
     }
   ],
   "gen-warm-room-agg": [
@@ -109873,6 +110417,10 @@
     {
       "remedyId": "merc",
       "grade": 1
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 2
     }
   ],
   "gen-emaciation-eating-well": [
@@ -110219,6 +110767,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "tril-p",
+      "grade": 3
     }
   ],
   "gen-hemorrhage-bright": [
@@ -110511,6 +111063,14 @@
     {
       "remedyId": "sep",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 2
+    },
+    {
+      "remedyId": "curc-l",
+      "grade": 2
     }
   ],
   "gen-injuries-bones": [
@@ -111231,6 +111791,14 @@
     {
       "remedyId": "sulph",
       "grade": 1
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
     }
   ],
   "gen-diabetes-weakness": [
@@ -111503,6 +112071,10 @@
     {
       "remedyId": "merc",
       "grade": 1
+    },
+    {
+      "remedyId": "carc",
+      "grade": 3
     }
   ],
   "gen-convalescence": [
@@ -112063,6 +112635,14 @@
     {
       "remedyId": "ars",
       "grade": 1
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 3
     }
   ],
   "hearing-acute": [
@@ -112767,6 +113347,10 @@
     {
       "remedyId": "oci",
       "grade": 2
+    },
+    {
+      "remedyId": "chim",
+      "grade": 2
     }
   ],
   "urine-albumin": [
@@ -112899,6 +113483,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 3
     }
   ],
   "urine-copious": [
@@ -113199,6 +113787,22 @@
     {
       "remedyId": "cop",
       "grade": 1
+    },
+    {
+      "remedyId": "chim",
+      "grade": 3
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis-h",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 2
     }
   ],
   "bladder-cystitis-acute": [
@@ -114077,6 +114681,10 @@
     {
       "remedyId": "gal-ac",
       "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 2
     }
   ],
   "bladder-spasm": [
@@ -114825,6 +115433,18 @@
     {
       "remedyId": "anth",
       "grade": 1
+    },
+    {
+      "remedyId": "equis-h",
+      "grade": 2
+    },
+    {
+      "remedyId": "pareir",
+      "grade": 2
+    },
+    {
+      "remedyId": "equis",
+      "grade": 2
     }
   ],
   "kidneys-pain-stitching": [
@@ -115355,6 +115975,10 @@
     {
       "remedyId": "gal-ac",
       "grade": 1
+    },
+    {
+      "remedyId": "chim",
+      "grade": 2
     }
   ],
   "kidneys-stones-right": [
@@ -118127,6 +118751,10 @@
     {
       "remedyId": "apis",
       "grade": 1
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 3
     }
   ],
   "immune-recurrent-cold": [
@@ -122090,6 +122718,14 @@
     },
     {
       "remedyId": "ol-an",
+      "grade": 3
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 3
+    },
+    {
+      "remedyId": "zinc-val",
       "grade": 3
     }
   ],
@@ -126185,6 +126821,10 @@
     {
       "remedyId": "merc",
       "grade": 1
+    },
+    {
+      "remedyId": "chen-a",
+      "grade": 3
     }
   ],
   "nerv-tinnitus-ringing": [
@@ -133303,6 +133943,10 @@
     {
       "remedyId": "calc",
       "grade": 1
+    },
+    {
+      "remedyId": "term-a",
+      "grade": 2
     }
   ],
   "cv-hypertension-headache": [
@@ -148465,6 +149109,14 @@
     {
       "remedyId": "tub",
       "grade": 1
+    },
+    {
+      "remedyId": "equis-h",
+      "grade": 3
+    },
+    {
+      "remedyId": "equis",
+      "grade": 3
     }
   ],
   "ped-growth-issues": [
@@ -148939,6 +149591,10 @@
     {
       "remedyId": "sep",
       "grade": 1
+    },
+    {
+      "remedyId": "carc",
+      "grade": 2
     }
   ],
   "ped-recurrent-otitis": [
@@ -155229,6 +155885,10 @@
     {
       "remedyId": "kali-c",
       "grade": 1
+    },
+    {
+      "remedyId": "carbn-s",
+      "grade": 2
     }
   ],
   "sx-ed-organic": [
@@ -155735,6 +156395,10 @@
     {
       "remedyId": "staph",
       "grade": 1
+    },
+    {
+      "remedyId": "withania",
+      "grade": 2
     }
   ],
   "sx-low-libido-male": [
@@ -158869,6 +159533,10 @@
     {
       "remedyId": "graph",
       "grade": 1
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
     }
   ],
   "ger-dementia-lewy-body": [
@@ -159561,6 +160229,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 3
     }
   ],
   "ger-senile-pruritus": [
@@ -159771,6 +160443,38 @@
     {
       "remedyId": "zing",
       "grade": 3
+    },
+    {
+      "remedyId": "carb-an",
+      "grade": 2
+    },
+    {
+      "remedyId": "abrom-a",
+      "grade": 2
+    },
+    {
+      "remedyId": "gymne-s",
+      "grade": 2
+    },
+    {
+      "remedyId": "syz-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "androc",
+      "grade": 2
+    },
+    {
+      "remedyId": "term-c",
+      "grade": 2
+    },
+    {
+      "remedyId": "withania",
+      "grade": 3
+    },
+    {
+      "remedyId": "tinos-c",
+      "grade": 2
     }
   ],
   "ger-debility-after-flu": [
@@ -165053,6 +165757,10 @@
     {
       "remedyId": "nat-m",
       "grade": 1
+    },
+    {
+      "remedyId": "bell-p",
+      "grade": 3
     }
   ],
   "hema-epistaxis-recurrent": [
@@ -185601,6 +186309,10 @@
     {
       "remedyId": "calc-f",
       "grade": 1
+    },
+    {
+      "remedyId": "ambr",
+      "grade": 2
     }
   ],
   "age-slow-recovery": [
@@ -186905,852 +187617,6 @@
     {
       "remedyId": "merc",
       "grade": 1
-    }
-  ],
-  "insomnia": [
-    {
-      "remedyId": "ambr",
-      "grade": 3
-    },
-    {
-      "remedyId": "carc",
-      "grade": 3
-    },
-    {
-      "remedyId": "zinc-val",
-      "grade": 2
-    },
-    {
-      "remedyId": "withania",
-      "grade": 2
-    }
-  ],
-  "anxiety-nervousness": [
-    {
-      "remedyId": "ambr",
-      "grade": 3
-    },
-    {
-      "remedyId": "withania",
-      "grade": 2
-    }
-  ],
-  "constipation": [
-    {
-      "remedyId": "ambr",
-      "grade": 2
-    }
-  ],
-  "cough-general": [
-    {
-      "remedyId": "ambr",
-      "grade": 2
-    },
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    },
-    {
-      "remedyId": "adhat-v",
-      "grade": 3
-    }
-  ],
-  "numbness-tingling": [
-    {
-      "remedyId": "ambr",
-      "grade": 2
-    },
-    {
-      "remedyId": "carbn-s",
-      "grade": 3
-    }
-  ],
-  "premature-aging": [
-    {
-      "remedyId": "ambr",
-      "grade": 2
-    }
-  ],
-  "bashfulness": [
-    {
-      "remedyId": "ambr",
-      "grade": 3
-    }
-  ],
-  "flatulence": [
-    {
-      "remedyId": "ambr",
-      "grade": 1
-    }
-  ],
-  "hoarseness": [
-    {
-      "remedyId": "arg-met",
-      "grade": 3
-    }
-  ],
-  "joint-pain-general": [
-    {
-      "remedyId": "arg-met",
-      "grade": 3
-    },
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "voice-loss": [
-    {
-      "remedyId": "arg-met",
-      "grade": 3
-    }
-  ],
-  "laryngitis": [
-    {
-      "remedyId": "arg-met",
-      "grade": 3
-    }
-  ],
-  "cartilage-inflammation": [
-    {
-      "remedyId": "arg-met",
-      "grade": 2
-    }
-  ],
-  "bruised-feeling": [
-    {
-      "remedyId": "arg-met",
-      "grade": 2
-    }
-  ],
-  "joint-stiffness": [
-    {
-      "remedyId": "arg-met",
-      "grade": 2
-    }
-  ],
-  "bruising": [
-    {
-      "remedyId": "bell-p",
-      "grade": 3
-    }
-  ],
-  "muscle-soreness": [
-    {
-      "remedyId": "bell-p",
-      "grade": 3
-    }
-  ],
-  "sprains-strains": [
-    {
-      "remedyId": "bell-p",
-      "grade": 3
-    }
-  ],
-  "venous-congestion": [
-    {
-      "remedyId": "bell-p",
-      "grade": 2
-    },
-    {
-      "remedyId": "carb-an",
-      "grade": 3
-    }
-  ],
-  "swelling-general": [
-    {
-      "remedyId": "bell-p",
-      "grade": 2
-    }
-  ],
-  "trauma": [
-    {
-      "remedyId": "bell-p",
-      "grade": 3
-    }
-  ],
-  "post-surgical-pain": [
-    {
-      "remedyId": "bell-p",
-      "grade": 2
-    }
-  ],
-  "glandular-swelling": [
-    {
-      "remedyId": "carb-an",
-      "grade": 3
-    }
-  ],
-  "hearing-difficulty": [
-    {
-      "remedyId": "carb-an",
-      "grade": 2
-    },
-    {
-      "remedyId": "chen-a",
-      "grade": 3
-    }
-  ],
-  "night-sweats": [
-    {
-      "remedyId": "carb-an",
-      "grade": 2
-    }
-  ],
-  "weakness-debility": [
-    {
-      "remedyId": "carb-an",
-      "grade": 2
-    },
-    {
-      "remedyId": "abrom-a",
-      "grade": 2
-    },
-    {
-      "remedyId": "gymne-s",
-      "grade": 2
-    },
-    {
-      "remedyId": "syz-c",
-      "grade": 2
-    }
-  ],
-  "burning-pains": [
-    {
-      "remedyId": "carb-an",
-      "grade": 2
-    }
-  ],
-  "old-age-complaints": [
-    {
-      "remedyId": "carb-an",
-      "grade": 2
-    }
-  ],
-  "neuritis": [
-    {
-      "remedyId": "carbn-s",
-      "grade": 3
-    }
-  ],
-  "vision-impaired": [
-    {
-      "remedyId": "carbn-s",
-      "grade": 2
-    }
-  ],
-  "trembling": [
-    {
-      "remedyId": "carbn-s",
-      "grade": 2
-    }
-  ],
-  "impotence": [
-    {
-      "remedyId": "carbn-s",
-      "grade": 2
-    }
-  ],
-  "mental-dullness": [
-    {
-      "remedyId": "carbn-s",
-      "grade": 2
-    }
-  ],
-  "chronic-fatigue": [
-    {
-      "remedyId": "carc",
-      "grade": 3
-    }
-  ],
-  "recurrent-infections": [
-    {
-      "remedyId": "carc",
-      "grade": 2
-    }
-  ],
-  "perfectionism": [
-    {
-      "remedyId": "carc",
-      "grade": 3
-    }
-  ],
-  "sensitivity": [
-    {
-      "remedyId": "carc",
-      "grade": 3
-    }
-  ],
-  "desire-to-travel": [
-    {
-      "remedyId": "carc",
-      "grade": 2
-    }
-  ],
-  "family-history-cancer": [
-    {
-      "remedyId": "carc",
-      "grade": 3
-    }
-  ],
-  "deafness": [
-    {
-      "remedyId": "chen-a",
-      "grade": 3
-    }
-  ],
-  "tinnitus": [
-    {
-      "remedyId": "chen-a",
-      "grade": 3
-    }
-  ],
-  "worms-intestinal": [
-    {
-      "remedyId": "chen-a",
-      "grade": 2
-    }
-  ],
-  "respiratory-catarrh": [
-    {
-      "remedyId": "chen-a",
-      "grade": 2
-    }
-  ],
-  "buzzing-in-ears": [
-    {
-      "remedyId": "chen-a",
-      "grade": 3
-    }
-  ],
-  "prostate-enlargement": [
-    {
-      "remedyId": "chim",
-      "grade": 3
-    }
-  ],
-  "kidney-stones": [
-    {
-      "remedyId": "chim",
-      "grade": 2
-    }
-  ],
-  "bladder-catarrh": [
-    {
-      "remedyId": "chim",
-      "grade": 3
-    },
-    {
-      "remedyId": "pareir",
-      "grade": 3
-    }
-  ],
-  "mucus-in-urine": [
-    {
-      "remedyId": "chim",
-      "grade": 2
-    }
-  ],
-  "difficulty-urinating": [
-    {
-      "remedyId": "chim",
-      "grade": 3
-    }
-  ],
-  "enuresis-bedwetting": [
-    {
-      "remedyId": "equis-h",
-      "grade": 3
-    }
-  ],
-  "bladder-irritation": [
-    {
-      "remedyId": "equis-h",
-      "grade": 3
-    }
-  ],
-  "kidney-pain": [
-    {
-      "remedyId": "equis-h",
-      "grade": 2
-    },
-    {
-      "remedyId": "pareir",
-      "grade": 2
-    }
-  ],
-  "frequent-urination": [
-    {
-      "remedyId": "equis-h",
-      "grade": 3
-    },
-    {
-      "remedyId": "abrom-a",
-      "grade": 2
-    },
-    {
-      "remedyId": "gymne-s",
-      "grade": 2
-    }
-  ],
-  "bedwetting": [
-    {
-      "remedyId": "equis-h",
-      "grade": 3
-    }
-  ],
-  "renal-colic": [
-    {
-      "remedyId": "pareir",
-      "grade": 3
-    }
-  ],
-  "urinary-obstruction": [
-    {
-      "remedyId": "pareir",
-      "grade": 3
-    }
-  ],
-  "prostate-problems": [
-    {
-      "remedyId": "pareir",
-      "grade": 2
-    }
-  ],
-  "constant-urging": [
-    {
-      "remedyId": "pareir",
-      "grade": 3
-    }
-  ],
-  "menorrhagia": [
-    {
-      "remedyId": "tril-p",
-      "grade": 3
-    }
-  ],
-  "uterine-hemorrhage": [
-    {
-      "remedyId": "tril-p",
-      "grade": 3
-    }
-  ],
-  "nosebleed": [
-    {
-      "remedyId": "tril-p",
-      "grade": 2
-    }
-  ],
-  "threatened-abortion": [
-    {
-      "remedyId": "tril-p",
-      "grade": 3
-    }
-  ],
-  "hemorrhage": [
-    {
-      "remedyId": "tril-p",
-      "grade": 3
-    }
-  ],
-  "hip-pain": [
-    {
-      "remedyId": "tril-p",
-      "grade": 2
-    }
-  ],
-  "profuse-bleeding": [
-    {
-      "remedyId": "tril-p",
-      "grade": 3
-    }
-  ],
-  "facial-neuralgia": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 3
-    }
-  ],
-  "restless-legs": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 3
-    }
-  ],
-  "neuralgia": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 3
-    }
-  ],
-  "hysteria": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 2
-    }
-  ],
-  "nervous-exhaustion": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 2
-    },
-    {
-      "remedyId": "withania",
-      "grade": 3
-    }
-  ],
-  "twitching": [
-    {
-      "remedyId": "zinc-val",
-      "grade": 2
-    }
-  ],
-  "liver-disorders": [
-    {
-      "remedyId": "androc",
-      "grade": 3
-    },
-    {
-      "remedyId": "tinos-c",
-      "grade": 2
-    }
-  ],
-  "jaundice": [
-    {
-      "remedyId": "androc",
-      "grade": 3
-    },
-    {
-      "remedyId": "tinos-c",
-      "grade": 2
-    },
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "fever-general": [
-    {
-      "remedyId": "androc",
-      "grade": 2
-    }
-  ],
-  "loss-of-appetite": [
-    {
-      "remedyId": "androc",
-      "grade": 2
-    }
-  ],
-  "digestive-weakness": [
-    {
-      "remedyId": "androc",
-      "grade": 2
-    },
-    {
-      "remedyId": "bael",
-      "grade": 2
-    }
-  ],
-  "general-debility": [
-    {
-      "remedyId": "androc",
-      "grade": 2
-    },
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    }
-  ],
-  "bitter-taste": [
-    {
-      "remedyId": "androc",
-      "grade": 2
-    }
-  ],
-  "diabetes": [
-    {
-      "remedyId": "abrom-a",
-      "grade": 3
-    },
-    {
-      "remedyId": "gymne-s",
-      "grade": 3
-    },
-    {
-      "remedyId": "syz-c",
-      "grade": 3
-    }
-  ],
-  "menstrual-irregularity": [
-    {
-      "remedyId": "abrom-a",
-      "grade": 3
-    }
-  ],
-  "excessive-thirst": [
-    {
-      "remedyId": "abrom-a",
-      "grade": 2
-    },
-    {
-      "remedyId": "syz-c",
-      "grade": 2
-    }
-  ],
-  "albuminuria": [
-    {
-      "remedyId": "abrom-a",
-      "grade": 3
-    }
-  ],
-  "excessive-hunger": [
-    {
-      "remedyId": "gymne-s",
-      "grade": 2
-    }
-  ],
-  "weight-loss": [
-    {
-      "remedyId": "gymne-s",
-      "grade": 2
-    }
-  ],
-  "sugar-in-urine": [
-    {
-      "remedyId": "gymne-s",
-      "grade": 3
-    }
-  ],
-  "cardiac-weakness": [
-    {
-      "remedyId": "term-a",
-      "grade": 3
-    }
-  ],
-  "angina-pectoris": [
-    {
-      "remedyId": "term-a",
-      "grade": 3
-    }
-  ],
-  "palpitation": [
-    {
-      "remedyId": "term-a",
-      "grade": 3
-    }
-  ],
-  "hypertension": [
-    {
-      "remedyId": "term-a",
-      "grade": 2
-    }
-  ],
-  "breathlessness": [
-    {
-      "remedyId": "term-a",
-      "grade": 2
-    }
-  ],
-  "cardiac-dropsy": [
-    {
-      "remedyId": "term-a",
-      "grade": 2
-    }
-  ],
-  "chronic-constipation": [
-    {
-      "remedyId": "term-c",
-      "grade": 3
-    }
-  ],
-  "eye-disorders": [
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    }
-  ],
-  "indigestion": [
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    }
-  ],
-  "sore-throat": [
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    }
-  ],
-  "skin-diseases": [
-    {
-      "remedyId": "term-c",
-      "grade": 2
-    },
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "debility": [
-    {
-      "remedyId": "withania",
-      "grade": 3
-    }
-  ],
-  "weakness-after-illness": [
-    {
-      "remedyId": "withania",
-      "grade": 3
-    }
-  ],
-  "poor-concentration": [
-    {
-      "remedyId": "withania",
-      "grade": 2
-    }
-  ],
-  "low-libido": [
-    {
-      "remedyId": "withania",
-      "grade": 2
-    }
-  ],
-  "excessive-urination": [
-    {
-      "remedyId": "syz-c",
-      "grade": 3
-    }
-  ],
-  "old-ulcers": [
-    {
-      "remedyId": "syz-c",
-      "grade": 2
-    }
-  ],
-  "prickly-heat": [
-    {
-      "remedyId": "syz-c",
-      "grade": 2
-    }
-  ],
-  "chronic-fever": [
-    {
-      "remedyId": "tinos-c",
-      "grade": 3
-    }
-  ],
-  "low-immunity": [
-    {
-      "remedyId": "tinos-c",
-      "grade": 3
-    }
-  ],
-  "general-weakness": [
-    {
-      "remedyId": "tinos-c",
-      "grade": 2
-    }
-  ],
-  "gout": [
-    {
-      "remedyId": "tinos-c",
-      "grade": 2
-    }
-  ],
-  "digestive-complaints": [
-    {
-      "remedyId": "tinos-c",
-      "grade": 2
-    }
-  ],
-  "liver-enlargement": [
-    {
-      "remedyId": "curc-l",
-      "grade": 3
-    }
-  ],
-  "inflammation": [
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "digestive-disorders": [
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "wounds": [
-    {
-      "remedyId": "curc-l",
-      "grade": 2
-    }
-  ],
-  "bronchitis": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 3
-    }
-  ],
-  "asthma": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 3
-    }
-  ],
-  "spasmodic-cough": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 3
-    }
-  ],
-  "chest-congestion": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 3
-    }
-  ],
-  "whooping-cough": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 2
-    }
-  ],
-  "hemoptysis": [
-    {
-      "remedyId": "adhat-v",
-      "grade": 2
-    }
-  ],
-  "chronic-diarrhea": [
-    {
-      "remedyId": "bael",
-      "grade": 3
-    }
-  ],
-  "dysentery": [
-    {
-      "remedyId": "bael",
-      "grade": 3
-    }
-  ],
-  "mucous-colitis": [
-    {
-      "remedyId": "bael",
-      "grade": 3
-    }
-  ],
-  "hemorrhoids": [
-    {
-      "remedyId": "bael",
-      "grade": 2
-    }
-  ],
-  "intestinal-catarrh": [
-    {
-      "remedyId": "bael",
-      "grade": 2
     }
   ]
 }

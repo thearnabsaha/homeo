@@ -3768,6 +3768,15 @@ export function translateData(text: string, language: string): string {
   return translateByWord(text);
 }
 
+// Reverse map: Bengali -> English (for Bengali search)
+export const bnToEn: Record<string, string> = {};
+for (const [en, bn] of Object.entries(bnMap)) {
+  bnToEn[bn] = en;
+}
+for (const [en, bn] of Object.entries(wordMap)) {
+  bnToEn[bn] = en;
+}
+
 const bnDigits: Record<string, string> = { "0": "০", "1": "১", "2": "২", "3": "৩", "4": "৪", "5": "৫", "6": "৬", "7": "৭", "8": "৮", "9": "৯" };
 
 export function toBengaliNum(val: number | string, language: string): string {
