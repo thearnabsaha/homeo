@@ -97,7 +97,19 @@ export function SymptomTree({
       <ScrollArea className="h-[calc(100vh-12rem)]">
         <div className="p-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold">{translateData(symptom.name, language)}</h2>
+            <div className="flex items-center gap-2 flex-1 min-w-0">
+              <button
+                onClick={() => onToggleSymptom(symptom.id, symptom.name)}
+                className="p-0.5 text-muted-foreground hover:text-foreground shrink-0"
+              >
+                {selectedSymptoms.includes(symptom.name) ? (
+                  <CheckSquare className="h-5 w-5 text-foreground" />
+                ) : (
+                  <Square className="h-5 w-5" />
+                )}
+              </button>
+              <h2 className="text-lg font-semibold truncate">{translateData(symptom.name, language)}</h2>
+            </div>
             <BookmarkButton id={symptom.id} name={symptom.name} type="symptom" />
           </div>
 
