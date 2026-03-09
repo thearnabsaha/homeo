@@ -11,7 +11,7 @@ import { BookmarkButton } from "@/components/BookmarkButton";
 import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import type { RemedyDetail } from "@/lib/api";
-import { translateRepertory } from "@/i18n/repertoryBn";
+import { translateRepertory, medDescBn, medDosageBn, medWorseBn, medBetterBn } from "@/i18n/repertoryBn";
 
 export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -52,6 +52,11 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
   }
 
   const { remedy } = data;
+  const nameUpper = remedy.name.toUpperCase();
+  const descText = isBn ? (medDescBn[nameUpper] || medDescBn[remedy.name] || bn(remedy.description)) : remedy.description;
+  const dosageText = isBn ? (medDosageBn[nameUpper] || medDosageBn[remedy.name] || bn(remedy.dosage)) : remedy.dosage;
+  const worseItems = isBn ? (medWorseBn[nameUpper] || medWorseBn[remedy.name] || remedy.modalities?.worse?.map(bn)) : remedy.modalities?.worse;
+  const betterItems = isBn ? (medBetterBn[nameUpper] || medBetterBn[remedy.name] || remedy.modalities?.better?.map(bn)) : remedy.modalities?.better;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -82,31 +87,31 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
 
         <section className="mb-8">
           <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">{t("remedy.description")}</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">{remedy.description}</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">{descText}</p>
         </section>
 
         {remedy.dosage && (
           <section className="mb-8 p-4 rounded-lg bg-card border border-border">
             <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.dosage")}</h2>
-            <p className="text-sm">{remedy.dosage}</p>
+            <p className="text-sm">{dosageText}</p>
           </section>
         )}
 
         {remedy.modalities && (
           <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {remedy.modalities.worse?.length > 0 && (
+            {worseItems && worseItems.length > 0 && (
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.worse")}</h3>
                 <div className="flex flex-wrap gap-1.5">
-                  {remedy.modalities.worse.map((w, i) => (<Badge key={i} variant="secondary" className="text-xs">{bn(w)}</Badge>))}
+                  {worseItems.map((w, i) => (<Badge key={i} variant="secondary" className="text-xs">{w}</Badge>))}
                 </div>
               </div>
             )}
-            {remedy.modalities.better?.length > 0 && (
+            {betterItems && betterItems.length > 0 && (
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.better")}</h3>
                 <div className="flex flex-wrap gap-1.5">
-                  {remedy.modalities.better.map((b, i) => (<Badge key={i} variant="secondary" className="text-xs">{bn(b)}</Badge>))}
+                  {betterItems.map((b, i) => (<Badge key={i} variant="secondary" className="text-xs">{b}</Badge>))}
                 </div>
               </div>
             )}

@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import { cn } from "@/lib/utils";
-import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
+import { translateRepertory, toBengaliNumeral, medDescBn, medDosageBn, medWorseBn, medBetterBn } from "@/i18n/repertoryBn";
 import { ConfidenceBar } from "@/components/ConfidenceBar";
 import { AudioReader } from "@/components/AudioReader";
 import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/api";
@@ -73,8 +73,9 @@ function RankedRemedyCard({
     return "bg-muted text-muted-foreground border-border";
   };
 
-  const tr = (text: string) => (language === "bn" ? translateRepertory(text) : text);
-  const toBengaliNum = (n: number) => (language === "bn" ? toBengaliNumeral(n) : String(n));
+  const isBn = language === "bn";
+  const tr = (text: string) => (isBn ? translateRepertory(text) : text);
+  const toBengaliNum = (n: number) => (isBn ? toBengaliNumeral(n) : String(n));
 
   return (
     <div
@@ -130,10 +131,16 @@ function RankedRemedyCard({
         {expanded ? t("rank.hideDetails") : t("rank.showDetails")}
       </button>
 
-      {expanded && (
+      {expanded && (() => {
+        const nu = remedy.name.toUpperCase();
+        const descBn = medDescBn[nu] || medDescBn[remedy.name];
+        const dosBn = medDosageBn[nu] || medDosageBn[remedy.name];
+        const worBn = medWorseBn[nu] || medWorseBn[remedy.name];
+        const betBn = medBetterBn[nu] || medBetterBn[remedy.name];
+        return (
         <div className="mt-2 space-y-2 animate-slide-up">
           <p className="text-[11px] text-muted-foreground leading-relaxed">
-            {tr(remedy.description)}
+            {isBn && descBn ? descBn : tr(remedy.description)}
           </p>
           <div>
             <p className="text-[10px] font-medium mb-1">{t("rank.symptomMatch")}:</p>
@@ -150,32 +157,31 @@ function RankedRemedyCard({
             </div>
           </div>
           <div className="text-[10px] text-muted-foreground">
-            <span className="font-medium">{t("remedy.dosage")}:</span> {tr(remedy.dosage)}
+            <span className="font-medium">{t("remedy.dosage")}:</span> {isBn && dosBn ? dosBn : tr(remedy.dosage)}
           </div>
           {remedy.modalities && (
             <div className="grid grid-cols-2 gap-2 text-[10px]">
               <div>
                 <span className="font-medium text-red-400/80">{t("rank.worse")}:</span>
                 <p className="text-muted-foreground mt-0.5">
-                  {remedy.modalities.worse
-                    ?.slice(0, 4)
-                    .map((w) => tr(w))
-                    .join(", ")}
+                  {isBn && worBn
+                    ? worBn.slice(0, 4).join(", ")
+                    : remedy.modalities.worse?.slice(0, 4).map((w) => tr(w)).join(", ")}
                 </p>
               </div>
               <div>
                 <span className="font-medium text-green-400/80">{t("rank.better")}:</span>
                 <p className="text-muted-foreground mt-0.5">
-                  {remedy.modalities.better
-                    ?.slice(0, 4)
-                    .map((b) => tr(b))
-                    .join(", ")}
+                  {isBn && betBn
+                    ? betBn.slice(0, 4).join(", ")
+                    : remedy.modalities.better?.slice(0, 4).map((b) => tr(b)).join(", ")}
                 </p>
               </div>
             </div>
           )}
         </div>
-      )}
+        );
+      })()}
     </div>
   );
 }

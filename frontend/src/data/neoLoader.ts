@@ -70,9 +70,31 @@ function slugify(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, "-").slice(0, 60);
 }
 
+type MedicineDetail = {
+  desc: string;
+  modalities: { worse: string[]; better: string[] };
+  dosage: string;
+  keynotes: string;
+  affinity: string;
+};
+
+let _medDetails: Record<string, MedicineDetail> | null = null;
+
+function getMedicineDetails(): Record<string, MedicineDetail> {
+  if (_medDetails) return _medDetails;
+  try {
+    const detailPath = path.join(process.cwd(), "src", "data", "medicineDetails.json");
+    _medDetails = JSON.parse(fs.readFileSync(detailPath, "utf-8"));
+  } catch {
+    _medDetails = {};
+  }
+  return _medDetails!;
+}
+
 function loadData() {
   if (_data) return _data;
 
+  const medDetails = getMedicineDetails();
   const jsonPath = path.join(process.cwd(), "src", "data", "oldRepertory.json");
   const raw = JSON.parse(fs.readFileSync(jsonPath, "utf-8")) as {
     repertories: {
@@ -124,7 +146,7 @@ function loadData() {
           repertoryName: rep.name, conditionName: cond.name, symptomName: symp.name,
         });
 
-        if (symp.medicines) regMeds(sympId, symp.medicines, remedyMap, remedySymMap, rubrics);
+        if (symp.medicines) regMeds(sympId, symp.medicines, remedyMap, remedySymMap, rubrics, medDetails);
 
         if (symp.subSymptoms?.length) {
           for (const sub of symp.subSymptoms) {
@@ -136,7 +158,7 @@ function loadData() {
               repertoryName: rep.name, conditionName: cond.name, symptomName: symp.name,
             });
 
-            if (sub.medicines) regMeds(subId, sub.medicines, remedyMap, remedySymMap, rubrics);
+            if (sub.medicines) regMeds(subId, sub.medicines, remedyMap, remedySymMap, rubrics, medDetails);
           }
         }
 
@@ -204,18 +226,23 @@ function regMeds(
   meds: { id: number; name: string; rank: number }[],
   rMap: Map<string, NeoRemedy>,
   rSym: Map<string, Set<string>>,
-  rub: NeoRubrics
+  rub: NeoRubrics,
+  medDetails: Record<string, MedicineDetail>
 ) {
   if (!rub[symId]) rub[symId] = [];
   for (const m of meds) {
     const rid = `neo-med-${m.id}`;
     if (!rMap.has(rid)) {
+      const detail = medDetails[m.name];
       rMap.set(rid, {
         id: rid, name: m.name,
         abbr: m.name.split(" ").map((w) => w[0]).join("").slice(0, 6) + ".",
-        description: `${m.name} - Classical homeopathic remedy from the repertory database.`,
-        dosage: "30C or as directed by physician",
-        commonSymptoms: [], modalities: { worse: [], better: [] },
+        description: detail?.desc || `${m.name} - Classical homeopathic remedy from the repertory database.`,
+        dosage: detail?.dosage || "30C or as directed by physician",
+        commonSymptoms: [],
+        modalities: detail?.modalities
+          ? { worse: detail.modalities.worse || [], better: detail.modalities.better || [] }
+          : { worse: [], better: [] },
       });
     }
     if (!rSym.has(rid)) rSym.set(rid, new Set());

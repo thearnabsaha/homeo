@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import { cn } from "@/lib/utils";
-import { translateRepertory } from "@/i18n/repertoryBn";
+import { translateRepertory, medDescBn } from "@/i18n/repertoryBn";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
 import type { SymptomDetail } from "@/lib/api";
 
@@ -203,7 +203,9 @@ export function NeoSymptomTree({
                         <span className="text-sm font-medium">{tr(rem.name)}</span>
                         <span className="text-xs text-muted-foreground">({rem.abbr})</span>
                       </div>
-                      <p className="text-xs text-muted-foreground line-clamp-1">{tr(rem.description)}</p>
+                      <p className="text-xs text-muted-foreground line-clamp-1">
+                        {language === "bn" ? (medDescBn[rem.name.toUpperCase()] || medDescBn[rem.name] || tr(rem.description)) : rem.description}
+                      </p>
                     </div>
                     <Badge
                       variant={rem.strength >= 3 ? "default" : "secondary"}

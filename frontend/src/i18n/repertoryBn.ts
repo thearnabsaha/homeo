@@ -2461,3 +2461,20 @@ export function toBengaliNumeral(n: number): string {
   const digits = "০১২৩৪৫৬৭৮৯";
   return String(n).replace(/\d/g, (d) => digits[parseInt(d)]);
 }
+
+export {
+  medDescBn,
+  medDosageBn,
+  medKeynotesBn,
+  medAffinityBn,
+  medWorseBn,
+  medBetterBn,
+} from "./medicineBn";
+
+import { medDescBn } from "./medicineBn";
+
+export function translateMedicineDesc(name: string): string {
+  if (!name) return name;
+  const upper = name.toUpperCase();
+  return medDescBn[upper] || medDescBn[name] || translateRepertory(name);
+}
