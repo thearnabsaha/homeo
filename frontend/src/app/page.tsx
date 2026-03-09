@@ -53,6 +53,11 @@ export default function LandingPage() {
                 {t("nav.explorer")}
               </Button>
             </Link>
+            <Link href="/repertory">
+              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">
+                {t("nav.repertory")}
+              </Button>
+            </Link>
             <Link href="/consult">
               <Button size="sm" className="text-xs gap-1.5">
                 <Stethoscope className="h-3.5 w-3.5" />

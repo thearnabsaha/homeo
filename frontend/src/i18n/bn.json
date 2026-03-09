@@ -16,7 +16,8 @@
     "bookmarks": "বুকমার্ক",
     "history": "ইতিহাস",
     "consult": "এআই পরামর্শ",
-    "explorer": "লক্ষণ অনুসন্ধান"
+    "explorer": "লক্ষণ অনুসন্ধান",
+    "repertory": "রেপার্টরি"
   },
   "landing": {
     "hero": "আপনার এআই হোমিওপ্যাথিক চিকিৎসক",
@@ -241,5 +242,25 @@
     "light": "হালকা",
     "dark": "গাঢ়",
     "system": "সিস্টেম"
+  },
+  "repertory": {
+    "title": "ক্লাসিক্যাল রেপার্টরি",
+    "reset": "রিসেট",
+    "allRepertories": "সকল রেপার্টরি",
+    "repertories": "রেপার্টরি",
+    "conditions": "অবস্থা",
+    "symptoms": "লক্ষণসমূহ",
+    "subSymptoms": "উপ-লক্ষণসমূহ",
+    "selectRepertory": "অবস্থা দেখতে একটি রেপার্টরি নির্বাচন করুন",
+    "selectCondition": "লক্ষণ দেখতে একটি অবস্থা নির্বাচন করুন",
+    "selectSymptom": "বিস্তারিত দেখতে একটি লক্ষণ নির্বাচন করুন",
+    "medicinesFor": "ওষুধসমূহ",
+    "medicine": "ওষুধ",
+    "rank": "র্যাঙ্ক",
+    "recommended": "প্রস্তাবিত ওষুধ",
+    "basedOn": "ভিত্তিতে",
+    "selections": "নির্বাচন",
+    "history": "নির্বাচন ইতিহাস",
+    "medicines": "ওষুধ"
   }
 }

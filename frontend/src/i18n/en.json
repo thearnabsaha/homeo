@@ -16,7 +16,8 @@
     "bookmarks": "Bookmarks",
     "history": "History",
     "consult": "AI Consultation",
-    "explorer": "Symptom Explorer"
+    "explorer": "Symptom Explorer",
+    "repertory": "Repertory"
   },
   "landing": {
     "hero": "Your AI Homeopathic Physician",
@@ -241,5 +242,25 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "repertory": {
+    "title": "Classical Repertory",
+    "reset": "Reset",
+    "allRepertories": "All Repertories",
+    "repertories": "Repertories",
+    "conditions": "Conditions",
+    "symptoms": "Symptoms",
+    "subSymptoms": "Sub-Symptoms",
+    "selectRepertory": "Select a repertory to see conditions",
+    "selectCondition": "Select a condition to see symptoms",
+    "selectSymptom": "Select a symptom to see details",
+    "medicinesFor": "Medicines for",
+    "medicine": "Medicine",
+    "rank": "Rank",
+    "recommended": "Recommended Medicines",
+    "basedOn": "Based on",
+    "selections": "selections",
+    "history": "Selection History",
+    "medicines": "medicines"
   }
 }
