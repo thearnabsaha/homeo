@@ -205,7 +205,7 @@ export default function NeoRepertoryPage() {
                   {medicines.map((med, i) => (
                     <tr key={i} className="border-b border-border/50">
                       <td className="py-2 text-muted-foreground">{num(i + 1)}</td>
-                      <td className="py-2 font-medium">{med.name}</td>
+                      <td className="py-2 font-medium">{bn(med.name)}</td>
                       <td className="py-2"><div className="flex gap-0.5">{Array.from({ length: Math.min(med.rank, 5) }).map((_, j) => (
                         <Star key={j} className="h-3 w-3 fill-primary text-primary" />
                       ))}</div></td>
@@ -228,7 +228,7 @@ export default function NeoRepertoryPage() {
                 <div key={med.name} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors">
                   <div className="flex items-center gap-2 min-w-0">
                     <span className={`text-xs font-bold shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${i < 3 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>{num(i + 1)}</span>
-                    <span className="text-sm font-medium truncate">{med.name}</span>
+                    <span className="text-sm font-medium truncate">{bn(med.name)}</span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-[10px] text-muted-foreground">{num(med.count)}x</span>

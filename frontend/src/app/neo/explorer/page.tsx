@@ -26,11 +26,13 @@ import { useNeoExplorer } from "@/context/NeoExplorerContext";
 import { neoApi } from "@/lib/neoApi";
 import type { Chapter, SymptomDetail, RankingResult, AIAnalysis } from "@/lib/api";
 import { ConfidenceBar } from "@/components/ConfidenceBar";
+import { translateRepertory } from "@/i18n/repertoryBn";
 
 export default function NeoExplorerPage() {
   const { t, language } = useTranslation();
   const router = useRouter();
   const isBn = language === "bn";
+  const bn = (text: string) => (isBn ? translateRepertory(text) : text);
   const {
     selectedSymptoms,
     activeChapter,
@@ -135,7 +137,7 @@ export default function NeoExplorerPage() {
                     activeChapter === ch.id ? "bg-primary/10 text-primary font-medium" : "hover:bg-muted"
                   }`}
                 >
-                  <span className="truncate">{ch.name}</span>
+                  <span className="truncate">{bn(ch.name)}</span>
                   <span className="text-[10px] text-muted-foreground">{ch.symptomCount}</span>
                 </button>
                 {activeChapter === ch.id && (
@@ -148,7 +150,7 @@ export default function NeoExplorerPage() {
                           selectedSymptomId === s.id ? "text-primary font-medium" : "text-muted-foreground hover:text-foreground"
                         }`}
                       >
-                        {s.name}
+                        {bn(s.name)}
                       </button>
                     ))}
                   </div>
@@ -182,14 +184,14 @@ export default function NeoExplorerPage() {
                   <span key={i} className="flex items-center gap-1">
                     {i > 0 && <ChevronRight className="h-3 w-3" />}
                     <span className={i === symptomDetail.breadcrumb.length - 1 ? "text-foreground font-medium" : ""}>
-                      {b.name}
+                      {bn(b.name)}
                     </span>
                   </span>
                 ))}
               </div>
 
               <div className="flex items-center gap-3 mb-6">
-                <h2 className="text-xl font-bold">{symptomDetail.symptom.name}</h2>
+                <h2 className="text-xl font-bold">{bn(symptomDetail.symptom.name)}</h2>
                 <button
                   onClick={() => toggleSymptom(symptomDetail.symptom.id, symptomDetail.symptom.name)}
                   className={`shrink-0 h-6 w-6 rounded-full border-2 flex items-center justify-center transition-colors ${
@@ -221,7 +223,7 @@ export default function NeoExplorerPage() {
                         >
                           {isSelected(sub.id) && <Check className="h-3 w-3" />}
                         </button>
-                        <span className="truncate">{sub.name}</span>
+                        <span className="truncate">{bn(sub.name)}</span>
                       </button>
                     ))}
                   </div>
@@ -243,8 +245,8 @@ export default function NeoExplorerPage() {
                         className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-muted text-left transition-colors"
                       >
                         <div className="min-w-0">
-                          <span className="text-sm font-medium">{rem.name}</span>
-                          <span className="text-xs text-muted-foreground ml-2">{rem.abbr}</span>
+                          <span className="text-sm font-medium">{bn(rem.name)}</span>
+                          <span className="text-xs text-muted-foreground ml-2">{isBn ? "" : rem.abbr}</span>
                         </div>
                         <div className="flex items-center gap-0.5 shrink-0">
                           {Array.from({ length: Math.min(rem.strength, 3) }).map((_, j) => (
@@ -273,7 +275,7 @@ export default function NeoExplorerPage() {
               <div className="space-y-1 mb-4">
                 {selectedSymptoms.map((s) => (
                   <div key={s.id} className="flex items-center justify-between px-2 py-1.5 rounded-lg bg-muted text-xs">
-                    <span className="truncate">{s.name}</span>
+                    <span className="truncate">{bn(s.name)}</span>
                     <button onClick={() => removeSymptom(s.id)} className="text-muted-foreground hover:text-destructive shrink-0 ml-2">
                       <X className="h-3 w-3" />
                     </button>
@@ -309,7 +311,7 @@ export default function NeoExplorerPage() {
                         i < 3 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
                       }`}>{i + 1}</span>
                       <div className="flex-1 min-w-0">
-                        <span className="text-xs font-medium truncate block">{r.name}</span>
+                        <span className="text-xs font-medium truncate block">{bn(r.name)}</span>
                         <ConfidenceBar confidence={r.confidence} />
                       </div>
                     </button>
@@ -323,7 +325,7 @@ export default function NeoExplorerPage() {
                   <p className="text-[10px] text-muted-foreground mb-2">{aiAnalysis.analysis}</p>
                   {aiAnalysis.remedies.map((r, i) => (
                     <div key={i} className="px-2 py-1.5 rounded-lg hover:bg-muted text-xs mb-1">
-                      <span className="font-medium">{r.name}</span>
+                      <span className="font-medium">{bn(r.name)}</span>
                       <span className="text-muted-foreground ml-1">({r.confidence}%)</span>
                       <p className="text-[10px] text-muted-foreground mt-0.5">{r.explanation}</p>
                     </div>

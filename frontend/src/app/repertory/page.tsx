@@ -500,7 +500,7 @@ export default function RepertoryPage() {
                         <td className="py-2 text-muted-foreground">
                           {num(i + 1)}
                         </td>
-                        <td className="py-2 font-medium">{med.name}</td>
+                        <td className="py-2 font-medium">{bn(med.name)}</td>
                         <td className="py-2">
                           <div className="flex items-center gap-0.5">
                             {Array.from({
@@ -551,7 +551,7 @@ export default function RepertoryPage() {
                       {num(i + 1)}
                     </span>
                     <span className="text-sm font-medium truncate">
-                      {med.name}
+                      {bn(med.name)}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">

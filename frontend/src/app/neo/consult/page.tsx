@@ -25,6 +25,7 @@ import type { ConsultResponse } from "@/lib/api";
 import { toBengaliNum } from "@/i18n/dataTranslations";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { translateRepertory } from "@/i18n/repertoryBn";
 
 interface ChatMsg {
   id: string;
@@ -225,6 +226,8 @@ function NeoRecommendationCard({
   language: string;
 }) {
   const { primaryRemedy, alternativeRemedies, generalAdvice, whenToSeekHelp } = data;
+  const isBn = language === "bn";
+  const bn = (text: string) => (isBn ? translateRepertory(text) : text);
 
   return (
     <div className="mt-4 space-y-4">
@@ -235,8 +238,8 @@ function NeoRecommendationCard({
         </div>
         <div className="flex items-center gap-2 mb-2">
           <Pill className="h-5 w-5 text-foreground" />
-          <span className="text-lg font-bold">{primaryRemedy.name}</span>
-          <Badge variant="secondary">{primaryRemedy.abbr}</Badge>
+          <span className="text-lg font-bold">{bn(primaryRemedy.name)}</span>
+          {!isBn && <Badge variant="secondary">{primaryRemedy.abbr}</Badge>}
         </div>
         <ConfidenceBar value={primaryRemedy.confidence} className="mb-3" />
         <p className="text-sm text-muted-foreground leading-relaxed mb-3">{primaryRemedy.explanation}</p>
@@ -272,8 +275,8 @@ function NeoRecommendationCard({
                 <span className="text-[10px] font-bold text-muted-foreground w-5 text-center shrink-0">{toBengaliNum(i + 2, language)}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-medium truncate">{r.name}</span>
-                    <Badge variant="secondary" className="text-[10px] shrink-0">{r.abbr}</Badge>
+                    <span className="text-xs font-medium truncate">{bn(r.name)}</span>
+                    {!isBn && <Badge variant="secondary" className="text-[10px] shrink-0">{r.abbr}</Badge>}
                   </div>
                   {r.brief && <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-1">{r.brief}</p>}
                 </div>

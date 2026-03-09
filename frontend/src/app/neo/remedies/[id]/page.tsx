@@ -11,11 +11,13 @@ import { neoApi } from "@/lib/neoApi";
 import type { RemedyDetail } from "@/lib/api";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { translateRepertory } from "@/i18n/repertoryBn";
 
 export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { t, language } = useTranslation();
   const isBn = language === "bn";
+  const bn = (text: string) => (isBn ? translateRepertory(text) : text);
   const [data, setData] = useState<RemedyDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -58,7 +60,7 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
           <div className="flex items-center gap-2">
             <Link href="/neo/explorer"><Button variant="ghost" size="icon"><ArrowLeft className="h-4 w-4" /></Button></Link>
             <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-bold text-sm truncate">{remedy.name}</span>
+            <span className="font-bold text-sm truncate">{bn(remedy.name)}</span>
           </div>
           <div className="flex items-center gap-2">
             <LanguageSwitcher />
@@ -75,8 +77,8 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
                 <Pill className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">{remedy.name}</h1>
-                <span className="text-sm text-muted-foreground">{remedy.abbr}</span>
+                <h1 className="text-2xl font-bold">{bn(remedy.name)}</h1>
+                {!isBn && <span className="text-sm text-muted-foreground">{remedy.abbr}</span>}
               </div>
             </div>
           </div>
@@ -100,7 +102,7 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.worse")}</h3>
                 <div className="flex flex-wrap gap-1.5">
-                  {remedy.modalities.worse.map((w, i) => (<Badge key={i} variant="secondary" className="text-xs">{w}</Badge>))}
+                  {remedy.modalities.worse.map((w, i) => (<Badge key={i} variant="secondary" className="text-xs">{bn(w)}</Badge>))}
                 </div>
               </div>
             )}
@@ -108,7 +110,7 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.better")}</h3>
                 <div className="flex flex-wrap gap-1.5">
-                  {remedy.modalities.better.map((b, i) => (<Badge key={i} variant="secondary" className="text-xs">{b}</Badge>))}
+                  {remedy.modalities.better.map((b, i) => (<Badge key={i} variant="secondary" className="text-xs">{bn(b)}</Badge>))}
                 </div>
               </div>
             )}
@@ -123,8 +125,8 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
                 <Link key={rel.id} href={`/neo/remedies/${rel.id}`}
                   className="flex items-center justify-between p-3 rounded-lg border border-border hover:border-muted-foreground/30 transition-colors">
                   <div>
-                    <span className="text-sm font-medium">{rel.name}</span>
-                    <span className="text-xs text-muted-foreground ml-2">({rel.abbr})</span>
+                    <span className="text-sm font-medium">{bn(rel.name)}</span>
+                    {!isBn && <span className="text-xs text-muted-foreground ml-2">({rel.abbr})</span>}
                   </div>
                   <ChevronRight className="h-4 w-4 text-muted-foreground" />
                 </Link>

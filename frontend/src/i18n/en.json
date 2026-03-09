@@ -17,7 +17,8 @@
     "history": "History",
     "consult": "AI Consultation",
     "explorer": "Symptom Explorer",
-    "repertory": "Repertory"
+    "repertory": "Repertory",
+    "neoRepertory": "New Repertory"
   },
   "landing": {
     "hero": "Your AI Homeopathic Physician",

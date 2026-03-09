@@ -59,6 +59,11 @@ export default function LandingPage() {
                 {t("nav.repertory")}
               </Button>
             </Link>
+            <Link href="/neo/repertory">
+              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">
+                {t("nav.neoRepertory")}
+              </Button>
+            </Link>
             <Link href="/consult">
               <Button size="sm" className="text-xs gap-1.5">
                 <Stethoscope className="h-3.5 w-3.5" />
