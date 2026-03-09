@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "@/i18n/useTranslation";
+import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Link from "next/link";
 import {
   BookOpen,
   ChevronRight,
-  ArrowLeft,
   Layers,
   FolderOpen,
   Stethoscope,
@@ -56,7 +56,17 @@ interface SelectedMedicine {
 }
 
 export default function RepertoryPage() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
+  const isBn = language === "bn";
+
+  const bn = useCallback(
+    (text: string) => (isBn ? translateRepertory(text) : text),
+    [isBn]
+  );
+  const num = useCallback(
+    (n: number) => (isBn ? toBengaliNumeral(n) : String(n)),
+    [isBn]
+  );
 
   const [repertories, setRepertories] = useState<Repertory[]>([]);
   const [conditions, setConditions] = useState<Condition[]>([]);
@@ -70,7 +80,9 @@ export default function RepertoryPage() {
 
   const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [allSelections, setAllSelections] = useState<SelectedMedicine[]>([]);
-  const [aggregated, setAggregated] = useState<{ name: string; rank: number; count: number }[]>([]);
+  const [aggregated, setAggregated] = useState<
+    { name: string; rank: number; count: number }[]
+  >([]);
 
   const [loading, setLoading] = useState(false);
 
@@ -80,24 +92,50 @@ export default function RepertoryPage() {
       .then((d) => setRepertories(d.repertories || []));
   }, []);
 
-  const selectRepertory = useCallback(
-    async (rep: Repertory) => {
-      setSelectedRep(rep);
-      setSelectedCond(null);
-      setSelectedSymp(null);
-      setSelectedSub(null);
-      setConditions([]);
-      setSymptoms([]);
-      setSubSymptoms([]);
-      setMedicines([]);
-      setLoading(true);
-      const res = await fetch(`/api/repertory?repertoryId=${rep.id}`);
-      const data = await res.json();
-      setConditions(data.conditions || []);
-      setLoading(false);
-    },
-    []
+  const sortedRepertories = useMemo(
+    () =>
+      [...repertories].sort((a, b) =>
+        bn(a.name).localeCompare(bn(b.name), isBn ? "bn" : "en")
+      ),
+    [repertories, bn, isBn]
   );
+  const sortedConditions = useMemo(
+    () =>
+      [...conditions].sort((a, b) =>
+        bn(a.name).localeCompare(bn(b.name), isBn ? "bn" : "en")
+      ),
+    [conditions, bn, isBn]
+  );
+  const sortedSymptoms = useMemo(
+    () =>
+      [...symptoms].sort((a, b) =>
+        bn(a.name).localeCompare(bn(b.name), isBn ? "bn" : "en")
+      ),
+    [symptoms, bn, isBn]
+  );
+  const sortedSubSymptoms = useMemo(
+    () =>
+      [...subSymptoms].sort((a, b) =>
+        bn(a.name).localeCompare(bn(b.name), isBn ? "bn" : "en")
+      ),
+    [subSymptoms, bn, isBn]
+  );
+
+  const selectRepertory = useCallback(async (rep: Repertory) => {
+    setSelectedRep(rep);
+    setSelectedCond(null);
+    setSelectedSymp(null);
+    setSelectedSub(null);
+    setConditions([]);
+    setSymptoms([]);
+    setSubSymptoms([]);
+    setMedicines([]);
+    setLoading(true);
+    const res = await fetch(`/api/repertory?repertoryId=${rep.id}`);
+    const data = await res.json();
+    setConditions(data.conditions || []);
+    setLoading(false);
+  }, []);
 
   const selectCondition = useCallback(
     async (cond: Condition) => {
@@ -109,7 +147,9 @@ export default function RepertoryPage() {
       setMedicines([]);
       if (!selectedRep) return;
       setLoading(true);
-      const res = await fetch(`/api/repertory?repertoryId=${selectedRep.id}&conditionId=${cond.id}`);
+      const res = await fetch(
+        `/api/repertory?repertoryId=${selectedRep.id}&conditionId=${cond.id}`
+      );
       const data = await res.json();
       setSymptoms(data.symptoms || []);
       setLoading(false);
@@ -160,7 +200,11 @@ export default function RepertoryPage() {
     [selectedRep, selectedCond, selectedSymp]
   );
 
-  const addToSelections = (symptomName: string, subSymptomName: string | undefined, meds: Medicine[]) => {
+  const addToSelections = (
+    symptomName: string,
+    subSymptomName: string | undefined,
+    meds: Medicine[]
+  ) => {
     setAllSelections((prev) => {
       const next = [...prev, { symptomName, subSymptomName, medicines: meds }];
       aggregateResults(next);
@@ -215,7 +259,12 @@ export default function RepertoryPage() {
             <span className="font-bold text-sm">{t("repertory.title")}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="text-xs gap-1" onClick={resetAll}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs gap-1"
+              onClick={resetAll}
+            >
               <RotateCcw className="h-3 w-3" />
               {t("repertory.reset")}
             </Button>
@@ -228,7 +277,10 @@ export default function RepertoryPage() {
       {/* Breadcrumb */}
       <div className="border-b border-border bg-card px-3 sm:px-4 py-2 overflow-x-auto">
         <div className="flex items-center gap-1 text-xs text-muted-foreground whitespace-nowrap">
-          <button onClick={resetAll} className="hover:text-foreground transition-colors">
+          <button
+            onClick={resetAll}
+            className="hover:text-foreground transition-colors"
+          >
             {t("repertory.allRepertories")}
           </button>
           {selectedRep && (
@@ -238,7 +290,7 @@ export default function RepertoryPage() {
                 onClick={() => selectRepertory(selectedRep)}
                 className="hover:text-foreground transition-colors text-foreground font-medium"
               >
-                {selectedRep.name}
+                {bn(selectedRep.name)}
               </button>
             </>
           )}
@@ -249,20 +301,24 @@ export default function RepertoryPage() {
                 onClick={() => selectCondition(selectedCond)}
                 className="hover:text-foreground transition-colors text-foreground font-medium"
               >
-                {selectedCond.name}
+                {bn(selectedCond.name)}
               </button>
             </>
           )}
           {selectedSymp && (
             <>
               <ChevronRight className="h-3 w-3 shrink-0" />
-              <span className="text-foreground font-medium">{selectedSymp.name}</span>
+              <span className="text-foreground font-medium">
+                {bn(selectedSymp.name)}
+              </span>
             </>
           )}
           {selectedSub && (
             <>
               <ChevronRight className="h-3 w-3 shrink-0" />
-              <span className="text-foreground font-medium">{selectedSub.name}</span>
+              <span className="text-foreground font-medium">
+                {bn(selectedSub.name)}
+              </span>
             </>
           )}
         </div>
@@ -277,11 +333,11 @@ export default function RepertoryPage() {
               <div className="sticky top-0 bg-card border-b border-border px-3 py-2">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <Layers className="h-3.5 w-3.5" />
-                  {t("repertory.repertories")} ({repertories.length})
+                  {t("repertory.repertories")} ({num(repertories.length)})
                 </div>
               </div>
               <div className="p-1">
-                {repertories.map((rep) => (
+                {sortedRepertories.map((rep) => (
                   <button
                     key={rep.id}
                     onClick={() => selectRepertory(rep)}
@@ -291,11 +347,15 @@ export default function RepertoryPage() {
                         : "hover:bg-muted"
                     }`}
                   >
-                    <span className="truncate">{rep.name}</span>
-                    <span className={`text-[10px] shrink-0 ml-1 ${
-                      selectedRep?.id === rep.id ? "text-background/60" : "text-muted-foreground"
-                    }`}>
-                      {rep.conditionCount}
+                    <span className="truncate">{bn(rep.name)}</span>
+                    <span
+                      className={`text-[10px] shrink-0 ml-1 ${
+                        selectedRep?.id === rep.id
+                          ? "text-background/60"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {num(rep.conditionCount)}
                     </span>
                   </button>
                 ))}
@@ -307,14 +367,16 @@ export default function RepertoryPage() {
               <div className="sticky top-0 bg-card border-b border-border px-3 py-2">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <FolderOpen className="h-3.5 w-3.5" />
-                  {t("repertory.conditions")} ({conditions.length})
+                  {t("repertory.conditions")} ({num(conditions.length)})
                 </div>
               </div>
               <div className="p-1">
                 {conditions.length === 0 && !loading && (
-                  <p className="text-xs text-muted-foreground p-3">{t("repertory.selectRepertory")}</p>
+                  <p className="text-xs text-muted-foreground p-3">
+                    {t("repertory.selectRepertory")}
+                  </p>
                 )}
-                {conditions.map((cond) => (
+                {sortedConditions.map((cond) => (
                   <button
                     key={cond.id}
                     onClick={() => selectCondition(cond)}
@@ -324,11 +386,15 @@ export default function RepertoryPage() {
                         : "hover:bg-muted"
                     }`}
                   >
-                    <span className="truncate">{cond.name}</span>
-                    <span className={`text-[10px] shrink-0 ml-1 ${
-                      selectedCond?.id === cond.id ? "text-background/60" : "text-muted-foreground"
-                    }`}>
-                      {cond.symptomCount}
+                    <span className="truncate">{bn(cond.name)}</span>
+                    <span
+                      className={`text-[10px] shrink-0 ml-1 ${
+                        selectedCond?.id === cond.id
+                          ? "text-background/60"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {num(cond.symptomCount)}
                     </span>
                   </button>
                 ))}
@@ -340,14 +406,16 @@ export default function RepertoryPage() {
               <div className="sticky top-0 bg-card border-b border-border px-3 py-2">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <Stethoscope className="h-3.5 w-3.5" />
-                  {t("repertory.symptoms")} ({symptoms.length})
+                  {t("repertory.symptoms")} ({num(symptoms.length)})
                 </div>
               </div>
               <div className="p-1">
                 {symptoms.length === 0 && !loading && (
-                  <p className="text-xs text-muted-foreground p-3">{t("repertory.selectCondition")}</p>
+                  <p className="text-xs text-muted-foreground p-3">
+                    {t("repertory.selectCondition")}
+                  </p>
                 )}
-                {symptoms.map((symp) => (
+                {sortedSymptoms.map((symp) => (
                   <button
                     key={symp.id}
                     onClick={() => selectSymptom(symp)}
@@ -357,11 +425,15 @@ export default function RepertoryPage() {
                         : "hover:bg-muted"
                     }`}
                   >
-                    <span className="truncate">{symp.name}</span>
+                    <span className="truncate">{bn(symp.name)}</span>
                     {symp.hasSubSymptoms && (
-                      <ChevronRight className={`h-3 w-3 shrink-0 ${
-                        selectedSymp?.id === symp.id ? "text-background/60" : "text-muted-foreground"
-                      }`} />
+                      <ChevronRight
+                        className={`h-3 w-3 shrink-0 ${
+                          selectedSymp?.id === symp.id
+                            ? "text-background/60"
+                            : "text-muted-foreground"
+                        }`}
+                      />
                     )}
                   </button>
                 ))}
@@ -373,14 +445,16 @@ export default function RepertoryPage() {
               <div className="sticky top-0 bg-card border-b border-border px-3 py-2">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                   <Pill className="h-3.5 w-3.5" />
-                  {t("repertory.subSymptoms")} ({subSymptoms.length})
+                  {t("repertory.subSymptoms")} ({num(subSymptoms.length)})
                 </div>
               </div>
               <div className="p-1">
                 {subSymptoms.length === 0 && !loading && (
-                  <p className="text-xs text-muted-foreground p-3">{t("repertory.selectSymptom")}</p>
+                  <p className="text-xs text-muted-foreground p-3">
+                    {t("repertory.selectSymptom")}
+                  </p>
                 )}
-                {subSymptoms.map((sub) => (
+                {sortedSubSymptoms.map((sub) => (
                   <button
                     key={sub.id}
                     onClick={() => selectSubSymptom(sub)}
@@ -390,7 +464,7 @@ export default function RepertoryPage() {
                         : "hover:bg-muted"
                     }`}
                   >
-                    {sub.name}
+                    {bn(sub.name)}
                   </button>
                 ))}
               </div>
@@ -402,26 +476,40 @@ export default function RepertoryPage() {
             <div className="border-t border-border p-4">
               <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
                 <Pill className="h-4 w-4" />
-                {t("repertory.medicinesFor")}: {selectedSub?.name || selectedSymp?.name}
+                {t("repertory.medicinesFor")}:{" "}
+                {selectedSub ? bn(selectedSub.name) : selectedSymp ? bn(selectedSymp.name) : ""}
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border text-left">
-                      <th className="pb-2 font-medium text-muted-foreground">#</th>
-                      <th className="pb-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
-                      <th className="pb-2 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                      <th className="pb-2 font-medium text-muted-foreground">
+                        #
+                      </th>
+                      <th className="pb-2 font-medium text-muted-foreground">
+                        {t("repertory.medicine")}
+                      </th>
+                      <th className="pb-2 font-medium text-muted-foreground">
+                        {t("repertory.rank")}
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {medicines.map((med, i) => (
                       <tr key={i} className="border-b border-border/50">
-                        <td className="py-2 text-muted-foreground">{i + 1}</td>
+                        <td className="py-2 text-muted-foreground">
+                          {num(i + 1)}
+                        </td>
                         <td className="py-2 font-medium">{med.name}</td>
                         <td className="py-2">
                           <div className="flex items-center gap-0.5">
-                            {Array.from({ length: Math.min(med.rank, 5) }).map((_, j) => (
-                              <Star key={j} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                            {Array.from({
+                              length: Math.min(med.rank, 5),
+                            }).map((_, j) => (
+                              <Star
+                                key={j}
+                                className="h-3 w-3 fill-yellow-400 text-yellow-400"
+                              />
                             ))}
                           </div>
                         </td>
@@ -438,9 +526,12 @@ export default function RepertoryPage() {
         {allSelections.length > 0 && (
           <div className="w-full lg:w-80 border-t lg:border-t-0 lg:border-l border-border bg-card overflow-y-auto max-h-[50vh] lg:max-h-[calc(100vh-8rem)]">
             <div className="sticky top-0 bg-card border-b border-border px-4 py-3 z-10">
-              <h3 className="text-sm font-bold">{t("repertory.recommended")}</h3>
+              <h3 className="text-sm font-bold">
+                {t("repertory.recommended")}
+              </h3>
               <p className="text-[10px] text-muted-foreground mt-0.5">
-                {t("repertory.basedOn")} {allSelections.length} {t("repertory.selections")}
+                {num(allSelections.length)} {t("repertory.selections")}{" "}
+                {isBn ? "ভিত্তিতে" : "based on"}
               </p>
             </div>
             <div className="p-3">
@@ -450,19 +541,25 @@ export default function RepertoryPage() {
                   className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors"
                 >
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className={`text-xs font-bold shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
-                      i < 3 ? "bg-foreground text-background" : "bg-muted text-muted-foreground"
-                    }`}>
-                      {i + 1}
+                    <span
+                      className={`text-xs font-bold shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                        i < 3
+                          ? "bg-foreground text-background"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {num(i + 1)}
                     </span>
-                    <span className="text-sm font-medium truncate">{med.name}</span>
+                    <span className="text-sm font-medium truncate">
+                      {med.name}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className="text-[10px] text-muted-foreground">
-                      {med.count}x
+                      {num(med.count)}x
                     </span>
                     <span className="text-xs font-semibold bg-secondary px-1.5 py-0.5 rounded">
-                      {med.rank}
+                      {num(med.rank)}
                     </span>
                   </div>
                 </div>
@@ -471,11 +568,21 @@ export default function RepertoryPage() {
 
             {/* Selection history */}
             <div className="border-t border-border px-4 py-3">
-              <h4 className="text-xs font-semibold text-muted-foreground mb-2">{t("repertory.history")}</h4>
+              <h4 className="text-xs font-semibold text-muted-foreground mb-2">
+                {t("repertory.history")}
+              </h4>
               {allSelections.map((sel, i) => (
-                <div key={i} className="text-[10px] text-muted-foreground py-1 border-b border-border/30 last:border-0">
-                  {sel.symptomName}{sel.subSymptomName ? ` > ${sel.subSymptomName}` : ""}{" "}
-                  <span className="text-foreground font-medium">({sel.medicines.length} {t("repertory.medicines")})</span>
+                <div
+                  key={i}
+                  className="text-[10px] text-muted-foreground py-1 border-b border-border/30 last:border-0"
+                >
+                  {bn(sel.symptomName)}
+                  {sel.subSymptomName
+                    ? ` > ${bn(sel.subSymptomName)}`
+                    : ""}{" "}
+                  <span className="text-foreground font-medium">
+                    ({num(sel.medicines.length)} {t("repertory.medicines")})
+                  </span>
                 </div>
               ))}
             </div>
