@@ -1,5 +1,4 @@
 import type {
-  Chapter,
   SymptomDetail,
   RemedySummary,
   RemedyDetail,
@@ -9,6 +8,34 @@ import type {
   SearchResult,
   RankingResult,
 } from "./api";
+
+export interface NeoSubSymptomSummary {
+  id: string;
+  name: string;
+}
+
+export interface NeoSymptomSummary {
+  id: string;
+  name: string;
+  hasSubSymptoms: boolean;
+  subSymptomCount: number;
+  subSymptoms: NeoSubSymptomSummary[];
+}
+
+export interface NeoConditionSummary {
+  id: string;
+  name: string;
+  symptomCount: number;
+  symptoms: NeoSymptomSummary[];
+}
+
+export interface NeoRepertorySummary {
+  id: string;
+  name: string;
+  order: number;
+  conditionCount: number;
+  conditions: NeoConditionSummary[];
+}
 
 const API_BASE = "/api/neo";
 
@@ -49,7 +76,7 @@ async function fetchNeoAPI<T>(endpoint: string, options?: RequestInit): Promise<
 }
 
 export const neoApi = {
-  getSymptoms: () => fetchNeoAPI<{ chapters: Chapter[] }>("/symptoms"),
+  getSymptoms: () => fetchNeoAPI<{ chapters: NeoRepertorySummary[] }>("/symptoms"),
 
   getSymptomById: (id: string) => fetchNeoAPI<SymptomDetail>(`/symptoms/${id}`),
 

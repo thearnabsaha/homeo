@@ -59,11 +59,6 @@ export default function LandingPage() {
                 {t("nav.repertory")}
               </Button>
             </Link>
-            <Link href="/neo/repertory">
-              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">
-                {t("nav.neoRepertory")}
-              </Button>
-            </Link>
             <Link href="/consult">
               <Button size="sm" className="text-xs gap-1.5">
                 <Stethoscope className="h-3.5 w-3.5" />
@@ -97,7 +92,7 @@ export default function LandingPage() {
               {t("landing.heroSub")}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 mb-16 animate-fade-in">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mb-6 animate-fade-in">
               <Link href="/consult">
                 <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto">
                   <Stethoscope className="h-4 w-4" />
@@ -115,6 +110,16 @@ export default function LandingPage() {
                 <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto bg-violet-600 hover:bg-violet-700 text-white border-0 shadow-lg shadow-violet-500/25">
                   <Sparkles className="h-4 w-4" />
                   {t("landing.ctaNeo")}
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="mb-16 animate-fade-in">
+              <Link href="/neo/repertory">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-8 h-11 rounded-xl border-violet-300 dark:border-violet-700 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-950/50">
+                  <BookOpen className="h-4 w-4" />
+                  {t("nav.neoRepertory")}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>

@@ -110,7 +110,7 @@ export function NeoSymptomTree({
     ? [...symptom.subSymptoms].sort((a, b) => tr(a.name).localeCompare(tr(b.name)))
     : [];
 
-  const sortedRemedies = [...remedies].sort((a, b) => tr(a.name).localeCompare(tr(b.name)));
+  const sortedRemedies = remedies;
 
   return (
     <div className="animate-fade-in">

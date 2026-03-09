@@ -61,8 +61,6 @@ const repBn: Record<string, string> = {
   "Sensation": "অনুভূতি",
   "Senile decay": "বার্ধক্যজনিত ক্ষয়",
   "Medicine for": "ওষুধ",
-  "Modalities": "পরিবর্তন শর্ত",
-  "Ill effects, Complaints": "পার্শ্বপ্রতিক্রিয়া, অভিযোগ",
   "Penis, Uterus, Bladder": "লিঙ্গ, জরায়ু, মূত্রাশয়",
   "Urine": "প্রস্রাব",
   "Skin": "চামড়া",
@@ -1566,7 +1564,6 @@ const wordBn: Record<string, string> = {
   "bruises": "থেঁতলানো",
   "bruised": "থেঁতলানো",
   "contusion": "আঘাত",
-  "abscess": "ফোঁড়া",
   "gangrene": "পচন",
   "sepsis": "সেপসিস",
   "septic": "সেপটিক",
@@ -1606,7 +1603,6 @@ const wordBn: Record<string, string> = {
   "toothache": "দাঁতের ব্যথা",
   "caries": "দাঁতের ক্ষয়",
   "carious": "ক্ষয়প্রাপ্ত",
-  "pleurisy": "প্লুরিসি",
   "empyema": "পুঁজজমা",
   "goitre": "গলগণ্ড",
   "goiter": "গলগণ্ড",
@@ -1728,7 +1724,6 @@ const wordBn: Record<string, string> = {
   "turbid": "ঘোলা",
   "milky": "দুধের মতো",
   "watery": "জলীয়",
-  "bloody": "রক্তাক্ত",
   "purulent": "পুঁজযুক্ত",
 
   // Time references
@@ -1985,7 +1980,6 @@ const wordBn: Record<string, string> = {
   "smooth": "মসৃণ",
   "rough": "রুক্ষ",
   "granular": "দানাদার",
-  "dry": "শুষ্ক",
   "moist": "আর্দ্র",
   "oily": "তৈলাক্ত",
   "greasy": "চর্বিযুক্ত",
@@ -2011,7 +2005,6 @@ const wordBn: Record<string, string> = {
   "few": "কম",
   "more": "বেশি",
   "less": "কম",
-  "increased": "বৃদ্ধি",
   "enlarged": "বড় হওয়া",
   "enlargement": "বৃদ্ধি",
   "atrophy": "শুকিয়ে যাওয়া",
@@ -2022,9 +2015,6 @@ const wordBn: Record<string, string> = {
   "softening": "নরম হওয়া",
 
   // Actions / verbs
-  "walking": "হাঁটা",
-  "eating": "খাওয়া",
-  "drinking": "পান করা",
   "swallowing": "গেলা",
   "chewing": "চিবানো",
   "biting": "কামড়ানো",
@@ -2041,7 +2031,6 @@ const wordBn: Record<string, string> = {
   "riding": "চড়া",
   "traveling": "ভ্রমণ",
   "travelling": "ভ্রমণ",
-  "exertion": "পরিশ্রম",
 
   // General medical terms
   "disease": "রোগ",
@@ -2195,8 +2184,6 @@ const wordBn: Record<string, string> = {
   "distention": "প্রসারণ",
   "retraction": "সংকোচন",
   "retracted": "সংকুচিত",
-  "prolapse": "ঝুলে পড়া",
-  "prolapsed": "ঝুলে পড়া",
   "relaxation": "শিথিলতা",
   "relaxed": "শিথিল",
   "tension": "টান",
@@ -2219,7 +2206,6 @@ const wordBn: Record<string, string> = {
   "pricking": "সূচ ফোটানো",
   "piercing": "ভেদ করা",
   "cutting": "কাটা",
-  "pressing": "চাপ দেওয়া",
   "drawing": "টানা",
   "stitching": "সেলাই করা",
   "boring": "ছিদ্র করা",
@@ -2324,7 +2310,6 @@ const wordBn: Record<string, string> = {
   "mucous": "শ্লেষ্মা",
   "catarrh": "সর্দি",
   "coryza": "সর্দি",
-  "sneezing": "হাঁচি",
   "wheezing": "শ্বাসের সময় শব্দ",
   "rattling": "ঘড়ঘড়",
   "hoarseness": "কণ্ঠ ভাঙ্গা",
@@ -2339,7 +2324,6 @@ const wordBn: Record<string, string> = {
   "asphyxia": "শ্বাসরোধ",
 
   // Skin specific
-  "eruption": "ফুসকুড়ি",
   "blister": "ফোস্কা",
   "blisters": "ফোস্কা",
   "vesicle": "ফোস্কা",
@@ -2362,7 +2346,6 @@ const wordBn: Record<string, string> = {
   "freckles": "রোদে দাগ",
   "pigmentation": "বর্ণহীনতা",
   "discoloration": "বিবর্ণতা",
-  "gangrene": "পচন",
   "necrosis": "টিস্যু মৃত্যু",
 
   // Stool specific
@@ -2404,7 +2387,6 @@ const wordBn: Record<string, string> = {
   "abortion": "গর্ভপাত",
   "lochia": "প্রসবোত্তর স্রাব",
   "afterpains": "প্রসবোত্তর ব্যথা",
-  "nausea": "বমিভাব",
   "eclampsia": "একলাম্পসিয়া",
   "toxemia": "টক্সেমিয়া",
 

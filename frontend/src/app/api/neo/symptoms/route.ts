@@ -12,15 +12,21 @@ function buildResponse() {
     id: ch.id,
     name: ch.name,
     order: ch.order,
-    symptomCount: ch.symptoms.reduce(
-      (acc, s) => acc + 1 + (s.subSymptoms?.length || 0),
-      0
-    ),
-    symptoms: ch.symptoms.map((s) => ({
-      id: s.id,
-      name: s.name,
-      hasSubSymptoms: !!s.subSymptoms?.length,
-      subSymptomCount: s.subSymptoms?.length || 0,
+    conditionCount: ch.conditions.length,
+    conditions: ch.conditions.map((cond) => ({
+      id: cond.id,
+      name: cond.name,
+      symptomCount: cond.symptoms.length,
+      symptoms: cond.symptoms.map((sym) => ({
+        id: sym.id,
+        name: sym.name,
+        hasSubSymptoms: sym.subSymptoms.length > 0,
+        subSymptomCount: sym.subSymptoms.length,
+        subSymptoms: sym.subSymptoms.map((sub) => ({
+          id: sub.id,
+          name: sub.name,
+        })),
+      })),
     })),
   }));
 }

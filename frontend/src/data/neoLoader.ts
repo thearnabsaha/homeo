@@ -10,11 +10,28 @@ export type NeoSymptomSearchEntry = {
   parent?: string;
 };
 
-interface NeoChapter {
+export interface NeoSubSymptom {
+  id: string;
+  name: string;
+}
+
+export interface NeoSymptom {
+  id: string;
+  name: string;
+  subSymptoms: NeoSubSymptom[];
+}
+
+export interface NeoCondition {
+  id: string;
+  name: string;
+  symptoms: NeoSymptom[];
+}
+
+export interface NeoChapter {
   id: string;
   name: string;
   order: number;
-  symptoms: { id: string; name: string; subSymptoms: { id: string; name: string }[] }[];
+  conditions: NeoCondition[];
 }
 
 interface NeoRemedy {
@@ -28,7 +45,14 @@ interface NeoRemedy {
 }
 
 type NeoRubrics = Record<string, { remedyId: string; grade: number }[]>;
-type SymEntry = { id: string; name: string; type: string; chapterName: string; parentName?: string };
+type SymEntry = {
+  id: string;
+  name: string;
+  type: "repertory" | "condition" | "symptom" | "subSymptom";
+  repertoryName: string;
+  conditionName?: string;
+  symptomName?: string;
+};
 
 let _data: {
   chapters: NeoChapter[];
@@ -71,37 +95,58 @@ function loadData() {
   const remedyMap = new Map<string, NeoRemedy>();
   const remedySymMap = new Map<string, Set<string>>();
   const rubrics: NeoRubrics = {};
+  const symptomById = new Map<string, SymEntry>();
   let order = 1;
 
   for (const rep of raw.repertories) {
-    const chId = `neo-${slugify(rep.name)}`;
-    const symptoms: NeoChapter["symptoms"] = [];
+    const repId = `neo-${slugify(rep.name)}`;
+    const conditions: NeoCondition[] = [];
+
+    symptomById.set(repId, {
+      id: repId, name: rep.name, type: "repertory", repertoryName: rep.name,
+    });
 
     for (const cond of rep.conditions) {
-      const symId = `${chId}-${slugify(cond.name)}`;
-      const subs: { id: string; name: string }[] = [];
+      const condId = `${repId}-${slugify(cond.name)}`;
+      const neoSymptoms: NeoSymptom[] = [];
+
+      symptomById.set(condId, {
+        id: condId, name: cond.name, type: "condition",
+        repertoryName: rep.name, conditionName: cond.name,
+      });
 
       for (const symp of cond.symptoms) {
-        const subId = `${symId}-${slugify(symp.name)}`;
+        const sympId = `${condId}-${slugify(symp.name)}`;
+        const neoSubs: NeoSubSymptom[] = [];
+
+        symptomById.set(sympId, {
+          id: sympId, name: symp.name, type: "symptom",
+          repertoryName: rep.name, conditionName: cond.name, symptomName: symp.name,
+        });
+
+        if (symp.medicines) regMeds(sympId, symp.medicines, remedyMap, remedySymMap, rubrics);
 
         if (symp.subSymptoms?.length) {
-          subs.push({ id: subId, name: symp.name });
           for (const sub of symp.subSymptoms) {
-            const ssId = `${subId}-${slugify(sub.name)}`;
-            subs.push({ id: ssId, name: `${symp.name} > ${sub.name}` });
-            if (sub.medicines) regMeds(ssId, sub.medicines, remedyMap, remedySymMap, rubrics);
+            const subId = `${sympId}-${slugify(sub.name)}`;
+            neoSubs.push({ id: subId, name: sub.name });
+
+            symptomById.set(subId, {
+              id: subId, name: sub.name, type: "subSymptom",
+              repertoryName: rep.name, conditionName: cond.name, symptomName: symp.name,
+            });
+
+            if (sub.medicines) regMeds(subId, sub.medicines, remedyMap, remedySymMap, rubrics);
           }
-        } else {
-          subs.push({ id: subId, name: symp.name });
         }
 
-        if (symp.medicines) regMeds(subId, symp.medicines, remedyMap, remedySymMap, rubrics);
+        neoSymptoms.push({ id: sympId, name: symp.name, subSymptoms: neoSubs });
       }
 
-      symptoms.push({ id: symId, name: cond.name, subSymptoms: subs });
+      conditions.push({ id: condId, name: cond.name, symptoms: neoSymptoms });
     }
 
-    chapters.push({ id: chId, name: rep.name, order: order++, symptoms });
+    chapters.push({ id: repId, name: rep.name, order: order++, conditions });
   }
 
   const remedies: NeoRemedy[] = [];
@@ -111,18 +156,8 @@ function loadData() {
     remedies.push(rem);
   }
 
-  const symptomById = new Map<string, SymEntry>();
   const chapterById = new Map<string, NeoChapter>();
-  for (const ch of chapters) {
-    chapterById.set(ch.id, ch);
-    symptomById.set(ch.id, { id: ch.id, name: ch.name, type: "chapter", chapterName: ch.name });
-    for (const s of ch.symptoms) {
-      symptomById.set(s.id, { id: s.id, name: s.name, type: "symptom", chapterName: ch.name });
-      for (const sub of s.subSymptoms) {
-        symptomById.set(sub.id, { id: sub.id, name: sub.name, type: "subSymptom", chapterName: ch.name, parentName: s.name });
-      }
-    }
-  }
+  for (const ch of chapters) chapterById.set(ch.id, ch);
 
   const remedyToSymptoms = new Map<string, string[]>();
   for (const [symId, entries] of Object.entries(rubrics)) {
@@ -135,11 +170,14 @@ function loadData() {
 
   const symptomSearchIndex: NeoSymptomSearchEntry[] = [];
   for (const ch of chapters) {
-    symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), type: "chapter", chapter: ch.name });
-    for (const s of ch.symptoms) {
-      symptomSearchIndex.push({ id: s.id, name: s.name, nameLower: s.name.toLowerCase(), type: "symptom", chapter: ch.name });
-      for (const sub of s.subSymptoms) {
-        symptomSearchIndex.push({ id: sub.id, name: sub.name, nameLower: sub.name.toLowerCase(), type: "subSymptom", chapter: ch.name, parent: s.name });
+    symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), type: "repertory", chapter: ch.name });
+    for (const cond of ch.conditions) {
+      symptomSearchIndex.push({ id: cond.id, name: cond.name, nameLower: cond.name.toLowerCase(), type: "condition", chapter: ch.name });
+      for (const sym of cond.symptoms) {
+        symptomSearchIndex.push({ id: sym.id, name: sym.name, nameLower: sym.name.toLowerCase(), type: "symptom", chapter: ch.name, parent: cond.name });
+        for (const sub of sym.subSymptoms) {
+          symptomSearchIndex.push({ id: sub.id, name: sub.name, nameLower: sub.name.toLowerCase(), type: "subSymptom", chapter: ch.name, parent: sym.name });
+        }
       }
     }
   }
