@@ -3,17 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import {
-  Send,
-  Loader2,
-  RotateCcw,
-  ArrowLeft,
-  Sparkles,
-  CheckCircle2,
-  AlertTriangle,
-  Pill,
-  Activity,
-  ClipboardList,
-  ShieldAlert,
+  Send, Loader2, RotateCcw, ArrowLeft, Sparkles,
+  CheckCircle2, AlertTriangle, Pill, Activity, ClipboardList, ShieldAlert,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,10 +13,9 @@ import { VoiceInput } from "@/components/VoiceInput";
 import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import type { ConsultResponse } from "@/lib/api";
-import { toBengaliNum } from "@/i18n/dataTranslations";
+import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { translateRepertory } from "@/i18n/repertoryBn";
 
 interface ChatMsg {
   id: string;
@@ -37,6 +27,8 @@ interface ChatMsg {
 export default function NeoConsultPage() {
   const { t, language } = useTranslation();
   const isBn = language === "bn";
+  const bn = (s: string) => (isBn ? translateRepertory(s) : s);
+  const num = (n: number) => (isBn ? toBengaliNumeral(n) : String(n));
   const [messages, setMessages] = useState<ChatMsg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -45,19 +37,13 @@ export default function NeoConsultPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const welcomeMsg = isBn
-    ? "আমি ডাঃ NeoAI। ক্লাসিক্যাল রেপার্টরি ডাটাবেসে প্রশিক্ষিত। আপনার সমস্যা বলুন, আমি ওষুধ পরামর্শ দেব।"
-    : "I'm Dr. NeoAI, trained on the classical repertory database. Describe your symptoms and I'll recommend remedies.";
-
   useEffect(() => {
     if (messages.length === 0) {
-      setMessages([{ id: "welcome", role: "assistant", content: welcomeMsg }]);
+      setMessages([{ id: "welcome", role: "assistant", content: t("consult.welcome") }]);
     } else {
-      setMessages((prev) =>
-        prev.map((m) => (m.id === "welcome" ? { ...m, content: welcomeMsg } : m))
-      );
+      setMessages((prev) => prev.map((m) => m.id === "welcome" ? { ...m, content: t("consult.welcome") } : m));
     }
-  }, [welcomeMsg, messages.length]);
+  }, [t, messages.length]);
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -66,56 +52,28 @@ export default function NeoConsultPage() {
   const sendMessage = async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || loading) return;
-
     const userMsg: ChatMsg = { id: Date.now().toString(), role: "user", content: trimmed };
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);
     setInput("");
     setLoading(true);
-
     try {
-      const history = newMessages
-        .filter((m) => m.id !== "welcome")
-        .map((m) => ({ role: m.role, content: m.content }));
-
+      const history = newMessages.filter((m) => m.id !== "welcome").map((m) => ({ role: m.role, content: m.content }));
       const response = await neoApi.consult(history, language);
       setStage(response.stage || "gathering");
       if (response.symptomsCollected?.length) setSymptoms(response.symptomsCollected);
-
-      setMessages((prev) => [...prev, {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: response.message,
-        data: response,
-      }]);
+      setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), role: "assistant", content: response.message, data: response }]);
     } catch {
-      setMessages((prev) => [...prev, {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: t("chat.error"),
-      }]);
+      setMessages((prev) => [...prev, { id: (Date.now() + 1).toString(), role: "assistant", content: t("chat.error") }]);
     }
-
     setLoading(false);
     setTimeout(() => inputRef.current?.focus(), 100);
   };
 
-  const resetConsultation = () => {
-    setMessages([]);
-    setStage("gathering");
-    setSymptoms([]);
-    setInput("");
-  };
+  const resetConsultation = () => { setMessages([]); setStage("gathering"); setSymptoms([]); setInput(""); };
 
-  const stageLabel =
-    stage === "recommendation" ? t("consult.recommendation")
-    : stage === "analyzing" ? t("consult.analyzing")
-    : t("consult.gathering");
-
-  const stageColor =
-    stage === "recommendation" ? "text-green-400"
-    : stage === "analyzing" ? "text-yellow-400"
-    : "text-purple-400";
+  const stageLabel = stage === "recommendation" ? t("consult.recommendation") : stage === "analyzing" ? t("consult.analyzing") : t("consult.gathering");
+  const stageColor = stage === "recommendation" ? "text-green-400" : stage === "analyzing" ? "text-yellow-400" : "text-primary";
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -150,28 +108,18 @@ export default function NeoConsultPage() {
                 <span className="text-xs font-medium text-muted-foreground">{t("consult.symptomsCollected")}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {symptoms.map((s, i) => (
-                  <Badge key={i} variant="secondary" className="text-[10px]">{s}</Badge>
-                ))}
+                {symptoms.map((s, i) => (<Badge key={i} variant="secondary" className="text-[10px]">{s}</Badge>))}
               </div>
             </div>
           )}
-
           {messages.map((msg) => (
             <div key={msg.id} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} animate-slide-up`}>
-              <div className={`max-w-[90%] md:max-w-[75%] rounded-2xl px-4 py-3 ${
-                msg.role === "user"
-                  ? "bg-foreground text-background rounded-br-md"
-                  : "bg-card border border-border rounded-bl-md"
-              }`}>
+              <div className={`max-w-[90%] md:max-w-[75%] rounded-2xl px-4 py-3 ${msg.role === "user" ? "bg-primary text-primary-foreground rounded-br-md" : "bg-card border border-border rounded-bl-md"}`}>
                 <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
-                {msg.data?.recommendation && (
-                  <NeoRecommendationCard data={msg.data.recommendation} t={t} language={language} />
-                )}
+                {msg.data?.recommendation && <NeoRecommendationCard data={msg.data.recommendation} t={t} language={language} bn={bn} num={num} isBn={isBn} />}
               </div>
             </div>
           ))}
-
           {loading && (
             <div className="flex justify-start animate-slide-up">
               <div className="bg-card border border-border rounded-2xl rounded-bl-md px-4 py-3">
@@ -189,18 +137,11 @@ export default function NeoConsultPage() {
         <div className="max-w-4xl mx-auto px-4 py-3">
           <div className="flex items-end gap-2">
             <div className="flex-1 relative">
-              <textarea
-                ref={inputRef}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); }
-                }}
+              <textarea ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); } }}
                 placeholder={t("consult.placeholder")}
                 className="w-full resize-none rounded-xl border border-border bg-card px-4 py-3 pr-12 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring min-h-[48px] max-h-[120px]"
-                rows={1}
-                disabled={loading}
-              />
+                rows={1} disabled={loading} />
               <div className="absolute right-2 bottom-2">
                 <VoiceInput onResult={(text) => sendMessage(text)} />
               </div>
@@ -217,17 +158,16 @@ export default function NeoConsultPage() {
 }
 
 function NeoRecommendationCard({
-  data,
-  t,
-  language,
+  data, t, language, bn, num, isBn,
 }: {
   data: NonNullable<ConsultResponse["recommendation"]>;
   t: (k: string) => string;
   language: string;
+  bn: (s: string) => string;
+  num: (n: number) => string;
+  isBn: boolean;
 }) {
   const { primaryRemedy, alternativeRemedies, generalAdvice, whenToSeekHelp } = data;
-  const isBn = language === "bn";
-  const bn = (text: string) => (isBn ? translateRepertory(text) : text);
 
   return (
     <div className="mt-4 space-y-4">
@@ -252,9 +192,7 @@ function NeoRecommendationCard({
             <div className="p-2 rounded-lg bg-card border border-border">
               <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{t("consult.keyIndications")}</span>
               <div className="flex flex-wrap gap-1 mt-1">
-                {primaryRemedy.keyIndications.map((ind, i) => (
-                  <Badge key={i} variant="secondary" className="text-[10px]">{ind}</Badge>
-                ))}
+                {primaryRemedy.keyIndications.map((ind, i) => (<Badge key={i} variant="secondary" className="text-[10px]">{ind}</Badge>))}
               </div>
             </div>
           )}
@@ -266,13 +204,13 @@ function NeoRecommendationCard({
           <div className="flex items-center gap-2 mb-3">
             <Activity className="h-3.5 w-3.5 text-muted-foreground" />
             <span className="text-xs font-medium text-muted-foreground">
-              {t("consult.alternatives")} ({toBengaliNum(alternativeRemedies.length, language)})
+              {t("consult.alternatives")} ({num(alternativeRemedies.length)})
             </span>
           </div>
           <div className="space-y-1.5">
             {alternativeRemedies.map((r, i) => (
               <div key={i} className="flex items-center gap-2 p-2 rounded-lg bg-card border border-border">
-                <span className="text-[10px] font-bold text-muted-foreground w-5 text-center shrink-0">{toBengaliNum(i + 2, language)}</span>
+                <span className="text-[10px] font-bold text-muted-foreground w-5 text-center shrink-0">{num(i + 2)}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
                     <span className="text-xs font-medium truncate">{bn(r.name)}</span>
@@ -281,7 +219,7 @@ function NeoRecommendationCard({
                   {r.brief && <p className="text-[10px] text-muted-foreground mt-0.5 line-clamp-1">{r.brief}</p>}
                 </div>
                 <div className="shrink-0 w-10 text-right">
-                  <span className="text-[10px] font-medium text-muted-foreground">{toBengaliNum(r.confidence, language)}%</span>
+                  <span className="text-[10px] font-medium text-muted-foreground">{num(r.confidence)}%</span>
                 </div>
               </div>
             ))}

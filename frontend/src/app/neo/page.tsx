@@ -2,29 +2,22 @@
 
 import Link from "next/link";
 import {
-  Stethoscope,
-  BookOpen,
-  Globe,
-  Mic,
-  Zap,
-  Smartphone,
-  ArrowRight,
-  MessageCircle,
-  Search,
-  CheckCircle2,
-  Sparkles,
-  ArrowLeft,
+  Stethoscope, BookOpen, Globe, Mic, Zap, Smartphone,
+  ArrowRight, MessageCircle, Search, CheckCircle2, Sparkles, ArrowLeft,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/i18n/useTranslation";
-import { toBengaliNum } from "@/i18n/dataTranslations";
+import { toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export default function NeoLandingPage() {
   const { t, language } = useTranslation();
-  const n = (v: string) => toBengaliNum(v, language);
   const isBn = language === "bn";
+  const n = (v: string) => {
+    if (!isBn) return v;
+    return v.replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[parseInt(d)]);
+  };
 
   const features = [
     { icon: Stethoscope, title: isBn ? "NeoAI ডায়াগনস্টিক চ্যাট" : "NeoAI Diagnostic Chat", desc: isBn ? "NeoAI চিকিৎসকের সাথে কথা বলুন। ক্লাসিক্যাল রেপার্টরি থেকে সঠিক ওষুধ খুঁজুন।" : "Chat with NeoAI physician. Find the right remedy from the classical repertory." },
@@ -43,15 +36,10 @@ export default function NeoLandingPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto flex items-center justify-between h-14 px-4 sm:px-6">
           <div className="flex items-center gap-2">
-            <Link href="/">
-              <Button variant="ghost" size="icon" className="shrink-0">
-                <ArrowLeft className="h-4 w-4" />
-              </Button>
-            </Link>
+            <Link href="/"><Button variant="ghost" size="icon" className="shrink-0"><ArrowLeft className="h-4 w-4" /></Button></Link>
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
               <Sparkles className="h-4 w-4 text-primary-foreground" />
             </div>
@@ -59,14 +47,10 @@ export default function NeoLandingPage() {
           </div>
           <div className="flex items-center gap-2 sm:gap-3">
             <Link href="/neo/explorer">
-              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">
-                {t("nav.explorer")}
-              </Button>
+              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">{t("nav.explorer")}</Button>
             </Link>
             <Link href="/neo/repertory">
-              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">
-                {t("nav.repertory")}
-              </Button>
+              <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">{t("nav.repertory")}</Button>
             </Link>
             <Link href="/neo/consult">
               <Button size="sm" className="text-xs gap-1.5">
@@ -80,16 +64,15 @@ export default function NeoLandingPage() {
         </div>
       </nav>
 
-      {/* Hero */}
       <section className="pt-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center text-center pt-16 sm:pt-24 pb-16 sm:pb-20">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-xs text-primary mb-8 animate-fade-in">
-              <Sparkles className="h-3.5 w-3.5" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-xs text-primary mb-8 animate-fade-in">
+              <Sparkles className="h-3.5 w-3.5 animate-pulse-slow" />
               {isBn ? "নিও জোন — ক্লাসিক্যাল রেপার্টরি" : "Neo Zone — Classical Repertory"}
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 max-w-3xl animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 max-w-3xl animate-fade-in bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text">
               {isBn ? "NeoAI হোমিওপ্যাথিক চিকিৎসক" : "NeoAI Homeopathic Physician"}
             </h1>
 
@@ -101,21 +84,20 @@ export default function NeoLandingPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 mb-16 animate-fade-in">
               <Link href="/neo/consult">
-                <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto">
+                <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
                   <Sparkles className="h-4 w-4" />
                   {isBn ? "NeoAI পরামর্শ শুরু করুন" : "Start NeoAI Consultation"}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/neo/explorer">
-                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-colors">
                   <BookOpen className="h-4 w-4" />
                   {isBn ? "রেপার্টরি দেখুন" : "Explore Repertory"}
                 </Button>
               </Link>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 w-full max-w-lg animate-fade-in">
               {[
                 { val: n("1103"), label: isBn ? "ওষুধ" : "Medicines" },
@@ -123,11 +105,9 @@ export default function NeoLandingPage() {
                 { val: n("43"), label: isBn ? "রেপার্টরি" : "Repertories" },
                 { val: n("95907"), label: isBn ? "সম্পর্ক" : "Relations" },
               ].map((s, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">{s.val}</div>
-                  <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                    {s.label}
-                  </div>
+                <div key={i} className="text-center group">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary group-hover:scale-105 transition-transform">{s.val}</div>
+                  <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -137,7 +117,6 @@ export default function NeoLandingPage() {
 
       <div className="border-t border-border" />
 
-      {/* How it works */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12 sm:mb-16">
@@ -145,10 +124,10 @@ export default function NeoLandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {steps.map((step, i) => (
-              <div key={i} className="relative p-6 rounded-2xl border border-border bg-card">
+              <div key={i} className="relative p-6 rounded-2xl border border-border bg-card hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 group">
                 <div className="text-[10px] font-mono text-muted-foreground/40 mb-4">{step.num}</div>
-                <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <step.icon className="h-5 w-5 text-primary" />
+                <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <step.icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-base font-semibold mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
@@ -163,12 +142,11 @@ export default function NeoLandingPage() {
 
       <div className="border-t border-border" />
 
-      {/* Features */}
       <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feat, i) => (
-              <div key={i} className="group p-5 sm:p-6 rounded-2xl border border-border hover:border-primary/30 transition-colors bg-card">
+              <div key={i} className="group p-5 sm:p-6 rounded-2xl border border-border hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5 bg-card">
                 <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <feat.icon className="h-4 w-4" />
                 </div>
@@ -180,7 +158,6 @@ export default function NeoLandingPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
@@ -190,9 +167,8 @@ export default function NeoLandingPage() {
             {isBn ? "ক্লাসিক্যাল রেপার্টরিতে প্রশিক্ষিত AI থেকে পরামর্শ নিন।" : "Get consultation from AI trained on classical repertory."}
           </p>
           <Link href="/neo/consult">
-            <Button size="lg" className="gap-2 text-sm px-8 h-12 rounded-xl">
-              <Sparkles className="h-4 w-4" />
-              {isBn ? "NeoAI পরামর্শ" : "NeoAI Consult"}
+            <Button size="lg" className="gap-2 text-sm px-8 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
+              <Sparkles className="h-4 w-4" />{isBn ? "NeoAI পরামর্শ" : "NeoAI Consult"}
             </Button>
           </Link>
         </div>
@@ -201,9 +177,7 @@ export default function NeoLandingPage() {
       <footer className="border-t border-border py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-[10px] text-muted-foreground/50 text-center leading-relaxed max-w-xl mx-auto mb-4">
-            {isBn
-              ? "এটি শুধুমাত্র শিক্ষামূলক উদ্দেশ্যে। পেশাদার হোমিওপ্যাথিক পরামর্শের বিকল্প নয়।"
-              : "For educational purposes only. Not a substitute for professional homeopathic advice."}
+            {isBn ? "এটি শুধুমাত্র শিক্ষামূলক উদ্দেশ্যে। পেশাদার হোমিওপ্যাথিক পরামর্শের বিকল্প নয়।" : "For educational purposes only. Not a substitute for professional homeopathic advice."}
           </p>
           <p className="text-[10px] text-muted-foreground/30 text-center">
             NeoAI &mdash; {isBn ? "ক্লাসিক্যাল রেপার্টরি দ্বারা চালিত" : "Powered by Classical Repertory"}

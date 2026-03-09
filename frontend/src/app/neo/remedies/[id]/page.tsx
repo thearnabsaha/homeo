@@ -1,23 +1,23 @@
 "use client";
 
 import { useState, useEffect, use } from "react";
-import { ArrowLeft, Pill, AlertTriangle, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowLeft, Pill, AlertTriangle, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { AudioReader } from "@/components/AudioReader";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import type { RemedyDetail } from "@/lib/api";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { translateRepertory } from "@/i18n/repertoryBn";
 
 export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { t, language } = useTranslation();
   const isBn = language === "bn";
-  const bn = (text: string) => (isBn ? translateRepertory(text) : text);
+  const bn = (s: string) => (isBn ? translateRepertory(s) : s);
   const [data, setData] = useState<RemedyDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,21 +55,13 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 h-14 border-b border-border bg-background/95 backdrop-blur">
-        <div className="flex h-full items-center justify-between px-3 sm:px-4 max-w-3xl mx-auto">
-          <div className="flex items-center gap-2">
-            <Link href="/neo/explorer"><Button variant="ghost" size="icon"><ArrowLeft className="h-4 w-4" /></Button></Link>
-            <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-bold text-sm truncate">{bn(remedy.name)}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <LanguageSwitcher />
-            <ThemeSwitcher />
-          </div>
-        </div>
-      </header>
-
       <div className="max-w-3xl mx-auto px-6 py-8">
+        <Link href="/neo/explorer"
+          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6">
+          <ArrowLeft className="h-4 w-4" />
+          {t("common.back")}
+        </Link>
+
         <div className="flex items-start justify-between mb-8">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -81,6 +73,10 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
                 {!isBn && <span className="text-sm text-muted-foreground">{remedy.abbr}</span>}
               </div>
             </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <AudioReader text={`${remedy.name}. ${remedy.description}`} />
+            <BookmarkButton id={remedy.id} name={remedy.name} type="remedy" />
           </div>
         </div>
 
@@ -96,9 +92,9 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
           </section>
         )}
 
-        {remedy.modalities && (remedy.modalities.worse.length > 0 || remedy.modalities.better.length > 0) && (
+        {remedy.modalities && (
           <section className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {remedy.modalities.worse.length > 0 && (
+            {remedy.modalities.worse?.length > 0 && (
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.worse")}</h3>
                 <div className="flex flex-wrap gap-1.5">
@@ -106,7 +102,7 @@ export default function NeoRemedyDetailPage({ params }: { params: Promise<{ id: 
                 </div>
               </div>
             )}
-            {remedy.modalities.better.length > 0 && (
+            {remedy.modalities.better?.length > 0 && (
               <div className="p-4 rounded-lg bg-card border border-border">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t("remedy.better")}</h3>
                 <div className="flex flex-wrap gap-1.5">

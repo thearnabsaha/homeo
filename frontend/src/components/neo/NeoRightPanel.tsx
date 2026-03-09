@@ -1,0 +1,461 @@
+"use client";
+
+import { useState } from "react";
+import {
+  Brain,
+  X,
+  Sparkles,
+  AlertTriangle,
+  Loader2,
+  ChevronUp,
+  ChevronDown,
+  Trophy,
+  Target,
+  Star,
+  Save,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
+import { useTranslation } from "@/i18n/useTranslation";
+import { neoApi } from "@/lib/neoApi";
+import { cn } from "@/lib/utils";
+import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
+import { ConfidenceBar } from "@/components/ConfidenceBar";
+import { AudioReader } from "@/components/AudioReader";
+import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/api";
+
+interface NeoRightPanelProps {
+  selectedSymptoms: { id: string; name: string }[];
+  onRemoveSymptom: (id: string) => void;
+  onClearSymptoms: () => void;
+  onViewRemedy?: (id: string) => void;
+  ranking?: RankingResult | null;
+  aiAnalysis?: AIAnalysis | null;
+  onRankingChange?: (r: RankingResult | null) => void;
+  onAiAnalysisChange?: (a: AIAnalysis | null) => void;
+  onSaveHistory?: () => void;
+}
+
+function GradeIndicator({ grade }: { grade: number }) {
+  return (
+    <span className="inline-flex gap-0.5">
+      {[1, 2, 3].map((g) => (
+        <Star
+          key={g}
+          className={cn(
+            "h-2.5 w-2.5",
+            g <= grade ? "fill-foreground text-foreground" : "text-muted-foreground/30"
+          )}
+        />
+      ))}
+    </span>
+  );
+}
+
+function RankedRemedyCard({
+  remedy,
+  language,
+  t,
+  onClick,
+}: {
+  remedy: RankedRemedy;
+  language: string;
+  t: (k: string) => string;
+  onClick?: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+
+  const getBadgeStyle = (rank: number) => {
+    if (rank === 1) return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
+    if (rank === 2) return "bg-gray-300/20 text-gray-300 border-gray-300/30";
+    if (rank === 3) return "bg-orange-500/20 text-orange-400 border-orange-500/30";
+    return "bg-muted text-muted-foreground border-border";
+  };
+
+  const tr = (text: string) => (language === "bn" ? translateRepertory(text) : text);
+  const toBengaliNum = (n: number) => (language === "bn" ? toBengaliNumeral(n) : String(n));
+
+  return (
+    <div
+      className={cn(
+        "rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/20",
+        remedy.rank <= 3 && "ring-1 ring-foreground/5"
+      )}
+    >
+      <div className="flex items-start gap-2">
+        <div
+          className={cn(
+            "flex-shrink-0 h-6 w-6 rounded-full border flex items-center justify-center text-[10px] font-bold",
+            getBadgeStyle(remedy.rank)
+          )}
+        >
+          {toBengaliNum(remedy.rank)}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onClick}
+              className="text-sm font-semibold hover:underline truncate"
+            >
+              {tr(remedy.name)}
+            </button>
+            <span className="text-[10px] text-muted-foreground flex-shrink-0">
+              {remedy.abbr}
+            </span>
+            <AudioReader text={`${remedy.name}. ${remedy.description?.substring(0, 80)}`} />
+          </div>
+          <div className="flex items-center gap-3 mt-1">
+            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+              <Target className="h-2.5 w-2.5" />
+              {toBengaliNum(remedy.symptomsCovered)}/{toBengaliNum(remedy.totalSymptoms)}{" "}
+              {t("rank.covered")}
+            </div>
+            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+              <Trophy className="h-2.5 w-2.5" />
+              {t("rank.score")}: {toBengaliNum(remedy.totalScore)}
+            </div>
+          </div>
+          <div className="mt-1.5">
+            <ConfidenceBar confidence={remedy.confidence} />
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-2 text-[10px] text-muted-foreground hover:text-foreground flex items-center gap-1"
+      >
+        {expanded ? <ChevronUp className="h-2.5 w-2.5" /> : <ChevronDown className="h-2.5 w-2.5" />}
+        {expanded ? t("rank.hideDetails") : t("rank.showDetails")}
+      </button>
+
+      {expanded && (
+        <div className="mt-2 space-y-2 animate-slide-up">
+          <p className="text-[11px] text-muted-foreground leading-relaxed">
+            {tr(remedy.description)}
+          </p>
+          <div>
+            <p className="text-[10px] font-medium mb-1">{t("rank.symptomMatch")}:</p>
+            <div className="space-y-0.5">
+              {remedy.coverageDetails.map((cd, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 text-[10px] text-muted-foreground"
+                >
+                  <GradeIndicator grade={cd.grade} />
+                  <span>{tr(cd.symptomName)}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="text-[10px] text-muted-foreground">
+            <span className="font-medium">{t("remedy.dosage")}:</span> {tr(remedy.dosage)}
+          </div>
+          {remedy.modalities && (
+            <div className="grid grid-cols-2 gap-2 text-[10px]">
+              <div>
+                <span className="font-medium text-red-400/80">{t("rank.worse")}:</span>
+                <p className="text-muted-foreground mt-0.5">
+                  {remedy.modalities.worse
+                    ?.slice(0, 4)
+                    .map((w) => tr(w))
+                    .join(", ")}
+                </p>
+              </div>
+              <div>
+                <span className="font-medium text-green-400/80">{t("rank.better")}:</span>
+                <p className="text-muted-foreground mt-0.5">
+                  {remedy.modalities.better
+                    ?.slice(0, 4)
+                    .map((b) => tr(b))
+                    .join(", ")}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function AnalysisSkeleton() {
+  return (
+    <div className="space-y-3 animate-pulse">
+      <div className="h-3 bg-muted rounded w-3/4" />
+      <div className="h-3 bg-muted rounded w-1/2" />
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="rounded-lg border border-border p-3 space-y-2">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-full bg-muted" />
+            <div className="h-3 bg-muted rounded w-32" />
+          </div>
+          <div className="h-2 bg-muted rounded w-full" />
+          <div className="h-2 bg-muted rounded w-2/3" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export function NeoRightPanel({
+  selectedSymptoms,
+  onRemoveSymptom,
+  onClearSymptoms,
+  onViewRemedy,
+  ranking: externalRanking,
+  aiAnalysis: externalAiAnalysis,
+  onRankingChange,
+  onAiAnalysisChange,
+  onSaveHistory,
+}: NeoRightPanelProps) {
+  const { t, language } = useTranslation();
+  const [localRanking, setLocalRanking] = useState<RankingResult | null>(null);
+  const [localAiAnalysis, setLocalAiAnalysis] = useState<AIAnalysis | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  const ranking = externalRanking ?? localRanking;
+  const aiAnalysis = externalAiAnalysis ?? localAiAnalysis;
+
+  const updateRanking = (r: RankingResult | null) => {
+    setLocalRanking(r);
+    onRankingChange?.(r);
+  };
+
+  const updateAiAnalysis = (a: AIAnalysis | null) => {
+    setLocalAiAnalysis(a);
+    onAiAnalysisChange?.(a);
+  };
+
+  const toBengaliNum = (n: number) =>
+    language === "bn" ? toBengaliNumeral(n) : String(n);
+
+  const tr = (text: string) => (language === "bn" ? translateRepertory(text) : text);
+
+  const handleRank = async () => {
+    if (selectedSymptoms.length === 0) return;
+    setLoading(true);
+    setError(null);
+    updateAiAnalysis(null);
+    setSaved(false);
+    try {
+      const result = await neoApi.rankRemedies(
+        selectedSymptoms.map((s) => s.id),
+        20
+      );
+      updateRanking(result);
+    } catch {
+      setError(t("common.requestFailed"));
+    }
+    setLoading(false);
+  };
+
+  const handleAiAnalyze = async () => {
+    if (selectedSymptoms.length === 0) return;
+    setAiLoading(true);
+    try {
+      const result = await neoApi.analyzeSymptoms(
+        selectedSymptoms.map((s) => s.name),
+        language
+      );
+      if (result && (result.analysis || result.remedies?.length)) {
+        updateAiAnalysis(result);
+      }
+    } catch {
+      // supplementary - don't block
+    }
+    setAiLoading(false);
+  };
+
+  const handleFullAnalysis = async () => {
+    await handleRank();
+    handleAiAnalyze();
+  };
+
+  const handleSave = () => {
+    onSaveHistory?.();
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
+  };
+
+  const panelContent = (
+    <div className="p-4">
+      <div className="flex items-center gap-2 mb-4">
+        <Brain className="h-4 w-4 text-muted-foreground" />
+        <h2 className="text-sm font-semibold">{t("ai.title")}</h2>
+      </div>
+
+      {selectedSymptoms.length > 0 && (
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-muted-foreground">
+              {toBengaliNum(selectedSymptoms.length)} {t("symptom.selected")}
+            </span>
+            <button
+              onClick={onClearSymptoms}
+              className="text-xs text-muted-foreground hover:text-foreground"
+            >
+              {t("symptom.clearSelection")}
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {selectedSymptoms.map((s) => (
+              <Badge
+                key={s.id}
+                variant="secondary"
+                className="gap-1 text-xs cursor-pointer"
+                onClick={() => onRemoveSymptom(s.id)}
+              >
+                {tr(s.name)}
+                <X className="h-2.5 w-2.5" />
+              </Badge>
+            ))}
+          </div>
+          <Button
+            onClick={handleFullAnalysis}
+            disabled={loading}
+            size="sm"
+            className="w-full mt-3 gap-2"
+          >
+            {loading ? (
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            ) : (
+              <Sparkles className="h-3.5 w-3.5" />
+            )}
+            {loading ? t("ai.analyzing") : t("rank.findBest")}
+          </Button>
+        </div>
+      )}
+
+      {selectedSymptoms.length === 0 && !ranking && (
+        <div className="text-center py-8">
+          <div className="h-12 w-12 rounded-full bg-card border border-border flex items-center justify-center mx-auto mb-3">
+            <Sparkles className="h-5 w-5 text-muted-foreground" />
+          </div>
+          <p className="text-xs text-muted-foreground max-w-[200px] mx-auto">
+            {t("ai.noSelection")}
+          </p>
+        </div>
+      )}
+
+      {error && (
+        <div className="p-3 rounded-lg bg-destructive/10 border border-destructive/20 mb-4">
+          <p className="text-xs text-destructive">{error}</p>
+        </div>
+      )}
+
+      {loading && <AnalysisSkeleton />}
+
+      {!loading && ranking && ranking.rankedRemedies.length > 0 && (
+        <div className="space-y-3 animate-slide-up">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              {t("rank.topRemedies")} ({toBengaliNum(ranking.totalRemediesFound)})
+            </h3>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-muted-foreground">
+                {toBengaliNum(ranking.totalSymptomsAnalyzed)} {t("rank.symptomsAnalyzed")}
+              </span>
+              {onSaveHistory && (
+                <button
+                  onClick={handleSave}
+                  className={cn(
+                    "p-1 rounded transition-colors",
+                    saved ? "text-green-400" : "text-muted-foreground hover:text-foreground"
+                  )}
+                  title={t("history.save")}
+                >
+                  <Save className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {aiLoading && (
+            <div className="flex items-center gap-2 p-2 rounded bg-card border border-border">
+              <Loader2 className="h-3 w-3 animate-spin text-muted-foreground" />
+              <span className="text-[10px] text-muted-foreground">{t("rank.aiEnriching")}</span>
+            </div>
+          )}
+
+          {aiAnalysis && (
+            <div className="p-3 rounded-lg bg-card border border-border">
+              <p className="text-[11px] text-muted-foreground leading-relaxed">
+                {aiAnalysis.analysis}
+              </p>
+              {aiAnalysis.precautions && (
+                <div className="flex items-center gap-1.5 mt-2 pt-2 border-t border-border">
+                  <AlertTriangle className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+                  <p className="text-[10px] text-muted-foreground">{aiAnalysis.precautions}</p>
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className="space-y-2">
+            {ranking.rankedRemedies.map((rem) => (
+              <RankedRemedyCard
+                key={rem.id}
+                remedy={rem}
+                language={language}
+                t={t}
+                onClick={() => onViewRemedy?.(rem.id)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {!loading && ranking && ranking.rankedRemedies.length === 0 && (
+        <div className="text-center py-6">
+          <p className="text-xs text-muted-foreground">{t("rank.noResults")}</p>
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <>
+      <aside className="hidden xl:block w-80 border-l border-border bg-background">
+        <ScrollArea className="h-[calc(100vh-3.5rem)]">{panelContent}</ScrollArea>
+      </aside>
+
+      <div className="xl:hidden">
+        {selectedSymptoms.length > 0 && (
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background shadow-lg text-xs font-medium"
+          >
+            <Brain className="h-3.5 w-3.5" />
+            {toBengaliNum(selectedSymptoms.length)} {t("symptom.selected")}
+            {mobileOpen ? (
+              <ChevronDown className="h-3.5 w-3.5" />
+            ) : (
+              <ChevronUp className="h-3.5 w-3.5" />
+            )}
+          </button>
+        )}
+
+        {mobileOpen && (
+          <>
+            <div
+              className="fixed inset-0 z-40 bg-background/80"
+              onClick={() => setMobileOpen(false)}
+            />
+            <div className="fixed bottom-0 left-0 right-0 z-40 max-h-[75vh] rounded-t-2xl border-t border-border bg-background shadow-xl overflow-y-auto animate-slide-up">
+              <div className="flex justify-center pt-2 pb-1">
+                <div className="h-1 w-10 rounded-full bg-border" />
+              </div>
+              {panelContent}
+            </div>
+          </>
+        )}
+      </div>
+    </>
+  );
+}
