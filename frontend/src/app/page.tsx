@@ -12,6 +12,7 @@ import {
   MessageCircle,
   Search,
   CheckCircle2,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/i18n/useTranslation";
@@ -64,6 +65,12 @@ export default function LandingPage() {
                 {t("nav.consult")}
               </Button>
             </Link>
+            <Link href="/neo">
+              <Button size="sm" className="text-xs gap-1.5 bg-violet-600 hover:bg-violet-700 text-white border-0">
+                <Sparkles className="h-3.5 w-3.5" />
+                NEO
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -97,6 +104,13 @@ export default function LandingPage() {
                 <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto">
                   <BookOpen className="h-4 w-4" />
                   {t("landing.ctaExplore")}
+                </Button>
+              </Link>
+              <Link href="/neo">
+                <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto bg-violet-600 hover:bg-violet-700 text-white border-0 shadow-lg shadow-violet-500/25">
+                  <Sparkles className="h-4 w-4" />
+                  {t("landing.ctaNeo")}
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
