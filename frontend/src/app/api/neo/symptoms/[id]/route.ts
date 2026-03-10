@@ -11,6 +11,8 @@ const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
 };
 
+const responseCache = new Map<string, unknown>();
+
 function collectChildRubrics(
   symptoms: { id: string; subSymptoms: { id: string }[] }[],
   rubrics: Record<string, { remedyId: string; grade: number }[]>,
@@ -31,6 +33,11 @@ export function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   return params.then(({ id }) => {
+    const cached = responseCache.get(id);
+    if (cached) {
+      return NextResponse.json(cached, { headers: CACHE_HEADERS });
+    }
+
     const symptomById = getNeoSymptomById();
     const rubrics = getNeoRubrics();
     const remedyById = getNeoRemedyById();
@@ -142,9 +149,9 @@ export function GET(
       breadcrumb.push({ id: found.id, name: found.name });
     }
 
-    return NextResponse.json(
-      { symptom: symptomData, breadcrumb, remedies: symptomRemedies },
-      { headers: CACHE_HEADERS }
-    );
+    const body = { symptom: symptomData, breadcrumb, remedies: symptomRemedies };
+    responseCache.set(id, body);
+
+    return NextResponse.json(body, { headers: CACHE_HEADERS });
   });
 }

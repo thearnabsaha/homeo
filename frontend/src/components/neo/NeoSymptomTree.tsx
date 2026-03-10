@@ -107,7 +107,9 @@ export function NeoSymptomTree({
   const tr = (text: string) => (language === "bn" ? translateRepertory(text) : text);
 
   const sortedSubSymptoms = symptom.subSymptoms
-    ? [...symptom.subSymptoms].sort((a, b) => tr(a.name).localeCompare(tr(b.name)))
+    ? [...symptom.subSymptoms]
+        .map((s) => ({ ...s, _sort: tr(s.name) }))
+        .sort((a, b) => a._sort.localeCompare(b._sort))
     : [];
 
   const sortedRemedies = remedies;

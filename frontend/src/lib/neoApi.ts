@@ -19,14 +19,12 @@ export interface NeoSymptomSummary {
   name: string;
   hasSubSymptoms: boolean;
   subSymptomCount: number;
-  subSymptoms: NeoSubSymptomSummary[];
 }
 
 export interface NeoConditionSummary {
   id: string;
   name: string;
   symptomCount: number;
-  symptoms: NeoSymptomSummary[];
 }
 
 export interface NeoRepertorySummary {
@@ -34,7 +32,6 @@ export interface NeoRepertorySummary {
   name: string;
   order: number;
   conditionCount: number;
-  conditions: NeoConditionSummary[];
 }
 
 const API_BASE = "/api/neo";
@@ -77,6 +74,11 @@ async function fetchNeoAPI<T>(endpoint: string, options?: RequestInit): Promise<
 
 export const neoApi = {
   getSymptoms: () => fetchNeoAPI<{ chapters: NeoRepertorySummary[] }>("/symptoms"),
+
+  getChildren: (parentId: string) =>
+    fetchNeoAPI<{ children: (NeoConditionSummary | NeoSymptomSummary | NeoSubSymptomSummary)[]; type: string }>(
+      `/symptoms?parent=${encodeURIComponent(parentId)}`
+    ),
 
   getSymptomById: (id: string) => fetchNeoAPI<SymptomDetail>(`/symptoms/${id}`),
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope } from "lucide-react";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope, Loader2 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTranslation } from "@/i18n/useTranslation";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
@@ -21,6 +21,8 @@ interface NeoSidebarProps {
   history?: NeoHistoryEntry[];
   onRestoreHistory?: (entry: NeoHistoryEntry) => void;
 }
+
+type ChildItem = { id: string; name: string; [key: string]: unknown };
 
 function formatTimestamp(ts: string, language: string) {
   try {
@@ -68,8 +70,11 @@ export function NeoSidebar({
   const [showHistory, setShowHistory] = useState(false);
   const [filter, setFilter] = useState("");
 
+  const [childrenCache, setChildrenCache] = useState<Record<string, ChildItem[]>>({});
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+
   const isBn = language === "bn";
-  const tr = (s: string) => (isBn ? translateRepertory(s) : s);
+  const tr = useCallback((s: string) => (isBn ? translateRepertory(s) : s), [isBn]);
   const num = (n: number) => (isBn ? toBengaliNumeral(n) : String(n));
 
   useEffect(() => {
@@ -79,30 +84,54 @@ export function NeoSidebar({
     }).catch(() => setLoading(false));
   }, []);
 
-  const sortedName = (a: string, b: string) => tr(a).localeCompare(tr(b), isBn ? "bn" : "en");
+  const sortedReps = useMemo(() => {
+    const locale = isBn ? "bn" : "en";
+    const items = repertories.map((r) => ({ ...r, _sort: tr(r.name) }));
+    items.sort((a, b) => a._sort.localeCompare(b._sort, locale));
+    if (!filter) return items;
+    const fl = filter.toLowerCase();
+    return items.filter((r) => r._sort.toLowerCase().includes(fl));
+  }, [repertories, isBn, filter, tr]);
 
-  const filteredReps = filter
-    ? repertories.filter(r => tr(r.name).toLowerCase().includes(filter.toLowerCase()))
-    : repertories;
+  const sortChildren = useCallback((items: ChildItem[]): (ChildItem & { _sort: string })[] => {
+    const locale = isBn ? "bn" : "en";
+    const mapped = items.map((c) => ({ ...c, _sort: tr(c.name) }));
+    mapped.sort((a, b) => a._sort.localeCompare(b._sort, locale));
+    return mapped;
+  }, [isBn, tr]);
 
-  const sorted = [...filteredReps].sort((a, b) => sortedName(a.name, b.name));
+  const fetchChildren = useCallback(async (parentId: string) => {
+    if (childrenCache[parentId]) return;
+    setLoadingId(parentId);
+    try {
+      const data = await neoApi.getChildren(parentId);
+      setChildrenCache((prev) => ({ ...prev, [parentId]: data.children as ChildItem[] }));
+    } catch { /* ignore */ }
+    setLoadingId(null);
+  }, [childrenCache]);
 
   const handleRepClick = (id: string) => {
-    setExpandedRep(expandedRep === id ? null : id);
+    const next = expandedRep === id ? null : id;
+    setExpandedRep(next);
     setExpandedCond(null);
     setExpandedSym(null);
     onSelectChapter(id);
+    if (next) fetchChildren(id);
   };
 
   const handleCondClick = (id: string) => {
-    setExpandedCond(expandedCond === id ? null : id);
+    const next = expandedCond === id ? null : id;
+    setExpandedCond(next);
     setExpandedSym(null);
     onSelectSymptom(id);
+    if (next) fetchChildren(id);
   };
 
-  const handleSymClick = (id: string, hasSubSymptoms: boolean) => {
-    if (hasSubSymptoms) {
-      setExpandedSym(expandedSym === id ? null : id);
+  const handleSymClick = (id: string, hasSubs: boolean) => {
+    if (hasSubs) {
+      const next = expandedSym === id ? null : id;
+      setExpandedSym(next);
+      if (next) fetchChildren(id);
     }
     onSelectSymptom(id);
   };
@@ -111,6 +140,13 @@ export function NeoSidebar({
     onSelectSymptom(id);
     if (window.innerWidth < 1024) onClose();
   };
+
+  const LoadingDots = () => (
+    <div className="flex items-center gap-1 px-3 py-1.5">
+      <Loader2 className="h-3 w-3 animate-spin text-muted-foreground" />
+      <span className="text-[10px] text-muted-foreground">{t("common.loading")}</span>
+    </div>
+  );
 
   return (
     <>
@@ -147,13 +183,12 @@ export function NeoSidebar({
               </div>
             ) : (
               <nav className="space-y-0.5">
-                {sorted.map((rep) => {
+                {sortedReps.map((rep) => {
                   const isRepExpanded = expandedRep === rep.id;
-                  const sortedConds = [...rep.conditions].sort((a, b) => sortedName(a.name, b.name));
+                  const conditions = childrenCache[rep.id] ? sortChildren(childrenCache[rep.id]) : null;
 
                   return (
                     <div key={rep.id}>
-                      {/* Level 1: Repertory */}
                       <button
                         onClick={() => handleRepClick(rep.id)}
                         className={cn(
@@ -165,7 +200,7 @@ export function NeoSidebar({
                       >
                         <span className="truncate flex items-center gap-1.5">
                           <Layers className="h-3 w-3 shrink-0 opacity-50" />
-                          {tr(rep.name)}
+                          {rep._sort}
                         </span>
                         <div className="flex items-center gap-1 shrink-0">
                           <span className="text-[10px] text-muted-foreground">{num(rep.conditionCount)}</span>
@@ -173,12 +208,12 @@ export function NeoSidebar({
                         </div>
                       </button>
 
-                      {/* Level 2: Conditions */}
                       {isRepExpanded && (
                         <div className="ml-3 mt-0.5 space-y-0.5 border-l border-border pl-1.5 animate-fade-in">
-                          {sortedConds.map((cond) => {
+                          {loadingId === rep.id && !conditions && <LoadingDots />}
+                          {conditions?.map((cond) => {
                             const isCondExpanded = expandedCond === cond.id;
-                            const sortedSyms = [...cond.symptoms].sort((a, b) => sortedName(a.name, b.name));
+                            const symptoms = childrenCache[cond.id] ? sortChildren(childrenCache[cond.id]) : null;
 
                             return (
                               <div key={cond.id}>
@@ -193,25 +228,28 @@ export function NeoSidebar({
                                 >
                                   <span className="truncate flex items-center gap-1.5">
                                     <FolderOpen className="h-2.5 w-2.5 shrink-0 opacity-50" />
-                                    {tr(cond.name)}
+                                    {cond._sort}
                                   </span>
                                   <div className="flex items-center gap-1 shrink-0">
-                                    <span className="text-[9px] text-muted-foreground">{num(cond.symptomCount)}</span>
+                                    {typeof cond.symptomCount === "number" && (
+                                      <span className="text-[9px] text-muted-foreground">{num(cond.symptomCount as number)}</span>
+                                    )}
                                     <ChevronRight className={cn("h-2.5 w-2.5 transition-transform", isCondExpanded && "rotate-90")} />
                                   </div>
                                 </button>
 
-                                {/* Level 3: Symptoms */}
                                 {isCondExpanded && (
                                   <div className="ml-3 mt-0.5 space-y-0.5 border-l border-border/60 pl-1.5 animate-fade-in">
-                                    {sortedSyms.map((sym) => {
+                                    {loadingId === cond.id && !symptoms && <LoadingDots />}
+                                    {symptoms?.map((sym) => {
+                                      const hasSubs = !!(sym.hasSubSymptoms || (sym.subSymptomCount as number) > 0);
                                       const isSymExpanded = expandedSym === sym.id;
-                                      const sortedSubs = [...sym.subSymptoms].sort((a, b) => sortedName(a.name, b.name));
+                                      const subs = childrenCache[sym.id] ? sortChildren(childrenCache[sym.id]) : null;
 
                                       return (
                                         <div key={sym.id}>
                                           <button
-                                            onClick={() => handleSymClick(sym.id, sym.hasSubSymptoms)}
+                                            onClick={() => handleSymClick(sym.id, hasSubs)}
                                             className={cn(
                                               "flex items-center justify-between w-full px-1.5 py-0.5 text-[11px] rounded transition-colors",
                                               "text-muted-foreground hover:text-foreground hover:bg-accent/30"
@@ -219,23 +257,23 @@ export function NeoSidebar({
                                           >
                                             <span className="truncate flex items-center gap-1">
                                               <Stethoscope className="h-2.5 w-2.5 shrink-0 opacity-40" />
-                                              {tr(sym.name)}
+                                              {sym._sort}
                                             </span>
-                                            {sym.hasSubSymptoms && (
+                                            {hasSubs && (
                                               <ChevronRight className={cn("h-2.5 w-2.5 shrink-0 transition-transform", isSymExpanded && "rotate-90")} />
                                             )}
                                           </button>
 
-                                          {/* Level 4: Sub-symptoms */}
-                                          {isSymExpanded && sortedSubs.length > 0 && (
+                                          {isSymExpanded && hasSubs && (
                                             <div className="ml-3 mt-0.5 space-y-0.5 border-l border-border/40 pl-1.5 animate-fade-in">
-                                              {sortedSubs.map((sub) => (
+                                              {loadingId === sym.id && !subs && <LoadingDots />}
+                                              {subs?.map((sub) => (
                                                 <button
                                                   key={sub.id}
                                                   onClick={() => handleSubClick(sub.id)}
                                                   className="block w-full text-left px-1.5 py-0.5 text-[10px] text-muted-foreground hover:text-foreground rounded hover:bg-accent/25 truncate transition-colors"
                                                 >
-                                                  {tr(sub.name)}
+                                                  {sub._sort}
                                                 </button>
                                               ))}
                                             </div>

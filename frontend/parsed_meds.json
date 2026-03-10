@@ -1,0 +1,2810 @@
+{
+  "ABIES CANADENSIS": {
+    "commonName": "Hemlock spruce",
+    "desc": "Indigestion with flatulence; sensation of undigested food remaining in stomach; gastric complaints w..."
+  },
+  "ABIES NIGRA": {
+    "commonName": "Black spruce",
+    "desc": "Sensation of hard-boiled egg or lump in stomach; extreme fullness with gastric and cardiac distress..."
+  },
+  "ABROTANUM": {
+    "commonName": "Southernwood",
+    "desc": "Metastasis of symptoms; emaciation with appetite; diarrhea after suppressed rheumatism..."
+  },
+  "ABSINTHIUM": {
+    "commonName": "Wormwood",
+    "desc": "Epileptiform attacks without aura; cerebral excitement with tremors..."
+  },
+  "ACALYPHA INDICA": {
+    "commonName": "Indian acalypha",
+    "desc": "Intestinal hemorrhage with great weakness; cough with blood..."
+  },
+  "ACANTHUS": {
+    "commonName": "Bear’s breech",
+    "desc": "Localized irritation of skin or mucous membranes without general symptoms..."
+  },
+  "ACARUS": {
+    "commonName": "Mite",
+    "desc": "Asthma-like symptoms aggravated by dust; skin and respiratory hypersensitivity..."
+  },
+  "ACETANILIDUM": {
+    "commonName": "Antifebrin",
+    "desc": "Cyanosis with weak and irregular pulse; coldness with circulatory collapse; swelling of feet from po..."
+  },
+  "ACETICUM ACIDUM": {
+    "commonName": "Acetic acid",
+    "desc": "Extreme debility with intense thirst; rapid emaciation and collapse..."
+  },
+  "ACHILLEA MILLEFOLIUM": {
+    "commonName": "Yarrow",
+    "desc": "Uncontrollable bleeding of bright red blood, great prostration from loss of vital fluids, pain as if..."
+  },
+  "ACHYRANTHES": {
+    "commonName": "Prickly chaff flower",
+    "desc": "Urinary irritation with local discomfort; mild respiratory involvement..."
+  },
+  "ACONITE FEROX": {
+    "commonName": "Indian Aconite",
+    "desc": "Intense fear, anxiety, and restlessness; symptoms that come on suddenly, especially after exposure t..."
+  },
+  "ACONITINUM": {
+    "commonName": "Monkshood or Wolf's Bane",
+    "desc": "Aconitinum is distinguished by the suddenness of symptoms, often triggered by cold weather or trauma..."
+  },
+  "ACONITUM FEROX": {
+    "commonName": "Indian Aconite",
+    "desc": "Intense burning and tingling. Numbness alternating with pain. More neuralgic than Aconitum Napellus..."
+  },
+  "ACONITUM NAPELLUS": {
+    "commonName": "Monkshood",
+    "desc": "Sudden onset, fear of death, restlessness..."
+  },
+  "ACTAEA RACEMOSA": {
+    "commonName": "Black cohosh",
+    "desc": "Shifting muscular pains; headache with neck stiffness; nervousness with muscular weakness..."
+  },
+  "ACTAEA SPICATA": {
+    "commonName": "Baneberry",
+    "desc": "Small joint pains aggravated by movement; wrist and finger joint involvement..."
+  },
+  "ADLUMIA FUNGOSA": {
+    "commonName": "Climbing Fumitory, Allegheny Vine, Mountain Fringe",
+    "desc": "Remedy for the effects of grief, worry, and overstudy; glandular indurations; sensation of a band ar..."
+  },
+  "ADONIDINUM": {
+    "commonName": "Adonidin",
+    "desc": "Weak heart action; fatigue and breathlessness on slight exertion..."
+  },
+  "ADONIS VERNALIS": {
+    "commonName": "Pheasant’s eye",
+    "desc": "Weak heart action with breathlessness; swelling of feet from circulatory weakness..."
+  },
+  "ADRENALINUM": {
+    "commonName": "Adrenaline",
+    "desc": "Sudden palpitations with anxiety; circulatory imbalance triggered by stress..."
+  },
+  "AESCULUS GLABRA": {
+    "commonName": "Ohio buckeye",
+    "desc": "Rectal heaviness with constipation; abdominal fullness after eating; venous congestion..."
+  },
+  "AESCULUS HIPPOCASTANUM": {
+    "commonName": "Horse chestnut",
+    "desc": "Piles without bleeding; rectal dryness and pain; backache with venous congestion..."
+  },
+  "AETHIOPS MINERALIS": {
+    "commonName": "Black Sulphuret of Mercury, Ethiops Mineral",
+    "desc": "Induration of tissues, especially skin and glands. Offensive, ichorous discharges. Scrofulous and sy..."
+  },
+  "AETHIOPS ANTIMONIALIS": {
+    "commonName": "Black sulphide of antimony",
+    "desc": "Chronic unhealthy skin eruptions; glandular enlargement..."
+  },
+  "AETHIOPS MERCURIALIS": {
+    "commonName": "Black sulphide of mercury",
+    "desc": "Chronic glandular swelling; unhealthy skin with suppuration..."
+  },
+  "AETHUSA CYNAPIUM": {
+    "commonName": "Fool’s parsley",
+    "desc": "Milk intolerance with vomiting; extreme weakness and collapse after feeding; digestive failure with..."
+  },
+  "AGARICIN": {
+    "commonName": "Agaric acid",
+    "desc": "Excessive sweating with weakness; nervous exhaustion with tremors..."
+  },
+  "AGARICUS EMETICUS": {
+    "commonName": "Emetic mushroom",
+    "desc": "Severe nausea and vomiting after food; gastric irritation with weakness..."
+  },
+  "AGARICUS MUSCARIUS": {
+    "commonName": "Fly agaric",
+    "desc": "Twitching and tremors; unsteady movements; burning and crawling nerve sensations..."
+  },
+  "AGARICUS PHALLOIDES": {
+    "commonName": "Death cap",
+    "desc": "Severe vomiting and diarrhea with collapse; coldness and extreme weakness..."
+  },
+  "AGAVE AMERICANA": {
+    "commonName": "Century plant",
+    "desc": "Burning pain in stomach; indigestion with weakness; gastric complaints followed by exhaustion and di..."
+  },
+  "AGNUS CASTUS": {
+    "commonName": "Chaste tree",
+    "desc": "Loss of sexual desire with weakness; mental depression with physical exhaustion; lack of vitality..."
+  },
+  "AGRAPHIS NUTANS": {
+    "commonName": "Bluebell",
+    "desc": "Chronic nasal blockage; enlarged adenoids; recurrent ear and throat problems..."
+  },
+  "AGRIMONIA EUPATORIA": {
+    "commonName": "Agrimony",
+    "desc": "Cheerful appearance hiding anxiety; pain and restlessness worse at night; digestive complaints with..."
+  },
+  "AGROPYRUM REPENS": {
+    "commonName": "Couch grass",
+    "desc": "Burning and frequent urination; bladder irritation with weakness; urinary discomfort relieved by war..."
+  },
+  "AGROSTEMMA GITHAGO": {
+    "commonName": "Corn cockle",
+    "desc": "Trembling with weakness; exhaustion after exertion; nervous and muscular debility..."
+  },
+  "AGROSTIS": {
+    "commonName": "Bent grass",
+    "desc": "General weakness with poor stamina; nervous exhaustion after exertion; mild digestive discomfort..."
+  },
+  "AILANTHUS GLANDULOSA": {
+    "commonName": "Tree of heaven",
+    "desc": "Sudden extreme prostration; dark, dusky appearance; toxic weakness with rapid onset..."
+  },
+  "AJUGA REPTANS": {
+    "commonName": "Bugleweed, Common Bugle",
+    "desc": "Palpitations with great nervousness and weakness; sensation as if the heart would stop; pulse irregu..."
+  },
+  "ALCOHOL SULPHURIS": {
+    "commonName": "Alcohol of sulphur",
+    "desc": "Toxic nervous symptoms; confusion and weakness after exposure; dizziness with headache..."
+  },
+  "ALETRIS FARINOSA": {
+    "commonName": "True unicorn root",
+    "desc": "Great weakness out of proportion to disease; digestive and uterine debility; anemia-like exhaustion..."
+  },
+  "ALFALFA": {
+    "commonName": "Lucerne",
+    "desc": "Loss of appetite with weight loss; nervous exhaustion from poor nutrition; weakness relieved by eati..."
+  },
+  "ALKENKENGI OFFICINARUM": {
+    "commonName": "Winter cherry",
+    "desc": "Burning pain during urination with weakness; bladder irritation relieved by warmth; urinary discomfo..."
+  },
+  "ALLIUM CEPA": {
+    "commonName": "Red onion",
+    "desc": "Watery nasal discharge with sneezing; burning eyes with bland tears; colds worse in warm rooms and b..."
+  },
+  "ALLIUM SATIVUM": {
+    "commonName": "Garlic",
+    "desc": "Bloating and gas after eating; digestive weakness with fatigue; abdominal discomfort relieved by war..."
+  },
+  "ALNUS GLUTINOSA": {
+    "commonName": "Black alder",
+    "desc": "Chronic weakness with poor digestion; fatigue out of proportion to effort; anemia-like exhaustion..."
+  },
+  "ALOE SOCOTRINA": {
+    "commonName": "Aloe",
+    "desc": "Urgent loose stools; rectal heaviness; diarrhea with weakness and fatigue..."
+  },
+  "ALSTONIA SCHOLARIS": {
+    "commonName": "Dita Bark, Devil's Tree, Blackboard Tree",
+    "desc": "Debility after exhausting fevers, especially malaria. Marked periodicity of symptoms. Complete loss..."
+  },
+  "ALSTONIA CONSTRICTA": {
+    "commonName": "Australian fever bark",
+    "desc": "Persistent weakness after fever; loss of appetite with fatigue; slow recovery of strength..."
+  },
+  "ALTHAEA OFFICINALIS": {
+    "commonName": "Marshmallow",
+    "desc": "Dryness and irritation of mucous membranes; burning soreness relieved by soothing warmth..."
+  },
+  "ALUMEN": {
+    "commonName": "Alum",
+    "desc": "Hard constipation with dryness; sluggish digestion; weakness with slow reaction..."
+  },
+  "ALUMINA": {
+    "commonName": "Oxide of aluminum",
+    "desc": "Constipation without urge, dryness, slow nerve response..."
+  },
+  "ALUMINA SILICATA SULPHURICA": {
+    "commonName": "Alumino-silico-sulphate",
+    "desc": "Dryness with sluggish mind and body; constipation with weakness; slow reactions..."
+  },
+  "AMANITA MUSCARIA": {
+    "commonName": "Fly agaric",
+    "desc": "Tremors with weakness; poor coordination; abnormal muscular movements..."
+  },
+  "AMANITA PHALLOIDES": {
+    "commonName": "Death cap mushroom",
+    "desc": "Violent vomiting and diarrhea with collapse; coldness and extreme prostration; rapid loss of strengt..."
+  },
+  "AMANITA VERNA": {
+    "commonName": "Destroying angel",
+    "desc": "Sudden digestive collapse; vomiting and diarrhea with extreme weakness..."
+  },
+  "AMBRA NOSODE": {
+    "commonName": "Amber Nosode",
+    "desc": "Key characteristics include a strong connection to emotional turmoil and a tendency to be overwhelme..."
+  },
+  "AMBRA GRISEA": {
+    "commonName": "Ambergris",
+    "desc": "Nervous weakness aggravated by company; anxiety with trembling; sleeplessness from mental activity..."
+  },
+  "AMBROSIA ARTEMISIAEFOLIA": {
+    "commonName": "Ragweed, Common Ragweed",
+    "desc": "Profuse, watery, excoriating nasal discharge with violent sneezing. Intense itching of eyes, nose, a..."
+  },
+  "AMBROSIA ARTEMISIIFOLIA": {
+    "commonName": "Ragweed",
+    "desc": "Hay fever with sneezing; nasal irritation from pollen; seasonal breathing difficulty..."
+  },
+  "AMMONIACUM GUMMI": {
+    "commonName": "Gum ammoniac",
+    "desc": "Thick chest mucus; chronic cough with weakness; breathing difficulty worse from cold air..."
+  },
+  "AMMONIUM ACETICUM": {
+    "commonName": "Ammonium acetate",
+    "desc": "Sudden collapse with weakness; rapid sinking of strength; coldness with faintness..."
+  },
+  "AMMONIUM BENZOICUM": {
+    "commonName": "Ammonium benzoate",
+    "desc": "Urinary irritation with weakness; joint discomfort with fatigue; metabolic sluggishness..."
+  },
+  "AMMONIUM BROMATUM": {
+    "commonName": "Ammonium bromide",
+    "desc": "Nervous weakness with skin eruptions; acne with fatigue; symptoms worse from mental strain..."
+  },
+  "AMMONIUM CARBONICUM": {
+    "commonName": "Ammonium carbonate",
+    "desc": "Breathlessness with weakness; cold sensitivity; swelling with poor circulation..."
+  },
+  "AMMONIUM CAUSTICUM": {
+    "commonName": "Caustic ammonium",
+    "desc": "Burning irritation of throat and chest; hoarseness with weakness; acute breathing difficulty after e..."
+  },
+  "AMMONIUM FORMALDEHYDUM": {
+    "commonName": "Ammonium formaldehyde",
+    "desc": "Toxic irritation of eyes and throat; headache with weakness; symptoms after chemical exposure..."
+  },
+  "AMMONIUM HYDRATUM": {
+    "commonName": "Ammonia water",
+    "desc": "Sudden burning irritation; acute breathlessness; faintness with weakness..."
+  },
+  "AMMONIUM IODATUM": {
+    "commonName": "Ammonium iodide",
+    "desc": "Glandular swelling with weakness; chronic respiratory mucus; exhaustion with weight loss..."
+  },
+  "AMMONIUM MURIATICUM": {
+    "commonName": "Sal ammoniac",
+    "desc": "Constipation with abdominal bloating; back pain with stiffness; weakness relieved by motion..."
+  },
+  "AMMONIUM PHOSPHORICUM": {
+    "commonName": "Ammonium phosphate",
+    "desc": "General weakness after exertion; nervous exhaustion; poor recovery of strength..."
+  },
+  "AMMONIUM PICRICUM": {
+    "commonName": "Ammonium picrate",
+    "desc": "Sudden prostration; extreme weakness; exhaustion out of proportion to illness..."
+  },
+  "AMMONIUM TARTARICUM": {
+    "commonName": "Ammonium tartrate",
+    "desc": "Chest full of mucus with weak cough; difficult breathing; great prostration..."
+  },
+  "AMMONIUM VALERIANICUM": {
+    "commonName": "Ammonium valerianate",
+    "desc": "Nervous excitement with weakness; anxiety with trembling; exhaustion after emotional strain..."
+  },
+  "AMMONIUM VANADICUM": {
+    "commonName": "Ammonium vanadate",
+    "desc": "General fatigue with muscular weakness; low stamina; exhaustion after slight effort..."
+  },
+  "AMPELOPSIS QUINQUEFOLIA": {
+    "commonName": "Virginia creeper",
+    "desc": "Low-grade fever with marked weakness; dull headache; absence of strong local symptoms..."
+  },
+  "AMPELOPSIS TRIFOLIATA": {
+    "commonName": "Three-leaved ivy",
+    "desc": "Digestive weakness with fatigue; poor appetite; slow recovery of strength..."
+  },
+  "AMPHISBAENA": {
+    "commonName": "Double-headed snake",
+    "desc": "Nervous weakness with vague symptoms; restlessness without clear cause..."
+  },
+  "AMYGDALA AMARA": {
+    "commonName": "Bitter almond",
+    "desc": "Sudden collapse-like weakness; dizziness with faintness; rapid loss of strength..."
+  },
+  "AMYGDALUS PERSICA": {
+    "commonName": "Peach",
+    "desc": "Vomiting with weakness; stomach irritation after food; digestive upset with exhaustion..."
+  },
+  "AMYL NITROSUM": {
+    "commonName": "Amyl Nitrite",
+    "desc": "(Nitrite)Specializes in conditions marked by constriction and spasm, particularly in the heart and blood vess..."
+  },
+  "ANACARDIUM OCCIDENTALE": {
+    "commonName": "Cashew Nut",
+    "desc": "Sensation as if a plug or hoop is present in various parts (stomach, rectum, etc.). Dual nature - fe..."
+  },
+  "ANACARDIUM ORIENTALE": {
+    "commonName": "Marking Nut",
+    "desc": "DUAL WILL - feels as if two wills, one commands what the other forbids. All symptoms BETTER EATING."
+  },
+  "ANAGALLIS ARVENSIS": {
+    "commonName": "Scarlet Pimpernel, Poor Man's Weatherglass",
+    "desc": "Intolerable, violent itching of the whole body; skin symptoms alternating with urinary symptoms; sen..."
+  },
+  "ANANTHERUM MURICATUM": {
+    "commonName": "Vetiver, Khus-Khus",
+    "desc": "Violent jerking of limbs, choreic movements, trembling of the whole body, great nervous excitability..."
+  },
+  "ANGELICA ATROPURPUREA": {
+    "commonName": "Purple Angelica, Great Angelica, American Angelica",
+    "desc": "Profuse, watery, acrid coryza; hoarseness and rawness in larynx; flatulence and bloating after eatin..."
+  },
+  "ANGUSTURA VERA": {
+    "commonName": "Cusparia, Angostura Bark",
+    "desc": "Great trembling and weakness, especially of lower limbs; sensation as if paralyzed. Constipation wit..."
+  },
+  "ANTHEMIS NOBILIS": {
+    "commonName": "Roman Chamomile, English Chamomile",
+    "desc": "Extreme irritability and restlessness with pain, especially in children. Pains are spasmodic, crampi..."
+  },
+  "ANTHRACINUM": {
+    "commonName": "Anthrax Nosode",
+    "desc": "Rapid, violent septicemia; burning, acrid, offensive discharges; profound adynamia (weakness); black..."
+  },
+  "ANTIFEBRIN": {
+    "commonName": "Acetanilide",
+    "desc": "(synthetic)Distinctive for its rapid action on acute febrile conditions, particularly when accompanied by inten..."
+  },
+  "ANTIMONIUM ARSENICOSUM": {
+    "commonName": "Antimony Arsenate",
+    "desc": "Rattling of mucus with extreme weakness to expel it; great anxiety, restlessness, and fear of death;..."
+  },
+  "ANTIMONIUM CRUDUM": {
+    "commonName": "Black Sulphide of Antimony",
+    "desc": "Thick, white, creamy coating on the tongue; extreme irritability and ill-humor; aversion to being lo..."
+  },
+  "ANTIMONIUM SULPHURATUM AUREUM": {
+    "commonName": "Golden Sulphide of Antimony",
+    "desc": "Marked respiratory symptoms with a feeling of heaviness and constriction, worse with lying down, and..."
+  },
+  "ANTIMONIUM TARTARICUM": {
+    "commonName": "Tartar Emetic",
+    "desc": "Rattling of mucus in the chest with inability to expectorate; extreme weakness and drowsiness; nause..."
+  },
+  "APIS MELLIFICA": {
+    "commonName": "Honey bee",
+    "desc": "Edema with stinging pain, thirstlessness, worse from heat..."
+  },
+  "APIUM GRAVEOLENS": {
+    "commonName": "Wild Celery",
+    "desc": "Rheumatic pains associated with urinary disturbances. Urine scanty, high-colored, and burning. Skin..."
+  },
+  "APIUM VIRUS": {
+    "commonName": "Celery Virus, Celery Poison",
+    "desc": "Intense burning in the urinary passage, frequent urging to urinate, rheumatic pains shifting from jo..."
+  },
+  "APOCYNUM CANNABINUM": {
+    "commonName": "Indian Hemp, Dog's Bane",
+    "desc": "Great thirst with aversion to water, edema that pits on pressure, coldness of the body, sudden sinki..."
+  },
+  "APOMORPHINUM": {
+    "commonName": "Apomorphine",
+    "desc": "Prominent emetic action, quick onset of symptoms, and profound effects on the nervous system..."
+  },
+  "AQUILEGIA VULGARIS": {
+    "commonName": "Columbine, European Columbine",
+    "desc": "Hysterical convulsions with trembling and sudden weakness. A sensation of a ball rising in the throa..."
+  },
+  "ARALIA HISPIDA": {
+    "commonName": "Bristly Sarsaparilla, Wild Elder, Dwarf Elder",
+    "desc": "Cough returns as soon as the head touches the pillow. Must sit up to cough. Cough worse after first..."
+  },
+  "ARALIA RACEMOSA": {
+    "commonName": "American Spikenard, Indian Root",
+    "desc": "Cough worse immediately on lying down, compelling the patient to sit up. Dry, tickling cough in the..."
+  },
+  "ARANEA DIADEMA": {
+    "commonName": "Papal Cross Spider, Garden Spider",
+    "desc": "Intense, pervading coldness as if from ice water in veins; sensation of swelling of the body or part..."
+  },
+  "ARANEA IXOBOLA": {
+    "commonName": "Spider, Garden Spider",
+    "desc": "Sensation of coldness as if ice or cold water is running through veins, periodicity of symptoms, agg..."
+  },
+  "ARCTIUM LAPPA": {
+    "commonName": "Burdock",
+    "desc": "Deep-seated, hard, indurated swellings; burning and stinging pains; left-sided symptoms; improvement..."
+  },
+  "ARCTOSTAPHYLOS UVA URSI": {
+    "commonName": "Bearberry, Uva Ursi",
+    "desc": "Constant urging to urinate with severe burning and tenesmus. Urine is dark, scanty, and may contain..."
+  },
+  "ARGENTUM METALLICUM": {
+    "commonName": "Metallic Silver",
+    "desc": "Hoarseness and loss of voice from overuse, ulceration of mucous membranes, burning pains, nervous ex..."
+  },
+  "ARGENTUM NITRICUM": {
+    "commonName": "Silver Nitrate",
+    "desc": "Anticipatory anxiety, impulsiveness..."
+  },
+  "ARISTOLOCHIA CLEMATITIS": {
+    "commonName": "Birthwort, European Birthwort",
+    "desc": "Pain extending from abdomen to back, better from bending double; uterine bearing down; left-sided co..."
+  },
+  "ARNICA MONTANA": {
+    "commonName": "Leopard's Bane",
+    "desc": "Trauma, bruised soreness..."
+  },
+  "ARSENICUM BROMATUM": {
+    "commonName": "Bromide of Arsenic",
+    "desc": "Intense anxiety, restlessness, and a tendency towards skin eruptions; often accompanied by a feeling..."
+  },
+  "ARSENICUM IODATUM": {
+    "commonName": "Arsenic Iodide",
+    "desc": "PERSISTENT CATARRH with thick, honey-like, acrid discharge. Burning of discharges. Emaciation despit..."
+  },
+  "ARSENICUM SULPHURATUM FLAVUM": {
+    "commonName": "Yellow Arsenic Sulphide",
+    "desc": "Burning pains, aggravation from cold, better with warmth, and a strong aversion to being alone..."
+  },
+  "ARSENICUM ALBUM": {
+    "commonName": "White arsenic",
+    "desc": "Burning pains relieved by heat, anxiety with restlessness, fear of death..."
+  },
+  "ARTEMISIA VULGARIS": {
+    "commonName": "Mugwort",
+    "desc": "Nausea worse from motion; epigastric pressure after eating; hysterical symptoms with convulsions; mo..."
+  },
+  "ARUNDO MAURITANICA": {
+    "commonName": "Reed, Giant Reed",
+    "desc": "Intense itching and burning at the root of the nose and in the ears. Hay fever beginning with sneezi..."
+  },
+  "ASAFOETIDA": {
+    "commonName": "Stink-weed, Devil's Dung",
+    "desc": "Extreme distension of abdomen with gas, violent eructations, globus hystericus, foul smelling flatul..."
+  },
+  "ASIMINA TRILOBA": {
+    "commonName": "Pawpaw",
+    "desc": "Left-sided neuralgia, nausea with vomiting, colicky pain relieved by bending double, suppressed mens..."
+  },
+  "ASPARAGUS OFFICINALIS": {
+    "commonName": "Garden Asparagus",
+    "desc": "Intense urging to urinate with burning; palpitations felt in the pit of the stomach; sexual exciteme..."
+  },
+  "ASPIDOSPERMA QUEBRACHO": {
+    "commonName": "Quebracho",
+    "desc": "Dyspnea on slightest exertion, worse from lying down, constriction in chest, associated with heart d..."
+  },
+  "ASTERIAS RUBENS": {
+    "commonName": "Red Starfish",
+    "desc": "Left-sided symptoms, sensation of a band or constriction around parts, flushes of heat to face and h..."
+  },
+  "ASTRAGALUS MENZIESII": {
+    "commonName": "Menzies' Milkvetch",
+    "desc": "Dry, teasing cough with oppression; marked weakness and prostration; cardiac symptoms with dyspnea..."
+  },
+  "ATRIPLEX HORTENSIS": {
+    "commonName": "Garden Orache, Mountain Spinach",
+    "desc": "Profound nervous exhaustion and debility, especially in women. Amenorrhea with backache and general..."
+  },
+  "ATROPA BELLADONNA": {
+    "commonName": "Deadly Nightshade",
+    "desc": "Sudden onset, intense symptoms, throbbing pain, hot and dry skin, bright red appearance, delirium wi..."
+  },
+  "ATROPINUM SULPHURICUM": {
+    "commonName": "Atropine Sulfate",
+    "desc": "Marked dilatation of pupils, increased heart rate, and dry mucous membranes; often associated with d..."
+  },
+  "AURUM ARSENICUM": {
+    "commonName": "Gold Arsenic",
+    "desc": "Marked emotional instability with a tendency towards despair, pronounced heart symptoms, and physica..."
+  },
+  "AURUM BROMATUM": {
+    "commonName": "Bromide of Gold",
+    "desc": "Intense mental distress with a tendency towards depression and suicidal thoughts, often accompanied..."
+  },
+  "AURUM IODATUM": {
+    "commonName": "Iodide of Gold",
+    "desc": "Intense emotional states, particularly associated with a feeling of worthlessness; physical symptoms..."
+  },
+  "AURUM MURIATICUM": {
+    "commonName": "Gold Chloride",
+    "desc": "Distinguished by its strong mental and emotional symptoms, particularly relating to self-worth and d..."
+  },
+  "AURUM SULPHURATUM": {
+    "commonName": "Gold Sulphide",
+    "desc": "Intense feelings of worthlessness and despair, particularly in individuals with a history of melanch..."
+  },
+  "AURUM METALLICUM": {
+    "commonName": "Gold",
+    "desc": "Profound despair, suicidal thoughts, bone pains, sense of failure..."
+  },
+  "AURUM MURIATICUM NATRONATUM": {
+    "commonName": "Chloride of gold and sodium",
+    "desc": "Uterine induration with depression, ovarian enlargement, bearing-down pains..."
+  },
+  "AVENA SATIVA": {
+    "commonName": "Wild Oat",
+    "desc": "Nervous exhaustion without organic disease, 'brain-fag', debility from overwork or illness, useful i..."
+  },
+  "AZADIRACHTA INDICA": {
+    "commonName": "Neem",
+    "desc": "Intense itching worse from warmth and scratching; dry, scaly skin eruptions; fever with marked chill..."
+  },
+  "BACILLINUM": {
+    "commonName": "Tuberculinum",
+    "desc": "Marked susceptibility to infections, particularly respiratory; tendency towards chronicity; often a..."
+  },
+  "BACILLINUM BURNETT": {
+    "commonName": "Bacillinum",
+    "desc": "Emaciation and weakness, especially in cases of chronic infections, often with a history of tubercul..."
+  },
+  "BADIAGA": {
+    "commonName": "Freshwater Sponge",
+    "desc": "Intense itching and burning worse from cold, better from warmth. Subcutaneous indurations and nodes..."
+  },
+  "BALSAMUM TOLUTANUM": {
+    "commonName": "Tolu Balsam, Balsam of Tolu",
+    "desc": "Dry, spasmodic cough worse in evening and night, tickling in throat causing cough, skin eruptions wi..."
+  },
+  "BAPTISIA TINCTORIA": {
+    "commonName": "Wild Indigo",
+    "desc": "Falls asleep mid-sentence. Body parts feel scattered..."
+  },
+  "BARIUM IODATUM": {
+    "commonName": "Barium Iodide",
+    "desc": "Barium Iodatum is distinguished by its strong affinity for the respiratory system and its ability to..."
+  },
+  "BARIUM MURIATICUM": {
+    "commonName": "Barium Chloride",
+    "desc": "Marked inflammation of mucous membranes, especially in the respiratory tract; tendency to develop sk..."
+  },
+  "BAROSMA CRENATA": {
+    "commonName": "Buchu",
+    "desc": "Burning and smarting in the urinary tract, especially at the neck of the bladder. Urine smells stron..."
+  },
+  "BARYTA CARBONICA": {
+    "commonName": "Baryta Carb",
+    "desc": "Mental and physical immaturity, slow development, enlarged glands, tonsillitis, weakness of memory,..."
+  },
+  "BARYTA IODATA": {
+    "commonName": "Barium Iodide",
+    "desc": "Induration and swelling of glands, especially tonsils and lymph nodes; delayed development and senil..."
+  },
+  "BARYTA MURIATICA": {
+    "commonName": "Barium Chloride",
+    "desc": "Marked delay in development (physical and mental), enlarged glands, especially tonsils and adenoids,..."
+  },
+  "BELLADONNA": {
+    "commonName": "Deadly Nightshade",
+    "desc": "Sudden violence, throbbing, redness, heat..."
+  },
+  "BELLIS PERENNIS": {
+    "commonName": "Daisy",
+    "desc": "Deep tissue soreness, pelvic pain after childbirth, bruised feeling..."
+  },
+  "BENZOIC ACID": {
+    "commonName": "Benzoic Acid",
+    "desc": "Extreme foulness of urine and sweat; gouty nodes; relief of joint pain when moving; uric acid diathe..."
+  },
+  "BENZOICUM ACIDUM": {
+    "commonName": "Benzoic Acid",
+    "desc": "Urine is the keynote: highly offensive, strong, like horse's urine. Sudden shifting of rheumatic pai..."
+  },
+  "BERBERIS VULGARIS": {
+    "commonName": "Barberry",
+    "desc": "Pains radiate in all directions. Bubbling sensation..."
+  },
+  "BETONICA OFFICINALIS": {
+    "commonName": "Wood Betony, Bishop's Wort",
+    "desc": "Headache with pressure at the root of the nose; headache from gastric disturbances; sensation as if..."
+  },
+  "BISMUTHUM SUBNITRICUM": {
+    "commonName": "Bismuth Subnitrate",
+    "desc": "Symptoms are often accompanied by a sense of heaviness in the abdomen; great sensitivity of the stom..."
+  },
+  "BIXA ORELLANA": {
+    "commonName": "Annatto, Lipstick Tree",
+    "desc": "Yellow or orange-red coloration of secretions and excretions; burning and itching of skin and mucous..."
+  },
+  "BLATTA ORIENTALIS": {
+    "commonName": "Oriental Cockroach, Indian Cockroach",
+    "desc": "Asthma worse in rainy weather and damp surroundings; copious, thick, yellow, purulent sputum; asthma..."
+  },
+  "BOLDO": {
+    "commonName": "Boldo, Boldus",
+    "desc": "Hepatic headaches with sensation of a band around the head; constipation with dry, knotty stools lik..."
+  },
+  "BORAX": {
+    "commonName": "Borax",
+    "desc": "Fear of downward motion (especially in children on being carried or swung), aphthous stomatitis with..."
+  },
+  "BORAX VENETA": {
+    "commonName": "Sodium Borate",
+    "desc": "Dread of downward motion. Child cries when laid down..."
+  },
+  "BOTHROPS LANCEOLATUS": {
+    "commonName": "Yellow Viper, Fer-de-Lance",
+    "desc": "Left-sided paralysis, dark fluid hemorrhages that do not clot, sudden onset of symptoms, sensation a..."
+  },
+  "BOVISTA": {
+    "commonName": "Puffball",
+    "desc": "Clumsiness, drops things; puffiness and swelling of tissues; ailments from overuse of limbs (e.g., w..."
+  },
+  "BOWEL NOSODES": {
+    "commonName": "Nosodes of the Bowel",
+    "desc": "Bowel Nosodes are characterized by their ability to restore gut flora balance and alleviate digestiv..."
+  },
+  "BRACHYGLOTTIS REPANDA": {
+    "commonName": "Bushman's Friend, Rangiora",
+    "desc": "Intolerable itching compelling scratching until raw, rheumatic pains that are tearing in character,..."
+  },
+  "BRASSICA NAPUS": {
+    "commonName": "Rape, Colza",
+    "desc": "Cough ending in vomiting of mucus; worse at night and lying down; pain in left side of chest; neural..."
+  },
+  "BROMIUM": {
+    "commonName": "Bromine",
+    "desc": "Sudden, violent onset of symptoms; suffocative feeling; constriction of larynx and trachea; worse in..."
+  },
+  "BRUCELLA MELITENSIS": {
+    "commonName": "Goat Brucella",
+    "desc": "Prolonged fatigue following infection, intermittent fever, and marked joint and muscle pain are char..."
+  },
+  "BRYONIA ALBA": {
+    "commonName": "White Bryony",
+    "desc": "Worse from motion, dryness, stitching pains..."
+  },
+  "BRYOPHYLLUM CALYCINUM": {
+    "commonName": "Kalanchoe Calcinum",
+    "desc": "Injuries to bones and periosteum, tendency for delayed union of fractures, periostitis after trauma,..."
+  },
+  "BUFO RANA": {
+    "commonName": "Toad",
+    "desc": "Epilepsy triggered by sexual excess or masturbation; mental dullness with childish, foolish behavior..."
+  },
+  "BUTYRIC ACID": {
+    "commonName": "Butyrate",
+    "desc": "CompoundCharacteristic for its action on the intestinal mucosa and its role in maintaining gut health. It ha..."
+  },
+  "BUXUS SEMPERVIRENS": {
+    "commonName": "Boxwood",
+    "desc": "Right-sided paralysis, tremors worse from motion, choreic movements, numbness with tingling..."
+  },
+  "CACTUS GRANDIFLORUS": {
+    "commonName": "Night-blooming Cereus",
+    "desc": "Iron band around heart. Constriction everywhere..."
+  },
+  "CADMIUM BROMATUM": {
+    "commonName": "Cadmium Bromide",
+    "desc": "Distinguished by its profound effects on the nervous system, particularly in cases of tremors and re..."
+  },
+  "CADMIUM IODATUM": {
+    "commonName": "Cadmium Iodide",
+    "desc": "Marked respiratory symptoms with a tendency to nausea and fatigue, often accompanied by a metallic t..."
+  },
+  "CADMIUM SULPHURATUM": {
+    "commonName": "Cadmium Sulphate",
+    "desc": "Marked respiratory symptoms, a tendency for skin eruptions, and a specific metallic taste in the mou..."
+  },
+  "CAESIUM METALLICUM": {
+    "commonName": "Cesium",
+    "desc": "Distinctive for its effects on the nervous system, particularly in cases of anxiety and restlessness..."
+  },
+  "CAFFEINE": {
+    "commonName": "Caffeine",
+    "desc": "Aggravation of symptoms from mental exertion, increased sensitivity to noise, and a feeling of restl..."
+  },
+  "CAHINCA": {
+    "commonName": "Cahinca",
+    "desc": "Profuse watery diarrhea with burning in rectum, extreme weakness after stool, thirstlessness during..."
+  },
+  "CAJUPUTUM": {
+    "commonName": "Cajuput, White Tea Tree, Swamp Tea Tree",
+    "desc": "Violent, sudden, and cramping pains. Profuse, greenish, thick catarrh. Symptoms appear with great in..."
+  },
+  "CALCAREA ACETICA": {
+    "commonName": "Acetate of Lime",
+    "desc": "Profuse, watery, debilitating discharges that drain the patient's vitality. Sweats, diarrhea, or leu..."
+  },
+  "CALCAREA ARSENICOSA": {
+    "commonName": "Arsenite of Lime",
+    "desc": "Intense anxiety about health (hypochondriasis), burning pains relieved by heat, swelling and indurat..."
+  },
+  "CALCAREA IODATA": {
+    "commonName": "Calcium Iodide",
+    "desc": "Hard, painless, glandular swellings; scrofulous constitution; tendency to catarrh and polyps; waxy,..."
+  },
+  "CALCAREA OSTREARUM": {
+    "commonName": "Oyster Shell",
+    "desc": "Calcarea Ostrearum is characterized by its affinity for the bones, teeth, and overall skeletal devel..."
+  },
+  "CALCAREA SILICATA": {
+    "commonName": "Silica of Lime, Calcium Silicate",
+    "desc": "Suppuration and fistulous openings; offensive foot sweat; emaciation despite good appetite; chilly a..."
+  },
+  "CALCAREA SULPHURICA": {
+    "commonName": "Calcium Sulphate",
+    "desc": "Promotes healing of suppurating wounds, especially when the discharge is thick and yellow. It is dis..."
+  },
+  "CALCAREA CARBONICA": {
+    "commonName": "Carbonate of lime",
+    "desc": "Head sweat, fear of illness, slow development, cold feet..."
+  },
+  "CALCAREA FLUORICA": {
+    "commonName": "Fluoride of lime",
+    "desc": "Hard indurations, varicose veins, loss of tissue elasticity..."
+  },
+  "CALCAREA PHOSPHORICA": {
+    "commonName": "Calcium phosphate",
+    "desc": "Childhood developmental issues, bone and joint complaints, slow assimilation, desire for salt and co..."
+  },
+  "CALCIUM BROMATUM": {
+    "commonName": "Bromide of Calcium",
+    "desc": "Calming properties, particularly beneficial for nervous system disturbances and muscular spasms..."
+  },
+  "CALCIUM IODATUM": {
+    "commonName": "Iodide of Calcium",
+    "desc": "Mucous discharges, particularly from the respiratory system, are a hallmark of this remedy, along wi..."
+  },
+  "CALCIUM LACTICUM": {
+    "commonName": "Calcium Lactate",
+    "desc": "Distinctive for its impact on bone health and its role in treating calcium deficiency-related sympto..."
+  },
+  "CALCIUM OXALICUM": {
+    "commonName": "Calcium Oxalate",
+    "desc": "Distinctive for its action on the urinary tract and its use in cases of calcium oxalate formation; o..."
+  },
+  "CALCIUM SILICOFLUORATUM": {
+    "commonName": "Fluoride of Calcium and Silicon",
+    "desc": "Distinctive for its action on the teeth and bones, particularly in cases where there is a tendency f..."
+  },
+  "CALENDULA OFFICINALIS": {
+    "commonName": "Pot Marigold, Marigold",
+    "desc": "Excellent antiseptic and healing agent, promotes healthy granulation, prevents proud flesh, pain ame..."
+  },
+  "CALOTROPIS GIGANTEA": {
+    "commonName": "Madar, Akanda, Swallow-wort",
+    "desc": "Copious discharges, tendency to suppuration, expulsion of foreign bodies, prolapse of various organs..."
+  },
+  "CAMELLIA SINENSIS": {
+    "commonName": "Green Tea, Tea Plant",
+    "desc": "Intense nervous excitement and restlessness with palpitations. Symptoms often arise from overuse of..."
+  },
+  "CAMPHORA": {
+    "commonName": "Camphor",
+    "desc": "Sudden, violent onset; icy coldness of the body but feels hot internally and throws off covers; prof..."
+  },
+  "CANANGA ODORATA": {
+    "commonName": "Ylang-Ylang",
+    "desc": "Intense nervous excitement and exhaustion, hysteria with palpitations and dyspnea, symptoms arising..."
+  },
+  "CANDIDA ALBICANS": {
+    "commonName": "Yeast Infection Remedy",
+    "desc": "Symptoms worsen after sugar intake, sensitivity to dampness, and a tendency for recurrent infections..."
+  },
+  "CANNA INDICA": {
+    "commonName": "Indian Hemp",
+    "desc": "Intense sexual excitement with priapism; nervous erethism; burning itching of the skin; desire to mo..."
+  },
+  "CANNABIS INDICA": {
+    "commonName": "Marijuana / Indian Hemp",
+    "desc": "TIME seems PROLONGED - seconds seem like hours. Distance seems ENORMOUS. EXAGGERATION of all sensati..."
+  },
+  "CANNABIS SATIVA": {
+    "commonName": "Marijuana, Ganja, Hemp",
+    "desc": "Marked distortion of time (time seems to pass very slowly or very quickly), delirium with uncontroll..."
+  },
+  "CANTHARIS": {
+    "commonName": "Spanish Fly",
+    "desc": "Intense burning sensations, particularly in the urinary tract, and a strong desire to urinate with l..."
+  },
+  "CAPPARIS SPINOSA": {
+    "commonName": "Caper Bush, Flinders Rose",
+    "desc": "Rheumatic affections of the small joints, especially fingers and toes, with swelling and stiffness."
+  },
+  "CAPSICUM ANNUUM": {
+    "commonName": "Cayenne Pepper, Spanish Pepper",
+    "desc": "Homesickness with red cheeks and sadness; Burning pains yet feels chilly; Sensation of rawness and s..."
+  },
+  "CARBO ANIMALIS": {
+    "commonName": "Animal Charcoal",
+    "desc": "Extreme weakness and emaciation, indurations and hard swellings, burning pains, tendency to malignan..."
+  },
+  "CARBO VEGETABILIS": {
+    "commonName": "Vegetable Charcoal",
+    "desc": "Collapse, air hunger, coldness..."
+  },
+  "CARBOLICUM ACIDUM": {
+    "commonName": "Carbolic Acid, Phenol",
+    "desc": "Sudden, profound prostration and collapse. All discharges are horribly offensive. Burning pains thro..."
+  },
+  "CARBON DIOXIDE": {
+    "commonName": "Carbonic Acid Gas",
+    "desc": "Symptoms often improve with fresh air and worsen in closed environments. The remedy is particularly..."
+  },
+  "CARBONEUM SULPHURATUM": {
+    "commonName": "Carb Sulph",
+    "desc": "Complete loss of mental and physical power; everything seems unreal; sensation as if floating in air..."
+  },
+  "CARCINOSINUM": {
+    "commonName": "Carcinosin",
+    "desc": "Strong family history of cancer, diabetes, or tuberculosis. Intense perfectionism and a strong desir..."
+  },
+  "CARISSA CARANDAS": {
+    "commonName": "Karonda, Christ's Thorn, Bengal Currant",
+    "desc": "Intense itching of skin without visible eruption, jaundice with marked yellow discoloration, hemorrh..."
+  },
+  "CARLSBAD AQUA": {
+    "commonName": "Carlsbad Water",
+    "desc": "Strong action on the liver and biliary system, constipation with large, difficult-to-pass stools, re..."
+  },
+  "CARPINUS BETULUS": {
+    "commonName": "Hornbeam",
+    "desc": "Characteristic 'Monday morning' feeling; fatigue is more anticipated than real; weakness is felt upo..."
+  },
+  "CARTHAMUS TINCTORIUS": {
+    "commonName": "Safflower, False Saffron",
+    "desc": "Bright red, fluid, non-coagulable bleeding; sensation of constriction in internal organs, especially..."
+  },
+  "CARUM CARVI": {
+    "commonName": "Caraway",
+    "desc": "Distension of abdomen from gas, rumbling after eating, better from eructation, cough worse at night,..."
+  },
+  "CASCARA SAGRADA": {
+    "commonName": "Chittem Bark, Bear Berry",
+    "desc": "Profoundly constipated, bowels do not respond to ordinary purgatives; stool hard, dry, dark, difficu..."
+  },
+  "CASSIA FISTULA": {
+    "commonName": "Purging Cassia, Indian Laburnum",
+    "desc": "Hard, knotty stools; jaundice with liver pain; constipation alternating with diarrhea..."
+  },
+  "CASSIA SOPHERA": {
+    "commonName": "Kasondi",
+    "desc": "Asthma worse at night, dry cough worse in warm room, better in open air, dry skin eruptions..."
+  },
+  "CASTANEA VESCA": {
+    "commonName": "Sweet Chestnut",
+    "desc": "Overwhelming exhaustion, feeling of being unable to cope, despair with the inability to weep, apathy..."
+  },
+  "CASTOR EQUI": {
+    "commonName": "Mare's Milk",
+    "desc": "Intensely painful, cracked, and ulcerated nipples, especially in nursing mothers. Burning pain in th..."
+  },
+  "CASTOR FIBER": {
+    "commonName": "Beaver",
+    "desc": "Characteristic for its strong emotional impact and ability to affect the digestive system; often ind..."
+  },
+  "CATALPA BIGNONIOIDES": {
+    "commonName": "Indian Bean Tree, Catawba, Southern Catalpa",
+    "desc": "Urticaria and itching aggravated by warmth and bathing. Rheumatic pains in the back and limbs. Restl..."
+  },
+  "CATECHU": {
+    "commonName": "Catechu, Cutch, Kath",
+    "desc": "Tenesmus in diarrhea, ulceration of mucous membranes, constipation with hard knotty stools, offensiv..."
+  },
+  "CAULOPHYLLUM THALICTROIDES": {
+    "commonName": "Blue cohosh",
+    "desc": "Uterine inertia, spasmodic pains, nervous irritability..."
+  },
+  "CAUSTICUM": {
+    "commonName": "Potassium Hydrate",
+    "desc": "Progressive weakness, hoarseness..."
+  },
+  "CEANOTHUS AMERICANUS": {
+    "commonName": "New Jersey Tea, Red Root",
+    "desc": "Enlargement of the spleen with pain, congestion of spleen and liver, feeling of a lump in the spleen..."
+  },
+  "CEDRON": {
+    "commonName": "Simaruba cedron",
+    "desc": "Marked periodicity of symptoms, especially fevers and neuralgias; intense burning pain, often with f..."
+  },
+  "CENCHRIS CONTORTRIX": {
+    "commonName": "Copperhead Snake",
+    "desc": "Dark, thin, watery, non-coagulable blood; coldness of the body with internal burning; septic conditi..."
+  },
+  "CENTAUREA TAGANA": {
+    "commonName": "None",
+    "desc": "Involuntary urination during sleep, vesical irritation without organic cause, burning sensation in u..."
+  },
+  "CEPHALANTHUS OCCIDENTALIS": {
+    "commonName": "Buttonbush",
+    "desc": "Periodicity of symptoms, especially fevers; spinal irritation with burning along the spine; sensatio..."
+  },
+  "CEREUS BONPLANDII": {
+    "commonName": "Bonpland's Cactus",
+    "desc": "Sudden violent palpitations with coldness; pain radiating to left shoulder/arm; worse from motion/co..."
+  },
+  "CEREUS SERPENTINUS": {
+    "commonName": "None",
+    "desc": "Vertigo with fear of falling backward, neuralgic pains worse from motion, better from pressure, nerv..."
+  },
+  "CERIUM OXALICUM": {
+    "commonName": "Oxalate of Cerium",
+    "desc": "Intense nausea with vomiting, especially in pregnant women; vomiting of food soon after eating; vert..."
+  },
+  "CERVUS CAMPESTRIS": {
+    "commonName": "Field Deer",
+    "desc": "Distinctive for its use in both respiratory and skin ailments, with a notable effect on vitality and..."
+  },
+  "CHAMOMILLA": {
+    "commonName": "German Chamomile",
+    "desc": "Extreme irritability, intolerable pain..."
+  },
+  "CHAMOMILLA VULGARIS": {
+    "commonName": "German Chamomile",
+    "desc": "Extreme irritability and anger, desire to be carried constantly but cries when touched or looked at,..."
+  },
+  "CHAMOMILLA RECUTITA": {
+    "commonName": "German Chamomile, Matricaria",
+    "desc": "Intolerance of pain, extreme irritability, desire to be carried, but cries when touched or looked at..."
+  },
+  "CHAPARRO AMARGOSA": {
+    "commonName": "Chaparro amargo, Creosote bush",
+    "desc": "Intense liver and gallbladder pain, burning in the stomach and intestines, tendency to hemorrhage, p..."
+  },
+  "CHAULMOOGRA": {
+    "commonName": "Gynocardia odorata, Hydnocarpus kurzii",
+    "desc": "Deep, destructive skin lesions; leprosy; nodules and tubercles on skin; foul-smelling discharges; hi..."
+  },
+  "CHEIRANTHUS CHEIRI": {
+    "commonName": "Wallflower",
+    "desc": "Irregular heart action with dyspnea, burning in urethra, skin affections with intense itching..."
+  },
+  "CHELONE GLABRA": {
+    "commonName": "Balmony, Turtlehead",
+    "desc": "Constant bitter taste, sensation of a lump in the stomach, tongue coated thickly white or yellow, ja..."
+  },
+  "CHENOPODIUM ANTHELMINTICUM": {
+    "commonName": "American Wormseed, Jerusalem Oak",
+    "desc": "Sudden, violent vertigo with tendency to fall left; deafness, especially after influenza; loud tinni..."
+  },
+  "CHIMAPHILA MACULATA": {
+    "commonName": "Spotted Wintergreen, Striped Prince's Pine",
+    "desc": "Constant urging to urinate with scanty, dark, foul urine. Sensation of a ball or foreign body in the..."
+  },
+  "CHIMAPHILA UMBELLATA": {
+    "commonName": "Pipsissewa, Prince's Pine",
+    "desc": "Sensation of a large, heavy ball in the bladder, must strain long before urine passes, urine flows o..."
+  },
+  "CHINA OFFICINALIS": {
+    "commonName": "Peruvian Bark",
+    "desc": "Debility from loss of fluids, periodicity..."
+  },
+  "CHININUM ARSENICOSUM": {
+    "commonName": "Arsenate of Quinine",
+    "desc": "Profound anemia and weakness after acute diseases; periodicity of symptoms; burning, neuralgic pains..."
+  },
+  "CHININUM SULPHURICUM": {
+    "commonName": "Quinine Sulphate",
+    "desc": "Periodicity of symptoms, profound anemia and weakness, ringing and roaring in ears, neuralgic pains,..."
+  },
+  "CHLORALUM HYDRATUM": {
+    "commonName": "Chloral Hydrate",
+    "desc": "Sensation of a splinter or fishbone in the throat. Profound prostration and nervous exhaustion. Inso..."
+  },
+  "CHLOROFORMUM": {
+    "commonName": "Chloroform",
+    "desc": "Suddenness and violence of symptoms; collapse with weak, imperceptible pulse; sensation of the heart..."
+  },
+  "CHOLESTERINUM": {
+    "commonName": "Cholesterol",
+    "desc": "Intense, cramping, cutting pain in liver region radiating to back; sensation of a lump under right r..."
+  },
+  "CHONDRODENDRON TOMENTOSUM": {
+    "commonName": "Pareira Brava",
+    "desc": "Must get on all fours to urinate; pain radiates down the thighs during urination; sensation as if th..."
+  },
+  "CHROMICUM ACIDUM": {
+    "commonName": "Chromic Acid",
+    "desc": "Offensive, thick, ropy, yellow-green discharges. Ulcers with fetid, ichorous pus. Great debility and..."
+  },
+  "CHROMIUM METALLICUM": {
+    "commonName": "Chromium",
+    "desc": "Promotes metabolism, improves sugar cravings, works well for individuals with weight issues and gluc..."
+  },
+  "CHRYSANTHEMUM LEUCANTHEMUM": {
+    "commonName": "Oxeye Daisy",
+    "desc": "Confusion of mind with headache, vertigo, and impaired memory. Stupefied feeling. Epistaxis from hea..."
+  },
+  "CICHORIUM INTYBUS": {
+    "commonName": "Wild Succory, Chicory",
+    "desc": "Intense irritability and peevishness, especially in children. Biliousness: bitter taste, vomiting of..."
+  },
+  "CICUTA VIROSA": {
+    "commonName": "Water Hemlock",
+    "desc": "Head thrown back (opisthotonus). Spasms from injury..."
+  },
+  "CIMEX LECTULARIUS": {
+    "commonName": "Bed Bug",
+    "desc": "Intense itching, especially at night, and a history of insect bites. Symptoms may be worse after scr..."
+  },
+  "CIMICIFUGA RACEMOSA": {
+    "commonName": "Black cohosh",
+    "desc": "Depression with fear of insanity, uterine pains with nervous symptoms..."
+  },
+  "CINA": {
+    "commonName": "Wormseed",
+    "desc": "Extreme irritability and sensitiveness, especially to touch; picking at the nose; grinding of teeth;..."
+  },
+  "CINCHONA OFFICINALIS": {
+    "commonName": "Peruvian Bark, Jesuit's Bark, China Bark",
+    "desc": "Extreme debility and prostration disproportionate to the illness; great exhaustion; intolerance of p..."
+  },
+  "CINNABARIS": {
+    "commonName": "Red Sulphide of Mercury, Cinnabar",
+    "desc": "Thick, ropy, yellow-green nasal discharge; sensation of a lump at root of nose; syphilitic history;..."
+  },
+  "CINNAMOMUM CAMPHORA": {
+    "commonName": "Camphor",
+    "desc": "Icy coldness of the whole body yet cannot bear to be covered, sudden and complete prostration of vit..."
+  },
+  "CINNAMOMUM ZEYLANICUM": {
+    "commonName": "Cinnamon, Ceylon Cinnamon",
+    "desc": "Sudden, violent, bright red hemorrhages from any orifice. Intense, cramping abdominal pains. Profoun..."
+  },
+  "CISTUS CANADENSIS": {
+    "commonName": "Rock Rose, Frostweed",
+    "desc": "Extreme chilliness, < cold air in any form. Offensive, thick, yellow catarrh. Sensation of a lump in..."
+  },
+  "CITRUS AURANTIUM": {
+    "commonName": "Bitter Orange, Seville Orange",
+    "desc": "Palpitations from the slightest emotion or excitement. Sensation of a lump in the throat (globus hys..."
+  },
+  "CITRUS LIMONUM": {
+    "commonName": "Lemon",
+    "desc": "Acidity and sourness affecting the system; tendency to bleeding and capillary fragility; symptoms wo..."
+  },
+  "CITRUS VULGARIS": {
+    "commonName": "Bitter Orange",
+    "desc": "Great nausea with desire to vomit, but vomiting gives no relief. Sourness of stomach. Bitter taste i..."
+  },
+  "CLEMATIS ERECTA": {
+    "commonName": "Virgin's Bower",
+    "desc": "Slow urinary stream. Interrupted flow..."
+  },
+  "CLEMATIS VITALBA": {
+    "commonName": "Traveller's Joy, Old Man's Beard",
+    "desc": "Intense burning in urethra during and after urination, scanty urine passed drop by drop, sensation o..."
+  },
+  "CLEMATIS RECTA": {
+    "commonName": "Ground Virginsbower",
+    "desc": "Swelling and inflammation of glands, especially testes and lymph nodes; discharge from urethra and c..."
+  },
+  "CNICUS BENEDICTUS": {
+    "commonName": "Holy Thistle, Blessed Thistle",
+    "desc": "Sourness of stomach with eructations, aversion to food, weakness and fatigue in convalescence, liver..."
+  },
+  "COBALTUM METALLICUM": {
+    "commonName": "Cobalt",
+    "desc": "Marked weakness, particularly in the limbs; symptoms may worsen with exertion; often used in cases r..."
+  },
+  "COBALTUM NITRICUM": {
+    "commonName": "Cobalt Nitrate",
+    "desc": "Intense precordial anxiety and oppression, as if heart is squeezed in a vise. Weakness so profound i..."
+  },
+  "COCA": {
+    "commonName": "Coca plant, Erythroxylum coca",
+    "desc": "Extreme exhaustion as if every step would be the last; sensation of constriction in chest and throat..."
+  },
+  "COCCINELLA SEPTEMPUNCTATA": {
+    "commonName": "Seven-spotted ladybug",
+    "desc": "Calming effects, alleviates anxiety and stress, beneficial for gastrointestinal issues, suitable for..."
+  },
+  "COCCULUS INDICUS": {
+    "commonName": "Indian Cockle",
+    "desc": "Vertigo, weakness from sleeplessness..."
+  },
+  "COCCULUS PALMATUS": {
+    "commonName": "Cocculus Indicus",
+    "desc": "Severe vertigo with nausea, worse from motion. Extreme weakness and paralysis, especially of the nec..."
+  },
+  "COCCUS CACTI": {
+    "commonName": "Cochineal",
+    "desc": "Stringy, ropy discharges; violent, paroxysmal cough; red sand in urine; symptoms appear and disappea..."
+  },
+  "COCHLEARIA ARMORACIA": {
+    "commonName": "Horseradish",
+    "desc": "Profuse, watery nasal discharge with sneezing; acts on mucous membranes, increasing secretions; usef..."
+  },
+  "COCHLEARIA OFFICINALIS": {
+    "commonName": "Scurvy Grass",
+    "desc": "Chronic catarrh with copious expectoration; rheumatic and gouty diathesis; edema; urinary irritation..."
+  },
+  "COFFEA ARABICA": {
+    "commonName": "Coffee",
+    "desc": "Mind unusually active, unable to sleep from happy excitement or anticipation; extreme sensitivity to..."
+  },
+  "COFFEA CRUDA": {
+    "commonName": "Coffee",
+    "desc": "Sleeplessness from excitement, hypersensitivity..."
+  },
+  "COFFEA TOSTA": {
+    "commonName": "Roasted Coffee",
+    "desc": "Extreme nervous sensitivity and excitability; ailments from sudden emotions, especially joy; pains f..."
+  },
+  "COLCHICINUM": {
+    "commonName": "Colchicum",
+    "desc": "Intense pain in joints, particularly the big toe, with a tendency for sudden onset; symptoms often o..."
+  },
+  "COLCHICUM": {
+    "commonName": "Colchicinum",
+    "desc": "Intense pain, particularly in the joints, often with swelling; symptoms may be accompanied by gastro..."
+  },
+  "COLCHICUM AUTUMNALE": {
+    "commonName": "Meadow Saffron, Autumn Crocus",
+    "desc": "Extreme sensitivity to odors, especially of cooking food, causing nausea and vomiting; intense, burn..."
+  },
+  "COLEUS AROMATICUS": {
+    "commonName": "Indian Borage, Mexican Mint, Country Borage, Plectranthus Amboinicus",
+    "desc": "Profuse, watery expectoration; rattling of mucus in chest; burning sensation in throat; relief from..."
+  },
+  "COLIBACILLINUM": {
+    "commonName": "Escherichia coli nosode",
+    "desc": "Colibacillinum is distinguished by its effectiveness in treating symptoms related to bacterial infec..."
+  },
+  "COLLINSIA CANADENSIS": {
+    "commonName": "Collinsonia, Stone Root, Heal-All, Knob Root",
+    "desc": "Sensation of a plug, stick, or splinter in the rectum; hemorrhoids that are large, blind, or bleedin..."
+  },
+  "COLLINSONIA CANADENSIS": {
+    "commonName": "Stone Root, Horse Balm, Richweed",
+    "desc": "Sensation of sticks, splinters, or gravel in affected parts (rectum, heart, throat). Constipation wi..."
+  },
+  "COLOCYNTHIS": {
+    "commonName": "Bitter Cucumber",
+    "desc": "Intense, cramping pain relieved by bending double or pressure; often associated with emotional stres..."
+  },
+  "COLOCYNTHIS CITRULLUS": {
+    "commonName": "Bitter Cucumber, Colocynth",
+    "desc": "Violent, cramping, cutting pains, especially in abdomen and sciatic nerve. Relief from firm pressure..."
+  },
+  "COMMIPHORA MYRRHA": {
+    "commonName": "Myrrh",
+    "desc": "Atonic conditions of mucous membranes, foul discharges, bleeding from mucous surfaces, unhealthy gum..."
+  },
+  "COMOCLADIA DENTATA": {
+    "commonName": "Guao, Toothleaf Maidenplum",
+    "desc": "Skin symptoms with intense burning and itching, urticaria with large red blotches, neuralgic pains d..."
+  },
+  "CONCHIOLINUM": {
+    "commonName": "Nacreous substance",
+    "desc": "Marked sensitivity of the skin, particularly in cases of skin eruptions that are worse from warmth..."
+  },
+  "CONDURANGO": {
+    "commonName": "Condor Vine, Eagle Vine",
+    "desc": "Sensation of a stricture or constriction in the esophagus, as if a plug or lump is present. Burning..."
+  },
+  "CONIOSELINUM CANADENSE": {
+    "commonName": "Hemlock Parsley, Small Hemlock",
+    "desc": "Violent trembling and twitching, weakness and loss of power, especially in limbs, paralytic weakness..."
+  },
+  "CONIUM MACULATUM": {
+    "commonName": "Poison hemlock",
+    "desc": "Vertigo on turning head, glandular induration, slow progressive weakness..."
+  },
+  "CONVALLARIA MAJALIS": {
+    "commonName": "Lily of the Valley",
+    "desc": "Sensation as if heart would stop, must hold breath to still the heart. Palpitations from the slighte..."
+  },
+  "CONVOLVULUS ARVENSIS": {
+    "commonName": "Field Bindweed, Bindweed",
+    "desc": "Constrictive sensation in the bladder, burning urination, difficulty passing urine, sensation of inc..."
+  },
+  "COPAIVA": {
+    "commonName": "Balsam of Copaiba",
+    "desc": "Profuse, thick, yellow or greenish mucopurulent discharges from mucous membranes. Intense burning an..."
+  },
+  "COPPER ARSENITE": {
+    "commonName": "Arsenite of Copper",
+    "desc": "Prominent skin eruptions with a burning sensation, especially in moist conditions; respiratory issue..."
+  },
+  "CORALLIUM RUBRUM": {
+    "commonName": "Red Coral",
+    "desc": "Cough is so rapid and violent it seems to come in quick, explosive, successive barks. Patient must s..."
+  },
+  "CORIANDRUM SATIVUM": {
+    "commonName": "Coriander",
+    "desc": "Intense restlessness and anxiety, often accompanied by insomnia; a feeling of being overwhelmed; for..."
+  },
+  "CORNUS CIRCINATA": {
+    "commonName": "Round-leaved Dogwood",
+    "desc": "Trembling weakness, severe lumbar pain as if broken, gouty deposits in joints, burning in urethra du..."
+  },
+  "CORNUS FLORIDA": {
+    "commonName": "Dogwood",
+    "desc": "Hemorrhoids with fullness and throbbing pain. Portal congestion with liver involvement. Sensation of..."
+  },
+  "CORYDALIS FORMOSA": {
+    "commonName": "Turkey Corn, Wild Turkey Pea",
+    "desc": "Urinary symptoms with prostatic involvement, burning and scalding during urination, dribbling stream..."
+  },
+  "COTYLEDON UMBILICUS": {
+    "commonName": "Navelwort, Pennywort, Wall Pennyroyal",
+    "desc": "Violent, spasmodic pains from kidney to bladder; urine scanty, bloody, and deposits red sand; skin a..."
+  },
+  "CRATAEGUS MONOGYNA": {
+    "commonName": "Hawthorn",
+    "desc": "Pain radiating to left shoulder/arm, constricting chest pain worse on exertion, palpitations with dy..."
+  },
+  "CRATAEGUS OXYACANTHA": {
+    "commonName": "Hawthorn, Maybush",
+    "desc": "Heart remedy for weakness and degeneration, acts as a heart tonic, sensation of heart being too larg..."
+  },
+  "CROCUS SATIVUS": {
+    "commonName": "Saffron",
+    "desc": "Sensation of something alive moving in abdomen, bright red hemorrhages with dark clots, marked nervo..."
+  },
+  "CROTALUS CASCAVELLA": {
+    "commonName": "Brazilian Rattlesnake",
+    "desc": "Dark, thin, non-coagulable blood; intense septic states; profound prostration with mental alertness;..."
+  },
+  "CROTALUS HORRIDUS": {
+    "commonName": "Rattlesnake",
+    "desc": "Hemorrhages from every orifice with dark, thin, non-coagulable blood; profound prostration and colla..."
+  },
+  "CROTON TIGLIUM": {
+    "commonName": "Croton Oil Seed, Purging Croton",
+    "desc": "All discharges are sudden and forcible; diarrhea drives him out of bed. Skin symptoms alternate with..."
+  },
+  "CUBEBA": {
+    "commonName": "Cubeb, Tailed Pepper, Java Pepper",
+    "desc": "Thick, mucopurulent, yellow-green discharges from urethra or bronchi; burning and smarting in urethr..."
+  },
+  "CUCUMIS SATIVUS": {
+    "commonName": "Cucumber",
+    "desc": "Intense vertigo on moving head/eyes; nausea with dizziness; faintness and weakness; cold hands and f..."
+  },
+  "CUCURBITA PEPO": {
+    "commonName": "Pumpkin",
+    "desc": "Indicated for worms with abdominal pain and nausea; urinary symptoms with burning and constrictive p..."
+  },
+  "CULEX MUSCA": {
+    "commonName": "Common House Mosquito",
+    "desc": "Prominent for its action on skin irritations and respiratory symptoms, especially when exacerbated b..."
+  },
+  "CUPHEA VISCOSISSIMA": {
+    "commonName": "Clammy Cuphea, Blue Waxweed",
+    "desc": "Burning and smarting as if from salt; constant urging to urinate with scanty, hot urine; skin feels..."
+  },
+  "CUPRUM ACETICUM": {
+    "commonName": "Copper Acetate",
+    "desc": "Marked muscle spasms and cramps, especially in the extremities, with a tendency for nervous excitabi..."
+  },
+  "CUPRUM ARSENICOSUM": {
+    "commonName": "Arseniate of Copper",
+    "desc": "Profound muscular spasms and cramps, especially in the extremities, with a tendency towards restless..."
+  },
+  "CUPRUM METALLICUM": {
+    "commonName": "Metallic Copper",
+    "desc": "Violent, sudden, spasmodic affections; cramps in extremities and abdomen; violent coughing fits with..."
+  },
+  "CUPRUM SULPHURICUM": {
+    "commonName": "Copper Sulphate",
+    "desc": "Marked by involuntary muscle contractions and a tendency towards nervous excitement; symptoms often..."
+  },
+  "CURARE": {
+    "commonName": "Woorara, South American Arrow Poison",
+    "desc": "Paralysis without atrophy, descending paralysis starting from eyes/throat, motor paralysis with inta..."
+  },
+  "CURCUMA LONGA": {
+    "commonName": "Turmeric",
+    "desc": "Yellow discoloration of skin/eyes, better from rubbing, worse from pressure/pressure bandages, burni..."
+  },
+  "CYCLAMEN PERSICUM": {
+    "commonName": "Persian Violet",
+    "desc": "Intense headaches that can be accompanied by nausea, a sensation of fullness in the head, and a tend..."
+  },
+  "CYCLAMEN EUROPAEUM": {
+    "commonName": "Sowbread",
+    "desc": "Vertigo with visual disturbances, sadness, menstrual irregularity..."
+  },
+  "CYNARA SCOLYMUS": {
+    "commonName": "Artichoke",
+    "desc": "Pain in right hypochondrium, worse after fatty foods; constipation with hard knotty stools; bloating..."
+  },
+  "CYNODON DACTYLON": {
+    "commonName": "Bermuda Grass, Doob Grass, Durva Grass",
+    "desc": "Profuse, passive bleeding from mucous membranes; dark, clotted blood; urinary symptoms with burning..."
+  },
+  "CYPRIPEDIUM PUBESCENS": {
+    "commonName": "Lady's Slipper",
+    "desc": "Anxiety after urination, burning pain in urethra, restlessness with frequent urination, worse from c..."
+  },
+  "CYTISUS SCOPARIUS": {
+    "commonName": "Spartium Scoparium, Broom, Scotch Broom",
+    "desc": "Profound weakness and coldness after loss of vital fluids; pulse slow, weak, intermittent; vertigo o..."
+  },
+  "DAMIANA": {
+    "commonName": "Damiana",
+    "desc": "Sexual weakness with anxiety; lack of sexual desire; urinary symptoms worse during coughing; menses..."
+  },
+  "DAPHNE INDICA": {
+    "commonName": "Indian Spurge Laurel, Spurge Olive",
+    "desc": "Intense burning sensation in all complaints, acrid and excoriating discharges, symptoms appear sudde..."
+  },
+  "DATURA ARBOREA": {
+    "commonName": "Angel's Trumpet",
+    "desc": "Attempts to escape during delirium, fear of impending death, hallucinations of animals, dilated pupi..."
+  },
+  "DATURA FEROX": {
+    "commonName": "Fierce Thornapple",
+    "desc": "Desire to run away or escape, incoherent loquacity, convulsions with opisthotonos, aversion to light..."
+  },
+  "DELPHINIUM STAPHISAGRIA": {
+    "commonName": "Stavesacre",
+    "desc": "Suppressed anger/humiliation, urinary symptoms after surgery/procedure, constipation with dry, hard..."
+  },
+  "DIERVILLA LONICERA": {
+    "commonName": "Bush Honeysuckle",
+    "desc": "Burning and smarting sensations as a keynote, especially in urinary passages and on skin. Symptoms a..."
+  },
+  "DIGITALINUM": {
+    "commonName": "Foxglove",
+    "desc": "Cardiac symptoms with a feeling of constriction, tendency towards bradycardia, and marked weakness o..."
+  },
+  "DIODIA VIRGINIANA": {
+    "commonName": "Carolina Willow",
+    "desc": "Particularly effective for urinary symptoms accompanied by a burning sensation and for skin eruption..."
+  },
+  "DIOSCOREA VILLOSA": {
+    "commonName": "Wild Yam",
+    "desc": "Pains that radiate from a central point to various directions, pains that make the patient bend back..."
+  },
+  "DIPHTHERINUM": {
+    "commonName": "Diphtheria Nosode",
+    "desc": "Rapid and extreme prostration out of proportion to the disease, foul odor, tendency to paralysis aft..."
+  },
+  "DIPHTHEROTOXINUM": {
+    "commonName": "Diphtheria Toxin",
+    "desc": "Characteristic throat symptoms with a foul odor, hoarseness, and a sensation of constriction in the..."
+  },
+  "DIRCA PALUSTRIS": {
+    "commonName": "Leatherwood",
+    "desc": "Distinctive for its action on the respiratory tract and its efficacy in managing chronic coughs with..."
+  },
+  "DOLICHOS PRURIENS": {
+    "commonName": "Cowhage, Mucuna Pruriens, Itch Bean",
+    "desc": "Intense, unbearable itching with no visible skin lesions. Itching is worse on the back, shoulders, a..."
+  },
+  "DOREMA AMMONIACUM": {
+    "commonName": "Ammoniacum, Gum Ammoniac",
+    "desc": "Tough, stringy mucus that is difficult to raise; sensation of a lump in the throat; hysterical sympt..."
+  },
+  "DORYPHORA": {
+    "commonName": "Colorado Potato Beetle",
+    "desc": "Marked gastrointestinal symptoms, especially after eating, with a tendency for skin eruptions and se..."
+  },
+  "DORYPHORA DECEMLINEATA": {
+    "commonName": "Colorado Potato Beetle",
+    "desc": "Burning pains as if from a hot iron, intense restlessness, pain in small of back, frequent urging to..."
+  },
+  "DROSERA": {
+    "commonName": "Sundew",
+    "desc": "Severe, dry, and spasmodic cough, often worse at night; cough may provoke vomiting; associated with..."
+  },
+  "DROSERA ROTUNDIFOLIA": {
+    "commonName": "Sundew",
+    "desc": "Violent, spasmodic, suffocating cough, worse lying down, worse after midnight, tickling in larynx, r..."
+  },
+  "DUBOISIA MYOPOROIDES": {
+    "commonName": "Corkwood, Pituri",
+    "desc": "Marked mydriasis (dilated pupils) with loss of accommodation, double vision, paralysis of ocular mus..."
+  },
+  "DULCAMARA": {
+    "commonName": "Bittersweet",
+    "desc": "Aggravation from cold, damp weather; skin affections appearing after suppression of eruptions; paral..."
+  },
+  "EBERTHINUM": {
+    "commonName": "Eberth's Bacillus",
+    "desc": "Prominent influence on the digestive tract, especially in cases of typhoid fever; marked weakness an..."
+  },
+  "ECHINACEA ANGUSTIFOLIA": {
+    "commonName": "Purple Coneflower",
+    "desc": "Septic states, putrid fevers, sluggish circulation, feeling of vital depression, extreme sensitivene..."
+  },
+  "ECHINACEA PURPUREA": {
+    "commonName": "Purple Coneflower",
+    "desc": "Rapidly developing septic states; profound weakness out of proportion to illness; tendency to suppur..."
+  },
+  "ELAPS CORALLINUS": {
+    "commonName": "Coral Snake",
+    "desc": "Everything appears black, sensation of a cold thread running through the body, hemorrhages that are..."
+  },
+  "ELATERIUM": {
+    "commonName": "Squirting Cucumber",
+    "desc": "Green, watery stools like spinach; great prostration; offensive odor; colic before and after stool..."
+  },
+  "EMBELIA RIBES": {
+    "commonName": "Vidanga, False Black Pepper",
+    "desc": "Violent itching at the anus, especially at night. Sensation of something alive moving in the abdomen..."
+  },
+  "ENTEROCOCCINUM": {
+    "commonName": "Enterococcus nosode",
+    "desc": "Distinguished by its ability to support recovery from infections, especially in cases where traditio..."
+  },
+  "EQUISETUM HYEMALE": {
+    "commonName": "Scouring Rush, Rough Horsetail",
+    "desc": "Constant desire to urinate with severe dull aching in bladder and kidneys; bedwetting, especially wi..."
+  },
+  "ERIGERON CANADENSE": {
+    "commonName": "Canadian Fleabane",
+    "desc": "Dribbling after urination, frequent urination at night, sense of weakness and emptiness in bladder,..."
+  },
+  "ERIODICTYON CALIFORNICUM": {
+    "commonName": "Yerba Santa, Mountain Balm",
+    "desc": "Expectoration profuse, thick, sweetish, and salty; bitter taste in mouth; sensation of a lump in the..."
+  },
+  "ERIODICYTON CALIFORNICUM": {
+    "commonName": "California Bay",
+    "desc": "Distinctive for its action on the respiratory tract and its ability to alleviate anxiety and depress..."
+  },
+  "ERYNGIUM AQUATICUM": {
+    "commonName": "Button Snakeroot, Water Eryngo, Rattlesnake Master",
+    "desc": "Intense burning and pain before, during, and after urination; urine is scanty, hot, and passed drop..."
+  },
+  "ERYNGIUM MARITIMUM": {
+    "commonName": "Sea Holly, Sea Eryngo",
+    "desc": "Urine contains red sand or gravel; violent burning and cutting pain in urethra during urination; pai..."
+  },
+  "ESCHSCHOLTZIA CALIFORNICA": {
+    "commonName": "California Poppy",
+    "desc": "Gentle sedative for the nervous system, specific for insomnia with inability to sleep due to an over..."
+  },
+  "ESERINUM": {
+    "commonName": "Eserine",
+    "desc": "Marked neuromuscular symptoms, especially involving paralysis and tremors, with a significant impact..."
+  },
+  "EUCALYPTUS CITRIODORA": {
+    "commonName": "Lemon-Scented Gum, Lemon Eucalyptus",
+    "desc": "Profuse, watery, acrid nasal discharge causing burning and rawness. Violent, exhausting sneezing. Pa..."
+  },
+  "EUCALYPTUS GLOBULUS": {
+    "commonName": "Blue Gum Tree, Fever Tree",
+    "desc": "Profuse, foul-smelling discharges from any mucous membrane; profound debility and exhaustion followi..."
+  },
+  "EUGENIA JAMBOS": {
+    "commonName": "Rose Apple, Jambul, Malabar Plum",
+    "desc": "Key remedy for diabetes with profuse urination of sugary urine and intense, unquenchable thirst. The..."
+  },
+  "EUONYMUS ATROPURPUREUS": {
+    "commonName": "Wahoo, Burning Bush, Spindle Tree",
+    "desc": "Biliousness; everything tastes bitter; vomiting of bile; intense, cramping hepatic pain; chill predo..."
+  },
+  "EUONYMUS EUROPAEUS": {
+    "commonName": "Spindle Tree",
+    "desc": "Dragging sensation in limbs, paralysis after diphtheria, rectal prolapse, weakness of lower extremit..."
+  },
+  "EUPATORIUM PERFOLIATUM": {
+    "commonName": "Boneset, Thoroughwort, Ague Weed",
+    "desc": "Pain as if bones are broken, great soreness of flesh and body, thirst for cold water before chill, v..."
+  },
+  "EUPATORIUM PURPUREUM": {
+    "commonName": "Queen of the Meadow, Gravel Root, Joe-Pye Weed",
+    "desc": "Bone-breaking pains, especially in the back and limbs. Thirst before the chill of fever. Vomiting of..."
+  },
+  "EUPHORBIA COROLLATA": {
+    "commonName": "Milkweed Spurge",
+    "desc": "Characteristic skin eruptions with a burning sensation, especially in respiratory ailments, and a te..."
+  },
+  "EUPHORBIA CYPARISSIAS": {
+    "commonName": "Cypress Spurge",
+    "desc": "Distinctive for its action on warts and its skin manifestations, Euphorbia Cyparissias is particular..."
+  },
+  "EUPHORBIA LATHYRIS": {
+    "commonName": "Caper Spurge",
+    "desc": "Prominent skin symptoms, especially with a burning sensation; respiratory complaints with a dry coug..."
+  },
+  "EUPHORBIA PILULIFERA": {
+    "commonName": "Petty Spurge",
+    "desc": "Distinctive for its ability to address both skin and respiratory conditions, with an emphasis on inf..."
+  },
+  "EUPHRASIA OFFICINALIS": {
+    "commonName": "Eyebright",
+    "desc": "The hallmark is the symptom contrast: acrid, burning tears with a bland, non-irritating nasal discha..."
+  },
+  "FAGOPYRUM ESCULENTUM": {
+    "commonName": "Buckwheat",
+    "desc": "Violent itching without visible eruption; sensation as if cold water were poured over parts; numbnes..."
+  },
+  "FERRUM ARSENICOSUM": {
+    "commonName": "Arsenic Ferrum",
+    "desc": "Marked weakness, especially in the limbs; sensitivity to cold; tendency to develop respiratory affec..."
+  },
+  "FERRUM BROMATUM": {
+    "commonName": "Iron Bromide",
+    "desc": "Marked weakness and fatigue, especially after exertion; respiratory symptoms with a feeling of heavi..."
+  },
+  "FERRUM IODATUM": {
+    "commonName": "Iodide of Iron",
+    "desc": "Key characteristics include a combination of respiratory symptoms with anemia, a tendency towards ch..."
+  },
+  "FERRUM PHOSPHORICUM": {
+    "commonName": "Phosphate of Iron",
+    "desc": "Bright red face, sudden onset of symptoms, inflammatory conditions without pus formation, tendency t..."
+  },
+  "FERRUM METALLICUM": {
+    "commonName": "Iron",
+    "desc": "Anemic appearance with a flushed face, weakness worse from slightest exertion, congestions, hemorrha..."
+  },
+  "FICUS RELIGIOSA": {
+    "commonName": "Sacred Fig, Peepal Tree, Bodhi Tree",
+    "desc": "Profuse bleeding from hemorrhoids with relief, constipation with ineffectual urging, sensation of a..."
+  },
+  "FILIX MAS": {
+    "commonName": "Male Fern",
+    "desc": "Specific for tapeworm, violent abdominal griping and tenesmus, profound weakness and prostration, sy..."
+  },
+  "FLUORIC ACID": {
+    "commonName": "Hydrofluoric Acid",
+    "desc": "Destructive bone changes, early decay..."
+  },
+  "FLUORICUM ACIDUM": {
+    "commonName": "Hydrofluoric Acid",
+    "desc": "Profound indifference, desire for constant change and travel, everything seems too long, rapid tissu..."
+  },
+  "FOENICULUM VULGARE": {
+    "commonName": "Fennel",
+    "desc": "Strong affinity for the digestive system, effective in relieving flatulence and colicky pain, has a..."
+  },
+  "FOLLICULINUM": {
+    "commonName": "Ovarian follicular hormone",
+    "desc": "Hormonal imbalance, cyclic symptoms, emotional hypersensitivity..."
+  },
+  "FORMALDEHYDE": {
+    "commonName": "Formalin",
+    "desc": "Effective for symptoms arising from toxic exposure, particularly respiratory and skin irritations. P..."
+  },
+  "FORMICA RUFA": {
+    "commonName": "Red Ant",
+    "desc": "Tearing pains in limbs and joints, stiffness as if paralyzed, restlessness with constant desire to m..."
+  },
+  "FRAGARIA VESCA": {
+    "commonName": "Wild Strawberry",
+    "desc": "Prominent skin symptoms with a strong emphasis on itching and burning sensations, often accompanied..."
+  },
+  "FRAXINUS AMERICANA": {
+    "commonName": "White ash",
+    "desc": "Uterine enlargement with bearing-down, pelvic congestion..."
+  },
+  "FUCUS VESICULOSUS": {
+    "commonName": "Bladderwrack, Sea Oak, Kelp",
+    "desc": "Obesity with indigestion and constipation; non-toxic, simple goiter; sensation of a lump in the thro..."
+  },
+  "GADUS MORRHUA": {
+    "commonName": "Cod Liver Oil",
+    "desc": "Rich in vitamins and essential fatty acids, it is particularly effective for dry skin and respirator..."
+  },
+  "GAERTNER BACH": {
+    "commonName": "Gaertner's Bach",
+    "desc": "Distinguished by its focus on mental and emotional symptoms, particularly in those feeling overwhelm..."
+  },
+  "GALANTHUS NIVALIS": {
+    "commonName": "Snowdrop",
+    "desc": "Prominent for its ability to alleviate symptoms triggered by cold weather; often characterized by a..."
+  },
+  "GALEGA OFFICINALIS": {
+    "commonName": "Goat's Rue",
+    "desc": "Promotes lactation, affects blood sugar levels, and is indicated for women with a history of diabete..."
+  },
+  "GALIUM APARINE": {
+    "commonName": "Cleavers",
+    "desc": "Key features include a strong affinity for the lymphatic system, skin-related issues, and a tendency..."
+  },
+  "GALVANISMUS": {
+    "commonName": "Electricity",
+    "desc": "Symptoms often arise after exposure to electrical stimuli; marked sensitivity to touch; often presen..."
+  },
+  "GAULTHERIA": {
+    "commonName": "Wintergreen",
+    "desc": "Strongly indicated for pain relief, especially in the joints and muscles; notable for its warming se..."
+  },
+  "GAULTHERIA PROCUMBENS": {
+    "commonName": "Wintergreen, Teaberry, Checkerberry",
+    "desc": "Intense, sharp, shooting, tearing, or lightning-like pains; pains often accompanied by a sensation o..."
+  },
+  "GELSEMIUM": {
+    "commonName": "Yellow Jasmine",
+    "desc": "Profound weakness, drowsiness, and a sensation of heaviness. Symptoms often appear gradually and are..."
+  },
+  "GELSEMIUM NITIDUM": {
+    "commonName": "Yellow Jasmine",
+    "desc": "Characteristic for its calming effects on the nervous system, particularly useful in anticipatory an..."
+  },
+  "GELSEMIUM SEMPERVIRENS": {
+    "commonName": "Yellow Jasmine",
+    "desc": "Weakness, trembling, fear..."
+  },
+  "GENETHYLIX TRIQUETRUM": {
+    "commonName": "Triquetrum",
+    "desc": "Calming effect on the nervous system, particularly effective for anxiety with physical symptoms, and..."
+  },
+  "GENISTA TINCTORIA": {
+    "commonName": "Dyer's Greenweed, Dyer's Broom",
+    "desc": "Vertigo with sensation of falling forward, especially when closing eyes. Pressure and pain at the ro..."
+  },
+  "GENTIANA LUTEA": {
+    "commonName": "Great Yellow Gentian, Bitter Root",
+    "desc": "Sinking, all-gone sensation in the stomach, not relieved by eating. Profound debility and trembling..."
+  },
+  "GERANIUM MACULATUM": {
+    "commonName": "Wild Geranium, Spotted Cranesbill",
+    "desc": "Passive, dark, non-coagulable bleeding; Debility from loss of vital fluids; Sensation of something w..."
+  },
+  "GEUM RIVALE": {
+    "commonName": "Water Avens",
+    "desc": "Strongly indicated for digestive upset, especially with a feeling of nausea and vomiting, often asso..."
+  },
+  "GILLENIA TRIFOLIATA": {
+    "commonName": "Indian Physic",
+    "desc": "Marked nausea and vomiting, especially during motion, and a tendency to diarrhea..."
+  },
+  "GINKGO BILOBA": {
+    "commonName": "Maidenhair Tree",
+    "desc": "Cerebral circulatory insufficiency, sensation of a band around the head, forgetfulness, coldness of..."
+  },
+  "GINSENG": {
+    "commonName": "American Ginseng, Panax",
+    "desc": "Complete mental and physical prostration; \"brain fag\"; sensation as if the mind were separated from..."
+  },
+  "GLEDITSIA TRIACANTHOS": {
+    "commonName": "Honey Locust",
+    "desc": "Characterized by skin conditions with intense itching and the presence of swollen glands; often acco..."
+  },
+  "GLONOINE": {
+    "commonName": "Nitroglycerin",
+    "desc": "Bursting sensation. Cannot bear heat on head..."
+  },
+  "GLYCYRRHIZA GLABRA": {
+    "commonName": "Licorice",
+    "desc": "Soothing effect on mucus membranes, anti-inflammatory properties, enhances adrenal function..."
+  },
+  "GNAPHALIUM POLYCEPHALUM": {
+    "commonName": "Common Everlasting, Sweet Scented Life Everlasting, Old Field Balsam",
+    "desc": "Sciatica with marked numbness of the affected part, numbness alternating with pain, pain feels as if..."
+  },
+  "GOSSYPIUM HERBACEUM": {
+    "commonName": "Cotton Plant, Cotton Root",
+    "desc": "Severe, cramping, labor-like pains in the uterus; sensation as if the uterus is being squeezed; naus..."
+  },
+  "GRAPHALIUM ULIGINOSUM": {
+    "commonName": "Water Graphite",
+    "desc": "Marked by skin eruptions and a tendency to secretion; particularly effective for chronic conditions..."
+  },
+  "GRAPHITES": {
+    "commonName": "Black lead",
+    "desc": "Cracked skin, sticky oozing discharge, constipation, obesity..."
+  },
+  "GRATIOLA": {
+    "commonName": "Hedge Hyssop",
+    "desc": "Marked nausea and vomiting, especially after eating; yellowish discoloration of the skin; strong eff..."
+  },
+  "GRATIOLA OFFICINALIS": {
+    "commonName": "Hedge Hyssop",
+    "desc": "Intense nausea with desire for salt; sour eructations; hiccups; vertigo..."
+  },
+  "GRINDELIA ROBUSTA": {
+    "commonName": "Gum Plant, Great Grindelia, Sticky-Heads",
+    "desc": "Asthma with profuse, ropy, tenacious mucus; patient must sit up to breathe; sensation of a band or w..."
+  },
+  "GUACO": {
+    "commonName": "Mikania glomerata",
+    "desc": "Prominent respiratory relief with a specific action on spasmodic coughs; notable for its ability to..."
+  },
+  "GUAIACUM OFFICINALE": {
+    "commonName": "Guaiacum, Lignum Vitae",
+    "desc": "Extreme stiffness and contraction, pains shift rapidly, profuse sour-smelling sweat that does not re..."
+  },
+  "GUARANA": {
+    "commonName": "Brazilian Cocoa, Paullinia",
+    "desc": "Intense cerebral excitation followed by profound depression and exhaustion. Headache from mental ove..."
+  },
+  "GYMNEMA SYLVESTRE": {
+    "commonName": "Gurmar, Australian Cowplant, Periploca of the Woods",
+    "desc": "The 'sugar destroyer' remedy; abolishes the taste of sugar; specific for reducing sugar cravings and..."
+  },
+  "HIV NOSODE": {
+    "commonName": "HIV Homeopathic Remedy",
+    "desc": "Distinct from other remedies due to its focus on immune system modulation and viral conditions..."
+  },
+  "HAEMATOXYLON CAMPECHIANUM": {
+    "commonName": "Logwood",
+    "desc": "Astringent properties, particularly effective for bleeding and skin conditions, often used when ther..."
+  },
+  "HAEMOPHILUS INFLUENZAE": {
+    "commonName": "H. influenzae",
+    "desc": "Keynotes include deep, loose cough, thick sputum, and significant nasal discharge, often with a hist..."
+  },
+  "HALIOTIS CALIFORNICA": {
+    "commonName": "Abalone",
+    "desc": "Prominent for its action on the skin and respiratory tract, particularly in patients with a history..."
+  },
+  "HAMAMELIS VIRGINIANA": {
+    "commonName": "Witch Hazel",
+    "desc": "Extreme soreness and tenderness of the affected parts, as if bruised; bleeding profusely, dark venou..."
+  },
+  "HELICHRYSUM ARENARIUM": {
+    "commonName": "Everlasting Flower",
+    "desc": "Distinguishing features include its efficacy in treating liver and gallbladder issues, and its actio..."
+  },
+  "HELLEBORUS FOETIDUS": {
+    "commonName": "Christmas Rose",
+    "desc": "Profound mental and physical debility, marked apathy, and a feeling of heaviness in the body..."
+  },
+  "HELLEBORUS NIGER": {
+    "commonName": "Christmas Rose",
+    "desc": "Profound stupor with coldness of the body, especially the extremities; suppression of urine with dro..."
+  },
+  "HELODERMA": {
+    "commonName": "Gila Monster",
+    "desc": "Icy cold internally. Trembling from head to feet..."
+  },
+  "HELODERMA HORRIDUM": {
+    "commonName": "Gila Monster",
+    "desc": "Symptoms often relate to the effects of venom, particularly in metabolic and neurological conditions..."
+  },
+  "HELONIAS DIOICA": {
+    "commonName": "False Unicorn Root, Unicorn Root",
+    "desc": "Dragging-down sensation in pelvis, uterine atony, prolapse, nervous exhaustion with irritability, it..."
+  },
+  "HEPAR SULPHURIS": {
+    "commonName": "Hepar Sulphur",
+    "desc": "Extreme sensitivity to touch, offensive discharges, and a tendency for abscess formation; often wors..."
+  },
+  "HEPAR SULPHURIS CALCAREUM": {
+    "commonName": "Calcium Sulphide",
+    "desc": "Extreme sensitivity, suppuration..."
+  },
+  "HEPATINE": {
+    "commonName": "Liver remedy",
+    "desc": "Primarily indicated for liver conditions, exhibits a marked improvement in jaundice and digestive co..."
+  },
+  "HEPATITIS NOSODE": {
+    "commonName": "Nosode of Hepatitis",
+    "desc": "Marked liver involvement, jaundice, and a tendency to chronicity distinguish this remedy..."
+  },
+  "HERACLEUM SPHONDYLIUM": {
+    "commonName": "Cow Parsnip",
+    "desc": "Prominent skin eruptions and respiratory symptoms, often with a marked sensitivity to touch and cold..."
+  },
+  "HERPES SIMPLEX": {
+    "commonName": "Cold Sores, Genital Herpes",
+    "desc": "Intense burning and itching sensations, localized eruptions that are painful, and recurrent nature o..."
+  },
+  "HIBISCUS SABDARIFFA": {
+    "commonName": "Roselle",
+    "desc": "Cooling effect, good for hot conditions, especially with redness and irritation, supports cardiovasc..."
+  },
+  "HIERACIUM PILOSELLA": {
+    "commonName": "Hawkweed",
+    "desc": "Markedly effective for respiratory issues with a tendency for dry cough, especially after eating or..."
+  },
+  "HIPPOMANES": {
+    "commonName": "Horse's Foot",
+    "desc": "Distinctive symptoms of nervousness and anxiety, particularly in relation to reproductive health..."
+  },
+  "HOLARRHENA ANTIDYSENTERICA": {
+    "commonName": "Kurchi",
+    "desc": "Effective in treating dysentery with mucus in the stools; characterized by a constant urge to defeca..."
+  },
+  "HOMARUS": {
+    "commonName": "Lobster",
+    "desc": "Intense itching, exacerbation of skin symptoms in warm environments, marked sensitivity to touch and..."
+  },
+  "HOUTTUYNIA CORDATA": {
+    "commonName": "Chameleon Plant",
+    "desc": "Distinctive for its effect on the respiratory system and skin, along with its ability to combat infe..."
+  },
+  "HYDRANGEA ARBORESCENS": {
+    "commonName": "Smooth Hydrangea",
+    "desc": "Prominent action on the urinary system, especially beneficial for kidney stones and associated pain;..."
+  },
+  "HYDROCOTYLE ASIATICA": {
+    "commonName": "Gotu Kola",
+    "desc": "Characteristic for its effect on the skin and mind, particularly in cases of chronic skin issues wit..."
+  },
+  "HYDROCYANIC ACID": {
+    "commonName": "Prussic Acid",
+    "desc": "Suddenness and violence of symptoms, extreme prostration, coldness, bluish discoloration (cyanosis),..."
+  },
+  "HYDROCYANICUM ACIDUM": {
+    "commonName": "Prussic Acid",
+    "desc": "Characterized by a feeling of suffocation, cyanosis, and intense nervous excitability. Symptoms may..."
+  },
+  "HYOSCYAMUS ALBUS": {
+    "commonName": "Henbane",
+    "desc": "Marked mental symptoms, especially hallucinations and delirium; twitching and spasms, sensitivity to..."
+  },
+  "HYOSCYAMUS NIGER": {
+    "commonName": "Henbane",
+    "desc": "Great loquacity with desire to expose genitals; jealousy and suspicion; involuntary urination during..."
+  },
+  "HYPERICUM PERFORATUM": {
+    "commonName": "St. John's Wort",
+    "desc": "Nerve injury, shooting pains..."
+  },
+  "HYPOPHYSIS ANTERIOR": {
+    "commonName": "Anterior Pituitary Gland",
+    "desc": "Distinctive for its action on growth and hormonal regulation, particularly in children; often indica..."
+  },
+  "HYPOPHYSIS POSTERIOR": {
+    "commonName": "Posterior Pituitary",
+    "desc": "Key characteristics include a tendency to excessive thirst and urination, along with hormonal dysreg..."
+  },
+  "HYSSOPUS OFFICINALIS": {
+    "commonName": "Hyssop",
+    "desc": "Prominent respiratory support, particularly for dry coughs; has a soothing effect on the nervous sys..."
+  },
+  "IBERIS AMARA": {
+    "commonName": "Bitter Candytuft",
+    "desc": "Palpitations with anxiety, nervousness, and restlessness; worsened by mental exertion..."
+  },
+  "IGNATIA AMARA": {
+    "commonName": "St. Ignatius Bean",
+    "desc": "Grief, sighing, contradiction of symptoms..."
+  },
+  "ILEX AQUIFOLIUM": {
+    "commonName": "Holly",
+    "desc": "Key characteristics include a tendency toward emotional disturbances, particularly anger, and physic..."
+  },
+  "ILLICIUM ANISATUM": {
+    "commonName": "Star Anise",
+    "desc": "Characterized by its ability to alleviate nausea and digestive discomfort, often with a marked effec..."
+  },
+  "IMPATIENS GLANDULIFERA": {
+    "commonName": "Himalayan Balsam",
+    "desc": "A distinctive feature of this remedy is its ability to alleviate feelings of impatience and frustrat..."
+  },
+  "INDIGOFERA TINCTORIA": {
+    "commonName": "Indigo",
+    "desc": "Intense itching and burning sensations, especially in skin eruptions; symptoms often worsen at night..."
+  },
+  "INFLUENZINUM": {
+    "commonName": "Influenza Nosode",
+    "desc": "Prostration out of proportion to the illness, aching in every bone, sudden onset, suits the symptoms..."
+  },
+  "INSULINUM": {
+    "commonName": "Insulin",
+    "desc": "Markedly addresses symptoms of sugar metabolism and is especially effective in cases where conventio..."
+  },
+  "INULA HELENIUM": {
+    "commonName": "Elecampane",
+    "desc": "Strong affinity for the respiratory system, especially in cases with a deep, rattling cough and a se..."
+  },
+  "IODUM": {
+    "commonName": "Iodine",
+    "desc": "Eats well but emaciates. Hot, restless. Swollen glands..."
+  },
+  "IPECACUANHA": {
+    "commonName": "Ipecac Root",
+    "desc": "Persistent nausea, clean tongue, no relief from vomiting..."
+  },
+  "IPOMOEA PURPUREA": {
+    "commonName": "Morning Glory",
+    "desc": "Distinct for its action on the nervous system and digestive tract, especially where anxiety leads to..."
+  },
+  "IRIS VERSICOLOR": {
+    "commonName": "Blue Flag",
+    "desc": "Severe, throbbing, often right-sided migraine headaches, typically preceded by visual aura (scintill..."
+  },
+  "JACARANDA CAROBA": {
+    "commonName": "Jacaranda",
+    "desc": "Distinctive for its action on the respiratory system and skin, with a notable affinity for condition..."
+  },
+  "JALAPA": {
+    "commonName": "Jalap",
+    "desc": "Intense purging effects, typically accompanied by anxiety and restlessness; often used in cases with..."
+  },
+  "JATROPHA CURCAS": {
+    "commonName": "Physic Nut",
+    "desc": "Prominent for its anti-inflammatory properties and its action on the digestive system..."
+  },
+  "JUGLANS CINEREA": {
+    "commonName": "Butternut",
+    "desc": "Marked skin eruptions, especially moist and itching, with a strong relationship to digestive complai..."
+  },
+  "JUGLANS REGIA": {
+    "commonName": "English Walnut",
+    "desc": "Skin affections with a tendency to develop fungal infections, especially with itching and burning se..."
+  },
+  "JUNIPERUS COMMUNIS": {
+    "commonName": "Common Juniper",
+    "desc": "Prominent for its diuretic action, particularly effective in cases of retention of urine and urinary..."
+  },
+  "JUNIPERUS VIRGINIANA": {
+    "commonName": "Eastern Red Cedar",
+    "desc": "Mainly indicated for urinary complaints with a strong diuretic action, it also addresses rheumatic p..."
+  },
+  "JUSTICIA ADHATODA": {
+    "commonName": "Malabar Nut",
+    "desc": "Prominent in treating respiratory disorders with a tendency to expectorate, especially in cases of b..."
+  },
+  "KALI ARSENICOSUM": {
+    "commonName": "Potassium Arsenite",
+    "desc": "Extreme emaciation with edema; restless anxiety; extreme weakness and prostration; dry cough with dy..."
+  },
+  "KALI BICHROMICUM": {
+    "commonName": "Potassium Bichromate",
+    "desc": "Stringy discharges, localized pain..."
+  },
+  "KALI IODATUM": {
+    "commonName": "Potassium Iodide",
+    "desc": "Profuse watery discharges, violent sneezing, sharp shooting pains, edema, worse at night, especially..."
+  },
+  "KALI MURIATICUM": {
+    "commonName": "Potassium Chloride",
+    "desc": "Mucous membrane affections with thick, white discharges; symptoms often worsen with dampness and hum..."
+  },
+  "KALI NITRICUM": {
+    "commonName": "Potassium Nitrate",
+    "desc": "Intense burning pains, violent urging to urinate, burning in urethra during and after urination, car..."
+  },
+  "KALI PHOSPHORICUM": {
+    "commonName": "Potassium Phosphate",
+    "desc": "Exhaustion, especially mental, accompanied by irritability and sensitivity, often worse from stress..."
+  },
+  "KALI SULPHURICUM": {
+    "commonName": "Potassium Sulphate",
+    "desc": "Kali Sulphuricum is distinguished by its affinity for yellow discharges, particularly in skin and re..."
+  },
+  "KALI CARBONICUM": {
+    "commonName": "Carbonate of potash",
+    "desc": "Sharp stitching pains, fear of being alone, aggravation at 3 am..."
+  },
+  "KALMIA LATIFOLIA": {
+    "commonName": "Mountain Laurel",
+    "desc": "Sharp, shooting pains that may be aggravated by motion, and symptoms that often radiate from the hea..."
+  },
+  "KARAKA": {
+    "commonName": "Indian Gooseberry",
+    "desc": "Strong affinity for digestive and respiratory systems, effective in dealing with fatigue and skin is..."
+  },
+  "KAVA KAVA": {
+    "commonName": "Kava",
+    "desc": "Deep relaxation without affecting mental clarity, helps with social anxiety, and promotes a sense of..."
+  },
+  "KINO": {
+    "commonName": "Kino Tree Extract",
+    "desc": "Prominent astringent action, especially in gastrointestinal issues, with a tendency to reduce excess..."
+  },
+  "KRAMERIA TRIANDRA": {
+    "commonName": "Rhatany",
+    "desc": "Prominent for its action on the mucous membranes and its ability to relieve symptoms associated with..."
+  },
+  "LAC CANINUM": {
+    "commonName": "Dog's Milk",
+    "desc": "Pains alternate sides, symptoms appear and disappear suddenly, throat pain extends to ears on swallo..."
+  },
+  "LAC DEFLORATUM": {
+    "commonName": "Skimmed Cow's Milk",
+    "desc": "Sensation of terrible emptiness in the stomach not relieved by eating; headaches that begin with the..."
+  },
+  "LAC FELINUM": {
+    "commonName": "Cat's Milk",
+    "desc": "Erratic, shooting pains that change location rapidly. Intense sensation of a band or constriction ar..."
+  },
+  "LAC HUMANUM": {
+    "commonName": "Human Milk",
+    "desc": "Profound feeling of being worthless, 'doormat' personality, craving for milk or dairy, symptoms wors..."
+  },
+  "LAC LEONINUM": {
+    "commonName": "Lion's Milk",
+    "desc": "Feeling of being overwhelmed by duties and responsibilities, sensation as if internal organs are sag..."
+  },
+  "LAC VACCINUM": {
+    "commonName": "Cow's Milk",
+    "desc": "Promotes growth and development, especially in children; effective for skin conditions; may have a m..."
+  },
+  "LAC VACCINUM COAGULATUM": {
+    "commonName": "Cow's Milk",
+    "desc": "Key characteristics include its strong affinity for milk-related issues and its ability to treat con..."
+  },
+  "LACHESIS": {
+    "commonName": "Bushmaster Snake Venom",
+    "desc": "Worse after sleep; intolerance of constriction..."
+  },
+  "LACHESIS MUTA": {
+    "commonName": "Bushmaster Snake Venom",
+    "desc": "Left-sided symptoms, aggravation from heat, and a tendency to be talkative and loquacious..."
+  },
+  "LACHNANTHES TINCTORIA": {
+    "commonName": "Black Root",
+    "desc": "Distinctive for its action on the mucous membranes and skin, particularly in cases of inflammation a..."
+  },
+  "LACTIC ACID": {
+    "commonName": "Lactic Acid",
+    "desc": "Extreme prostration and weakness, nausea with inability to retain food, sourness of all discharges,..."
+  },
+  "LACTUCA VIROSA": {
+    "commonName": "Wild Lettuce",
+    "desc": "Deep, heavy sleep with difficulty waking, alleviates nervous irritability and restlessness..."
+  },
+  "LAMIUM ALBUM": {
+    "commonName": "White Dead Nettle",
+    "desc": "Spasmodic cough, skin eruptions, and a tendency to allergy-like symptoms..."
+  },
+  "LAPPA MAJOR": {
+    "commonName": "Burdock Root",
+    "desc": "Promotes detoxification, especially through the skin; effective in skin eruptions and conditions wor..."
+  },
+  "LATHYRUS SATIVUS": {
+    "commonName": "Grass Pea",
+    "desc": "Predominantly indicated for conditions with muscle weakness and paralysis, particularly after exposu..."
+  },
+  "LATRODECTUS MACTANS": {
+    "commonName": "Black Widow Spider",
+    "desc": "Constriction and cramping pains, especially in heart and abdomen. Sensation as if a tight band is ar..."
+  },
+  "LAVANDULA VERA": {
+    "commonName": "True Lavender",
+    "desc": "Calming and soothing properties, particularly for nervous agitation and sleep issues..."
+  },
+  "LEDUM PALUSTRE": {
+    "commonName": "Marsh Tea",
+    "desc": "Puncture wounds, better cold..."
+  },
+  "LEMNA MINOR": {
+    "commonName": "Duckweed",
+    "desc": "Mucus congestion with a tendency to inflammation, particularly in respiratory and urinary tracts; sy..."
+  },
+  "LEONURUS CARDIACA": {
+    "commonName": "Motherwort",
+    "desc": "A strong affinity for the female reproductive system and the heart, often indicated in cases of anxi..."
+  },
+  "LEPTANDRA VIRGINICA": {
+    "commonName": "Black Root",
+    "desc": "Key symptomology includes a sensation of heaviness in the liver region and a tendency toward constip..."
+  },
+  "LEVISTICUM OFFICINALE": {
+    "commonName": "Lovage",
+    "desc": "Characteristic for its action on the digestive system and urinary tract; often indicated for conditi..."
+  },
+  "LIATRIS SPICATA": {
+    "commonName": "Blazing Star, Gayfeather",
+    "desc": "Distinctive for its action on the urinary tract and its ability to relieve nervous conditions, Liatr..."
+  },
+  "LILIUM LONGIFLORUM": {
+    "commonName": "Easter Lily",
+    "desc": "Prominent heart symptoms combined with anxiety and a sensation of pressure in the chest, often worse..."
+  },
+  "LILIUM TIGRINUM": {
+    "commonName": "Tiger Lily",
+    "desc": "Must cross legs to prevent prolapse. Hurried, restless..."
+  },
+  "LIMULUS CYCLOPS": {
+    "commonName": "Horseshoe Crab",
+    "desc": "Marked improvement in inflammatory conditions, specific affinity for the skin and mucous membranes,..."
+  },
+  "LINARIA VULGARIS": {
+    "commonName": "Toadflax",
+    "desc": "Cough with a sensation of constriction, skin eruptions that are itchy and burning; often used when s..."
+  },
+  "LINUM USITATISSIMUM": {
+    "commonName": "Flaxseed",
+    "desc": "Marked improvement in symptoms with the onset of warm weather, particularly effective for gastrointe..."
+  },
+  "LIPPIA DULCIS": {
+    "commonName": "Sweet Verbena",
+    "desc": "Distinct for its sweet taste and aromatic properties, it is particularly effective in cases of respi..."
+  },
+  "LITHOSPERMUM OFFICINALE": {
+    "commonName": "Gromwell",
+    "desc": "Marked astringency, particularly useful for dry, scaly skin and urinary issues. Characterized by its..."
+  },
+  "LOBELIA INFLATA": {
+    "commonName": "Indian Tobacco, Wild Tobacco",
+    "desc": "Sensation of a lump or constriction in the throat or chest. Nausea with profuse salivation and weakn..."
+  },
+  "LOLIUM TEMULENTUM": {
+    "commonName": "Darnel",
+    "desc": "Marked neurological symptoms, particularly tremors and anxiety, often accompanied by digestive issue..."
+  },
+  "LONICERA CAPRIFOLIUM": {
+    "commonName": "Honeysuckle",
+    "desc": "Intense itching and burning sensations, especially in skin eruptions, along with respiratory symptom..."
+  },
+  "LUPULUS HUMULUS": {
+    "commonName": "Hops",
+    "desc": "Restlessness and insomnia associated with anxiety, especially when the patient feels overwhelmed and..."
+  },
+  "LYCOPERSICUM ESCULENTUM": {
+    "commonName": "Tomato",
+    "desc": "Burning sensations in the stomach, digestive upset after consuming tomatoes, and skin eruptions rese..."
+  },
+  "LYCOPUS VIRGINICUS": {
+    "commonName": "Bugleweed, Virginia Bugleweed",
+    "desc": "Violent palpitations felt throughout the body, sensation as if the heart were squeezed by a hand, ex..."
+  },
+  "LYSIMACHIA NUMMULARIA": {
+    "commonName": "Moneywort",
+    "desc": "It is especially noted for its efficacy in skin eruptions and its action on the lymphatic system, wi..."
+  },
+  "LYSSIN": {
+    "commonName": "Hydrophobinum, Saliva of Rabid Dog",
+    "desc": "Symptoms reproduced by sight or sound of running water. Cannot swallow liquids without violent throa..."
+  },
+  "LYSSINUM": {
+    "commonName": "Saliva of Rabid Dog, Hydrophobinum",
+    "desc": "Symptoms brought on by sight or sound of running water; cannot swallow liquids without violent throa..."
+  },
+  "MAGNESIA CARBONICA": {
+    "commonName": "Magnesium Carbonate",
+    "desc": "Extreme irritability and restlessness, especially in children; sharp, cutting pains in the abdomen,..."
+  },
+  "MAGNESIA MURIATICA": {
+    "commonName": "Magnesia mur",
+    "desc": "Constipation with large, hard stools that are difficult to pass; constipation in women and children;..."
+  },
+  "MAGNESIA PHOSPHORICA": {
+    "commonName": "Magnesium Phosphate",
+    "desc": "Characterized by cramping pains that are relieved by warmth; often used in cases of colicky conditio..."
+  },
+  "MAGNESIA SULPHURICA": {
+    "commonName": "Magnesium Sulfate, Epsom Salts",
+    "desc": "Profound muscular weakness, neuralgic pains, marked aggravation from cold, dampness, and motion, ame..."
+  },
+  "MAGNETIS POLUS ARCTICUS": {
+    "commonName": "Arctic Magnetic Pole",
+    "desc": "Distinctive for its effects on the mind and nervous system, particularly in cases of anxiety and dep..."
+  },
+  "MAGNETIS POLUS AUSTRALIS": {
+    "commonName": "Southern Magnetic Pole",
+    "desc": "Disturbances in energy flow, sensitivity to magnetic fields, and a general feeling of malaise charac..."
+  },
+  "MAGNOLIA GLAUCA": {
+    "commonName": "Sweet Bay Magnolia",
+    "desc": "Distinctive for its action on anxiety and respiratory symptoms, with a calming effect on the mind..."
+  },
+  "MALANDRINUM": {
+    "commonName": "Vaccine Nosode, Smallpox Vaccine",
+    "desc": "Skin looks permanently dirty and cannot be washed clean; eruptions on the face, especially around th..."
+  },
+  "MALARIA OFFICINALIS": {
+    "commonName": "Malaria",
+    "desc": "Intermittent fever pattern, pronounced chill phase, and symptoms that recur at specific times..."
+  },
+  "MANCINELLA": {
+    "commonName": "Manchineel",
+    "desc": "Burning pain, especially in skin and mucous membranes; intense irritation; symptoms worsen from cont..."
+  },
+  "MANDRAGORA OFFICINARUM": {
+    "commonName": "Mandrake",
+    "desc": "Intense emotional states, particularly fear and anxiety, accompanied by physical symptoms such as sp..."
+  },
+  "MANGANUM": {
+    "commonName": "Manganese",
+    "desc": "Bone pains, especially in long bones; weariness and weakness; stitching pains; hoarseness and sore t..."
+  },
+  "MANGANUM ACETICUM": {
+    "commonName": "Manganese",
+    "desc": "Hoarseness worse from talking; pains in long bones; craving for wine and coffee; great weakness and..."
+  },
+  "MANGANUM METALLICUM": {
+    "commonName": "Manganese",
+    "desc": "Extreme restlessness, especially of the legs; aching, drawing pains in muscles and joints; hoarsenes..."
+  },
+  "MARUM VERUM": {
+    "commonName": "Catmint",
+    "desc": "Restlessness with a tendency to be easily startled; calming effect on the mind; notable for its use..."
+  },
+  "MATRICARIA CHAMOMILLA": {
+    "commonName": "German Chamomile",
+    "desc": "Irritability and restlessness, especially in children, with a tendency towards hypersensitivity; sym..."
+  },
+  "MEDORRHINUM": {
+    "commonName": "Gonorrheal nosode",
+    "desc": "Extremes of mood, restlessness, better at seaside..."
+  },
+  "MEDUSA": {
+    "commonName": "Jellyfish",
+    "desc": "Intense anxiety focused on the heart, sensation of a tight band around the chest or limbs, skin symp..."
+  },
+  "MELILOTUS OFFICINALIS": {
+    "commonName": "Sweet Clover",
+    "desc": "Key characteristics include a strong affinity for the circulatory system, particularly in conditions..."
+  },
+  "MELISSA OFFICINALIS": {
+    "commonName": "Lemon Balm",
+    "desc": "Calming, soothing effects, particularly for anxiety and sleep disturbances; often used in cases of n..."
+  },
+  "MENYANTHES TRIFOLIATA": {
+    "commonName": "Buckbean",
+    "desc": "Characteristic for its action on the digestive system and its ability to alleviate mental anguish, e..."
+  },
+  "MEPHITIS PUTORIUS": {
+    "commonName": "Skunk",
+    "desc": "Intense aversion to odors, particularly foul ones; exacerbation of symptoms in crowded or poorly ven..."
+  },
+  "MERCURIALIS PERENNIS": {
+    "commonName": "Mercury Plant",
+    "desc": "Marked respiratory symptoms with a tendency for skin eruptions, particularly when there is a history..."
+  },
+  "MERCURIUS CORROSIVUS": {
+    "commonName": "Corrosive Sublimate, Mercuric Chloride",
+    "desc": "Violent, unrelenting tenesmus (ineffectual urging) of both rectum and bladder simultaneously, raw bu..."
+  },
+  "MERCURIUS IODATUS FLAVUS": {
+    "commonName": "Yellow Iodide of Mercury",
+    "desc": "Marked right-sidedness, throat and glandular affections, stitching pains, swollen and indurated glan..."
+  },
+  "MERCURIUS IODATUS RUBER": {
+    "commonName": "Red Iodide of Mercury",
+    "desc": "Marked right-sided affinity, throat pain shoots to ear on swallowing, glands are hard and swollen, t..."
+  },
+  "MERCURIUS SOLUBILIS": {
+    "commonName": "Mercury",
+    "desc": "Offensive discharges, salivation, night aggravation..."
+  },
+  "MERCURIUS VIVUS": {
+    "commonName": "Quicksilver, Mercury",
+    "desc": "All discharges are foul and excoriating; marked aggravation at night and from extremes of temperatur..."
+  },
+  "MEZEREUM": {
+    "commonName": "Spurge Olive, Daphne mezereum",
+    "desc": "Intolerable itching, burning relieved by cold applications, thick leathery crusts under which pus ac..."
+  },
+  "MILLEFOLIUM": {
+    "commonName": "Yarrow",
+    "desc": "Millefolium is particularly noted for its ability to stop bleeding and promote healing in wounds, di..."
+  },
+  "MITCHELLA REPENS": {
+    "commonName": "Partridge Berry",
+    "desc": "Promotes uterine contractions and supports childbirth; beneficial for women experiencing anxiety rel..."
+  },
+  "MOMORDICA BALSAMINA": {
+    "commonName": "Balsam Pear, Bitter Cucumber",
+    "desc": "Marked bitterness, tendency toward skin eruptions, and digestive complaints; often indicated in acut..."
+  },
+  "MONOTROPA UNIFLORA": {
+    "commonName": "Ghost Plant, Indian Pipe",
+    "desc": "Marked insensitivity and emotional detachment, often accompanied by feelings of fear and anxiety..."
+  },
+  "MORBILLINUM": {
+    "commonName": "Measles Nosode",
+    "desc": "Remedy for the effects and sequelae of measles; used when measles has been suppressed or fails to er..."
+  },
+  "MORGAN GAERTNER": {
+    "commonName": "Not applicable",
+    "desc": "Distinctive for its action on the respiratory tract and digestive system, particularly in individual..."
+  },
+  "MORGAN PURE": {
+    "commonName": "Morgan Pure",
+    "desc": "Distinctive for its focus on chronic conditions and its ability to address deep-seated infections an..."
+  },
+  "MORPHINUM": {
+    "commonName": "Morphine",
+    "desc": "Intense pain relief, especially in conditions with anxiety or restlessness; often indicated in termi..."
+  },
+  "MORUS NIGRA": {
+    "commonName": "Black Mulberry",
+    "desc": "Relief of throat irritation, cough with thick mucus, and digestive complaints; often presents with a..."
+  },
+  "MOSCHUS": {
+    "commonName": "Musk",
+    "desc": "Intense nervous excitability and hysteria, fainting with coldness, sensation of a ball rising from t..."
+  },
+  "MUREX PURPUREA": {
+    "commonName": "Purple Fish, Purple Dye Murex",
+    "desc": "Intense bearing down sensation as if everything would protrude through the vagina, must cross legs t..."
+  },
+  "MURIATICUM ACIDUM": {
+    "commonName": "Hydrochloric Acid",
+    "desc": "Prostration so great he slides down in bed; everything seems loose and open; hemorrhoids that are la..."
+  },
+  "MUS DECUMANUS": {
+    "commonName": "Common House Mouse",
+    "desc": "Extreme sensitivity to external stimuli, a tendency to overreact to stressors, and digestive issues..."
+  },
+  "MUSA SAPIENTUM": {
+    "commonName": "Banana",
+    "desc": "Nausea with a desire for bananas, digestive upset with a history of eating bananas..."
+  },
+  "MUSCA DOMESTICA": {
+    "commonName": "House Fly",
+    "desc": "Restlessness and irritability, exacerbation of symptoms in warm weather, and a tendency to itch and..."
+  },
+  "MYGALE LASIODORA": {
+    "commonName": "Brazilian Black Tarantula",
+    "desc": "Violent, jerking, choreiform movements; extreme, ceaseless restlessness; sensation as if insects are..."
+  },
+  "MYOSOTIS SYMPHYTIFOLIA": {
+    "commonName": "Forget-me-not",
+    "desc": "Marked action on the respiratory tract with a tendency to dryness and irritation, often accompanied..."
+  },
+  "MYRISTICA SEBIFERA": {
+    "commonName": "Ucuhuba, Brazilian Nutmeg, Virola",
+    "desc": "Known as the 'homeopathic lancet' for its ability to hasten suppuration and open abscesses; prevents..."
+  },
+  "NAJA NAJA": {
+    "commonName": "Indian Cobra",
+    "desc": "Prominent cardiac symptoms, a feeling of constriction in the chest, and emotional disturbances like..."
+  },
+  "NAJA TRIPUDIANS": {
+    "commonName": "Indian Cobra Venom",
+    "desc": "Constriction sensations (heart, throat, head), left-sided symptoms, pain radiating from heart to lef..."
+  },
+  "NAPHTHALINUM": {
+    "commonName": "Naphthalene",
+    "desc": "Dryness, restlessness, and a tendency towards skin eruptions; symptoms often improve with warm appli..."
+  },
+  "NARCISSUS POETICUS": {
+    "commonName": "Poet's Narcissus",
+    "desc": "Marked respiratory distress, sensitivity to light, and pronounced skin symptoms. Often indicated in..."
+  },
+  "NARDUS": {
+    "commonName": "Spikenard",
+    "desc": "Deeply calming effect, particularly helpful in states of despair and anxiety; beneficial for those w..."
+  },
+  "NASTURTIUM AQUATICUM": {
+    "commonName": "Water Cress",
+    "desc": "Prominent for skin conditions and respiratory issues, often accompanied by a sense of urgency or res..."
+  },
+  "NATRUM CARBONICUM": {
+    "commonName": "Sodium Carbonate",
+    "desc": "Aggravation from sun and heat, burning eyes with photophobia, desire for salt, weakness and fatigue,..."
+  },
+  "NATRUM PHOSPHORICUM": {
+    "commonName": "Sodium Phosphate",
+    "desc": "Sourness of all discharges and excretions (vomit, sweat, stool). Yellow, creamy coating on the base..."
+  },
+  "NATRUM SULPHURICUM": {
+    "commonName": "Sodium Sulphate",
+    "desc": "Worse in damp weather, associated with liver and gallbladder issues, and has a strong effect on the..."
+  },
+  "NATRUM MURIATICUM": {
+    "commonName": "Common salt",
+    "desc": "Grief with silent brooding, headache from sun, craving salt..."
+  },
+  "NAUTILUS POMPILIUS": {
+    "commonName": "Chambered Nautilus",
+    "desc": "Unique for its ability to enhance cognitive function and emotional resilience, particularly in indiv..."
+  },
+  "NECTANDRA AMARA": {
+    "commonName": "Cinnamon Tree",
+    "desc": "Particularly effective for digestive tract disorders with a tendency towards nausea and vomiting, ac..."
+  },
+  "NERIUM OLEANDER": {
+    "commonName": "Oleander",
+    "desc": "Marked cardiac symptoms with emotional instability, strong affinity for the heart and lungs, and ski..."
+  },
+  "NICCOLUM METALLICUM": {
+    "commonName": "Nickel",
+    "desc": "Sensitivity to cold, metal toxicity symptoms, and a marked tendency for skin eruptions..."
+  },
+  "NITRIC ACID": {
+    "commonName": "Nitric Acid",
+    "desc": "Splinter-like pains, ulceration..."
+  },
+  "NITRICUM ACIDUM": {
+    "commonName": "Nitric Acid",
+    "desc": "Splinter-like pains. Cracks at mucocutaneous junctions. Offensive..."
+  },
+  "NUX MOSCHATA": {
+    "commonName": "Nutmeg",
+    "desc": "Irresistible sleepiness. Extreme dryness. Absent-minded..."
+  },
+  "NUX VOMICA": {
+    "commonName": "Poison Nut",
+    "desc": "Irritability, digestive upset, ineffectual urging..."
+  },
+  "OLEANDER": {
+    "commonName": "Rose Bay, Nerium",
+    "desc": "Violent itching; skin eruptions that ooze and form crusts, especially on the scalp; paralytic weakne..."
+  },
+  "OLEUM JECORIS ASELLI": {
+    "commonName": "Cod Liver Oil",
+    "desc": "Defective nutrition, especially of bones and glands. Children with large heads, open fontanelles, an..."
+  },
+  "OOPHORINUM": {
+    "commonName": "Ovarian extract",
+    "desc": "Ovarian dysfunction, menstrual irregularity, climacteric complaints..."
+  },
+  "OPIUM": {
+    "commonName": "Poppy Juice",
+    "desc": "Stupor, lack of pain, insensibility..."
+  },
+  "ORCHITINUM": {
+    "commonName": "Orchitinum",
+    "desc": "Distinctly addresses male reproductive health and function, particularly when emotional factors are..."
+  },
+  "ORNITHORHYNCHUS ANATINUS": {
+    "commonName": "Platypus",
+    "desc": "Unique for its action on the nervous system, especially in cases of heightened sensitivity and emoti..."
+  },
+  "OSCILLOCOCCINUM": {
+    "commonName": "Anas Barbariae Hepatis et Cordis Extractum",
+    "desc": "Sudden, violent onset of symptoms; intense body aches; profound weakness and prostration; feeling 'k..."
+  },
+  "OVIS ARIES": {
+    "commonName": "Sheep",
+    "desc": "Prominent skin eruptions often accompanied by respiratory symptoms; weakness and fatigue are common;..."
+  },
+  "OXALICUM ACIDUM": {
+    "commonName": "Oxalic Acid",
+    "desc": "Sudden, sharp, stitching pains like lightning; profound weakness after stool or urination; symptoms..."
+  },
+  "PANAX QUINQUEFOLIUM": {
+    "commonName": "American Ginseng",
+    "desc": "Complete mental and physical exhaustion, especially after prolonged mental exertion or illness. The..."
+  },
+  "PANCREATINUM": {
+    "commonName": "Pancreas extract",
+    "desc": "Effective for digestive complaints, particularly when there is a history of pancreatic issues, chara..."
+  },
+  "PARATHYROIDINUM": {
+    "commonName": "Parathyroid Hormone",
+    "desc": "Distinctive for its effectiveness in addressing symptoms related to calcium deficiency and parathyro..."
+  },
+  "PECTEN JACOBAEUS": {
+    "commonName": "Scallop Shell",
+    "desc": "Marked improvement in skin conditions and respiratory symptoms, especially in allergic types; sensit..."
+  },
+  "PEDICULUS CAPITIS": {
+    "commonName": "Head Lice",
+    "desc": "Intense itching, especially at night; scalp lesions; often accompanied by anxiety and restlessness..."
+  },
+  "PEPSINUM": {
+    "commonName": "Pepsin",
+    "desc": "Indicated for cases of impaired digestion where there is an absence or insufficiency of gastric juic..."
+  },
+  "PERTUSSINUM": {
+    "commonName": "Whooping Cough Nosode",
+    "desc": "Spasmodic and paroxysmal cough with a whooping sound, often triggered by excitement or laughter; may..."
+  },
+  "PETROLEUM": {
+    "commonName": "Crude Oil",
+    "desc": "Deep cracks that bleed. Worse winter. Better eating. Motion sick..."
+  },
+  "PHOSPHORIC ACID": {
+    "commonName": "Phosphoric acid",
+    "desc": "Apathy from grief, painless weakness, debility after loss of fluids..."
+  },
+  "PHOSPHORICUM ACIDUM": {
+    "commonName": "Phosphoric Acid",
+    "desc": "Profound indifference and apathy; answers questions slowly or not at all; weakness from loss of vita..."
+  },
+  "PHOSPHORUS": {
+    "commonName": "Phosphorus",
+    "desc": "Fear of being alone, craving cold drinks, bleeding tendency..."
+  },
+  "PHYTOLACCA DECANDRA": {
+    "commonName": "Pokeweed",
+    "desc": "Dark red throat. Pain to ears on swallowing. Breast hard..."
+  },
+  "PICRIC ACID": {
+    "commonName": "Picric Acid, Carbazotic Acid",
+    "desc": "Everything is heavy and weak. Profound prostration of mind and body. Aversion to mental work. Paraly..."
+  },
+  "PICRICUM ACIDUM": {
+    "commonName": "Picric Acid, Carbazotic Acid",
+    "desc": "Everything is heavy and weak. Profound prostration of mind and body. Aversion to mental work. Paraly..."
+  },
+  "PILOCARPINUM": {
+    "commonName": "Pilocarpine",
+    "desc": "Characterized by excessive secretions, especially saliva and perspiration, and its ability to revers..."
+  },
+  "PILOCARPUS": {
+    "commonName": "Jaborandi",
+    "desc": "Profuse secretions from all mucous membranes and skin; sweat, saliva, and tears flow copiously. A le..."
+  },
+  "PITUITARIUM POSTERIUM": {
+    "commonName": "Posterior Pituitary",
+    "desc": "Characteristic symptoms include intense thirst and excessive urination, particularly when there is a..."
+  },
+  "PLATINA": {
+    "commonName": "Platinum",
+    "desc": "Everything seems small. Haughty. Genital hypersensitivity..."
+  },
+  "PLATINA METALLICUM": {
+    "commonName": "Platinum",
+    "desc": "Pride and contempt, hypersensitivity, numbness with pain..."
+  },
+  "PLATINUM METALLICUM": {
+    "commonName": "Platinum",
+    "desc": "Haughty, contemptuous pride; sensation of numbness and constriction; everything seems smaller or dim..."
+  },
+  "PLUMBUM METALLICUM": {
+    "commonName": "Lead",
+    "desc": "Paralysis beginning in the extensors (wrist drop), severe colic with retraction of abdomen, blue lin..."
+  },
+  "PODOPHYLLUM": {
+    "commonName": "May Apple",
+    "desc": "Gushing, painless diarrhea. Worse morning, hot weather..."
+  },
+  "POLIOMYELITIS NOSODE": {
+    "commonName": "Polio Nosode",
+    "desc": "Distinctive for its ability to address paralysis and muscle atrophy, particularly following acute in..."
+  },
+  "PROTEUS BACH": {
+    "commonName": "Proteus",
+    "desc": "Particularly effective for conditions involving infection and inflammation, with a focus on the urin..."
+  },
+  "PRUNUS SPINOSA": {
+    "commonName": "Blackthorn, Sloe",
+    "desc": "Sudden, sharp, neuralgic, shooting pains. Constrictive sensation in the bladder and heart. Pain as i..."
+  },
+  "PSORINUM": {
+    "commonName": "Psoric Nosode",
+    "desc": "Hopelessness, offensive discharges..."
+  },
+  "PULEX IRRITANS": {
+    "commonName": "Common Flea",
+    "desc": "Intense itching that is unbearable, often worse at night; skin eruptions that may resemble flea bite..."
+  },
+  "PULSATILLA": {
+    "commonName": "Wind Flower",
+    "desc": "Changeable symptoms, weeping mood, thirstlessness..."
+  },
+  "PYROGENIUM": {
+    "commonName": "Pyrogen, Sepsin",
+    "desc": "Horrible, offensive odors from discharges and body; sensation as if lying on a board or bruised; int..."
+  },
+  "QUININE SULPHATE": {
+    "commonName": "Quinine",
+    "desc": "Intense chilliness, sensitivity to cold, and marked symptoms of malaria; often associated with a des..."
+  },
+  "RADIUM BROMATUM": {
+    "commonName": "Radium Bromide",
+    "desc": "Heightened sensitivity to external stimuli, particularly noise; symptoms may worsen in the evening;..."
+  },
+  "RANUNCULUS BULBOSUS": {
+    "commonName": "Buttercup, Bulbous Buttercup",
+    "desc": "Intense stitching, burning pains in chest wall; extreme soreness and sensitivity; symptoms aggravate..."
+  },
+  "RAPHANUS SATIVUS": {
+    "commonName": "Garden Radish",
+    "desc": "Complete cessation of all evacuations (flatus, stool, urine). Sensation of a hard, plugged-up ball i..."
+  },
+  "RHEUM": {
+    "commonName": "Rhubarb",
+    "desc": "Everything is sour - stool, sweat, vomit, body odor. Child is extremely irritable and cross, cannot..."
+  },
+  "RHUS TOXICODENDRON": {
+    "commonName": "Poison Ivy",
+    "desc": "Restlessness with relief from motion..."
+  },
+  "RUMEX CRISPUS": {
+    "commonName": "Yellow Dock, Curled Dock",
+    "desc": "Cough from slightest inhalation of cold air, must cover mouth; Tickling in throat-pit; Itching of sk..."
+  },
+  "RUTA GRAVEOLENS": {
+    "commonName": "Rue, Herb-of-grace",
+    "desc": "Bruised, sore, lame feeling. Injuries to fibrous tissues, tendons, and periosteum. Eye strain from c..."
+  },
+  "SABADILLA": {
+    "commonName": "Cevadilla, Sabadilla Seed",
+    "desc": "Violent, paroxysmal sneezing; copious, watery nasal discharge; intense itching in the nose and roof..."
+  },
+  "SABINA": {
+    "commonName": "Savin",
+    "desc": "Uterine hemorrhage with clots, pain from sacrum to pubes..."
+  },
+  "SALMONELLA TYPHI": {
+    "commonName": "Typhoid Bacillus",
+    "desc": "High fever with abdominal distress, prostration, and pronounced weakness; symptoms may appear after..."
+  },
+  "SAMBUCUS NIGRA": {
+    "commonName": "Elderberry",
+    "desc": "Sudden suffocation, especially at night; profuse, hot, debilitating sweat; dry mouth with profuse sw..."
+  },
+  "SANGUINARIA CANADENSIS": {
+    "commonName": "Bloodroot",
+    "desc": "Right-sided headache, flushing..."
+  },
+  "SARSAPARILLA": {
+    "commonName": "Wild Sarsaparilla",
+    "desc": "Skin eruptions with dry, cracked, fissured surfaces; urinary symptoms worse when not urinating; bone..."
+  },
+  "SARSAPARILLA OFFICINALIS": {
+    "commonName": "Sarsaparilla",
+    "desc": "Scanty urine, especially in children; urine passes only when standing; thick, dirty, greenish urine;..."
+  },
+  "SCARLATINUM": {
+    "commonName": "Scarlet Fever Nosode",
+    "desc": "Marked by a bright red rash and intense fever, with a characteristic throbbing headache and a tenden..."
+  },
+  "SECALE CORNUTUM": {
+    "commonName": "Ergot of Rye",
+    "desc": "Extreme coldness with burning pains, dry gangrene with intact skin, intense restlessness, thirst for..."
+  },
+  "SELENIUM": {
+    "commonName": "Selenium",
+    "desc": "Marked debility, skin affections, and a tendency towards nervous exhaustion; often associated with h..."
+  },
+  "SELENIUM METALLICUM": {
+    "commonName": "Selenium",
+    "desc": "Premature old age, marked weakness and trembling, hair falling out, nails brittle and sore, constipa..."
+  },
+  "SENECIO AUREUS": {
+    "commonName": "Golden Ragwort, Life Root",
+    "desc": "Urinary symptoms with weakness and fatigue, especially in women; menstrual irregularities; cough wit..."
+  },
+  "SEPIA": {
+    "commonName": "Cuttlefish Ink",
+    "desc": "Bearing-down, indifference, better exercise..."
+  },
+  "SEPIA SUCCUS": {
+    "commonName": "Cuttlefish Ink",
+    "desc": "Melancholy with indifference, especially in women; cravings for vinegar; feelings of being overwhelm..."
+  },
+  "SEPIA OFFICINALIS": {
+    "commonName": "Cuttlefish ink",
+    "desc": "Bearing-down sensation, indifference to family, better from exercise, yellow facial discoloration..."
+  },
+  "SILICEA": {
+    "commonName": "Silica",
+    "desc": "Chilliness, lack of reaction, suppuration..."
+  },
+  "SILICEA TERRA": {
+    "commonName": "Pure flint",
+    "desc": "Chilly, slow healing, lack of grit, offensive foot sweat..."
+  },
+  "SPIGELIA ANTHELMIA": {
+    "commonName": "Pinkroot",
+    "desc": "Left-sided neuralgia, cardiac pain..."
+  },
+  "SPONGIA MARINA": {
+    "commonName": "Sea Sponge",
+    "desc": "Cough that is dry and barking, often worse at night; sensation of constriction in the throat; improv..."
+  },
+  "SPONGIA TOSTA": {
+    "commonName": "Roasted Sponge",
+    "desc": "Dry, barking, sawing cough like a saw going through wood. Sensation of a plug or splinter in the thr..."
+  },
+  "SQUILLA MARITIMA": {
+    "commonName": "Sea Onion",
+    "desc": "Violent, spasmodic cough; dyspnea with cardiac weakness; copious watery expectoration; burning urina..."
+  },
+  "STANNUM METALLICUM": {
+    "commonName": "Tin",
+    "desc": "Extreme, progressive weakness and prostration; Cough that is violent, loose, and ends in exhaustion;..."
+  },
+  "STAPHYLOCOCCINUM": {
+    "commonName": "Staphylococcus Nosode",
+    "desc": "Prevents recurrence of boils and abscesses; useful in septic conditions with pus formation; acts as..."
+  },
+  "STAPHYSAGRIA": {
+    "commonName": "Stavesacre",
+    "desc": "Suppressed anger, sensitivity..."
+  },
+  "STELLARIA MEDIA": {
+    "commonName": "Chickweed",
+    "desc": "Sharp, shooting pains, especially in joints, worse with motion. Cough with rattling expectoration. F..."
+  },
+  "STRAMONIUM": {
+    "commonName": "Thorn Apple / Jimsonweed",
+    "desc": "TERROR is the keynote - of darkness, solitude, dogs, water, shining objects. Must have light and com..."
+  },
+  "STREPTOCOCCINUM": {
+    "commonName": "Streptococcus Nosode",
+    "desc": "History of repeated strep infections; conditions that develop after scarlet fever; septic, toxic sta..."
+  },
+  "STRYCHNIA PHOSPHORICA": {
+    "commonName": "Phosphoric Strychnine",
+    "desc": "Characteristic for its action on the nervous system, leading to increased muscular tension and spasm..."
+  },
+  "SULPHUR": {
+    "commonName": "Brimstone",
+    "desc": "Burning pains, heat on top of head, aversion to bathing, standing thinker..."
+  },
+  "SULPHURICUM ACIDUM": {
+    "commonName": "Sulphuric Acid",
+    "desc": "Intense, sudden weakness and sinking sensation; everything seems too much of an effort; tendency to..."
+  },
+  "SUS SCROFA": {
+    "commonName": "Wild Boar",
+    "desc": "Characteristic eruptions, tendency to infections, and strong reaction to skin stimuli distinguish th..."
+  },
+  "SYMPHYTUM OFFICINALE": {
+    "commonName": "Comfrey / Knitbone",
+    "desc": "Called the 'bone setter' remedy. Promotes union of fractures. Pricking stitching pain in injury site..."
+  },
+  "SYPHILINUM": {
+    "commonName": "Syphilitic nosode",
+    "desc": "Night aggravation, destructive pains, despair..."
+  },
+  "TABACUM": {
+    "commonName": "Tobacco",
+    "desc": "DEATHLY NAUSEA with icy cold sweat is the keynote. Pallor - face pale, greenish, or ashen. Cold as d..."
+  },
+  "TARENTULA CUBENSIS": {
+    "commonName": "Cuban Tarantula",
+    "desc": "Intense burning and bluish or purplish discoloration of affected parts; symptoms develop with terrif..."
+  },
+  "TARENTULA HISPANICA": {
+    "commonName": "Spanish Spider",
+    "desc": "Violent, sudden, and extreme symptoms; must keep moving constantly; amelioration from music; destruc..."
+  },
+  "TETANUS TOXOID": {
+    "commonName": "Tetanus Vaccine",
+    "desc": "Characterized by extreme muscle rigidity and spasms, often affecting the jaw and neck, with a potent..."
+  },
+  "THERIDION CURASSAVICUM": {
+    "commonName": "Orange Spider",
+    "desc": "Vertigo on closing the eyes. Extreme sensitivity to noise, which penetrates the teeth. Spine feels w..."
+  },
+  "THUJA OCCIDENTALIS": {
+    "commonName": "Arbor vitae",
+    "desc": "Warty excrescences, fixed ideas, sensation of something alive inside..."
+  },
+  "THYMUS GLAND": {
+    "commonName": "Thymus",
+    "desc": "Distinguished by its effect on the immune system and its role in enhancing vitality and resilience."
+  },
+  "THYROIDINUM": {
+    "commonName": "Thyroid Extract",
+    "desc": "Markedly influences metabolism and energy levels, often indicated in patients with sluggishness and..."
+  },
+  "TUBERCULINUM": {
+    "commonName": "Tubercular nosode",
+    "desc": "Desire for change, restlessness, recurring complaints..."
+  },
+  "TUBERCULINUM BOVINUM": {
+    "commonName": "Bovine Tuberculinum, Tuberculinum",
+    "desc": "Profound physical and mental restlessness, constant desire for change (place, job, company). Marked..."
+  },
+  "URTICA URENS": {
+    "commonName": "Stinging Nettle",
+    "desc": "BURNING STINGING ITCHING eruptions like nettle rash. Urticaria worse from bathing, exercise, warmth..."
+  },
+  "VALERIANA OFFICINALIS": {
+    "commonName": "Valerian, Garden Heliotrope",
+    "desc": "Hysterical states with nervous laughter and weeping, extreme restlessness, sensation of internal tre..."
+  },
+  "VARIOLINUM": {
+    "commonName": "Smallpox Nosode",
+    "desc": "Intense burning and stinging pains, severe backache preceding eruption, pustular eruptions, symptoms..."
+  },
+  "VENUS MERCENARIA": {
+    "commonName": "Quahog",
+    "desc": "It is particularly indicated for skin eruptions that are itchy and worse from warmth, along with dig..."
+  },
+  "VESPA CRABRO": {
+    "commonName": "Hornet",
+    "desc": "Marked swelling and inflammation, particularly after insect stings; restlessness and irritability ar..."
+  },
+  "VIBURNUM OPULUS": {
+    "commonName": "High Cranberry / Cramp Bark",
+    "desc": "CRAMPS radiating from pelvis down the thighs. Sudden colicky pains. Better rest and pressure. Threat..."
+  },
+  "VIOLA ODORATA": {
+    "commonName": "Sweet Violet",
+    "desc": "Violent cough with profuse expectoration, worse in the morning. Headache with dullness and sleepines..."
+  },
+  "VIOLA TRICOLOR": {
+    "commonName": "Wild Pansy, Heartsease",
+    "desc": "Itching of the skin, especially when dry; pustular eruptions with thick crusts; scrofulous symptoms;..."
+  },
+  "VIPERA BERUS": {
+    "commonName": "Common European Adder, Viper Venom",
+    "desc": "Sensation as if a limb would burst; must hang it down or keep it elevated. Veins are swollen, sensit..."
+  },
+  "WYETHIA HELENOIDES": {
+    "commonName": "Rattlesnake Weed, Indian Sage",
+    "desc": "Intense itching and dryness of the throat and pharynx, with a tickling cough that is hard to suppres..."
+  },
+  "X-RAY": {
+    "commonName": "X-Ray",
+    "desc": "Sensitive to light and noise, often shows signs of fatigue and emotional distress, exacerbated by ex..."
+  },
+  "XYLOCOPA VIOLACEA": {
+    "commonName": "Black Carpenter Bee",
+    "desc": "Marked respiratory symptoms, heightened sensitivity to pain, and pronounced emotional disturbances s..."
+  },
+  "ZINCUM METALLICUM": {
+    "commonName": "Zinc",
+    "desc": "Constant fidgeting of feet and legs, symptoms from suppressed eruptions or discharges, ailments from..."
+  },
+  "ZINGIBER OFFICINALE": {
+    "commonName": "Ginger",
+    "desc": "Extreme chilliness, sluggish circulation, nausea with excessive salivation, thirstlessness with diar..."
+  }
+}

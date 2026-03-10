@@ -1,10 +1,12 @@
 import * as fs from "fs";
 import * as path from "path";
+import { translateRepertory, repBnToEn } from "@/i18n/repertoryBn";
 
 export type NeoSymptomSearchEntry = {
   id: string;
   name: string;
   nameLower: string;
+  bnLower: string;
   type: string;
   chapter: string;
   parent?: string;
@@ -63,7 +65,7 @@ let _data: {
   chapterById: Map<string, NeoChapter>;
   remedyToSymptoms: Map<string, string[]>;
   symptomSearchIndex: NeoSymptomSearchEntry[];
-  remedySearchIndex: { lower: string; abbrLower: string; descLower: string; r: NeoRemedy }[];
+  remedySearchIndex: { lower: string; abbrLower: string; descLower: string; bnLower: string; r: NeoRemedy }[];
 } | null = null;
 
 function slugify(s: string): string {
@@ -192,13 +194,13 @@ function loadData() {
 
   const symptomSearchIndex: NeoSymptomSearchEntry[] = [];
   for (const ch of chapters) {
-    symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), type: "repertory", chapter: ch.name });
+    symptomSearchIndex.push({ id: ch.id, name: ch.name, nameLower: ch.name.toLowerCase(), bnLower: translateRepertory(ch.name).toLowerCase(), type: "repertory", chapter: ch.name });
     for (const cond of ch.conditions) {
-      symptomSearchIndex.push({ id: cond.id, name: cond.name, nameLower: cond.name.toLowerCase(), type: "condition", chapter: ch.name });
+      symptomSearchIndex.push({ id: cond.id, name: cond.name, nameLower: cond.name.toLowerCase(), bnLower: translateRepertory(cond.name).toLowerCase(), type: "condition", chapter: ch.name });
       for (const sym of cond.symptoms) {
-        symptomSearchIndex.push({ id: sym.id, name: sym.name, nameLower: sym.name.toLowerCase(), type: "symptom", chapter: ch.name, parent: cond.name });
+        symptomSearchIndex.push({ id: sym.id, name: sym.name, nameLower: sym.name.toLowerCase(), bnLower: translateRepertory(sym.name).toLowerCase(), type: "symptom", chapter: ch.name, parent: cond.name });
         for (const sub of sym.subSymptoms) {
-          symptomSearchIndex.push({ id: sub.id, name: sub.name, nameLower: sub.name.toLowerCase(), type: "subSymptom", chapter: ch.name, parent: sym.name });
+          symptomSearchIndex.push({ id: sub.id, name: sub.name, nameLower: sub.name.toLowerCase(), bnLower: translateRepertory(sub.name).toLowerCase(), type: "subSymptom", chapter: ch.name, parent: sym.name });
         }
       }
     }
@@ -208,6 +210,7 @@ function loadData() {
     lower: r.name.toLowerCase(),
     abbrLower: r.abbr.toLowerCase(),
     descLower: r.description.toLowerCase(),
+    bnLower: translateRepertory(r.name).toLowerCase(),
     r,
   }));
 
@@ -260,3 +263,4 @@ export function getNeoChapterById() { return loadData().chapterById; }
 export function getNeoRemedyToSymptoms() { return loadData().remedyToSymptoms; }
 export function getNeoSymptomSearchIndex() { return loadData().symptomSearchIndex; }
 export function getNeoRemedySearchIndex() { return loadData().remedySearchIndex; }
+export function getNeoBnToEn() { return repBnToEn; }
