@@ -115,4 +115,43 @@ export const neoApi = {
       method: "POST",
       body: JSON.stringify({ symptomIds, topN }),
     }),
+
+  doctor: (payload: { complaint: string; round: number; answers: Record<string, string>; history: { role: string; content: string }[]; language: string }) =>
+    fetchNeoAPI<DoctorResponse>("/doctor", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }),
 };
+
+export interface DoctorQuestion {
+  id: string;
+  text: string;
+  type: "yesno" | "scale" | "select";
+  options: { value: string; label: string }[];
+}
+
+export interface DoctorQuestionsResponse {
+  type: "questions";
+  round: number;
+  message: string;
+  questions: DoctorQuestion[];
+}
+
+export interface DoctorRecommendationResponse {
+  type: "recommendation";
+  message: string;
+  symptomsIdentified: string[];
+  primaryRemedy: {
+    name: string;
+    abbr: string;
+    confidence: number;
+    explanation: string;
+    dosage: string;
+    keyIndications: string[];
+  };
+  alternativeRemedies: { name: string; abbr: string; confidence: number; brief: string }[];
+  generalAdvice: string;
+  whenToSeekHelp: string;
+}
+
+export type DoctorResponse = DoctorQuestionsResponse | DoctorRecommendationResponse;

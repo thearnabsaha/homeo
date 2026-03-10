@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {
   Stethoscope, BookOpen, Globe, Mic, Zap, Smartphone,
-  ArrowRight, MessageCircle, Search, CheckCircle2, Sparkles, ArrowLeft,
+  ArrowRight, MessageCircle, Search, CheckCircle2, Sparkles, ArrowLeft, HeartPulse,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/i18n/useTranslation";
@@ -29,9 +29,9 @@ export default function NeoLandingPage() {
   ];
 
   const steps = [
-    { icon: MessageCircle, num: n("01"), title: isBn ? "লক্ষণ বলুন" : "Describe Symptoms", desc: isBn ? "আপনার সমস্যা বর্ণনা করুন।" : "Describe your problems." },
-    { icon: Search, num: n("02"), title: isBn ? "NeoAI বিশ্লেষণ" : "NeoAI Analysis", desc: isBn ? "NeoAI ক্লাসিক্যাল রেপার্টরি থেকে বিশ্লেষণ করবে।" : "NeoAI analyzes from the classical repertory." },
-    { icon: CheckCircle2, num: n("03"), title: isBn ? "ওষুধ পান" : "Get Remedies", desc: isBn ? "১০-১৫টি প্রাসঙ্গিক ওষুধের পরামর্শ পান।" : "Get 10-15 relevant remedy suggestions." },
+    { icon: MessageCircle, num: n("01"), title: isBn ? "সমস্যা বলুন" : "Describe Problem", desc: isBn ? "আপনার সমস্যা বর্ণনা করুন, NeoAI ডাক্তার প্রশ্ন করবে।" : "Describe your problem, NeoAI Doctor will ask questions." },
+    { icon: Search, num: n("02"), title: isBn ? "৩ ধাপে প্রশ্ন-উত্তর" : "3-Round Q&A", desc: isBn ? "হ্যাঁ/না, সংখ্যা বা সিলেক্ট বক্স থেকে উত্তর দিন — টাইপ করতে হবে না!" : "Answer with Yes/No, numbers, or selection boxes — no typing!" },
+    { icon: CheckCircle2, num: n("03"), title: isBn ? "ওষুধ পান" : "Get Medicines", desc: isBn ? "১০-১৫টি প্রাসঙ্গিক ওষুধের পরামর্শ পান।" : "Get 10-15 relevant medicine suggestions." },
   ];
 
   return (
@@ -52,10 +52,16 @@ export default function NeoLandingPage() {
             <Link href="/neo/repertory">
               <Button variant="ghost" size="sm" className="text-xs hidden sm:inline-flex">{t("nav.repertory")}</Button>
             </Link>
-            <Link href="/neo/consult">
+            <Link href="/neo/doctor">
               <Button size="sm" className="text-xs gap-1.5">
+                <HeartPulse className="h-3.5 w-3.5" />
+                {isBn ? "NeoAI ডাক্তার" : "NeoAI Doctor"}
+              </Button>
+            </Link>
+            <Link href="/neo/consult">
+              <Button variant="outline" size="sm" className="text-xs gap-1.5 hidden sm:inline-flex">
                 <Stethoscope className="h-3.5 w-3.5" />
-                {isBn ? "NeoAI পরামর্শ" : "NeoAI Consult"}
+                {isBn ? "পরামর্শ" : "Consult"}
               </Button>
             </Link>
             <LanguageSwitcher />
@@ -83,11 +89,17 @@ export default function NeoLandingPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 mb-16 animate-fade-in">
-              <Link href="/neo/consult">
+              <Link href="/neo/doctor">
                 <Button size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
-                  <Sparkles className="h-4 w-4" />
-                  {isBn ? "NeoAI পরামর্শ শুরু করুন" : "Start NeoAI Consultation"}
+                  <HeartPulse className="h-4 w-4" />
+                  {isBn ? "NeoAI ডাক্তার শুরু করুন" : "Start NeoAI Doctor"}
                   <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/neo/consult">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-colors">
+                  <Stethoscope className="h-4 w-4" />
+                  {isBn ? "ফ্রি-ফর্ম পরামর্শ" : "Free-form Consult"}
                 </Button>
               </Link>
               <Link href="/neo/explorer">
@@ -161,16 +173,23 @@ export default function NeoLandingPage() {
       <section className="py-16 sm:py-24 border-t border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            {isBn ? "NeoAI পরামর্শ শুরু করুন" : "Start NeoAI Consultation"}
+            {isBn ? "NeoAI ডাক্তার শুরু করুন" : "Start NeoAI Doctor"}
           </h2>
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-8">
-            {isBn ? "ক্লাসিক্যাল রেপার্টরিতে প্রশিক্ষিত AI থেকে পরামর্শ নিন।" : "Get consultation from AI trained on classical repertory."}
+            {isBn ? "৩টি ধাপে প্রশ্ন-উত্তর — টাইপ ছাড়াই সিলেক্ট বক্স দিয়ে। ক্লাসিক্যাল রেপার্টরিতে প্রশিক্ষিত AI।" : "3 rounds of Q&A with selection boxes — no typing needed. AI trained on classical repertory."}
           </p>
-          <Link href="/neo/consult">
-            <Button size="lg" className="gap-2 text-sm px-8 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
-              <Sparkles className="h-4 w-4" />{isBn ? "NeoAI পরামর্শ" : "NeoAI Consult"}
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link href="/neo/doctor">
+              <Button size="lg" className="gap-2 text-sm px-8 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow">
+                <HeartPulse className="h-4 w-4" />{isBn ? "NeoAI ডাক্তার" : "NeoAI Doctor"}
+              </Button>
+            </Link>
+            <Link href="/neo/consult">
+              <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-12 rounded-xl">
+                <Stethoscope className="h-4 w-4" />{isBn ? "ফ্রি-ফর্ম পরামর্শ" : "Free-form Consult"}
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
