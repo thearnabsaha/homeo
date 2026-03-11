@@ -1,32 +1,76 @@
-import { NextResponse } from "next/server";
-import { symptomsData } from "@/data/loader";
+import { NextRequest, NextResponse } from "next/server";
+import { neoSymptomsData } from "@/data/neoLoader";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
 };
 
-let cached: ReturnType<typeof buildResponse> | null = null;
+let cachedTop: unknown[] | null = null;
+const childrenCache = new Map<string, unknown>();
 
-function buildResponse() {
-  return symptomsData.chapters.map((ch) => ({
+function buildTopLevel() {
+  return neoSymptomsData.chapters.map((ch) => ({
     id: ch.id,
     name: ch.name,
     order: ch.order,
-    symptomCount: ch.symptoms.reduce(
-      (acc: number, s: { subSymptoms?: unknown[] }) =>
-        acc + 1 + (s.subSymptoms?.length || 0),
-      0
-    ),
-    symptoms: ch.symptoms.map((s) => ({
-      id: s.id,
-      name: s.name,
-      hasSubSymptoms: !!(s as { subSymptoms?: unknown[] }).subSymptoms?.length,
-      subSymptomCount: ((s as { subSymptoms?: unknown[] }).subSymptoms?.length) || 0,
-    })),
+    conditionCount: ch.conditions.length,
   }));
 }
 
-export function GET() {
-  if (!cached) cached = buildResponse();
-  return NextResponse.json({ chapters: cached }, { headers: CACHE_HEADERS });
+export function GET(request: NextRequest) {
+  const parentId = request.nextUrl.searchParams.get("parent");
+
+  if (!parentId) {
+    if (!cachedTop) cachedTop = buildTopLevel();
+    return NextResponse.json({ chapters: cachedTop }, { headers: CACHE_HEADERS });
+  }
+
+  const hit = childrenCache.get(parentId);
+  if (hit) {
+    return NextResponse.json(hit, { headers: CACHE_HEADERS });
+  }
+
+  const chapters = neoSymptomsData.chapters;
+
+  const chapter = chapters.find((c) => c.id === parentId);
+  if (chapter) {
+    const conditions = chapter.conditions.map((cond) => ({
+      id: cond.id,
+      name: cond.name,
+      symptomCount: cond.symptoms.length,
+    }));
+    const body = { children: conditions, type: "conditions" };
+    childrenCache.set(parentId, body);
+    return NextResponse.json(body, { headers: CACHE_HEADERS });
+  }
+
+  for (const ch of chapters) {
+    const cond = ch.conditions.find((c) => c.id === parentId);
+    if (cond) {
+      const symptoms = cond.symptoms.map((sym) => ({
+        id: sym.id,
+        name: sym.name,
+        hasSubSymptoms: sym.subSymptoms.length > 0,
+        subSymptomCount: sym.subSymptoms.length,
+      }));
+      const body = { children: symptoms, type: "symptoms" };
+      childrenCache.set(parentId, body);
+      return NextResponse.json(body, { headers: CACHE_HEADERS });
+    }
+
+    for (const co of ch.conditions) {
+      const sym = co.symptoms.find((s) => s.id === parentId);
+      if (sym) {
+        const subs = sym.subSymptoms.map((sub) => ({
+          id: sub.id,
+          name: sub.name,
+        }));
+        const body = { children: subs, type: "subSymptoms" };
+        childrenCache.set(parentId, body);
+        return NextResponse.json(body, { headers: CACHE_HEADERS });
+      }
+    }
+  }
+
+  return NextResponse.json({ children: [], type: "unknown" }, { headers: CACHE_HEADERS });
 }

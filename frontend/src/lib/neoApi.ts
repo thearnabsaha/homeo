@@ -7,7 +7,7 @@ import type {
   ConsultResponse,
   SearchResult,
   RankingResult,
-} from "./api";
+} from "./types";
 
 export interface NeoSubSymptomSummary {
   id: string;
@@ -34,7 +34,7 @@ export interface NeoRepertorySummary {
   conditionCount: number;
 }
 
-const API_BASE = "/api/neo";
+const API_BASE = "/api";
 
 const getCache = new Map<string, { data: unknown; ts: number }>();
 const GET_CACHE_TTL = 60_000;

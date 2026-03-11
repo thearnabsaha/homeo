@@ -26,7 +26,7 @@ const TOKEN_KEY = "neoai-token";
 const USER_KEY = "neoai-user";
 
 async function apiFetch(path: string, body: Record<string, string>) {
-  const res = await fetch(`/api/neo/auth/${path}`, {
+  const res = await fetch(`/api/auth/${path}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

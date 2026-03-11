@@ -8,7 +8,7 @@ import {
   useEffect,
   type ReactNode,
 } from "react";
-import type { RankingResult, AIAnalysis } from "@/lib/api";
+import type { RankingResult, AIAnalysis } from "@/lib/types";
 
 const STORAGE_KEY = "neoai-explorer-state";
 const HISTORY_KEY = "neoai-history";

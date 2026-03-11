@@ -1,7 +1,7 @@
 "use client";
 
 import { Bookmark, BookmarkCheck } from "lucide-react";
-import { useBookmarks } from "@/hooks/useBookmarks";
+import { useNeoBookmarks as useBookmarks } from "@/hooks/useNeoBookmarks";
 import { useTranslation } from "@/i18n/useTranslation";
 
 interface BookmarkButtonProps {

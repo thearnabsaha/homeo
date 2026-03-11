@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { consultWithAI } from "../lib/groq";
+import { neoConsultWithAI } from "../lib/groqNeo";
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,10 +25,10 @@ export async function POST(request: NextRequest) {
       .filter((m: { role?: string; content?: string }) => m.role && m.content)
       .map((m: { role: string; content: string }) => ({ role: m.role, content: m.content }));
 
-    const result = await consultWithAI(validHistory, language || "bn");
+    const result = await neoConsultWithAI(validHistory, language || "bn");
     return NextResponse.json(result);
   } catch (error) {
-    console.error("consult error:", error);
+    console.error("neo consult error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

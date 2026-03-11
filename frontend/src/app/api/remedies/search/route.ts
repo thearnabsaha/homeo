@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { remedySearchIndex, bnToEn } from "@/data/loader";
+import { getNeoRemedySearchIndex, getNeoBnToEn } from "@/data/neoLoader";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600",
@@ -17,14 +17,17 @@ export function GET(request: NextRequest) {
 
   const query = raw.toLowerCase();
   const bengali = isBengali(raw);
+  const bnToEn = getNeoBnToEn();
 
   let englishQuery = "";
   if (bengali && bnToEn[raw]) {
     englishQuery = bnToEn[raw].toLowerCase();
   }
 
+  const searchIndex = getNeoRemedySearchIndex();
   const results = [];
-  for (const entry of remedySearchIndex) {
+
+  for (const entry of searchIndex) {
     const match = bengali
       ? entry.bnLower.includes(query) || (englishQuery && (entry.lower.includes(englishQuery) || entry.descLower.includes(englishQuery)))
       : entry.lower.includes(query) || entry.abbrLower.includes(query) || entry.descLower.includes(query) || entry.bnLower.includes(query);
@@ -34,7 +37,7 @@ export function GET(request: NextRequest) {
         id: entry.r.id,
         name: entry.r.name,
         abbr: entry.r.abbr,
-        description: entry.r.description.substring(0, 100) + "...",
+        type: "remedy",
       });
       if (results.length >= 50) break;
     }

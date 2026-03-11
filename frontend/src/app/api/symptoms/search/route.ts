@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { symptomSearchIndex, bnToEn } from "@/data/loader";
+import { getNeoSymptomSearchIndex, getNeoBnToEn } from "@/data/neoLoader";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600",
@@ -17,15 +17,17 @@ export function GET(request: NextRequest) {
 
   const query = raw.toLowerCase();
   const bengali = isBengali(raw);
+  const bnToEn = getNeoBnToEn();
 
-  // If Bengali, also try reverse-translating to English for matching
   let englishQuery = "";
   if (bengali && bnToEn[raw]) {
     englishQuery = bnToEn[raw].toLowerCase();
   }
 
+  const searchIndex = getNeoSymptomSearchIndex();
   const results = [];
-  for (const entry of symptomSearchIndex) {
+
+  for (const entry of searchIndex) {
     const match = bengali
       ? entry.bnLower.includes(query) || (englishQuery && entry.nameLower.includes(englishQuery))
       : entry.nameLower.includes(query) || entry.bnLower.includes(query);

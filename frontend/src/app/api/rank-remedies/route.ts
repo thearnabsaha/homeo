@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rubrics, remedyById, symptomById } from "@/data/loader";
+import { getNeoRubrics, getNeoRemedyById, getNeoSymptomById } from "@/data/neoLoader";
 
-function findMatchingRubrics(symptomId: string) {
+function findMatchingRubrics(symptomId: string, rubrics: Record<string, { remedyId: string; grade: number }[]>) {
   const direct = rubrics[symptomId];
   if (direct && direct.length > 0) return [{ symptomId, remedies: direct }];
 
@@ -23,11 +23,15 @@ export function POST(request: NextRequest) {
       return NextResponse.json({ error: "Please provide an array of symptom IDs" }, { status: 400 });
     }
 
+    const rubrics = getNeoRubrics();
+    const remedyById = getNeoRemedyById();
+    const symptomById = getNeoSymptomById();
+
     const topN = Math.min(Math.max(rawTopN || 20, 5), 30);
     const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; grade: number }[] }>();
 
     for (const symId of symptomIds) {
-      for (const rubric of findMatchingRubrics(symId)) {
+      for (const rubric of findMatchingRubrics(symId, rubrics)) {
         for (const rem of rubric.remedies) {
           let entry = scores.get(rem.remedyId);
           if (!entry) {

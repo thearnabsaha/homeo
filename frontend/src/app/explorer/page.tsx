@@ -1,17 +1,21 @@
 "use client";
 
-import { useCallback } from "react";
-import { Header } from "@/components/layout/Header";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { RightPanel } from "@/components/layout/RightPanel";
-import { SymptomTree } from "@/components/SymptomTree";
-import { ChatWidget } from "@/components/ChatWidget";
+import { useCallback, useState } from "react";
+import { NeoHeader } from "@/components/neo/NeoHeader";
+import { NeoSidebar } from "@/components/neo/NeoSidebar";
+import { NeoRightPanel } from "@/components/neo/NeoRightPanel";
+import { NeoSymptomTree } from "@/components/neo/NeoSymptomTree";
+import { NeoChatWidget } from "@/components/neo/NeoChatWidget";
 import { useTranslation } from "@/i18n/useTranslation";
-import { useExplorer } from "@/context/ExplorerContext";
+import { useNeoExplorer } from "@/context/NeoExplorerContext";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { AuthGuard } from "@/components/AuthGuard";
 
-export default function ExplorerPage() {
+export default function NeoExplorerPage() {
+  return <AuthGuard><ExplorerContent /></AuthGuard>;
+}
+
+function ExplorerContent() {
   const { t } = useTranslation();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -31,7 +35,7 @@ export default function ExplorerPage() {
     saveToHistory,
     history,
     restoreHistory,
-  } = useExplorer();
+  } = useNeoExplorer();
 
   const handleSelectChapter = useCallback((id: string) => {
     setActiveChapter(id);
@@ -44,22 +48,20 @@ export default function ExplorerPage() {
   }, [setSelectedSymptomId]);
 
   const handleViewRemedy = useCallback(
-    (id: string) => {
-      router.push(`/remedies/${id}`);
-    },
+    (id: string) => { router.push(`/remedies/${id}`); },
     [router]
   );
 
   return (
     <div className="min-h-screen bg-background">
-      <Header
+      <NeoHeader
         onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
         onSelectSymptom={handleSelectSymptom}
         onSelectRemedy={handleViewRemedy}
       />
 
       <div className="flex">
-        <Sidebar
+        <NeoSidebar
           isOpen={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
           activeChapter={activeChapter}
@@ -75,13 +77,11 @@ export default function ExplorerPage() {
               <div className="max-w-lg animate-fade-in">
                 <h2 className="text-2xl font-bold tracking-tight mb-3">{t("symptom.explorer")}</h2>
                 <p className="text-sm text-muted-foreground mb-4">{t("symptom.selectMultiple")}</p>
-                <p className="text-xs text-muted-foreground/50">
-                  {t("ai.noSelection")}
-                </p>
+                <p className="text-xs text-muted-foreground/50">{t("ai.noSelection")}</p>
               </div>
             </div>
           ) : (
-            <SymptomTree
+            <NeoSymptomTree
               selectedSymptomId={selectedSymptomId}
               selectedSymptoms={selectedSymptoms.map((s) => s.name)}
               onToggleSymptom={toggleSymptom}
@@ -91,7 +91,7 @@ export default function ExplorerPage() {
           )}
         </main>
 
-        <RightPanel
+        <NeoRightPanel
           selectedSymptoms={selectedSymptoms}
           onRemoveSymptom={removeSymptom}
           onClearSymptoms={clearSymptoms}
@@ -104,7 +104,7 @@ export default function ExplorerPage() {
         />
       </div>
 
-      <ChatWidget />
+      <NeoChatWidget />
     </div>
   );
 }

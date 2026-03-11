@@ -10,7 +10,7 @@ import { neoApi } from "@/lib/neoApi";
 import { cn } from "@/lib/utils";
 import { translateRepertory, medDescBn } from "@/i18n/repertoryBn";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
-import type { SymptomDetail } from "@/lib/api";
+import type { SymptomDetail } from "@/lib/types";
 
 interface NeoSymptomTreeProps {
   selectedSymptomId: string | null;

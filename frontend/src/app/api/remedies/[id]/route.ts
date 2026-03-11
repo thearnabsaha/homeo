@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { remedyById, remedyToSymptoms, rubrics } from "@/data/loader";
+import { getNeoRemedyById, getNeoRemedyToSymptoms, getNeoRubrics } from "@/data/neoLoader";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
@@ -10,18 +10,16 @@ export function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   return params.then(({ id }) => {
-    const remedy = remedyById.get(id);
+    const remedyById = getNeoRemedyById();
+    const remedyToSymptoms = getNeoRemedyToSymptoms();
+    const rubrics = getNeoRubrics();
 
+    const remedy = remedyById.get(id);
     if (!remedy) {
-      const bn = (request.nextUrl.searchParams.get("language") || "bn") === "bn";
-      return NextResponse.json(
-        { error: bn ? "ওষুধ পাওয়া যায়নি" : "Remedy not found" },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Remedy not found" }, { status: 404 });
     }
 
     const symptomIds = remedyToSymptoms.get(id) || [];
-
     const relatedIds = new Set<string>();
     for (const symId of symptomIds) {
       const entries = rubrics[symId];

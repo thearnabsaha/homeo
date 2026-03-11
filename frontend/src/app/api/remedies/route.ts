@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { remediesData } from "@/data/loader";
+import { neoRemediesData } from "@/data/neoLoader";
 
 const CACHE_HEADERS = {
   "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
@@ -9,7 +9,7 @@ let cached: { id: string; name: string; abbr: string; description: string; sympt
 
 export function GET() {
   if (!cached) {
-    cached = remediesData.remedies.map((r) => ({
+    cached = neoRemediesData.remedies.map((r) => ({
       id: r.id,
       name: r.name,
       abbr: r.abbr,

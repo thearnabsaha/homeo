@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { chatWithAI } from "../lib/groq";
+import { neoChatWithAI } from "../lib/groqNeo";
 
 export async function POST(request: NextRequest) {
   try {
@@ -7,17 +7,13 @@ export async function POST(request: NextRequest) {
     const { message, language } = body;
 
     if (!message || typeof message !== "string" || message.trim().length === 0) {
-      const bn = (language || "bn") === "bn";
-      return NextResponse.json(
-        { error: bn ? "একটি বার্তা প্রদান করুন" : "Please provide a message" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Message is required" }, { status: 400 });
     }
 
-    const result = await chatWithAI(message.trim(), language || "bn");
+    const result = await neoChatWithAI(message.trim(), language || "bn");
     return NextResponse.json(result);
   } catch (error) {
-    console.error("chat error:", error);
+    console.error("neo chat error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

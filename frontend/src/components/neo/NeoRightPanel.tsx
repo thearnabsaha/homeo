@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 import { translateRepertory, toBengaliNumeral, medDescBn, medDosageBn, medWorseBn, medBetterBn } from "@/i18n/repertoryBn";
 import { ConfidenceBar } from "@/components/ConfidenceBar";
 import { AudioReader } from "@/components/AudioReader";
-import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/api";
+import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/types";
 
 interface NeoRightPanelProps {
   selectedSymptoms: { id: string; name: string }[];
