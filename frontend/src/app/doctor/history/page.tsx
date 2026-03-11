@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowLeft, Clock, Trash2, Pill, HeartPulse, ChevronDown, ChevronUp,
   Activity, ShieldAlert, Sparkles, CheckCircle2, X, Edit3, Save,
-  Loader2, LogIn, Database, HardDrive,
+  Loader2, LogIn, Database, HardDrive, MessageCircle, Check,
+  RotateCcw, ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -19,10 +21,29 @@ import { useNeoDoctorHistory, DoctorHistoryEntry } from "@/hooks/useNeoDoctorHis
 import { useNeoAuth } from "@/hooks/useNeoAuth";
 import { cn } from "@/lib/utils";
 
+interface SavedQuestionEntry {
+  id: string;
+  text: string;
+  type: "yesno" | "scale" | "select";
+  options: { value: string; label: string }[];
+  selectedValue: string;
+}
+
+interface SavedRound {
+  round: number;
+  questions: SavedQuestionEntry[];
+}
+
+interface SavedCycle {
+  complaint: string;
+  rounds: SavedRound[];
+}
+
 interface DbConsultation {
   id: string;
   name: string;
   complaints: string[];
+  cycles: SavedCycle[];
   recommendation: DoctorHistoryEntry["recommendation"];
   createdAt: string;
 }
@@ -119,7 +140,6 @@ function HistoryContent() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
       <div className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="flex items-center gap-3 px-4 h-14 max-w-4xl mx-auto w-full">
           <Link href="/doctor" className="text-muted-foreground hover:text-foreground">
@@ -158,7 +178,6 @@ function HistoryContent() {
         </div>
       </div>
 
-      {/* Tab toggle */}
       {user && (
         <div className="border-b border-border bg-card/50">
           <div className="max-w-4xl mx-auto px-4 py-2">
@@ -188,7 +207,6 @@ function HistoryContent() {
         </div>
       )}
 
-      {/* Content */}
       <div className="flex-1 overflow-y-auto">
         <div className="max-w-4xl mx-auto px-4 py-6 space-y-3">
           {dbLoading && showingCloud ? (
@@ -226,34 +244,172 @@ function HistoryContent() {
             </div>
           ) : showingCloud ? (
             dbEntries.map((entry) => (
-              <DbCard
-                key={entry.id}
-                entry={entry}
-                expanded={expandedId === entry.id}
-                onToggle={() => toggle(entry.id)}
-                onDelete={() => deleteDb(entry.id)}
-                onRename={(n) => renameDb(entry.id, n)}
-                isBn={isBn}
-                bn={bn}
-                num={num}
-              />
+              <SwipeCard key={entry.id} onSwipeDelete={() => deleteDb(entry.id)}>
+                <DbCard
+                  entry={entry}
+                  expanded={expandedId === entry.id}
+                  onToggle={() => toggle(entry.id)}
+                  onDelete={() => deleteDb(entry.id)}
+                  onRename={(n) => renameDb(entry.id, n)}
+                  isBn={isBn}
+                  bn={bn}
+                  num={num}
+                />
+              </SwipeCard>
             ))
           ) : (
             localEntries.map((entry) => (
-              <LocalCard
-                key={entry.id}
-                entry={entry}
-                expanded={expandedId === entry.id}
-                onToggle={() => toggle(entry.id)}
-                onDelete={() => removeLocal(entry.id)}
-                isBn={isBn}
-                bn={bn}
-                num={num}
-              />
+              <SwipeCard key={entry.id} onSwipeDelete={() => removeLocal(entry.id)}>
+                <LocalCard
+                  entry={entry}
+                  expanded={expandedId === entry.id}
+                  onToggle={() => toggle(entry.id)}
+                  onDelete={() => removeLocal(entry.id)}
+                  isBn={isBn}
+                  bn={bn}
+                  num={num}
+                />
+              </SwipeCard>
             ))
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ─── Swipe-to-delete wrapper ─── */
+function SwipeCard({ children, onSwipeDelete }: { children: React.ReactNode; onSwipeDelete: () => void }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const currentX = useRef(0);
+  const [offset, setOffset] = useState(0);
+  const [swiping, setSwiping] = useState(false);
+  const threshold = 100;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+    currentX.current = e.touches[0].clientX;
+    setSwiping(true);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!swiping) return;
+    currentX.current = e.touches[0].clientX;
+    const dx = currentX.current - startX.current;
+    if (dx < 0) {
+      setOffset(Math.max(dx, -180));
+    }
+  };
+
+  const onTouchEnd = () => {
+    setSwiping(false);
+    if (offset < -threshold) {
+      setOffset(-180);
+    } else {
+      setOffset(0);
+    }
+  };
+
+  const confirmDelete = () => {
+    setOffset(-9999);
+    setTimeout(onSwipeDelete, 200);
+  };
+
+  const cancel = () => setOffset(0);
+
+  return (
+    <div className="relative overflow-hidden rounded-xl">
+      {/* Delete background revealed on swipe */}
+      <div className="absolute inset-y-0 right-0 flex items-center gap-2 pr-3 z-0">
+        {offset <= -threshold && (
+          <>
+            <button onClick={confirmDelete} className="h-10 px-4 rounded-lg bg-destructive text-destructive-foreground text-xs font-medium flex items-center gap-1.5 transition-all animate-fade-in">
+              <Trash2 className="h-3.5 w-3.5" />
+              Delete
+            </button>
+            <button onClick={cancel} className="h-10 px-3 rounded-lg bg-muted text-muted-foreground text-xs font-medium flex items-center transition-all animate-fade-in">
+              <X className="h-3.5 w-3.5" />
+            </button>
+          </>
+        )}
+      </div>
+      <div
+        ref={containerRef}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        className="relative z-10 bg-background transition-transform"
+        style={{
+          transform: `translateX(${offset}px)`,
+          transition: swiping ? "none" : "transform 0.25s ease-out",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/* ─── Q&A Rounds display ─── */
+function QARoundsDisplay({ cycles, isBn }: { cycles: SavedCycle[]; isBn: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const totalQuestions = cycles.reduce((sum, c) => sum + c.rounds.reduce((rs, r) => rs + (r.questions?.length || 0), 0), 0);
+  if (totalQuestions === 0) return null;
+
+  return (
+    <div className="rounded-lg border border-border overflow-hidden">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full flex items-center gap-2 px-3 py-2.5 text-left hover:bg-muted/30 transition-colors"
+      >
+        <MessageCircle className="h-3.5 w-3.5 text-primary shrink-0" />
+        <span className="text-[11px] font-medium flex-1">
+          {isBn ? `প্রশ্ন-উত্তর (${toBengaliNumeral(totalQuestions)}টি প্রশ্ন)` : `Q&A (${totalQuestions} questions)`}
+        </span>
+        {expanded ? <ChevronUp className="h-3.5 w-3.5 text-muted-foreground" /> : <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />}
+      </button>
+
+      {expanded && (
+        <div className="border-t border-border divide-y divide-border/50 animate-fade-in">
+          {cycles.map((cycle, ci) => (
+            <div key={ci} className="px-3 py-2.5">
+              {cycles.length > 1 && (
+                <div className="flex items-center gap-1.5 mb-2">
+                  <Badge variant="secondary" className="text-[9px]">
+                    {isBn ? `লক্ষণ ${toBengaliNumeral(ci + 1)}` : `Symptom ${ci + 1}`}
+                  </Badge>
+                  <span className="text-[10px] text-muted-foreground truncate">{cycle.complaint}</span>
+                </div>
+              )}
+              {cycle.rounds.map((round, ri) => (
+                <div key={ri} className="mb-2 last:mb-0">
+                  <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-1.5">
+                    {isBn ? `ধাপ ${toBengaliNumeral(round.round)}` : `Round ${round.round}`}
+                  </p>
+                  <div className="space-y-1.5">
+                    {round.questions?.map((q, qi) => (
+                      <div key={qi} className="flex items-start gap-2">
+                        <MessageCircle className="h-3 w-3 text-muted-foreground/40 mt-0.5 shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[11px] text-muted-foreground leading-snug">{q.text}</p>
+                          <div className="flex items-center gap-1 mt-0.5">
+                            <Check className="h-3 w-3 text-primary shrink-0" />
+                            <span className="text-[11px] font-medium text-foreground">
+                              {q.options.find((o) => o.value === q.selectedValue)?.label || q.selectedValue || "—"}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -336,12 +492,23 @@ function DbCard({ entry, expanded, onToggle, onDelete, onRename, isBn, bn, num }
   entry: DbConsultation; expanded: boolean; onToggle: () => void; onDelete: () => void;
   onRename: (name: string) => void; isBn: boolean; bn: (s: string) => string; num: (n: number) => string;
 }) {
+  const router = useRouter();
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editName, setEditName] = useState(entry.name);
   const rec = entry.recommendation;
   const primaryName = rec?.primaryRemedy?.name || "—";
   const ts = new Date(entry.createdAt).getTime();
+
+  const handleReopen = () => {
+    const params = new URLSearchParams();
+    params.set("reopen", "1");
+    params.set("consultationId", entry.id);
+    params.set("complaints", (entry.complaints || []).join("|||"));
+    params.set("primaryRemedy", rec?.primaryRemedy?.name || "");
+    params.set("primaryDosage", rec?.primaryRemedy?.dosage || "");
+    router.push(`/doctor?${params.toString()}`);
+  };
 
   return (
     <div className={cn("rounded-xl border transition-all animate-fade-in",
@@ -367,7 +534,6 @@ function DbCard({ entry, expanded, onToggle, onDelete, onRename, isBn, bn, num }
 
       {expanded && (
         <div className="px-4 pb-4 space-y-3 border-t border-border/50 pt-3 animate-fade-in">
-          {/* Rename */}
           {editing ? (
             <div className="flex items-center gap-2">
               <input
@@ -395,12 +561,19 @@ function DbCard({ entry, expanded, onToggle, onDelete, onRename, isBn, bn, num }
             ))}
           </div>
 
+          {entry.cycles && entry.cycles.length > 0 && (
+            <QARoundsDisplay cycles={entry.cycles} isBn={isBn} />
+          )}
+
           {rec && <RecommendationDetail rec={rec} isBn={isBn} bn={bn} num={num} />}
 
           <div className="flex items-center gap-2 pt-1">
-            <Link href="/doctor" className="flex-1">
-              <Button size="sm" className="w-full gap-1.5 text-xs rounded-lg h-8">
-                <HeartPulse className="h-3 w-3" /> {isBn ? "নতুন পরামর্শ" : "New Consultation"}
+            <Button size="sm" onClick={handleReopen} className="flex-1 gap-1.5 text-xs rounded-lg h-8">
+              <RotateCcw className="h-3 w-3" /> {isBn ? "আপডেট দিন" : "Give Update"}
+            </Button>
+            <Link href="/doctor">
+              <Button variant="outline" size="sm" className="gap-1.5 text-xs rounded-lg h-8">
+                <HeartPulse className="h-3 w-3" /> {isBn ? "নতুন" : "New"}
               </Button>
             </Link>
             {confirmDelete ? (
@@ -412,7 +585,7 @@ function DbCard({ entry, expanded, onToggle, onDelete, onRename, isBn, bn, num }
               </div>
             ) : (
               <Button variant="outline" size="sm" onClick={() => setConfirmDelete(true)} className="gap-1.5 text-xs h-8 rounded-lg text-destructive hover:text-destructive">
-                <Trash2 className="h-3 w-3" /> {isBn ? "মুছুন" : "Delete"}
+                <Trash2 className="h-3 w-3" />
               </Button>
             )}
           </div>

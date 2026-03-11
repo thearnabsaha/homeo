@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse, Clock, Save, LogIn,
   CheckCircle2, AlertTriangle, Pill, Activity, ShieldAlert, ChevronRight, Check, X,
+  ClipboardList,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -23,9 +25,18 @@ import { AuthGuard } from "@/components/AuthGuard";
 
 type Phase = "complaint" | "questions" | "choose" | "recommendation";
 
+interface SavedQuestion {
+  id: string;
+  text: string;
+  type: "yesno" | "scale" | "select";
+  options: { value: string; label: string }[];
+  selectedValue: string;
+}
+
 interface AnswerSet {
   round: number;
   answers: Record<string, string>;
+  questions: SavedQuestion[];
 }
 
 interface SymptomCycle {
@@ -34,7 +45,20 @@ interface SymptomCycle {
 }
 
 export default function NeoDoctorPage() {
-  return <AuthGuard><DoctorContent /></AuthGuard>;
+  return (
+    <AuthGuard>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-background"><Loader2 className="h-8 w-8 animate-spin text-primary" /></div>}>
+        <DoctorContent />
+      </Suspense>
+    </AuthGuard>
+  );
+}
+
+interface ReopenContext {
+  consultationId: string;
+  complaints: string[];
+  primaryRemedy: string;
+  primaryDosage: string;
 }
 
 function DoctorContent() {
@@ -42,6 +66,20 @@ function DoctorContent() {
   const isBn = language === "bn";
   const bn = (s: string) => (isBn ? translateRepertory(s) : s);
   const num = (n: number) => (isBn ? toBengaliNumeral(n) : String(n));
+
+  const searchParams = useSearchParams();
+  const [reopenCtx, setReopenCtx] = useState<ReopenContext | null>(null);
+
+  useEffect(() => {
+    if (searchParams.get("reopen") === "1") {
+      setReopenCtx({
+        consultationId: searchParams.get("consultationId") || "",
+        complaints: (searchParams.get("complaints") || "").split("|||").filter(Boolean),
+        primaryRemedy: searchParams.get("primaryRemedy") || "",
+        primaryDosage: searchParams.get("primaryDosage") || "",
+      });
+    }
+  }, [searchParams]);
 
   const [phase, setPhase] = useState<Phase>("complaint");
   const [complaint, setComplaint] = useState("");
@@ -94,8 +132,17 @@ function DoctorContent() {
     setComplaint(trimmed);
     setLoading(true);
     try {
-      const allPreviousContext = completedCycles.length > 0
-        ? `Previous symptoms analyzed: ${completedCycles.map((c) => c.complaint).join(", ")}. New symptom: ${trimmed}`
+      let contextParts: string[] = [];
+      if (reopenCtx) {
+        contextParts.push(`[FOLLOW-UP] Previous consultation had complaints: ${reopenCtx.complaints.join(", ")}.`);
+        if (reopenCtx.primaryRemedy) contextParts.push(`Previously prescribed: ${reopenCtx.primaryRemedy}${reopenCtx.primaryDosage ? ` (${reopenCtx.primaryDosage})` : ""}.`);
+        contextParts.push(`Patient update: ${trimmed}`);
+      }
+      if (completedCycles.length > 0) {
+        contextParts.push(`Previous symptoms analyzed in this session: ${completedCycles.map((c) => c.complaint).join(", ")}.`);
+      }
+      const allPreviousContext = contextParts.length > 0
+        ? [...contextParts, ...(reopenCtx ? [] : [`New symptom: ${trimmed}`])].join(" ")
         : trimmed;
       const res = await neoApi.doctor({ complaint: allPreviousContext, round: 1, answers: {}, history: [], language });
       const data = res as DoctorResponse;
@@ -113,13 +160,17 @@ function DoctorContent() {
       setPhase("questions");
     }
     setLoading(false);
-  }, [loading, language, isBn, completedCycles]);
+  }, [loading, language, isBn, completedCycles, reopenCtx]);
 
   const submitAnswers = useCallback(async () => {
     if (loading) return;
     const merged = { ...allAnswers, ...currentAnswers };
     setAllAnswers(merged);
-    setCompletedRounds((prev) => [...prev, { round: currentRound, answers: { ...currentAnswers } }]);
+    const savedQs: SavedQuestion[] = questions.map((q) => ({
+      id: q.id, text: q.text, type: q.type, options: q.options,
+      selectedValue: currentAnswers[q.id] || "",
+    }));
+    setCompletedRounds((prev) => [...prev, { round: currentRound, answers: { ...currentAnswers }, questions: savedQs }]);
 
     const nextRound = currentRound + 1;
 
@@ -207,19 +258,47 @@ function DoctorContent() {
       const cycles = [
         ...completedCycles.map((c) => ({
           complaint: c.complaint,
-          answers: c.rounds.reduce((acc, r) => ({ ...acc, ...r.answers }), {} as Record<string, string>),
+          rounds: c.rounds.map((r) => ({
+            round: r.round,
+            questions: (r.questions || []).map((q) => ({
+              id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
+            })),
+          })),
         })),
-        { complaint, answers: { ...allAnswers } },
+        {
+          complaint,
+          rounds: completedRounds.map((r) => ({
+            round: r.round,
+            questions: (r.questions || []).map((q) => ({
+              id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
+            })),
+          })),
+        },
       ];
-      const res = await fetch("/api/consultations", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ name, complaints: allComplaints, cycles, recommendation }),
-      });
-      if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
+
+      if (reopenCtx?.consultationId) {
+        const res = await fetch(`/api/consultations/${reopenCtx.consultationId}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({
+            name,
+            complaints: [...new Set([...reopenCtx.complaints, ...allComplaints])],
+            cycles,
+            recommendation,
+          }),
+        });
+        if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
+      } else {
+        const res = await fetch("/api/consultations", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ name, complaints: allComplaints, cycles, recommendation }),
+        });
+        if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
+      }
     } catch {}
     setSaving(false);
-  }, [token, recommendation, completedCycles, complaint, allAnswers]);
+  }, [token, recommendation, completedCycles, complaint, completedRounds, reopenCtx]);
 
   const reset = () => {
     setPhase("complaint");
@@ -238,6 +317,7 @@ function DoctorContent() {
     setSavedToDb(false);
     setShowSaveDialog(false);
     setSaveName("");
+    setReopenCtx(null);
   };
 
   const allQuestionsAnswered = questions.length > 0 && questions.every((q) => currentAnswers[q.id]);
@@ -367,23 +447,72 @@ function DoctorContent() {
           {/* PHASE: Complaint */}
           {phase === "complaint" && !loading && (
             <div className="flex flex-col items-center text-center pt-8 sm:pt-16 animate-fade-in">
+              {/* Reopen banner */}
+              {reopenCtx && completedCycles.length === 0 && (
+                <div className="w-full max-w-md mb-6 animate-fade-in">
+                  <div className="rounded-xl border border-primary/30 bg-primary/5 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <ClipboardList className="h-4 w-4 text-primary" />
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                        {isBn ? "ফলো-আপ পরামর্শ" : "Follow-up Consultation"}
+                      </span>
+                    </div>
+                    <div className="space-y-1.5">
+                      <p className="text-xs text-muted-foreground">
+                        {isBn ? "আগের সমস্যা:" : "Previous complaints:"}
+                        <span className="ml-1 font-medium text-foreground">{reopenCtx.complaints.join(", ")}</span>
+                      </p>
+                      {reopenCtx.primaryRemedy && (
+                        <p className="text-xs text-muted-foreground">
+                          {isBn ? "আগের ওষুধ:" : "Previous remedy:"}
+                          <span className="ml-1 font-medium text-foreground">
+                            {reopenCtx.primaryRemedy}{reopenCtx.primaryDosage ? ` (${reopenCtx.primaryDosage})` : ""}
+                          </span>
+                        </p>
+                      )}
+                    </div>
+                    <p className="text-[11px] text-muted-foreground/70 mt-2.5 leading-relaxed">
+                      {isBn
+                        ? "আপনার বর্তমান অবস্থা বলুন — ওষুধে কতটা উন্নতি হয়েছে, নতুন কোনো সমস্যা হয়েছে কিনা।"
+                        : "Tell us how you're doing now — how much the remedy helped, any new symptoms, or changes."}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               <div className="h-20 w-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <HeartPulse className="h-10 w-10 text-primary" />
+                {reopenCtx ? <RotateCcw className="h-10 w-10 text-primary" /> : <HeartPulse className="h-10 w-10 text-primary" />}
               </div>
               {completedCycles.length === 0 ? (
-                <>
-                  <h2 className="text-xl sm:text-2xl font-bold mb-3">
-                    {isBn ? "NeoAI ডাক্তার" : "NeoAI Doctor"}
-                  </h2>
-                  <p className="text-sm text-muted-foreground max-w-md mb-2">
-                    {isBn
-                      ? "আপনার সমস্যা বলুন। আমি ৩টি ধাপে প্রশ্ন করব, তারপর আপনার জন্য সঠিক হোমিওপ্যাথিক ওষুধ খুঁজে দেব।"
-                      : "Describe your problem. I'll ask questions in 3 rounds, then find the right homeopathic medicine for you."}
-                  </p>
-                  <p className="text-xs text-muted-foreground/60 mb-8">
-                    {isBn ? "প্রতিটি প্রশ্নের পাশে সিলেক্ট বক্স থাকবে — টাইপ করতে হবে না!" : "Each question has a selection box — no typing needed!"}
-                  </p>
-                </>
+                reopenCtx ? (
+                  <>
+                    <h2 className="text-xl sm:text-2xl font-bold mb-3">
+                      {isBn ? "আপডেট দিন" : "Give an Update"}
+                    </h2>
+                    <p className="text-sm text-muted-foreground max-w-md mb-2">
+                      {isBn
+                        ? "ওষুধ খাওয়ার পর আপনার অবস্থা কেমন? নতুন কোনো সমস্যা বা পরিবর্তন?"
+                        : "How are you feeling after the medicine? Any new issues or changes?"}
+                    </p>
+                    <p className="text-xs text-muted-foreground/60 mb-8">
+                      {isBn ? "বিস্তারিত বললে ভালো পরামর্শ পাবেন।" : "The more detail you share, the better the recommendation."}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-xl sm:text-2xl font-bold mb-3">
+                      {isBn ? "NeoAI ডাক্তার" : "NeoAI Doctor"}
+                    </h2>
+                    <p className="text-sm text-muted-foreground max-w-md mb-2">
+                      {isBn
+                        ? "আপনার সমস্যা বলুন। আমি ৩টি ধাপে প্রশ্ন করব, তারপর আপনার জন্য সঠিক হোমিওপ্যাথিক ওষুধ খুঁজে দেব।"
+                        : "Describe your problem. I'll ask questions in 3 rounds, then find the right homeopathic medicine for you."}
+                    </p>
+                    <p className="text-xs text-muted-foreground/60 mb-8">
+                      {isBn ? "প্রতিটি প্রশ্নের পাশে সিলেক্ট বক্স থাকবে — টাইপ করতে হবে না!" : "Each question has a selection box — no typing needed!"}
+                    </p>
+                  </>
+                )
               ) : (
                 <>
                   <h2 className="text-xl sm:text-2xl font-bold mb-3">
@@ -629,9 +758,11 @@ function DoctorContent() {
 
               {/* Save to DB */}
               {user && !savedToDb && !showSaveDialog && (
-                <Button onClick={() => { setSaveName(complaint || ""); setShowSaveDialog(true); }} variant="outline" className="w-full gap-2 h-11 rounded-xl border-primary/30 text-primary hover:bg-primary/5">
+                <Button onClick={() => { setSaveName(reopenCtx ? `${complaint} (Update)` : (complaint || "")); setShowSaveDialog(true); }} variant="outline" className="w-full gap-2 h-11 rounded-xl border-primary/30 text-primary hover:bg-primary/5">
                   <Save className="h-4 w-4" />
-                  {isBn ? "নাম দিয়ে সংরক্ষণ করুন" : "Save with a Name"}
+                  {reopenCtx
+                    ? (isBn ? "আপডেট সংরক্ষণ করুন" : "Save Update")
+                    : (isBn ? "নাম দিয়ে সংরক্ষণ করুন" : "Save with a Name")}
                 </Button>
               )}
               {user && savedToDb && (

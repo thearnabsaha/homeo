@@ -32,10 +32,15 @@ export async function PATCH(req: NextRequest, ctx: Ctx) {
     });
     if (!existing) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-    const { name } = await req.json();
+    const body = await req.json();
+    const updateData: Record<string, unknown> = {};
+    if (body.name) updateData.name = body.name.trim();
+    if (body.complaints) updateData.complaints = body.complaints;
+    if (body.cycles) updateData.cycles = body.cycles;
+    if (body.recommendation) updateData.recommendation = body.recommendation;
     const consultation = await prisma.consultation.update({
       where: { id },
-      data: { ...(name ? { name: name.trim() } : {}) },
+      data: updateData,
     });
     return NextResponse.json({ consultation });
   } catch (error) {
