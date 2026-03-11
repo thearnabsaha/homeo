@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
-  Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse, Clock,
-  CheckCircle2, AlertTriangle, Pill, Activity, ShieldAlert, ChevronRight, Check,
+  Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse, Clock, Save, LogIn,
+  CheckCircle2, AlertTriangle, Pill, Activity, ShieldAlert, ChevronRight, Check, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -17,6 +17,7 @@ import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { useNeoDoctorHistory } from "@/hooks/useNeoDoctorHistory";
+import { useNeoAuth } from "@/hooks/useNeoAuth";
 import { cn } from "@/lib/utils";
 
 type Phase = "complaint" | "questions" | "choose" | "recommendation";
@@ -50,9 +51,14 @@ export default function NeoDoctorPage() {
   const [completedRounds, setCompletedRounds] = useState<AnswerSet[]>([]);
   const [completedCycles, setCompletedCycles] = useState<SymptomCycle[]>([]);
   const [saved, setSaved] = useState(false);
+  const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [saveName, setSaveName] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [savedToDb, setSavedToDb] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const { addEntry } = useNeoDoctorHistory();
+  const { user, token } = useNeoAuth();
 
   const totalRounds = 3;
 
@@ -188,6 +194,28 @@ export default function NeoDoctorPage() {
     setTimeout(() => inputRef.current?.focus(), 150);
   };
 
+  const saveToDb = useCallback(async (name: string) => {
+    if (!token || !recommendation) return;
+    setSaving(true);
+    try {
+      const allComplaints = [...completedCycles.map((c) => c.complaint), complaint].filter(Boolean);
+      const cycles = [
+        ...completedCycles.map((c) => ({
+          complaint: c.complaint,
+          answers: c.rounds.reduce((acc, r) => ({ ...acc, ...r.answers }), {} as Record<string, string>),
+        })),
+        { complaint, answers: { ...allAnswers } },
+      ];
+      const res = await fetch("/api/neo/consultations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ name, complaints: allComplaints, cycles, recommendation }),
+      });
+      if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
+    } catch {}
+    setSaving(false);
+  }, [token, recommendation, completedCycles, complaint, allAnswers]);
+
   const reset = () => {
     setPhase("complaint");
     setComplaint("");
@@ -202,6 +230,9 @@ export default function NeoDoctorPage() {
     setCurrentRound(1);
     setLoading(false);
     setSaved(false);
+    setSavedToDb(false);
+    setShowSaveDialog(false);
+    setSaveName("");
   };
 
   const allQuestionsAnswered = questions.length > 0 && questions.every((q) => currentAnswers[q.id]);
@@ -588,6 +619,53 @@ export default function NeoDoctorPage() {
                     ))}
                     <Badge variant="secondary" className="text-[10px]">{complaint}</Badge>
                   </div>
+                </div>
+              )}
+
+              {/* Save to DB */}
+              {user && !savedToDb && !showSaveDialog && (
+                <Button onClick={() => { setSaveName(complaint || ""); setShowSaveDialog(true); }} variant="outline" className="w-full gap-2 h-11 rounded-xl border-primary/30 text-primary hover:bg-primary/5">
+                  <Save className="h-4 w-4" />
+                  {isBn ? "নাম দিয়ে সংরক্ষণ করুন" : "Save with a Name"}
+                </Button>
+              )}
+              {user && savedToDb && (
+                <div className="flex items-center justify-center gap-2 py-2 text-xs text-primary animate-fade-in">
+                  <Check className="h-3.5 w-3.5" />
+                  {isBn ? "ডাটাবেসে সংরক্ষিত!" : "Saved to database!"}
+                </div>
+              )}
+              {!user && (
+                <Link href="/neo/login" className="block">
+                  <Button variant="outline" className="w-full gap-2 h-11 rounded-xl border-primary/30 text-primary hover:bg-primary/5">
+                    <LogIn className="h-4 w-4" />
+                    {isBn ? "লগইন করে সংরক্ষণ করুন" : "Login to Save"}
+                  </Button>
+                </Link>
+              )}
+
+              {/* Save dialog */}
+              {showSaveDialog && (
+                <div className="p-4 rounded-xl bg-card border border-primary/30 animate-fade-in">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-sm font-semibold">{isBn ? "পরামর্শ সংরক্ষণ" : "Save Consultation"}</span>
+                    <button onClick={() => setShowSaveDialog(false)} className="text-muted-foreground hover:text-foreground">
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    value={saveName}
+                    onChange={(e) => setSaveName(e.target.value)}
+                    placeholder={isBn ? "পরামর্শের নাম লিখুন..." : "Enter consultation name..."}
+                    className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-3"
+                    autoFocus
+                    onKeyDown={(e) => { if (e.key === "Enter" && saveName.trim()) saveToDb(saveName.trim()); }}
+                  />
+                  <Button onClick={() => saveToDb(saveName.trim())} disabled={!saveName.trim() || saving} className="w-full gap-2 h-10 rounded-lg text-sm">
+                    {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
+                    {saving ? (isBn ? "সংরক্ষণ করছি..." : "Saving...") : (isBn ? "সংরক্ষণ করুন" : "Save")}
+                  </Button>
                 </div>
               )}
 

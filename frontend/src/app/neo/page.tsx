@@ -4,16 +4,19 @@ import Link from "next/link";
 import {
   Stethoscope, BookOpen, Globe, Mic, Zap, Smartphone, Clock,
   ArrowRight, MessageCircle, Search, CheckCircle2, Sparkles, ArrowLeft, HeartPulse,
+  LogIn, LogOut, User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/i18n/useTranslation";
 import { toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { useNeoAuth } from "@/hooks/useNeoAuth";
 
 export default function NeoLandingPage() {
   const { t, language } = useTranslation();
   const isBn = language === "bn";
+  const { user, logout } = useNeoAuth();
   const n = (v: string) => {
     if (!isBn) return v;
     return v.replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[parseInt(d)]);
@@ -70,6 +73,25 @@ export default function NeoLandingPage() {
                 {isBn ? "পরামর্শ" : "Consult"}
               </Button>
             </Link>
+            {user ? (
+              <div className="flex items-center gap-1.5">
+                <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-medium">
+                  <User className="h-3 w-3" />
+                  {user.name.split(" ")[0]}
+                </div>
+                <Button variant="ghost" size="sm" onClick={logout} className="text-xs gap-1.5">
+                  <LogOut className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">{isBn ? "লগআউট" : "Logout"}</span>
+                </Button>
+              </div>
+            ) : (
+              <Link href="/neo/login">
+                <Button variant="ghost" size="sm" className="text-xs gap-1.5">
+                  <LogIn className="h-3.5 w-3.5" />
+                  {isBn ? "লগইন" : "Login"}
+                </Button>
+              </Link>
+            )}
             <LanguageSwitcher />
             <ThemeSwitcher />
           </div>

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { NeoExplorerProvider } from "@/context/NeoExplorerContext";
+import { NeoAuthProvider } from "@/hooks/useNeoAuth";
 
 export default function NeoLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -11,5 +12,9 @@ export default function NeoLayout({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return <NeoExplorerProvider>{children}</NeoExplorerProvider>;
+  return (
+    <NeoAuthProvider>
+      <NeoExplorerProvider>{children}</NeoExplorerProvider>
+    </NeoAuthProvider>
+  );
 }
