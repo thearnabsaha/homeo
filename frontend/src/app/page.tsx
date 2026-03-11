@@ -124,20 +124,20 @@ export default function LandingPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 mb-16 animate-fade-in">
               <Link href="/doctor">
-                <Button size="lg" className="gap-2 text-sm px-8 h-13 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-[1.02]">
+                <Button size="lg" className="gap-2.5 text-sm px-8 py-3 h-12 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-[1.02]">
                   <HeartPulse className="h-5 w-5" />
                   {isBn ? "AI ডাক্তার শুরু করুন" : "Start AI Doctor"}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/explorer">
-                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-13 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-all">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 py-3 h-12 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-all">
                   <BookOpen className="h-4 w-4" />
                   {isBn ? "রেপার্টরি দেখুন" : "Explore Repertory"}
                 </Button>
               </Link>
               <Link href="/consult">
-                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-13 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-all">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 py-3 h-12 rounded-xl w-full sm:w-auto hover:bg-primary/5 transition-all">
                   <Stethoscope className="h-4 w-4" />
                   {isBn ? "ফ্রি-ফর্ম পরামর্শ" : "Free-form Consult"}
                 </Button>
@@ -236,14 +236,14 @@ export default function LandingPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/doctor">
-              <Button size="lg" className="gap-2 text-sm px-8 h-13 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-[1.02]">
+              <Button size="lg" className="gap-2.5 text-sm px-8 py-3 h-12 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-[1.02]">
                 <HeartPulse className="h-5 w-5" />
                 {isBn ? "AI ডাক্তার শুরু করুন" : "Start AI Doctor"}
               </Button>
             </Link>
             {!user && (
               <Link href="/login">
-                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 h-13 rounded-xl">
+                <Button variant="outline" size="lg" className="gap-2 text-sm px-6 py-3 h-12 rounded-xl">
                   <LogIn className="h-4 w-4" />
                   {isBn ? "সাইন আপ / লগইন" : "Sign Up / Login"}
                 </Button>
