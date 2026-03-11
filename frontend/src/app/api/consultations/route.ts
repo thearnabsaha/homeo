@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
       where: { userId: payload.userId },
       orderBy: { createdAt: "desc" },
       select: {
-        id: true, name: true, complaints: true,
+        id: true, name: true, complaints: true, cycles: true,
         recommendation: true, createdAt: true, updatedAt: true,
       },
     });
