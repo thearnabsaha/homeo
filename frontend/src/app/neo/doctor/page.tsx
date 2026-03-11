@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
-  Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse,
+  Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse, Clock,
   CheckCircle2, AlertTriangle, Pill, Activity, ShieldAlert, ChevronRight, Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import type { DoctorQuestion, DoctorQuestionsResponse, DoctorRecommendationRespo
 import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { useNeoDoctorHistory } from "@/hooks/useNeoDoctorHistory";
 import { cn } from "@/lib/utils";
 
 type Phase = "complaint" | "questions" | "choose" | "recommendation";
@@ -48,8 +49,10 @@ export default function NeoDoctorPage() {
   const [recommendation, setRecommendation] = useState<DoctorRecommendationResponse | null>(null);
   const [completedRounds, setCompletedRounds] = useState<AnswerSet[]>([]);
   const [completedCycles, setCompletedCycles] = useState<SymptomCycle[]>([]);
+  const [saved, setSaved] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const { addEntry } = useNeoDoctorHistory();
 
   const totalRounds = 3;
 
@@ -58,6 +61,21 @@ export default function NeoDoctorPage() {
       scrollRef.current.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
     }
   }, [phase, questions, recommendation, loading, completedRounds, completedCycles]);
+
+  useEffect(() => {
+    if (phase === "recommendation" && recommendation && !saved) {
+      const allComplaints = [...completedCycles.map((c) => c.complaint), complaint].filter(Boolean);
+      const cycles = [
+        ...completedCycles.map((c) => ({
+          complaint: c.complaint,
+          answers: c.rounds.reduce((acc, r) => ({ ...acc, ...r.answers }), {} as Record<string, string>),
+        })),
+        { complaint, answers: { ...allAnswers } },
+      ];
+      addEntry({ complaints: allComplaints, cycles, recommendation });
+      setSaved(true);
+    }
+  }, [phase, recommendation, saved, completedCycles, complaint, allAnswers, addEntry]);
 
   const submitComplaint = useCallback(async (text: string) => {
     const trimmed = text.trim();
@@ -183,6 +201,7 @@ export default function NeoDoctorPage() {
     setCompletedCycles([]);
     setCurrentRound(1);
     setLoading(false);
+    setSaved(false);
   };
 
   const allQuestionsAnswered = questions.length > 0 && questions.every((q) => currentAnswers[q.id]);
@@ -206,6 +225,12 @@ export default function NeoDoctorPage() {
               ))}
             </div>
           </div>
+          <Link href="/neo/doctor/history" className="text-muted-foreground hover:text-foreground">
+            <Button variant="ghost" size="sm" className="gap-1.5 text-xs">
+              <Clock className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">{isBn ? "ইতিহাস" : "History"}</span>
+            </Button>
+          </Link>
           <Button variant="ghost" size="sm" onClick={reset} className="gap-1.5 text-xs">
             <RotateCcw className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">{isBn ? "নতুন শুরু" : "Start Over"}</span>
@@ -566,10 +591,16 @@ export default function NeoDoctorPage() {
                 </div>
               )}
 
-              <Button onClick={reset} variant="outline" className="w-full gap-2 h-11 rounded-xl">
-                <RotateCcw className="h-3.5 w-3.5" />
-                {isBn ? "নতুন পরামর্শ নিন" : "Start New Consultation"}
-              </Button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <Button onClick={addAnotherSymptom} className="gap-2 h-11 rounded-xl">
+                  <HeartPulse className="h-4 w-4" />
+                  {isBn ? "আরেকটি লক্ষণ যোগ করুন" : "Add Another Symptom"}
+                </Button>
+                <Button onClick={reset} variant="outline" className="gap-2 h-11 rounded-xl">
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  {isBn ? "নতুন পরামর্শ নিন" : "Start New Consultation"}
+                </Button>
+              </div>
             </div>
           )}
         </div>

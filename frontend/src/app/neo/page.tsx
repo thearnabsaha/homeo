@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {
-  Stethoscope, BookOpen, Globe, Mic, Zap, Smartphone,
+  Stethoscope, BookOpen, Globe, Mic, Zap, Smartphone, Clock,
   ArrowRight, MessageCircle, Search, CheckCircle2, Sparkles, ArrowLeft, HeartPulse,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,6 +56,12 @@ export default function NeoLandingPage() {
               <Button size="sm" className="text-xs gap-1.5">
                 <HeartPulse className="h-3.5 w-3.5" />
                 {isBn ? "NeoAI ডাক্তার" : "NeoAI Doctor"}
+              </Button>
+            </Link>
+            <Link href="/neo/doctor/history">
+              <Button variant="ghost" size="sm" className="text-xs gap-1.5 hidden sm:inline-flex">
+                <Clock className="h-3.5 w-3.5" />
+                {isBn ? "ইতিহাস" : "History"}
               </Button>
             </Link>
             <Link href="/neo/consult">
