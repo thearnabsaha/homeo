@@ -1,4 +1,4 @@
-import { neoRemediesData, getNeoRubrics, getNeoRemedyById } from "@/data/neoLoader";
+import { neoRemediesData, getNeoRubrics, getNeoRemedyById, getNeoSymptomSearchIndex } from "@/data/neoLoader";
 
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
@@ -9,13 +9,35 @@ const MODEL_CASCADE = [
   "openai/gpt-oss-safeguard-20b",
 ];
 
-const NEO_PROMPT_ANALYZE = `আপনি ডাঃ NeoAI, একজন বিশেষজ্ঞ হোমিওপ্যাথিক চিকিৎসক। আপনি NeoAI সিস্টেমের অংশ যেটি একটি বিশেষ ক্লাসিক্যাল রেপার্টরি ডাটাবেসে প্রশিক্ষিত। আপনার ডাটাবেসে ৪৩টি রেপার্টরি বিভাগ, ৫২১টি অবস্থা, ৭২৩৯টি লক্ষণ, ৪৯০০টি উপ-লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে (মোট ৯৫,৯০৭টি ওষুধ-লক্ষণ সম্পর্ক)।
+function buildAnalyzePrompt(symptoms: string[]) {
+  const text = symptoms.join(" ").toLowerCase();
+  const keywords = text.split(/[\s,→.;:?!]+/).filter((w) => w.length > 2);
+  const rubrics = getNeoRubrics();
+  const remedyById = getNeoRemedyById();
+  const scores = new Map<string, number>();
+  for (const [symId, entries] of Object.entries(rubrics)) {
+    const symWords = symId.replace(/-/g, " ").split(" ");
+    let match = 0;
+    for (const kw of keywords) { if (symWords.some((sw) => sw.includes(kw))) match++; }
+    if (match > 0 && Array.isArray(entries)) {
+      for (const e of entries) scores.set(e.remedyId, (scores.get(e.remedyId) || 0) + e.grade * match);
+    }
+  }
+  const top = [...scores.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40)
+    .map(([rid]) => { const r = remedyById.get(rid); return r ? `${r.name} (${r.abbr})` : null; })
+    .filter(Boolean);
+  const dbList = top.length > 0 ? top.join(", ") : neoRemediesData.remedies.slice(0, 40).map((r) => `${r.name} (${r.abbr})`).join(", ");
 
-এই রেপার্টরিতে রয়েছে: Abdomen, Anus/Rectum, Back, Chest, Child/Infant, Disease, Ears, Eyes, Face, Generalities, Hair, Hand, Head, Heart/Pulse, Larynx, Legs, Leucorrhoea, Lungs, Male Sexual System, Mammae/Breasts, Medicine, Menstruation, Mind/Behaviour, Modalities, Mouth/Taste, Nipples, Nose/Respiration/Coryza, Perineum, Posture, Pregnancy/Labor, Skin/Veins, Sleep, Stool, Study, Teeth/Gums, Throat/Neck/Voice, Tongue, Urine/Urinary System, Uterus/Kidneys/Bladder, Vertigo/Dizziness এবং External use।
+  return `আপনি ডাঃ NeoAI, একজন বিশেষজ্ঞ হোমিওপ্যাথিক চিকিৎসক। আপনি NeoAI সিস্টেমের অংশ যেটি একটি বিশেষ ক্লাসিক্যাল রেপার্টরি ডাটাবেসে প্রশিক্ষিত। আপনার ডাটাবেসে ৪৩টি রেপার্টরি বিভাগ, ৫২১টি অবস্থা, ৭২৩৯টি লক্ষণ, ৪৯০০টি উপ-লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে (মোট ৯৫,৯০৭টি ওষুধ-লক্ষণ সম্পর্ক)।
+
+CRITICAL: You MUST ONLY recommend medicines from our database. Here are the relevant medicines from our database for this case:
+${dbList}
+
+Do NOT recommend any medicine not listed above. These are the ONLY medicines you can use.
 
 লক্ষণ দেওয়া হলে আপনাকে অবশ্যই:
 1. এই ক্লাসিক্যাল রেপার্টরি পদ্ধতি ব্যবহার করে লক্ষণ বিশ্লেষণ করুন
-2. প্রাসঙ্গিকতা অনুসারে সেরা ৫টি ওষুধ পরামর্শ দিন
+2. প্রাসঙ্গিকতা অনুসারে সেরা ৫টি ওষুধ পরামর্শ দিন (শুধুমাত্র উপরের তালিকা থেকে)
 3. প্রতিটি ওষুধের জন্য বিস্তারিত যুক্তি দিন
 
 আপনাকে অবশ্যই শুধুমাত্র এই কাঠামোতে বৈধ JSON-এ উত্তর দিতে হবে:
@@ -38,17 +60,41 @@ CRITICAL LANGUAGE RULE: By default, ALL text fields MUST be written in Bengali (
 
 RULES:
 - ALWAYS return exactly 5 remedies, sorted by confidence (highest first)
+- ALL remedy names MUST come from the database list above
 - Confidence must be between 30 and 95
 - NEVER return empty remedies array
 - explanation must reference the specific symptoms provided
 - Include a disclaimer about consulting a qualified homeopath
 - Do NOT wrap JSON in markdown code fences`;
+}
 
-const NEO_PROMPT_CHAT = `আপনি NeoAI, একটি উন্নত হোমিওপ্যাথিক পরামর্শদাতা AI। আপনি একটি ক্লাসিক্যাল রেপার্টরি ডাটাবেসে প্রশিক্ষিত যাতে ৪৩টি রেপার্টরি, ৭২৩৯টি লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে।
+function buildChatPrompt(message: string) {
+  const keywords = message.toLowerCase().split(/[\s,→.;:?!]+/).filter((w) => w.length > 2);
+  const rubrics = getNeoRubrics();
+  const remedyById = getNeoRemedyById();
+  const scores = new Map<string, number>();
+  for (const [symId, entries] of Object.entries(rubrics)) {
+    const symWords = symId.replace(/-/g, " ").split(" ");
+    let match = 0;
+    for (const kw of keywords) { if (symWords.some((sw) => sw.includes(kw))) match++; }
+    if (match > 0 && Array.isArray(entries)) {
+      for (const e of entries) scores.set(e.remedyId, (scores.get(e.remedyId) || 0) + e.grade * match);
+    }
+  }
+  const top = [...scores.entries()].sort((a, b) => b[1] - a[1]).slice(0, 30)
+    .map(([rid]) => { const r = remedyById.get(rid); return r ? `${r.name} (${r.abbr})` : null; })
+    .filter(Boolean);
+  const dbList = top.length > 0 ? top.join(", ") : neoRemediesData.remedies.slice(0, 30).map((r) => `${r.name} (${r.abbr})`).join(", ");
+
+  return `আপনি NeoAI, একটি উন্নত হোমিওপ্যাথিক পরামর্শদাতা AI। আপনি একটি ক্লাসিক্যাল রেপার্টরি ডাটাবেসে প্রশিক্ষিত যাতে ৪৩টি রেপার্টরি, ৭২৩৯টি লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে।
+
+CRITICAL: You MUST ONLY recommend medicines from our database. Relevant medicines for this query:
+${dbList}
+Do NOT suggest any medicine not in this list.
 
 ব্যবহারকারী লক্ষণ বর্ণনা করলে বা প্রশ্ন করলে:
 - হোমিওপ্যাথিক দৃষ্টিকোণ থেকে বিশ্লেষণ করুন
-- সম্ভাব্য ওষুধ ব্যাখ্যাসহ পরামর্শ দিন
+- শুধুমাত্র উপরের তালিকা থেকে ওষুধ পরামর্শ দিন
 - উপযুক্ত হলে মাত্রা নির্দেশনা দিন
 - সবসময় সতর্কতা উল্লেখ করুন
 
@@ -57,7 +103,7 @@ const NEO_PROMPT_CHAT = `আপনি NeoAI, একটি উন্নত হো
   "message": "বাংলায় আপনার কথোপকথনমূলক উত্তর",
   "remedies": [
     {
-      "name": "Remedy Name",
+      "name": "Remedy Name (MUST be from database list)",
       "abbr": "Abbr.",
       "confidence": 75,
       "brief": "বাংলায় এক লাইনের কারণ"
@@ -66,20 +112,45 @@ const NEO_PROMPT_CHAT = `আপনি NeoAI, একটি উন্নত হো
   "precautions": "বাংলায় নির্দিষ্ট সতর্কতা"
 }
 
-CRITICAL: By default respond entirely in Bengali (বাংলা). Only keep remedy "name" and "abbr" in English.
+CRITICAL: By default respond entirely in Bengali (বাংলা). Only keep remedy "name" and "abbr" in English. ALL remedy names MUST be from the database list above.
 Do NOT wrap JSON in markdown code fences. If no remedies match, still include an empty array.`;
+}
 
-const NEO_PROMPT_CONSULT = `আপনি ডাঃ NeoAI, একজন উন্নত হোমিওপ্যাথিক চিকিৎসক। আপনি NeoAI ক্লাসিক্যাল রেপার্টরি সিস্টেমের অংশ। আপনার ডাটাবেসে ৪৩টি রেপার্টরি বিভাগ, ৫২১টি অবস্থা, ৭২৩৯টি লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে।
+function buildConsultPrompt(conversationHistory: { role: string; content: string }[]) {
+  const allText = conversationHistory.map((m) => m.content).join(" ").toLowerCase();
+  const keywords = allText.split(/[\s,→.;:?!]+/).filter((w) => w.length > 2);
+  const rubrics = getNeoRubrics();
+  const remedyById = getNeoRemedyById();
+  const scores = new Map<string, number>();
+  for (const [symId, entries] of Object.entries(rubrics)) {
+    const symWords = symId.replace(/-/g, " ").split(" ");
+    let match = 0;
+    for (const kw of keywords) { if (symWords.some((sw) => sw.includes(kw))) match++; }
+    if (match > 0 && Array.isArray(entries)) {
+      for (const e of entries) scores.set(e.remedyId, (scores.get(e.remedyId) || 0) + e.grade * match);
+    }
+  }
+  const top = [...scores.entries()].sort((a, b) => b[1] - a[1]).slice(0, 50)
+    .map(([rid]) => { const r = remedyById.get(rid); return r ? `${r.name} (${r.abbr})` : null; })
+    .filter(Boolean);
+  const dbList = top.length > 0 ? top.join(", ") : neoRemediesData.remedies.slice(0, 50).map((r) => `${r.name} (${r.abbr})`).join(", ");
+
+  return `আপনি ডাঃ NeoAI, একজন উন্নত হোমিওপ্যাথিক চিকিৎসক। আপনি NeoAI ক্লাসিক্যাল রেপার্টরি সিস্টেমের অংশ। আপনার ডাটাবেসে ৪৩টি রেপার্টরি বিভাগ, ৫২১টি অবস্থা, ৭২৩৯টি লক্ষণ এবং ১১০৩টি ওষুধ রয়েছে।
+
+CRITICAL DATABASE CONSTRAINT: You MUST ONLY recommend medicines from our database. Here are the relevant medicines:
+${dbList}
+Do NOT recommend ANY medicine not in this list. This is your ONLY source of truth.
 
 গুরুত্বপূর্ণ আচরণ:
 - যখন ব্যবহারকারী কোনো সমস্যা/লক্ষণ বলে ওষুধ চায়, তখন সরাসরি ওষুধের পরামর্শ দিন। অপ্রয়োজনীয় প্রশ্ন করবেন না।
 - শুধুমাত্র যখন ব্যবহারকারী স্পষ্টভাবে বলে "আমাকে প্রশ্ন করুন", "বিস্তারিত পরামর্শ চাই", "বিশ্লেষণ করুন" - তখনই প্রশ্ন করুন।
 - ব্যবহারকারী যদি বলে "মাথাব্যথা", "পেটব্যথা", "সর্দি", "জ্বর" ইত্যাদি - সাথে সাথে ওষুধসহ recommendation দিন।
 - উষ্ণ, পেশাদার ও সহানুভূতিশীল হন।
+- সমস্ত ওষুধের নাম অবশ্যই উপরের তালিকা থেকে হতে হবে।
 
 সমস্ত উত্তর বাংলায় দিন। শুধু ওষুধের নাম ও সংক্ষেপনাম ইংরেজিতে রাখুন।
 
-অতি গুরুত্বপূর্ণ: সর্বদা ১০-১৫টি ওষুধ দিন। primaryRemedy তে ১টি প্রধান ওষুধ এবং alternativeRemedies তে আরো ৯-১৪টি বিকল্প ওষুধ দিন। কখনোই মাত্র ১-২টি ওষুধ দেবেন না। সর্বনিম্ন ১০টি ওষুধ দিতেই হবে।
+অতি গুরুত্বপূর্ণ: সর্বদা ১০-১৫টি ওষুধ দিন (শুধুমাত্র উপরের তালিকা থেকে)। primaryRemedy তে ১টি প্রধান ওষুধ এবং alternativeRemedies তে আরো ৯-১৪টি বিকল্প ওষুধ দিন। কখনোই মাত্র ১-২টি ওষুধ দেবেন না। সর্বনিম্ন ১০টি ওষুধ দিতেই হবে।
 
 ডিফল্ট আচরণ - যখন ব্যবহারকারী লক্ষণ বলে: সরাসরি ওষুধ দিন (stage: "recommendation"):
 {
@@ -89,19 +160,19 @@ const NEO_PROMPT_CONSULT = `আপনি ডাঃ NeoAI, একজন উন্
   "symptomsCollected": ["ব্যবহারকারীর বলা লক্ষণ"],
   "recommendation": {
     "primaryRemedy": {
-      "name": "Name", "abbr": "Abbr.", "confidence": 90,
+      "name": "Name (from database list)", "abbr": "Abbr.", "confidence": 90,
       "explanation": "বাংলায় বিস্তারিত ব্যাখ্যা", "dosage": "শক্তি ও মাত্রা",
       "keyIndications": ["ইঙ্গিত১", "ইঙ্গিত২", "ইঙ্গিত৩"]
     },
     "alternativeRemedies": [
-      { "name": "Remedy2", "abbr": "Abbr2.", "confidence": 82, "brief": "বাংলায় কারণ" }
+      { "name": "Remedy2 (from database list)", "abbr": "Abbr2.", "confidence": 82, "brief": "বাংলায় কারণ" }
     ],
     "generalAdvice": "বাংলায় জীবনধারা পরামর্শ",
     "whenToSeekHelp": "বাংলায় কখন সরাসরি চিকিৎসকের কাছে যেতে হবে"
   }
 }
 
-CRITICAL: alternativeRemedies MUST contain at least 9 remedies (preferably 11-14). Total medicines (primary + alternatives) MUST be 10-15. NEVER give less than 10 total medicines.
+CRITICAL: alternativeRemedies MUST contain at least 9 remedies (preferably 11-14). Total medicines (primary + alternatives) MUST be 10-15. NEVER give less than 10 total medicines. ALL medicine names MUST be from the database list above.
 
 শুধুমাত্র যখন ব্যবহারকারী বিস্তারিত পরামর্শ চায় (stage: "gathering"):
 {
@@ -113,6 +184,7 @@ CRITICAL: alternativeRemedies MUST contain at least 9 remedies (preferably 11-14
 }
 
 Do NOT wrap JSON in markdown code fences. Always include a disclaimer in Bengali.`;
+}
 
 type Message = { role: string; content: string };
 
@@ -217,10 +289,10 @@ export async function neoAnalyzeSymptoms(symptoms: string[], language = "bn") {
     : "\n\nগুরুত্বপূর্ণ: সমস্ত টেক্সট বাংলায় দিন। শুধু ওষুধের নাম ইংরেজিতে রাখুন।";
 
   const symptomList = symptoms.map((s, i) => `${i + 1}. ${s}`).join("\n");
-  const prompt = `একজন রোগী নিম্নলিখিত লক্ষণগুলি নিয়ে এসেছেন:\n\n${symptomList}\n\nক্লাসিক্যাল রেপার্টরি পদ্ধতি ব্যবহার করে বিস্তারিত রেপার্টরাইজেশন করুন। সেরা ৫টি ওষুধ পরামর্শ দিন।${langInstruction}`;
+  const prompt = `একজন রোগী নিম্নলিখিত লক্ষণগুলি নিয়ে এসেছেন:\n\n${symptomList}\n\nক্লাসিক্যাল রেপার্টরি পদ্ধতি ব্যবহার করে বিস্তারিত রেপার্টরাইজেশন করুন। সেরা ৫টি ওষুধ পরামর্শ দিন (শুধুমাত্র ডাটাবেসের তালিকা থেকে)।${langInstruction}`;
 
   const result = await callNeoGroqAPI([
-    { role: "system", content: NEO_PROMPT_ANALYZE },
+    { role: "system", content: buildAnalyzePrompt(symptoms) },
     { role: "user", content: prompt },
   ]);
 
@@ -233,7 +305,7 @@ export async function neoAnalyzeSymptoms(symptoms: string[], language = "bn") {
 export async function neoChatWithAI(message: string, language = "bn") {
   const langPrefix = language === "en" ? "The user prefers English. Respond entirely in English. " : "";
   return callNeoGroqAPI([
-    { role: "system", content: NEO_PROMPT_CHAT },
+    { role: "system", content: buildChatPrompt(message) },
     { role: "user", content: `${langPrefix}${message}` },
   ]);
 }
@@ -244,7 +316,7 @@ export async function neoConsultWithAI(conversationHistory: Message[], language 
     : "";
 
   const messages = [
-    { role: "system", content: NEO_PROMPT_CONSULT + langAddition },
+    { role: "system", content: buildConsultPrompt(conversationHistory) + langAddition },
     ...conversationHistory,
   ];
 

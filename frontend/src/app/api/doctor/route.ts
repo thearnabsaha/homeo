@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { neoRemediesData, getNeoRubrics, getNeoRemedyById } from "@/data/neoLoader";
+import { neoRemediesData, getNeoRubrics, getNeoRemedyById, getNeoSymptomSearchIndex } from "@/data/neoLoader";
 
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
@@ -10,16 +10,68 @@ const MODEL_CASCADE = [
   "openai/gpt-oss-safeguard-20b",
 ];
 
-function buildSystemPrompt(round: number, totalRounds: number, language: string) {
+function findRelevantRemedies(complaint: string, answers: Record<string, string>, limit = 60): { name: string; abbr: string; score: number }[] {
+  const text = `${complaint} ${Object.values(answers).join(" ")}`.toLowerCase();
+  const keywords = text.split(/[\s,→.;:?!]+/).filter((w) => w.length > 2);
+  const rubrics = getNeoRubrics();
+  const remedyById = getNeoRemedyById();
+  const scores = new Map<string, number>();
+
+  for (const [symId, entries] of Object.entries(rubrics)) {
+    const symWords = symId.replace(/-/g, " ").split(" ");
+    let match = 0;
+    for (const kw of keywords) {
+      if (symWords.some((sw) => sw.includes(kw))) match++;
+    }
+    if (match > 0 && Array.isArray(entries)) {
+      for (const e of entries) {
+        scores.set(e.remedyId, (scores.get(e.remedyId) || 0) + e.grade * match);
+      }
+    }
+  }
+
+  if (scores.size < 10) {
+    const idx = getNeoSymptomSearchIndex();
+    for (const entry of idx) {
+      for (const kw of keywords) {
+        if (entry.nameLower.includes(kw)) {
+          const symEntries = rubrics[entry.id];
+          if (Array.isArray(symEntries)) {
+            for (const e of symEntries) {
+              scores.set(e.remedyId, (scores.get(e.remedyId) || 0) + e.grade);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return [...scores.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([rid, score]) => {
+      const r = remedyById.get(rid);
+      return r ? { name: r.name, abbr: r.abbr, score } : null;
+    })
+    .filter(Boolean) as { name: string; abbr: string; score: number }[];
+}
+
+function buildSystemPrompt(round: number, totalRounds: number, language: string, dbRemedies?: string) {
   const isBn = language === "bn";
 
-  return `You are Dr. NeoAI, a structured homeopathic diagnostic AI. You operate on a classical repertory database with 43 repertories, 521 conditions, 7,239 symptoms, 4,900 sub-symptoms, and 1,103 medicines (95,907 medicine-symptom relationships).
+  const dbConstraint = dbRemedies
+    ? `\n\nCRITICAL DATABASE CONSTRAINT: You MUST ONLY recommend medicines from the following list. These are the ONLY medicines in our database. Do NOT invent or suggest any medicine not in this list.\n\nAVAILABLE MEDICINES FROM OUR DATABASE:\n${dbRemedies}\n\nIf a medicine is not in the list above, DO NOT recommend it. Pick the best matches from this list ONLY.`
+    : "";
+
+  return `You are Dr. NeoAI, a structured homeopathic diagnostic AI. You operate EXCLUSIVELY on our classical repertory database with 43 repertories, 521 conditions, 7,239 symptoms, 4,900 sub-symptoms, and 1,103 medicines (95,907 medicine-symptom relationships).
+
+IMPORTANT: You must ONLY use medicines from our database. You must NEVER recommend medicines from outside sources or your general training data. Our database is your ONLY source of truth for medicine names.
 
 You work in a STRUCTURED DIAGNOSTIC MODE. The patient describes a complaint, then you ask EXACTLY ${totalRounds} rounds of diagnostic questions. After all rounds are complete, you give medicine recommendations.
 
 THIS IS ROUND ${round} OF ${totalRounds}.
 
-${round <= totalRounds ? `CURRENT TASK: Ask 3-5 diagnostic questions. Each question MUST have selectable options.` : `CURRENT TASK: Based on ALL collected answers, provide medicine recommendations.`}
+${round <= totalRounds ? `CURRENT TASK: Ask 3-5 diagnostic questions. Each question MUST have selectable options.` : `CURRENT TASK: Based on ALL collected answers, provide medicine recommendations ONLY from our database.`}
 
 You MUST respond ONLY in valid JSON (no markdown fences).
 
@@ -62,7 +114,7 @@ RULES FOR QUESTIONS:
   "message": "${isBn ? "বাংলায় বিশ্লেষণ সারসংক্ষেপ" : "Analysis summary"}",
   "symptomsIdentified": ["symptom1", "symptom2"],
   "primaryRemedy": {
-    "name": "Medicine Name",
+    "name": "Medicine Name (MUST be from the database list)",
     "abbr": "Abbr.",
     "confidence": 90,
     "explanation": "${isBn ? "বাংলায় ব্যাখ্যা" : "Explanation"}",
@@ -70,7 +122,7 @@ RULES FOR QUESTIONS:
     "keyIndications": ["ind1", "ind2", "ind3"]
   },
   "alternativeRemedies": [
-    { "name": "Name", "abbr": "Abbr.", "confidence": 80, "brief": "${isBn ? "কারণ" : "Reason"}" }
+    { "name": "Name (MUST be from database)", "abbr": "Abbr.", "confidence": 80, "brief": "${isBn ? "কারণ" : "Reason"}" }
   ],
   "generalAdvice": "${isBn ? "সাধারণ পরামর্শ" : "General advice"}",
   "whenToSeekHelp": "${isBn ? "কখন ডাক্তার দেখাবেন" : "When to see a doctor"}"
@@ -78,9 +130,10 @@ RULES FOR QUESTIONS:
 
 RULES FOR RECOMMENDATION:
 - Provide 10-15 total medicines (1 primary + 9-14 alternatives)
+- ALL medicine names MUST come from our database list above. Do NOT use any other medicine.
 - ${isBn ? "All text in Bengali except medicine name and abbr" : "All text in English except medicine name and abbr stay in English"}
 - Confidence between 30-95
-- Base recommendations on ALL answers from all 3 rounds`}
+- Base recommendations on ALL answers from all 3 rounds`}${dbConstraint}
 
 ${isBn ? "গুরুত্বপূর্ণ: ওষুধের নাম ও সংক্ষেপনাম ছাড়া সব কিছু বাংলায় লিখুন।" : ""}
 Do NOT wrap JSON in markdown code fences.`;
@@ -193,6 +246,41 @@ function generateFallbackRecommendation(answers: Record<string, string>, complai
   };
 }
 
+function validateRemediesAgainstDb(result: Record<string, unknown>): Record<string, unknown> {
+  if (result.type !== "recommendation") return result;
+  const remedyById = getNeoRemedyById();
+  const allDbNames = new Set<string>();
+  for (const [, r] of remedyById) allDbNames.add(r.name.toLowerCase());
+
+  const isInDb = (name: string) => allDbNames.has(name.toLowerCase());
+
+  const primary = result.primaryRemedy as { name: string } | undefined;
+  if (primary && !isInDb(primary.name)) {
+    const fallbackRemedies = [...remedyById.values()];
+    if (fallbackRemedies.length > 0) {
+      primary.name = fallbackRemedies[0].name;
+      (primary as Record<string, unknown>).abbr = fallbackRemedies[0].abbr;
+    }
+  }
+
+  const alts = result.alternativeRemedies as { name: string }[] | undefined;
+  if (alts) {
+    const dbRemedies = [...remedyById.values()];
+    let fallbackIdx = 1;
+    for (const alt of alts) {
+      if (!isInDb(alt.name)) {
+        if (fallbackIdx < dbRemedies.length) {
+          alt.name = dbRemedies[fallbackIdx].name;
+          (alt as Record<string, unknown>).abbr = dbRemedies[fallbackIdx].abbr;
+          fallbackIdx++;
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -203,7 +291,12 @@ export async function POST(request: NextRequest) {
 
     if (currentRound > totalRounds) {
       const allAnswers = answers || {};
-      const systemPrompt = buildSystemPrompt(totalRounds + 1, totalRounds, language);
+      const relevant = findRelevantRemedies(complaint || "", allAnswers);
+      const dbRemediesList = relevant.length > 0
+        ? relevant.map((r, i) => `${i + 1}. ${r.name} (${r.abbr})`).join("\n")
+        : neoRemediesData.remedies.slice(0, 60).map((r, i) => `${i + 1}. ${r.name} (${r.abbr})`).join("\n");
+
+      const systemPrompt = buildSystemPrompt(totalRounds + 1, totalRounds, language, dbRemediesList);
       const conversationSummary = `Patient complaint: ${complaint}\n\nAll answers from ${totalRounds} rounds:\n${JSON.stringify(allAnswers, null, 2)}`;
       const groqResult = await callGroq([
         { role: "system", content: systemPrompt },
@@ -211,7 +304,7 @@ export async function POST(request: NextRequest) {
         { role: "user", content: conversationSummary },
       ]);
       if (groqResult && groqResult.type === "recommendation") {
-        return NextResponse.json(groqResult);
+        return NextResponse.json(validateRemediesAgainstDb(groqResult));
       }
       return NextResponse.json(generateFallbackRecommendation(allAnswers, complaint || "", isBn));
     }
