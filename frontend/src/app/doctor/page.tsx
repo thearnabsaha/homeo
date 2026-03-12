@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import {
   Send, Loader2, RotateCcw, ArrowLeft, Sparkles, HeartPulse, Clock, Save, LogIn,
   CheckCircle2, AlertTriangle, Pill, Activity, ShieldAlert, ChevronRight, Check, X,
-  ClipboardList,
+  ClipboardList, Edit3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -250,55 +250,85 @@ function DoctorContent() {
     setTimeout(() => inputRef.current?.focus(), 150);
   };
 
-  const saveToDb = useCallback(async (name: string) => {
-    if (!token || !recommendation) return;
-    setSaving(true);
-    try {
-      const allComplaints = [...completedCycles.map((c) => c.complaint), complaint].filter(Boolean);
-      const cycles = [
-        ...completedCycles.map((c) => ({
-          complaint: c.complaint,
-          rounds: c.rounds.map((r) => ({
-            round: r.round,
-            questions: (r.questions || []).map((q) => ({
-              id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
-            })),
+  const [autoSavedId, setAutoSavedId] = useState<string | null>(null);
+
+  const buildCyclesPayload = useCallback(() => {
+    return [
+      ...completedCycles.map((c) => ({
+        complaint: c.complaint,
+        rounds: c.rounds.map((r) => ({
+          round: r.round,
+          questions: (r.questions || []).map((q) => ({
+            id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
           })),
         })),
-        {
-          complaint,
-          rounds: completedRounds.map((r) => ({
-            round: r.round,
-            questions: (r.questions || []).map((q) => ({
-              id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
-            })),
+      })),
+      {
+        complaint,
+        rounds: completedRounds.map((r) => ({
+          round: r.round,
+          questions: (r.questions || []).map((q) => ({
+            id: q.id, text: q.text, type: q.type, options: q.options, selectedValue: q.selectedValue,
           })),
-        },
-      ];
+        })),
+      },
+    ];
+  }, [completedCycles, complaint, completedRounds]);
 
-      if (reopenCtx?.consultationId) {
-        const res = await fetch(`/api/consultations/${reopenCtx.consultationId}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-          body: JSON.stringify({
-            name,
-            complaints: [...new Set([...reopenCtx.complaints, ...allComplaints])],
-            cycles,
-            recommendation,
-          }),
-        });
-        if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
-      } else {
-        const res = await fetch("/api/consultations", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-          body: JSON.stringify({ name, complaints: allComplaints, cycles, recommendation }),
-        });
-        if (res.ok) { setSavedToDb(true); setShowSaveDialog(false); }
-      }
+  // Auto-save to cloud when recommendation arrives
+  useEffect(() => {
+    if (!token || !recommendation || savedToDb) return;
+    const autoSave = async () => {
+      setSaving(true);
+      try {
+        const allComplaints = [...completedCycles.map((c) => c.complaint), complaint].filter(Boolean);
+        const cycles = buildCyclesPayload();
+        const autoName = allComplaints.join(", ") || complaint || (new Date().toLocaleDateString());
+
+        if (reopenCtx?.consultationId) {
+          const res = await fetch(`/api/consultations/${reopenCtx.consultationId}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+              name: autoName,
+              complaints: [...new Set([...reopenCtx.complaints, ...allComplaints])],
+              cycles,
+              recommendation,
+            }),
+          });
+          if (res.ok) {
+            setSavedToDb(true);
+            setAutoSavedId(reopenCtx.consultationId);
+          }
+        } else {
+          const res = await fetch("/api/consultations", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+            body: JSON.stringify({ name: autoName, complaints: allComplaints, cycles, recommendation }),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            setSavedToDb(true);
+            setAutoSavedId(data.consultation?.id || null);
+          }
+        }
+      } catch {}
+      setSaving(false);
+    };
+    autoSave();
+  }, [token, recommendation, savedToDb, completedCycles, complaint, buildCyclesPayload, reopenCtx]);
+
+  const renameConsultation = useCallback(async (newName: string) => {
+    if (!token || !autoSavedId || !newName.trim()) return;
+    try {
+      await fetch(`/api/consultations/${autoSavedId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ name: newName.trim() }),
+      });
+      setSaveName(newName.trim());
     } catch {}
-    setSaving(false);
-  }, [token, recommendation, completedCycles, complaint, completedRounds, reopenCtx]);
+  }, [token, autoSavedId]);
 
   const reset = () => {
     setPhase("complaint");
@@ -318,6 +348,7 @@ function DoctorContent() {
     setShowSaveDialog(false);
     setSaveName("");
     setReopenCtx(null);
+    setAutoSavedId(null);
   };
 
   const allQuestionsAnswered = questions.length > 0 && questions.every((q) => currentAnswers[q.id]);
@@ -756,19 +787,52 @@ function DoctorContent() {
                 </div>
               )}
 
-              {/* Save to DB */}
-              {user && !savedToDb && !showSaveDialog && (
-                <Button onClick={() => { setSaveName(reopenCtx ? `${complaint} (Update)` : (complaint || "")); setShowSaveDialog(true); }} variant="outline" className="w-full gap-2 h-11 rounded-xl border-primary/30 text-primary hover:bg-primary/5">
-                  <Save className="h-4 w-4" />
-                  {reopenCtx
-                    ? (isBn ? "আপডেট সংরক্ষণ করুন" : "Save Update")
-                    : (isBn ? "নাম দিয়ে সংরক্ষণ করুন" : "Save with a Name")}
-                </Button>
+              {/* Auto-save status */}
+              {user && saving && !savedToDb && (
+                <div className="flex items-center justify-center gap-2 py-2.5 text-xs text-muted-foreground animate-fade-in">
+                  <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                  {isBn ? "স্বয়ংক্রিয়ভাবে সংরক্ষণ করছি..." : "Auto-saving..."}
+                </div>
               )}
               {user && savedToDb && (
-                <div className="flex items-center justify-center gap-2 py-2 text-xs text-primary animate-fade-in">
-                  <Check className="h-3.5 w-3.5" />
-                  {isBn ? "ডাটাবেসে সংরক্ষিত!" : "Saved to database!"}
+                <div className="rounded-xl border border-primary/20 bg-primary/5 p-3 animate-fade-in">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Check className="h-3.5 w-3.5 text-primary" />
+                    <span className="text-xs font-medium text-primary">
+                      {isBn ? "স্বয়ংক্রিয়ভাবে সংরক্ষিত" : "Auto-saved"}
+                    </span>
+                  </div>
+                  {showSaveDialog ? (
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="text"
+                        value={saveName}
+                        onChange={(e) => setSaveName(e.target.value)}
+                        placeholder={isBn ? "নতুন নাম লিখুন..." : "Enter new name..."}
+                        className="flex-1 h-8 rounded-lg border border-border bg-background px-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/30"
+                        autoFocus
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" && saveName.trim()) { renameConsultation(saveName.trim()); setShowSaveDialog(false); }
+                          if (e.key === "Escape") setShowSaveDialog(false);
+                        }}
+                      />
+                      <Button size="sm" onClick={() => { renameConsultation(saveName.trim()); setShowSaveDialog(false); }} disabled={!saveName.trim()} className="h-8 px-3 text-xs gap-1">
+                        <Save className="h-3 w-3" /> {isBn ? "সংরক্ষণ" : "Save"}
+                      </Button>
+                      <Button variant="ghost" size="sm" onClick={() => setShowSaveDialog(false)} className="h-8 px-2">
+                        <X className="h-3 w-3" />
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] text-muted-foreground truncate flex-1">
+                        {saveName || complaint || (isBn ? "নাম নেই" : "Untitled")}
+                      </span>
+                      <Button variant="ghost" size="sm" onClick={() => { setSaveName(saveName || complaint || ""); setShowSaveDialog(true); }} className="h-7 px-2 text-[11px] gap-1 text-primary shrink-0">
+                        <Edit3 className="h-3 w-3" /> {isBn ? "নাম পরিবর্তন" : "Rename"}
+                      </Button>
+                    </div>
+                  )}
                 </div>
               )}
               {!user && (
@@ -778,31 +842,6 @@ function DoctorContent() {
                     {isBn ? "লগইন করে সংরক্ষণ করুন" : "Login to Save"}
                   </Button>
                 </Link>
-              )}
-
-              {/* Save dialog */}
-              {showSaveDialog && (
-                <div className="p-4 rounded-xl bg-card border border-primary/30 animate-fade-in">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold">{isBn ? "পরামর্শ সংরক্ষণ" : "Save Consultation"}</span>
-                    <button onClick={() => setShowSaveDialog(false)} className="text-muted-foreground hover:text-foreground">
-                      <X className="h-4 w-4" />
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    value={saveName}
-                    onChange={(e) => setSaveName(e.target.value)}
-                    placeholder={isBn ? "পরামর্শের নাম লিখুন..." : "Enter consultation name..."}
-                    className="w-full h-10 rounded-lg border border-border bg-background px-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/30 mb-3"
-                    autoFocus
-                    onKeyDown={(e) => { if (e.key === "Enter" && saveName.trim()) saveToDb(saveName.trim()); }}
-                  />
-                  <Button onClick={() => saveToDb(saveName.trim())} disabled={!saveName.trim() || saving} className="w-full gap-2 h-10 rounded-lg text-sm">
-                    {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Save className="h-3.5 w-3.5" />}
-                    {saving ? (isBn ? "সংরক্ষণ করছি..." : "Saving...") : (isBn ? "সংরক্ষণ করুন" : "Save")}
-                  </Button>
-                </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
