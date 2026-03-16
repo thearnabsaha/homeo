@@ -8,7 +8,7 @@ import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Link from "next/link";
 import {
   BookOpen, ChevronRight, Layers, FolderOpen, Stethoscope, Pill,
-  Star, RotateCcw, Sparkles, ArrowLeft, Clock, Check, Loader2, Edit3, Save, X,
+  Star, RotateCcw, Sparkles, ArrowLeft, Clock, Check, Loader2, Edit3, Save, X, Trash2,
 } from "lucide-react";
 import { AuthGuard } from "@/components/AuthGuard";
 import { Button } from "@/components/ui/button";
@@ -108,6 +108,14 @@ function RepertoryContent() {
   const addSel = (sn: string, ssn: string | undefined, m: Medicine[]) => {
     setAllSelections((prev) => {
       const next = [...prev, { symptomName: sn, subSymptomName: ssn, medicines: m }];
+      aggregate(next);
+      return next;
+    });
+  };
+
+  const removeSel = (index: number) => {
+    setAllSelections((prev) => {
+      const next = prev.filter((_, i) => i !== index);
       aggregate(next);
       return next;
     });
@@ -362,12 +370,34 @@ function RepertoryContent() {
               ))}
             </div>
             <div className="border-t border-border px-4 py-3">
-              <h4 className="text-xs font-semibold text-muted-foreground mb-2">{t("repertory.history")}</h4>
-              {allSelections.map((sel, i) => (
-                <div key={i} className="text-[10px] text-muted-foreground py-1 border-b border-border/30 last:border-0">
-                  {bn(sel.symptomName)}{sel.subSymptomName ? ` > ${bn(sel.subSymptomName)}` : ""} <span className="text-foreground font-medium">({num(sel.medicines.length)} {t("repertory.medicines")})</span>
-                </div>
-              ))}
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-xs font-semibold text-muted-foreground">
+                  {isBn ? "নির্বাচন ইতিহাস" : "Selection History"} ({num(allSelections.length)})
+                </h4>
+                {allSelections.length > 1 && (
+                  <button onClick={() => { setAllSelections([]); setAggregated([]); }} className="text-[10px] text-destructive hover:text-destructive/80 flex items-center gap-0.5">
+                    <Trash2 className="h-2.5 w-2.5" /> {isBn ? "সব মুছুন" : "Clear"}
+                  </button>
+                )}
+              </div>
+              <div className="space-y-0.5">
+                {allSelections.map((sel, i) => (
+                  <SwipeHistoryItem key={`${sel.symptomName}-${sel.subSymptomName}-${i}`} onDelete={() => removeSel(i)}>
+                    <div className="flex items-center gap-1.5 py-1.5 px-1 group">
+                      <span className="text-[9px] text-muted-foreground/40 w-3 shrink-0 text-right">{num(i + 1)}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] text-muted-foreground truncate">
+                          {bn(sel.symptomName)}{sel.subSymptomName ? <span className="text-muted-foreground/50"> &gt; {bn(sel.subSymptomName)}</span> : ""}
+                        </p>
+                        <p className="text-[9px] text-foreground/70 font-medium">{num(sel.medicines.length)} {t("repertory.medicines")}</p>
+                      </div>
+                      <button onClick={(e) => { e.stopPropagation(); removeSel(i); }} className="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded hover:bg-destructive/10 text-destructive shrink-0">
+                        <X className="h-3 w-3" />
+                      </button>
+                    </div>
+                  </SwipeHistoryItem>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -378,6 +408,57 @@ function RepertoryContent() {
           <div className="h-8 w-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin" />
         </div>
       )}
+    </div>
+  );
+}
+
+function SwipeHistoryItem({ children, onDelete }: { children: React.ReactNode; onDelete: () => void }) {
+  const startX = useRef(0);
+  const [offset, setOffset] = useState(0);
+  const [swiping, setSwiping] = useState(false);
+  const threshold = 60;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    startX.current = e.touches[0].clientX;
+    setSwiping(true);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!swiping) return;
+    const dx = e.touches[0].clientX - startX.current;
+    if (dx < 0) setOffset(Math.max(dx, -100));
+  };
+
+  const onTouchEnd = () => {
+    setSwiping(false);
+    if (offset < -threshold) {
+      setOffset(-100);
+    } else {
+      setOffset(0);
+    }
+  };
+
+  return (
+    <div className="relative overflow-hidden rounded-lg">
+      <div className="absolute inset-y-0 right-0 flex items-center z-0">
+        {offset <= -threshold && (
+          <button onClick={() => { setOffset(0); onDelete(); }} className="h-full px-3 bg-destructive text-destructive-foreground text-[10px] font-medium flex items-center gap-1 animate-fade-in">
+            <Trash2 className="h-3 w-3" />
+          </button>
+        )}
+      </div>
+      <div
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        className="relative z-10 bg-card"
+        style={{
+          transform: `translateX(${offset}px)`,
+          transition: swiping ? "none" : "transform 0.2s ease-out",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
