@@ -15,7 +15,8 @@ model User {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  consultations Consultation[]
+  consultations    Consultation[]
+  repertorySessions RepertorySession[]
 
   @@map("users")
 }
@@ -35,4 +36,20 @@ model Consultation {
 
   @@index([userId, createdAt(sort: Desc)])
   @@map("consultations")
+}
+
+model RepertorySession {
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  selections Json
+  aggregated Json
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, createdAt(sort: Desc)])
+  @@map("repertory_sessions")
 }

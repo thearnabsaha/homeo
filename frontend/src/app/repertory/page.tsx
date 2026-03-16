@@ -1,25 +1,18 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useTranslation } from "@/i18n/useTranslation";
 import { translateRepertory, toBengaliNumeral } from "@/i18n/repertoryBn";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Link from "next/link";
 import {
-  BookOpen,
-  ChevronRight,
-  Layers,
-  FolderOpen,
-  Stethoscope,
-  Pill,
-  Star,
-  RotateCcw,
-  Sparkles,
-  ArrowLeft,
+  BookOpen, ChevronRight, Layers, FolderOpen, Stethoscope, Pill,
+  Star, RotateCcw, Sparkles, ArrowLeft, Clock, Check, Loader2, Edit3, Save, X,
 } from "lucide-react";
 import { AuthGuard } from "@/components/AuthGuard";
 import { Button } from "@/components/ui/button";
+import { useNeoAuth } from "@/hooks/useNeoAuth";
 
 interface Repertory { id: number; name: string; conditionCount: number; }
 interface Condition { id: number; name: string; symptomCount: number; }
@@ -37,6 +30,7 @@ function RepertoryContent() {
   const isBn = language === "bn";
   const bn = useCallback((text: string) => (isBn ? translateRepertory(text) : text), [isBn]);
   const num = useCallback((n: number) => (isBn ? toBengaliNumeral(n) : String(n)), [isBn]);
+  const { token } = useNeoAuth();
 
   const [repertories, setRepertories] = useState<Repertory[]>([]);
   const [conditions, setConditions] = useState<Condition[]>([]);
@@ -50,6 +44,14 @@ function RepertoryContent() {
   const [allSelections, setAllSelections] = useState<SelectedMedicine[]>([]);
   const [aggregated, setAggregated] = useState<{ name: string; rank: number; count: number }[]>([]);
   const [loading, setLoading] = useState(false);
+
+  // Auto-save state
+  const [savedSessionId, setSavedSessionId] = useState<string | null>(null);
+  const [autoSaving, setAutoSaving] = useState(false);
+  const [autoSaved, setAutoSaved] = useState(false);
+  const [sessionName, setSessionName] = useState("");
+  const [showRename, setShowRename] = useState(false);
+  const saveTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     fetch("/api/repertory").then((r) => r.json()).then((d) => setRepertories(d.repertories || []));
@@ -104,7 +106,11 @@ function RepertoryContent() {
   }, [selectedRep, selectedCond, selectedSymp]);
 
   const addSel = (sn: string, ssn: string | undefined, m: Medicine[]) => {
-    setAllSelections((prev) => { const next = [...prev, { symptomName: sn, subSymptomName: ssn, medicines: m }]; aggregate(next); return next; });
+    setAllSelections((prev) => {
+      const next = [...prev, { symptomName: sn, subSymptomName: ssn, medicines: m }];
+      aggregate(next);
+      return next;
+    });
   };
 
   const aggregate = (sels: SelectedMedicine[]) => {
@@ -116,10 +122,76 @@ function RepertoryContent() {
     setAggregated(Array.from(map.entries()).map(([name, { rank, count }]) => ({ name, rank, count })).sort((a, b) => b.count - a.count || b.rank - a.rank));
   };
 
+  // Auto-save: debounced save whenever allSelections changes
+  useEffect(() => {
+    if (!token || allSelections.length === 0) return;
+
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      doAutoSave(allSelections, aggregated);
+    }, 1500);
+
+    return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
+  }, [allSelections, aggregated, token]);
+
+  const doAutoSave = async (sels: SelectedMedicine[], agg: { name: string; rank: number; count: number }[]) => {
+    if (!token || sels.length === 0) return;
+    setAutoSaving(true);
+    try {
+      const autoName = sels.map((s) => s.symptomName).filter((v, i, a) => a.indexOf(v) === i).join(", ");
+      const payload = {
+        name: sessionName || autoName,
+        selections: sels.map((s) => ({
+          symptomName: s.symptomName,
+          subSymptomName: s.subSymptomName,
+          medicineCount: s.medicines.length,
+          medicines: s.medicines.map((m) => ({ name: m.name, rank: m.rank })),
+        })),
+        aggregated: agg.slice(0, 30),
+      };
+
+      if (savedSessionId) {
+        await fetch(`/api/repertory-sessions/${savedSessionId}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify(payload),
+        });
+      } else {
+        const res = await fetch("/api/repertory-sessions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setSavedSessionId(data.session?.id || null);
+          if (!sessionName) setSessionName(autoName);
+        }
+      }
+      setAutoSaved(true);
+      setTimeout(() => setAutoSaved(false), 3000);
+    } catch {}
+    setAutoSaving(false);
+  };
+
+  const renameSession = async (newName: string) => {
+    if (!token || !savedSessionId || !newName.trim()) return;
+    try {
+      await fetch(`/api/repertory-sessions/${savedSessionId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ name: newName.trim() }),
+      });
+      setSessionName(newName.trim());
+    } catch {}
+    setShowRename(false);
+  };
+
   const resetAll = () => {
     setSelectedRep(null); setSelectedCond(null); setSelectedSymp(null); setSelectedSub(null);
     setConditions([]); setSymptoms([]); setSubSymptoms([]); setMedicines([]);
     setAllSelections([]); setAggregated([]);
+    setSavedSessionId(null); setAutoSaved(false); setSessionName("");
   };
 
   const Col = ({ icon: Icon, label, count, items, selected, onSelect, placeholder }: {
@@ -159,6 +231,11 @@ function RepertoryContent() {
             <span className="font-bold text-sm">{isBn ? "নিও রেপার্টরি" : "Neo Repertory"}</span>
           </div>
           <div className="flex items-center gap-2">
+            <Link href="/repertory/history">
+              <Button variant="ghost" size="sm" className="text-xs gap-1">
+                <Clock className="h-3 w-3" /> {isBn ? "ইতিহাস" : "History"}
+              </Button>
+            </Link>
             <Button variant="outline" size="sm" className="text-xs gap-1" onClick={resetAll}>
               <RotateCcw className="h-3 w-3" /> {t("repertory.reset")}
             </Button>
@@ -227,6 +304,48 @@ function RepertoryContent() {
             <div className="sticky top-0 bg-card border-b border-border px-4 py-3 z-10">
               <h3 className="text-sm font-bold">{t("repertory.recommended")}</h3>
               <p className="text-[10px] text-muted-foreground mt-0.5">{num(allSelections.length)} {t("repertory.selections")}</p>
+
+              {/* Auto-save indicator */}
+              {token && (
+                <div className="mt-2">
+                  {autoSaving && (
+                    <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                      <Loader2 className="h-3 w-3 animate-spin" />
+                      {isBn ? "সংরক্ষণ করছি..." : "Saving..."}
+                    </div>
+                  )}
+                  {autoSaved && !autoSaving && (
+                    <div className="flex items-center gap-1.5 text-[10px] text-primary">
+                      <Check className="h-3 w-3" />
+                      {isBn ? "সংরক্ষিত" : "Saved"}
+                    </div>
+                  )}
+                  {savedSessionId && !autoSaving && !autoSaved && (
+                    <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                      <Check className="h-3 w-3" />
+                      {isBn ? "ক্লাউডে আছে" : "On cloud"}
+                    </div>
+                  )}
+                  {savedSessionId && (
+                    showRename ? (
+                      <div className="flex items-center gap-1 mt-1">
+                        <input
+                          type="text" value={sessionName} onChange={(e) => setSessionName(e.target.value)}
+                          className="flex-1 h-6 rounded border border-border bg-background px-2 text-[10px] focus:outline-none focus:ring-1 focus:ring-primary/30"
+                          autoFocus
+                          onKeyDown={(e) => { if (e.key === "Enter") renameSession(sessionName); if (e.key === "Escape") setShowRename(false); }}
+                        />
+                        <button onClick={() => renameSession(sessionName)} className="text-primary hover:text-primary/80"><Save className="h-3 w-3" /></button>
+                        <button onClick={() => setShowRename(false)} className="text-muted-foreground"><X className="h-3 w-3" /></button>
+                      </div>
+                    ) : (
+                      <button onClick={() => setShowRename(true)} className="flex items-center gap-1 mt-1 text-[10px] text-primary hover:text-primary/80">
+                        <Edit3 className="h-2.5 w-2.5" /> {isBn ? "নাম পরিবর্তন" : "Rename"}
+                      </button>
+                    )
+                  )}
+                </div>
+              )}
             </div>
             <div className="p-3">
               {aggregated.slice(0, 20).map((med, i) => (
