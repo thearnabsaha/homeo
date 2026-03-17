@@ -375,7 +375,15 @@ function RepertoryContent() {
                   {isBn ? "নির্বাচন ইতিহাস" : "Selection History"} ({num(allSelections.length)})
                 </h4>
                 {allSelections.length > 1 && (
-                  <button onClick={() => { setAllSelections([]); setAggregated([]); }} className="text-[10px] text-destructive hover:text-destructive/80 flex items-center gap-0.5">
+                  <button onClick={() => {
+                    setAllSelections([]); setAggregated([]);
+                    if (savedSessionId && token) {
+                      fetch(`/api/repertory-sessions/${savedSessionId}`, {
+                        method: "DELETE", headers: { Authorization: `Bearer ${token}` },
+                      }).catch(() => {});
+                      setSavedSessionId(null); setSessionName(""); setAutoSaved(false);
+                    }
+                  }} className="text-[10px] text-destructive hover:text-destructive/80 flex items-center gap-0.5">
                     <Trash2 className="h-2.5 w-2.5" /> {isBn ? "সব মুছুন" : "Clear"}
                   </button>
                 )}
@@ -398,6 +406,17 @@ function RepertoryContent() {
                   </SwipeHistoryItem>
                 ))}
               </div>
+
+              {/* Link to full history page */}
+              {token && (
+                <div className="mt-3 pt-2 border-t border-border/30">
+                  <Link href="/repertory/history" className="flex items-center gap-1.5 text-[10px] text-primary hover:text-primary/80 font-medium">
+                    <Clock className="h-3 w-3" />
+                    {isBn ? "সব সংরক্ষিত সেশন দেখুন" : "View All Saved Sessions"}
+                    <ChevronRight className="h-2.5 w-2.5" />
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         )}
