@@ -12,7 +12,7 @@ import {
   Trophy,
   Target,
   Star,
-  Save,
+  Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -34,7 +34,6 @@ interface NeoRightPanelProps {
   aiAnalysis?: AIAnalysis | null;
   onRankingChange?: (r: RankingResult | null) => void;
   onAiAnalysisChange?: (a: AIAnalysis | null) => void;
-  onSaveHistory?: () => void;
 }
 
 function GradeIndicator({ grade }: { grade: number }) {
@@ -214,7 +213,6 @@ export function NeoRightPanel({
   aiAnalysis: externalAiAnalysis,
   onRankingChange,
   onAiAnalysisChange,
-  onSaveHistory,
 }: NeoRightPanelProps) {
   const { t, language } = useTranslation();
   const [localRanking, setLocalRanking] = useState<RankingResult | null>(null);
@@ -223,7 +221,6 @@ export function NeoRightPanel({
   const [aiLoading, setAiLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [saved, setSaved] = useState(false);
 
   const ranking = externalRanking ?? localRanking;
   const aiAnalysis = externalAiAnalysis ?? localAiAnalysis;
@@ -248,7 +245,6 @@ export function NeoRightPanel({
     setLoading(true);
     setError(null);
     updateAiAnalysis(null);
-    setSaved(false);
     try {
       const result = await neoApi.rankRemedies(
         selectedSymptoms.map((s) => s.id),
@@ -281,12 +277,6 @@ export function NeoRightPanel({
   const handleFullAnalysis = async () => {
     await handleRank();
     handleAiAnalyze();
-  };
-
-  const handleSave = () => {
-    onSaveHistory?.();
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
   };
 
   const panelContent = (
@@ -359,7 +349,7 @@ export function NeoRightPanel({
 
       {!loading && ranking && ranking.rankedRemedies.length > 0 && (
         <div className="space-y-3 animate-slide-up">
-          <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between">
             <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
               {t("rank.topRemedies")} ({toBengaliNum(ranking.totalRemediesFound)})
             </h3>
@@ -367,18 +357,10 @@ export function NeoRightPanel({
               <span className="text-[10px] text-muted-foreground">
                 {toBengaliNum(ranking.totalSymptomsAnalyzed)} {t("rank.symptomsAnalyzed")}
               </span>
-              {onSaveHistory && (
-                <button
-                  onClick={handleSave}
-                  className={cn(
-                    "p-1 rounded transition-colors",
-                    saved ? "text-green-400" : "text-muted-foreground hover:text-foreground"
-                  )}
-                  title={t("history.save")}
-                >
-                  <Save className="h-3.5 w-3.5" />
-                </button>
-              )}
+              <span className="text-[10px] text-green-500 flex items-center gap-0.5">
+                <Check className="h-2.5 w-2.5" />
+                {language === "bn" ? "সংরক্ষিত" : "Saved"}
+              </span>
             </div>
           </div>
 

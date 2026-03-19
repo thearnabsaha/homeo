@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect, useRef } from "react";
 import { NeoHeader } from "@/components/neo/NeoHeader";
 import { NeoSidebar } from "@/components/neo/NeoSidebar";
 import { NeoRightPanel } from "@/components/neo/NeoRightPanel";
@@ -35,7 +35,19 @@ function ExplorerContent() {
     saveToHistory,
     history,
     restoreHistory,
+    deleteHistory,
+    clearHistory,
   } = useNeoExplorer();
+
+  const lastSavedRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!ranking || selectedSymptoms.length === 0) return;
+    const key = selectedSymptoms.map((s) => s.id).sort().join(",") + "|" + ranking.totalRemediesFound;
+    if (lastSavedRef.current === key) return;
+    lastSavedRef.current = key;
+    saveToHistory();
+  }, [ranking, selectedSymptoms, saveToHistory]);
 
   const handleSelectChapter = useCallback((id: string) => {
     setActiveChapter(id);
@@ -69,6 +81,8 @@ function ExplorerContent() {
           onSelectSymptom={handleSelectSymptom}
           history={history}
           onRestoreHistory={restoreHistory}
+          onDeleteHistory={deleteHistory}
+          onClearHistory={clearHistory}
         />
 
         <main className="flex-1 min-w-0">
@@ -100,7 +114,6 @@ function ExplorerContent() {
           aiAnalysis={aiAnalysis}
           onRankingChange={setRanking}
           onAiAnalysisChange={setAiAnalysis}
-          onSaveHistory={saveToHistory}
         />
       </div>
 

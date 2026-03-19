@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
-import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope, Loader2 } from "lucide-react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
+import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope, Loader2, Trash2 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTranslation } from "@/i18n/useTranslation";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
@@ -20,9 +20,42 @@ interface NeoSidebarProps {
   onSelectSymptom: (id: string) => void;
   history?: NeoHistoryEntry[];
   onRestoreHistory?: (entry: NeoHistoryEntry) => void;
+  onDeleteHistory?: (id: string) => void;
+  onClearHistory?: () => void;
 }
 
 type ChildItem = { id: string; name: string; [key: string]: unknown };
+
+function SwipeItem({ children, onDelete }: { children: React.ReactNode; onDelete: () => void }) {
+  const startX = useRef(0);
+  const [offset, setOffset] = useState(0);
+  const [swiping, setSwiping] = useState(false);
+  const threshold = 55;
+
+  return (
+    <div className="relative overflow-hidden rounded-md">
+      <div className="absolute inset-y-0 right-0 flex items-center z-0">
+        {offset <= -threshold && (
+          <button
+            onClick={() => { setOffset(0); onDelete(); }}
+            className="h-full px-3 bg-destructive text-destructive-foreground text-[10px] font-medium flex items-center gap-1 animate-fade-in"
+          >
+            <Trash2 className="h-3 w-3" />
+          </button>
+        )}
+      </div>
+      <div
+        onTouchStart={(e) => { startX.current = e.touches[0].clientX; setSwiping(true); }}
+        onTouchMove={(e) => { if (!swiping) return; const dx = e.touches[0].clientX - startX.current; if (dx < 0) setOffset(Math.max(dx, -90)); }}
+        onTouchEnd={() => { setSwiping(false); setOffset(offset < -threshold ? -90 : 0); }}
+        className="relative z-10 bg-background"
+        style={{ transform: `translateX(${offset}px)`, transition: swiping ? "none" : "transform 0.2s ease-out" }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 function formatTimestamp(ts: string, language: string) {
   try {
@@ -59,9 +92,11 @@ export function NeoSidebar({
   onSelectSymptom,
   history = [],
   onRestoreHistory,
+  onDeleteHistory,
+  onClearHistory,
 }: NeoSidebarProps) {
   const { t, language } = useTranslation();
-  const { bookmarks } = useNeoBookmarks();
+  const { bookmarks, removeBookmark, clearAll: clearAllBookmarks } = useNeoBookmarks();
   const [repertories, setRepertories] = useState<NeoRepertorySummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedRep, setExpandedRep] = useState<string | null>(null);
@@ -296,19 +331,30 @@ export function NeoSidebar({
 
             {bookmarks.length > 0 && (
               <div className="mt-6">
-                <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                  <BookmarkIcon className="h-3 w-3" />
-                  {t("nav.bookmarks")}
-                </h2>
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+                    <BookmarkIcon className="h-3 w-3" />
+                    {t("nav.bookmarks")} ({num(bookmarks.length)})
+                  </h2>
+                  <button
+                    onClick={clearAllBookmarks}
+                    className="text-[10px] text-destructive/70 hover:text-destructive flex items-center gap-0.5 transition-colors"
+                    title={isBn ? "সব মুছুন" : "Delete all"}
+                  >
+                    <Trash2 className="h-2.5 w-2.5" />
+                    <span>{isBn ? "সব মুছুন" : "Clear"}</span>
+                  </button>
+                </div>
                 <div className="space-y-0.5">
-                  {bookmarks.slice(0, 8).map((b) => (
-                    <button
-                      key={b.id}
-                      onClick={() => onSelectSymptom(b.id)}
-                      className="block w-full text-left px-2 py-1 text-xs text-muted-foreground hover:text-foreground rounded hover:bg-accent/50 truncate"
-                    >
-                      {tr(b.name)}
-                    </button>
+                  {bookmarks.map((b) => (
+                    <SwipeItem key={b.id} onDelete={() => removeBookmark(b.id)}>
+                      <button
+                        onClick={() => onSelectSymptom(b.id)}
+                        className="block w-full text-left px-2 py-1.5 text-xs text-muted-foreground hover:text-foreground rounded hover:bg-accent/50 truncate"
+                      >
+                        {tr(b.name)}
+                      </button>
+                    </SwipeItem>
                   ))}
                 </div>
               </div>
@@ -316,44 +362,55 @@ export function NeoSidebar({
 
             {history.length > 0 && (
               <div className="mt-6">
-                <button
-                  onClick={() => setShowHistory(!showHistory)}
-                  className="w-full flex items-center justify-between text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3"
-                >
-                  <span className="flex items-center gap-1.5">
+                <div className="flex items-center justify-between mb-3">
+                  <button
+                    onClick={() => setShowHistory(!showHistory)}
+                    className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                  >
                     <History className="h-3 w-3" />
                     {t("history.title")} ({num(history.length)})
-                  </span>
-                  <ChevronRight className={cn("h-3 w-3 transition-transform", showHistory && "rotate-90")} />
-                </button>
+                    <ChevronRight className={cn("h-3 w-3 transition-transform", showHistory && "rotate-90")} />
+                  </button>
+                  {showHistory && onClearHistory && (
+                    <button
+                      onClick={onClearHistory}
+                      className="text-[10px] text-destructive/70 hover:text-destructive flex items-center gap-0.5 transition-colors"
+                      title={isBn ? "সব মুছুন" : "Delete all"}
+                    >
+                      <Trash2 className="h-2.5 w-2.5" />
+                      <span>{isBn ? "সব মুছুন" : "Clear"}</span>
+                    </button>
+                  )}
+                </div>
 
                 {showHistory && (
                   <div className="space-y-1.5 animate-fade-in">
                     {history.slice(0, 10).map((entry) => (
-                      <button
-                        key={entry.id}
-                        onClick={() => onRestoreHistory?.(entry)}
-                        className="w-full text-left p-2 rounded border border-border hover:border-foreground/20 hover:bg-accent/50 transition-colors"
-                      >
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <Pill className="h-2.5 w-2.5 text-muted-foreground flex-shrink-0" />
-                          <span className="text-[11px] font-medium truncate">{tr(entry.topRemedy)}</span>
-                        </div>
-                        <div className="flex flex-wrap gap-1 mb-1">
-                          {entry.symptoms.slice(0, 3).map((s) => (
-                            <span key={s.id} className="text-[9px] px-1 py-0.5 bg-secondary rounded truncate max-w-[100px]">
-                              {tr(s.name)}
-                            </span>
-                          ))}
-                          {entry.symptoms.length > 3 && (
-                            <span className="text-[9px] text-muted-foreground">+{num(entry.symptoms.length - 3)}</span>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
-                          <Clock className="h-2 w-2" />
-                          {formatTimestamp(entry.timestamp, language)}
-                        </div>
-                      </button>
+                      <SwipeItem key={entry.id} onDelete={() => onDeleteHistory?.(entry.id)}>
+                        <button
+                          onClick={() => onRestoreHistory?.(entry)}
+                          className="w-full text-left p-2 rounded border border-border hover:border-foreground/20 hover:bg-accent/50 transition-colors"
+                        >
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <Pill className="h-2.5 w-2.5 text-muted-foreground flex-shrink-0" />
+                            <span className="text-[11px] font-medium truncate">{tr(entry.topRemedy)}</span>
+                          </div>
+                          <div className="flex flex-wrap gap-1 mb-1">
+                            {entry.symptoms.slice(0, 3).map((s) => (
+                              <span key={s.id} className="text-[9px] px-1 py-0.5 bg-secondary rounded truncate max-w-[100px]">
+                                {tr(s.name)}
+                              </span>
+                            ))}
+                            {entry.symptoms.length > 3 && (
+                              <span className="text-[9px] text-muted-foreground">+{num(entry.symptoms.length - 3)}</span>
+                            )}
+                          </div>
+                          <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
+                            <Clock className="h-2 w-2" />
+                            {formatTimestamp(entry.timestamp, language)}
+                          </div>
+                        </button>
+                      </SwipeItem>
                     ))}
                   </div>
                 )}

@@ -57,5 +57,9 @@ export function useNeoBookmarks() {
     [isBookmarked, addBookmark, removeBookmark]
   );
 
-  return { bookmarks, addBookmark, removeBookmark, isBookmarked, toggleBookmark };
+  const clearAll = useCallback(() => {
+    save([]);
+  }, [save]);
+
+  return { bookmarks, addBookmark, removeBookmark, isBookmarked, toggleBookmark, clearAll };
 }
