@@ -9,6 +9,7 @@ import Link from "next/link";
 import {
   BookOpen, ChevronRight, Layers, FolderOpen, Stethoscope, Pill,
   Star, RotateCcw, Sparkles, ArrowLeft, Clock, Check, Loader2, Edit3, Save, X, Trash2,
+  ArrowUp, ArrowRight, ArrowDown,
 } from "lucide-react";
 import { AuthGuard } from "@/components/AuthGuard";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,13 @@ interface Condition { id: number; name: string; symptomCount: number; }
 interface Symptom { id: number; name: string; hasSubSymptoms: boolean; medicineCount: number; }
 interface SubSymptom { id: number; name: string; symptomsTypeID: number; }
 interface Medicine { id: number; name: string; rank: number; repertory: string; condition: string; symptom: string; subSymptom: string; }
-interface SelectedMedicine { symptomName: string; subSymptomName?: string; medicines: Medicine[]; }
+interface SelectedMedicine { symptomName: string; subSymptomName?: string; medicines: Medicine[]; repertoryName?: string; conditionName?: string; }
+
+function getRankLabel(rank: number, t: (k: string) => string): { label: string; color: string; icon: React.ElementType } {
+  if (rank >= 3) return { label: t("repertory.rankHigh"), color: "text-green-500 bg-green-500/10 border-green-500/30", icon: ArrowUp };
+  if (rank === 2) return { label: t("repertory.rankMid"), color: "text-yellow-500 bg-yellow-500/10 border-yellow-500/30", icon: ArrowRight };
+  return { label: t("repertory.rankLow"), color: "text-red-400 bg-red-400/10 border-red-400/30", icon: ArrowDown };
+}
 
 export default function NeoRepertoryPage() {
   return <AuthGuard><RepertoryContent /></AuthGuard>;
@@ -42,7 +49,7 @@ function RepertoryContent() {
   const [selectedSub, setSelectedSub] = useState<SubSymptom | null>(null);
   const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [allSelections, setAllSelections] = useState<SelectedMedicine[]>([]);
-  const [aggregated, setAggregated] = useState<{ name: string; rank: number; count: number }[]>([]);
+  const [aggregated, setAggregated] = useState<{ name: string; rank: number; count: number; avgRank: number }[]>([]);
   const [loading, setLoading] = useState(false);
 
   // Auto-save state
@@ -91,7 +98,7 @@ function RepertoryContent() {
     const res = await fetch(`/api/repertory?repertoryId=${selectedRep.id}&conditionId=${selectedCond.id}&symptomId=${symp.id}`);
     const data = await res.json();
     if (data.subSymptoms?.length > 0) setSubSymptoms(data.subSymptoms);
-    if (data.medicines?.length > 0) { setMedicines(data.medicines); addSel(symp.name, undefined, data.medicines); }
+    if (data.medicines?.length > 0) { setMedicines(data.medicines); addSel(symp.name, undefined, data.medicines, selectedRep.name, selectedCond.name); }
     setLoading(false);
   }, [selectedRep, selectedCond]);
 
@@ -101,13 +108,13 @@ function RepertoryContent() {
     setLoading(true);
     const res = await fetch(`/api/repertory?repertoryId=${selectedRep.id}&conditionId=${selectedCond.id}&symptomId=${selectedSymp.id}&subSymptomId=${sub.id}`);
     const data = await res.json();
-    if (data.medicines?.length > 0) { setMedicines(data.medicines); addSel(selectedSymp.name, sub.name, data.medicines); }
+    if (data.medicines?.length > 0) { setMedicines(data.medicines); addSel(selectedSymp.name, sub.name, data.medicines, selectedRep.name, selectedCond.name); }
     setLoading(false);
   }, [selectedRep, selectedCond, selectedSymp]);
 
-  const addSel = (sn: string, ssn: string | undefined, m: Medicine[]) => {
+  const addSel = (sn: string, ssn: string | undefined, m: Medicine[], repName?: string, condName?: string) => {
     setAllSelections((prev) => {
-      const next = [...prev, { symptomName: sn, subSymptomName: ssn, medicines: m }];
+      const next = [...prev, { symptomName: sn, subSymptomName: ssn, medicines: m, repertoryName: repName, conditionName: condName }];
       aggregate(next);
       return next;
     });
@@ -127,7 +134,11 @@ function RepertoryContent() {
       const e = map.get(m.name);
       if (e) { e.rank += m.rank; e.count += 1; } else map.set(m.name, { rank: m.rank, count: 1 });
     }
-    setAggregated(Array.from(map.entries()).map(([name, { rank, count }]) => ({ name, rank, count })).sort((a, b) => b.count - a.count || b.rank - a.rank));
+    setAggregated(
+      Array.from(map.entries())
+        .map(([name, { rank, count }]) => ({ name, rank, count, avgRank: Math.round(rank / count) }))
+        .sort((a, b) => b.count - a.count || b.rank - a.rank)
+    );
   };
 
   // Auto-save: debounced save whenever allSelections changes
@@ -284,25 +295,37 @@ function RepertoryContent() {
             <div className="border-t border-border p-4">
               <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
                 <Pill className="h-4 w-4" /> {t("repertory.medicinesFor")}: {selectedSub ? bn(selectedSub.name) : selectedSymp ? bn(selectedSymp.name) : ""}
+                <span className="text-xs font-normal text-muted-foreground ml-auto">{num(medicines.length)} {t("repertory.medicines")}</span>
               </h3>
-              <table className="w-full text-sm">
-                <thead><tr className="border-b border-border text-left">
-                  <th className="pb-2 font-medium text-muted-foreground">#</th>
-                  <th className="pb-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
-                  <th className="pb-2 font-medium text-muted-foreground">{t("repertory.rank")}</th>
-                </tr></thead>
-                <tbody>
-                  {medicines.map((med, i) => (
-                    <tr key={i} className="border-b border-border/50">
-                      <td className="py-2 text-muted-foreground">{num(i + 1)}</td>
-                      <td className="py-2 font-medium">{bn(med.name)}</td>
-                      <td className="py-2"><div className="flex gap-0.5">{Array.from({ length: Math.min(med.rank, 5) }).map((_, j) => (
-                        <Star key={j} className="h-3 w-3 fill-primary text-primary" />
-                      ))}</div></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-border text-left">
+                    <th className="pb-2 pr-3 font-medium text-muted-foreground">#</th>
+                    <th className="pb-2 pr-3 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
+                    <th className="pb-2 pr-3 font-medium text-muted-foreground">{t("repertory.totalSymptoms")}</th>
+                    <th className="pb-2 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                  </tr></thead>
+                  <tbody>
+                    {medicines.map((med, i) => {
+                      const rl = getRankLabel(med.rank, t);
+                      const RankIcon = rl.icon;
+                      return (
+                        <tr key={i} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
+                          <td className="py-2 pr-3 text-muted-foreground font-mono text-xs">{num(i + 1)}</td>
+                          <td className="py-2 pr-3 font-medium">{bn(med.name)}</td>
+                          <td className="py-2 pr-3 text-muted-foreground text-center">{num(med.rank)}</td>
+                          <td className="py-2">
+                            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-[10px] font-semibold ${rl.color}`}>
+                              <RankIcon className="h-2.5 w-2.5" />
+                              {rl.label}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>
@@ -356,19 +379,119 @@ function RepertoryContent() {
               )}
             </div>
             <div className="p-3">
-              {aggregated.slice(0, 20).map((med, i) => (
-                <div key={med.name} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <span className={`text-xs font-bold shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${i < 3 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>{num(i + 1)}</span>
-                    <span className="text-sm font-medium truncate">{bn(med.name)}</span>
+              {aggregated.slice(0, 20).map((med, i) => {
+                const rl = getRankLabel(med.avgRank, t);
+                const RankIcon = rl.icon;
+                return (
+                  <div key={med.name} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-muted transition-colors">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className={`text-xs font-bold shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${i < 3 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>{num(i + 1)}</span>
+                      <span className="text-sm font-medium truncate">{bn(med.name)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="text-[10px] text-muted-foreground">{num(med.count)}x</span>
+                      <span className="text-xs font-semibold bg-secondary px-1.5 py-0.5 rounded">{num(med.rank)}</span>
+                      <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold ${rl.color}`}>
+                        <RankIcon className="h-2 w-2" />
+                        {rl.label}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-[10px] text-muted-foreground">{num(med.count)}x</span>
-                    <span className="text-xs font-semibold bg-secondary px-1.5 py-0.5 rounded">{num(med.rank)}</span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+            {/* Top Medicine Rank List */}
+            {aggregated.length > 0 && (
+              <div className="border-t border-border px-4 py-3">
+                <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  {t("repertory.topMedicineRank")}
+                </h4>
+                <div className="overflow-x-auto -mx-1">
+                  <table className="w-full text-[10px]">
+                    <thead>
+                      <tr className="border-b border-border text-left">
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.index")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.totalSymptoms")}</th>
+                        <th className="pb-1.5 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {aggregated.slice(0, 10).map((med, i) => {
+                        const rl = getRankLabel(med.avgRank, t);
+                        const RankIcon = rl.icon;
+                        return (
+                          <tr key={med.name} className="border-b border-border/30">
+                            <td className="py-1.5 pr-2 text-muted-foreground font-mono">{num(i + 1)}</td>
+                            <td className="py-1.5 pr-2 font-medium">{bn(med.name)}</td>
+                            <td className="py-1.5 pr-2 text-muted-foreground text-center">{num(med.count)}</td>
+                            <td className="py-1.5">
+                              <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold ${rl.color}`}>
+                                <RankIcon className="h-2 w-2" />
+                                {num(i + 1)} - {rl.label}
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Medicine Rank List All - detailed breakdown by selection */}
+            {allSelections.length > 0 && (
+              <div className="border-t border-border px-4 py-3">
+                <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                  {t("repertory.allMedicineRank")}
+                </h4>
+                <div className="overflow-x-auto -mx-1">
+                  <table className="w-full text-[10px]">
+                    <thead>
+                      <tr className="border-b border-border text-left">
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.index")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.repertories")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.conditions")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.symptoms")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.subSymptoms")}</th>
+                        <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
+                        <th className="pb-1.5 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(() => {
+                        let idx = 0;
+                        return allSelections.flatMap((sel) =>
+                          sel.medicines.map((med) => {
+                            idx++;
+                            const rl = getRankLabel(med.rank, t);
+                            const RankIcon = rl.icon;
+                            return (
+                              <tr key={`${sel.symptomName}-${sel.subSymptomName}-${med.name}-${idx}`} className="border-b border-border/30">
+                                <td className="py-1.5 pr-2 text-muted-foreground font-mono">{num(idx)}</td>
+                                <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[60px]">{bn(sel.repertoryName || "-")}</td>
+                                <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[60px]">{bn(sel.conditionName || "-")}</td>
+                                <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[60px]">{bn(sel.symptomName)}</td>
+                                <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[60px]">{sel.subSymptomName ? bn(sel.subSymptomName) : "-"}</td>
+                                <td className="py-1.5 pr-2 font-medium">{bn(med.name)}</td>
+                                <td className="py-1.5">
+                                  <span className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold ${rl.color}`}>
+                                    <RankIcon className="h-2 w-2" />
+                                    {num(med.rank)} - {rl.label}
+                                  </span>
+                                </td>
+                              </tr>
+                            );
+                          })
+                        );
+                      })()}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
             <div className="border-t border-border px-4 py-3">
               <div className="flex items-center justify-between mb-2">
                 <h4 className="text-xs font-semibold text-muted-foreground">
