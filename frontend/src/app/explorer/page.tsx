@@ -97,7 +97,7 @@ function ExplorerContent() {
           ) : (
             <NeoSymptomTree
               selectedSymptomId={selectedSymptomId}
-              selectedSymptoms={selectedSymptoms.map((s) => s.name)}
+              selectedSymptoms={selectedSymptoms.map((s) => s.id)}
               onToggleSymptom={toggleSymptom}
               onViewRemedies={handleSelectSymptom}
               onViewRemedy={handleViewRemedy}

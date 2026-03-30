@@ -142,7 +142,7 @@ export function NeoSymptomTree({
                 onClick={() => onToggleSymptom(symptom.id, symptom.name)}
                 className="p-0.5 text-muted-foreground hover:text-foreground shrink-0"
               >
-                {selectedSymptoms.includes(symptom.name) ? (
+                {selectedSymptoms.includes(symptom.id) ? (
                   <CheckSquare className="h-5 w-5 text-foreground" />
                 ) : (
                   <Square className="h-5 w-5" />
@@ -161,7 +161,7 @@ export function NeoSymptomTree({
               </h3>
               <div className="space-y-1">
                 {sortedSubSymptoms.map((sub) => {
-                  const isSelected = selectedSymptoms.includes(sub.name);
+                  const isSelected = selectedSymptoms.includes(sub.id);
                   return (
                     <div key={sub.id} className="flex items-center gap-2 group">
                       <button
