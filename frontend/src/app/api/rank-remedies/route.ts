@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getNeoRubrics, getNeoRemedyById, getNeoSymptomById } from "@/data/neoLoader";
 
-function findMatchingRubrics(symptomId: string, rubrics: Record<string, { remedyId: string; grade: number }[]>) {
+function findMatchingRubrics(symptomId: string, rubrics: Record<string, { remedyId: string; grade: number; rawRank: number }[]>) {
   const direct = rubrics[symptomId];
   if (direct && direct.length > 0) return [{ symptomId, remedies: direct }];
 

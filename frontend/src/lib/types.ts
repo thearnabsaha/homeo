@@ -29,6 +29,7 @@ export interface RemedyMatch {
   name: string;
   abbr: string;
   strength: number;
+  rawRank: number;
   description: string;
 }
 

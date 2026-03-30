@@ -15,8 +15,8 @@ const responseCache = new Map<string, unknown>();
 
 function collectChildRubrics(
   symptoms: { id: string; subSymptoms: { id: string }[] }[],
-  rubrics: Record<string, { remedyId: string; grade: number }[]>,
-  out: { remedyId: string; grade: number }[]
+  rubrics: Record<string, { remedyId: string; grade: number; rawRank: number }[]>,
+  out: { remedyId: string; grade: number; rawRank: number }[]
 ) {
   for (const sym of symptoms) {
     const r = rubrics[sym.id];
@@ -50,7 +50,7 @@ export function GET(
     }
 
     let subSymptoms: { id: string; name: string }[] = [];
-    const allRubricEntries: { remedyId: string; grade: number }[] = [];
+    const allRubricEntries: { remedyId: string; grade: number; rawRank: number }[] = [];
 
     if (found.type === "repertory") {
       const ch = chapterById.get(id);
@@ -90,22 +90,32 @@ export function GET(
       if (r) allRubricEntries.push(...r);
     }
 
-    // Aggregate: highest grade per remedy
-    const remedyGrades = new Map<string, number>();
+    // Aggregate: highest grade + highest rawRank per remedy
+    const remedyAgg = new Map<string, { grade: number; rawRank: number }>();
     for (const entry of allRubricEntries) {
-      const existing = remedyGrades.get(entry.remedyId) || 0;
-      if (entry.grade > existing) remedyGrades.set(entry.remedyId, entry.grade);
+      const existing = remedyAgg.get(entry.remedyId);
+      if (!existing) {
+        remedyAgg.set(entry.remedyId, { grade: entry.grade, rawRank: entry.rawRank });
+      } else {
+        if (entry.grade > existing.grade) existing.grade = entry.grade;
+        if (entry.rawRank > existing.rawRank) existing.rawRank = entry.rawRank;
+      }
     }
 
-    const symptomRemedies = [...remedyGrades.entries()]
-      .map(([remedyId, grade]) => {
+    const symptomRemedies = [...remedyAgg.entries()]
+      .map(([remedyId, { grade, rawRank }]) => {
         const remedy = remedyById.get(remedyId);
         return remedy
-          ? { id: remedy.id, name: remedy.name, abbr: remedy.abbr, strength: grade, description: remedy.description }
+          ? { id: remedy.id, name: remedy.name, abbr: remedy.abbr, strength: grade, rawRank, description: remedy.description }
           : null;
       })
       .filter(Boolean)
-      .sort((a, b) => (b as { strength: number }).strength - (a as { strength: number }).strength)
+      .sort((a, b) => {
+        const br = b as { rawRank: number; strength: number };
+        const ar = a as { rawRank: number; strength: number };
+        if (br.rawRank !== ar.rawRank) return br.rawRank - ar.rawRank;
+        return br.strength - ar.strength;
+      })
       .slice(0, 200);
 
     const symptomData = { id: found.id, name: found.name, type: found.type, subSymptoms };

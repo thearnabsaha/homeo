@@ -46,7 +46,7 @@ interface NeoRemedy {
   modalities: { worse: string[]; better: string[] };
 }
 
-type NeoRubrics = Record<string, { remedyId: string; grade: number }[]>;
+type NeoRubrics = Record<string, { remedyId: string; grade: number; rawRank: number }[]>;
 type SymEntry = {
   id: string;
   name: string;
@@ -250,7 +250,7 @@ function regMeds(
     }
     if (!rSym.has(rid)) rSym.set(rid, new Set());
     rSym.get(rid)!.add(symId);
-    rub[symId].push({ remedyId: rid, grade: Math.min(3, Math.max(1, m.rank)) });
+    rub[symId].push({ remedyId: rid, grade: Math.min(3, Math.max(1, m.rank)), rawRank: m.rank });
   }
 }
 

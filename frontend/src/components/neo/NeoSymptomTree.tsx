@@ -195,50 +195,61 @@ export function NeoSymptomTree({
                 <span className="ml-1 text-muted-foreground/60">({sortedRemedies.length})</span>
               </h3>
               <div className="space-y-2">
-                {sortedRemedies.map((rem, idx) => (
-                  <button
-                    key={rem.id}
-                    onClick={() => (onViewRemedy ? onViewRemedy(rem.id) : onViewRemedies(rem.id))}
-                    className="flex items-center w-full p-3 rounded-lg border border-border hover:border-muted-foreground/30 transition-colors text-left gap-3"
-                  >
-                    <div
-                      className={cn(
-                        "flex-shrink-0 h-6 w-6 rounded-full border flex items-center justify-center text-[10px] font-bold",
-                        idx < 3
-                          ? "bg-primary/15 text-primary border-primary/30"
-                          : "bg-muted text-muted-foreground border-border"
-                      )}
+                {sortedRemedies.map((rem, idx) => {
+                  const rankNum = rem.rawRank ?? rem.strength;
+                  const strengthLabel = rem.strength >= 3
+                    ? t("remedy.high")
+                    : rem.strength >= 2
+                      ? t("remedy.medium")
+                      : t("remedy.low");
+                  return (
+                    <button
+                      key={rem.id}
+                      onClick={() => (onViewRemedy ? onViewRemedy(rem.id) : onViewRemedies(rem.id))}
+                      className="flex items-center w-full p-3 rounded-lg border border-border hover:border-muted-foreground/30 transition-colors text-left gap-3"
                     >
-                      {idx + 1}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-0.5">
-                        <span className="text-sm font-medium">{tr(rem.name)}</span>
-                        <span className="text-xs text-muted-foreground">({rem.abbr})</span>
+                      <div
+                        className={cn(
+                          "flex-shrink-0 h-6 w-6 rounded-full border flex items-center justify-center text-[10px] font-bold",
+                          idx < 3
+                            ? "bg-primary/15 text-primary border-primary/30"
+                            : "bg-muted text-muted-foreground border-border"
+                        )}
+                      >
+                        {idx + 1}
                       </div>
-                      <p className="text-xs text-muted-foreground line-clamp-1">
-                        {language === "bn" ? (medDescBn[rem.name.toUpperCase()] || medDescBn[rem.name] || tr(rem.description)) : rem.description}
-                      </p>
-                    </div>
-                    <Badge
-                      variant={rem.strength >= 3 ? "default" : "secondary"}
-                      className={cn(
-                        "ml-2 flex-shrink-0",
-                        rem.strength >= 3
-                          ? "bg-green-500/15 text-green-500 border-green-500/30 hover:bg-green-500/20"
-                          : rem.strength >= 2
-                            ? "bg-yellow-500/15 text-yellow-500 border-yellow-500/30 hover:bg-yellow-500/20"
-                            : "bg-red-400/15 text-red-400 border-red-400/30 hover:bg-red-400/20"
-                      )}
-                    >
-                      {idx + 1} - {rem.strength >= 3
-                        ? t("remedy.high")
-                        : rem.strength >= 2
-                          ? t("remedy.medium")
-                          : t("remedy.low")}
-                    </Badge>
-                  </button>
-                ))}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-sm font-medium">{tr(rem.name)}</span>
+                          <span className="text-xs text-muted-foreground">({rem.abbr})</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground line-clamp-1">
+                          {language === "bn" ? (medDescBn[rem.name.toUpperCase()] || medDescBn[rem.name] || tr(rem.description)) : rem.description}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                        <span className={cn(
+                          "text-sm font-bold tabular-nums min-w-[1.5rem] text-center",
+                          rem.strength >= 3 ? "text-green-500" : rem.strength >= 2 ? "text-yellow-500" : "text-red-400"
+                        )}>
+                          {rankNum}
+                        </span>
+                        <Badge
+                          variant={rem.strength >= 3 ? "default" : "secondary"}
+                          className={cn(
+                            rem.strength >= 3
+                              ? "bg-green-500/15 text-green-500 border-green-500/30 hover:bg-green-500/20"
+                              : rem.strength >= 2
+                                ? "bg-yellow-500/15 text-yellow-500 border-yellow-500/30 hover:bg-yellow-500/20"
+                                : "bg-red-400/15 text-red-400 border-red-400/30 hover:bg-red-400/20"
+                          )}
+                        >
+                          {strengthLabel}
+                        </Badge>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
