@@ -7,10 +7,11 @@ import { toBengaliNum } from "@/i18n/dataTranslations";
 interface ConfidenceBarProps {
   confidence?: number;
   value?: number;
+  score?: number;
   className?: string;
 }
 
-export function ConfidenceBar({ confidence, value, className }: ConfidenceBarProps) {
+export function ConfidenceBar({ confidence, value, score, className }: ConfidenceBarProps) {
   const pct = confidence ?? value ?? 0;
   const { language } = useTranslation();
 
@@ -28,6 +29,11 @@ export function ConfidenceBar({ confidence, value, className }: ConfidenceBarPro
           style={{ width: `${Math.min(100, pct)}%` }}
         />
       </div>
+      {score != null && (
+        <span className="text-[10px] font-semibold tabular-nums text-foreground">
+          {toBengaliNum(String(score), language)}
+        </span>
+      )}
       <span className="text-[10px] text-muted-foreground tabular-nums w-8 text-right">
         {toBengaliNum(pct.toFixed(0), language)}%
       </span>

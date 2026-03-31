@@ -117,7 +117,7 @@ function RankedRemedyCard({
             </div>
           </div>
           <div className="mt-1.5">
-            <ConfidenceBar confidence={remedy.confidence} />
+            <ConfidenceBar confidence={remedy.confidence} score={remedy.totalScore} />
           </div>
         </div>
       </div>
