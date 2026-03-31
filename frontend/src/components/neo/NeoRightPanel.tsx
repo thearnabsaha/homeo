@@ -115,9 +115,13 @@ function RankedRemedyCard({
               <Trophy className="h-2.5 w-2.5" />
               {t("rank.score")}: {toBengaliNum(remedy.totalScore)}
             </div>
+            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+              <Sparkles className="h-2.5 w-2.5" />
+              {toBengaliNum(Math.round(remedy.confidence))}%
+            </div>
           </div>
           <div className="mt-1.5">
-            <ConfidenceBar confidence={remedy.confidence} score={remedy.totalScore} />
+            <ConfidenceBar confidence={remedy.confidence} />
           </div>
         </div>
       </div>
