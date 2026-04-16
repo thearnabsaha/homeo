@@ -105,7 +105,7 @@ function RankedRemedyCard({
             </span>
             <AudioReader text={`${remedy.name}. ${remedy.description?.substring(0, 80)}`} />
           </div>
-          <div className="flex items-center gap-3 mt-1">
+          <div className="flex items-center gap-3 mt-1 flex-wrap">
             <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
               <Target className="h-2.5 w-2.5" />
               {toBengaliNum(remedy.symptomsCovered)}/{toBengaliNum(remedy.totalSymptoms)}{" "}
@@ -115,13 +115,30 @@ function RankedRemedyCard({
               <Trophy className="h-2.5 w-2.5" />
               {t("rank.score")}: {toBengaliNum(remedy.totalScore)}
             </div>
-            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-              <Sparkles className="h-2.5 w-2.5" />
-              {toBengaliNum(Math.round(remedy.confidence))}%
-            </div>
           </div>
-          <div className="mt-1.5">
-            <ConfidenceBar confidence={remedy.confidence} />
+          <div className="flex items-center gap-2 mt-1.5">
+            <div className="flex-1 min-w-0">
+              <ConfidenceBar confidence={remedy.confidence} />
+            </div>
+            <span className={cn(
+              "text-sm font-bold tabular-nums min-w-[1.5rem] text-center",
+              remedy.maxGrade >= 3 ? "text-green-500" : remedy.maxGrade >= 2 ? "text-yellow-500" : "text-red-400"
+            )}>
+              {toBengaliNum(remedy.totalScore)}
+            </span>
+            <Badge
+              variant={remedy.maxGrade >= 3 ? "default" : "secondary"}
+              className={cn(
+                "text-[10px] shrink-0",
+                remedy.maxGrade >= 3
+                  ? "bg-green-500/15 text-green-500 border-green-500/30"
+                  : remedy.maxGrade >= 2
+                    ? "bg-yellow-500/15 text-yellow-500 border-yellow-500/30"
+                    : "bg-red-400/15 text-red-400 border-red-400/30"
+              )}
+            >
+              {remedy.maxGrade >= 3 ? t("remedy.high") : remedy.maxGrade >= 2 ? t("remedy.medium") : t("remedy.low")}
+            </Badge>
           </div>
         </div>
       </div>

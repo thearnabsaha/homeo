@@ -1,0 +1,4434 @@
+[
+  {
+    "id": 1,
+    "name": "ABIES CANADENSIS"
+  },
+  {
+    "id": 2,
+    "name": "ABIES NIGRA"
+  },
+  {
+    "id": 3,
+    "name": "ABROTANUM"
+  },
+  {
+    "id": 4,
+    "name": "ABSINTHIUM"
+  },
+  {
+    "id": 5,
+    "name": "ACALYPHA"
+  },
+  {
+    "id": 8,
+    "name": "ACETANILID"
+  },
+  {
+    "id": 9,
+    "name": "ACETIC ACID"
+  },
+  {
+    "id": 15,
+    "name": "ACONITINE"
+  },
+  {
+    "id": 11,
+    "name": "ACONITUM CAMMARUM"
+  },
+  {
+    "id": 12,
+    "name": "ACONITUM FEROX"
+  },
+  {
+    "id": 13,
+    "name": "ACONITUM LYCOTON"
+  },
+  {
+    "id": 14,
+    "name": "ACONITUM NAPELLUS"
+  },
+  {
+    "id": 17,
+    "name": "ACTAEA SPICATA"
+  },
+  {
+    "id": 18,
+    "name": "ADONIS VERNALIS"
+  },
+  {
+    "id": 20,
+    "name": "ADRENALIN"
+  },
+  {
+    "id": 21,
+    "name": "AESCULUS GLABRA"
+  },
+  {
+    "id": 22,
+    "name": "AESCULUS HIPPOCAST"
+  },
+  {
+    "id": 23,
+    "name": "AETHIOPS ANTIMON"
+  },
+  {
+    "id": 24,
+    "name": "AETHIOPS MERC"
+  },
+  {
+    "id": 25,
+    "name": "AETHUSA CYNAPIUM"
+  },
+  {
+    "id": 26,
+    "name": "AGARICIN"
+  },
+  {
+    "id": 27,
+    "name": "AGARICUS EMETICUS"
+  },
+  {
+    "id": 28,
+    "name": "AGARICUS MUSCARIUS"
+  },
+  {
+    "id": 29,
+    "name": "AGARICUS PHALLOIDES"
+  },
+  {
+    "id": 30,
+    "name": "AGAVE"
+  },
+  {
+    "id": 151,
+    "name": "AGENTUM OXYD"
+  },
+  {
+    "id": 31,
+    "name": "AGNUS CASTUS"
+  },
+  {
+    "id": 32,
+    "name": "AGRAPHIS"
+  },
+  {
+    "id": 35,
+    "name": "AGROSTEMA"
+  },
+  {
+    "id": 36,
+    "name": "AGROSTIS"
+  },
+  {
+    "id": 37,
+    "name": "AILANTHUS"
+  },
+  {
+    "id": 38,
+    "name": "ALCOHOL SULPHURIS"
+  },
+  {
+    "id": 39,
+    "name": "ALETRIS FARINOSA"
+  },
+  {
+    "id": 40,
+    "name": "ALFALFA"
+  },
+  {
+    "id": 42,
+    "name": "ALLIUM CEPA"
+  },
+  {
+    "id": 44,
+    "name": "ALLIUM SATIVUM"
+  },
+  {
+    "id": 45,
+    "name": "ALNUS"
+  },
+  {
+    "id": 46,
+    "name": "ALOE SOCOTRINA"
+  },
+  {
+    "id": 47,
+    "name": "ALSTONIA CONSTRICTA"
+  },
+  {
+    "id": 1448,
+    "name": "ALSTONIA SCHOLARIS"
+  },
+  {
+    "id": 49,
+    "name": "ALUMEN"
+  },
+  {
+    "id": 55,
+    "name": "ALUMIN. SILIC."
+  },
+  {
+    "id": 50,
+    "name": "ALUMINA"
+  },
+  {
+    "id": 57,
+    "name": "AMANITA(AGARICUS)"
+  },
+  {
+    "id": 60,
+    "name": "AMBRA GRISEA"
+  },
+  {
+    "id": 61,
+    "name": "AMBROSIA"
+  },
+  {
+    "id": 62,
+    "name": "AMMONIACUM"
+  },
+  {
+    "id": 1430,
+    "name": "AMMONIACUM GUMMI"
+  },
+  {
+    "id": 63,
+    "name": "AMMONIUM ACET."
+  },
+  {
+    "id": 64,
+    "name": "AMMONIUM BENZOICUM"
+  },
+  {
+    "id": 65,
+    "name": "AMMONIUM BROM."
+  },
+  {
+    "id": 66,
+    "name": "AMMONIUM CARB."
+  },
+  {
+    "id": 67,
+    "name": "AMMONIUM CAUSTICUM"
+  },
+  {
+    "id": 70,
+    "name": "AMMONIUM IOD."
+  },
+  {
+    "id": 71,
+    "name": "AMMONIUM MUR."
+  },
+  {
+    "id": 72,
+    "name": "AMMONIUM PHOS."
+  },
+  {
+    "id": 75,
+    "name": "AMMONIUM PICRICUM."
+  },
+  {
+    "id": 77,
+    "name": "AMMONIUM VALER."
+  },
+  {
+    "id": 78,
+    "name": "AMMONIUM VANAD."
+  },
+  {
+    "id": 79,
+    "name": "AMPELOPSIS QUIN."
+  },
+  {
+    "id": 80,
+    "name": "AMPELOPSIS TRIFOL."
+  },
+  {
+    "id": 81,
+    "name": "AMPHISBOENA"
+  },
+  {
+    "id": 82,
+    "name": "AMYGDALA AMARA."
+  },
+  {
+    "id": 83,
+    "name": "AMYGDALUS PERSICA"
+  },
+  {
+    "id": 84,
+    "name": "AMYL NITRISTE"
+  },
+  {
+    "id": 85,
+    "name": "ANACARDIUM OCCID."
+  },
+  {
+    "id": 86,
+    "name": "ANACARDIUM ORIENTALE"
+  },
+  {
+    "id": 87,
+    "name": "ANAGALLIS"
+  },
+  {
+    "id": 90,
+    "name": "ANAHOLINUM"
+  },
+  {
+    "id": 91,
+    "name": "ANATHERUM"
+  },
+  {
+    "id": 96,
+    "name": "ANDROSACE LACTEA"
+  },
+  {
+    "id": 97,
+    "name": "ANEMOPSIS"
+  },
+  {
+    "id": 99,
+    "name": "ANGOPHORA"
+  },
+  {
+    "id": 101,
+    "name": "ANGUSTURA"
+  },
+  {
+    "id": 1439,
+    "name": "ANHALONIUM LEWINII"
+  },
+  {
+    "id": 102,
+    "name": "ANILINUM"
+  },
+  {
+    "id": 103,
+    "name": "ANISUM STELLATUM"
+  },
+  {
+    "id": 104,
+    "name": "ANTHEMIS"
+  },
+  {
+    "id": 105,
+    "name": "ANTHRACINUM"
+  },
+  {
+    "id": 106,
+    "name": "ANTHRAKOKALI"
+  },
+  {
+    "id": 110,
+    "name": "ANTIMONIUM ARSENICUM"
+  },
+  {
+    "id": 112,
+    "name": "ANTIMONIUM CHLORID."
+  },
+  {
+    "id": 111,
+    "name": "ANTIMONIUM CHLORID."
+  },
+  {
+    "id": 113,
+    "name": "ANTIMONIUM CRUDUM"
+  },
+  {
+    "id": 114,
+    "name": "ANTIMONIUM JODATUM"
+  },
+  {
+    "id": 115,
+    "name": "ANTIMONIUM SULPH."
+  },
+  {
+    "id": 116,
+    "name": "ANTIMONIUM TART."
+  },
+  {
+    "id": 117,
+    "name": "ANTIPYRIN"
+  },
+  {
+    "id": 118,
+    "name": "ANTIPYRIN"
+  },
+  {
+    "id": 120,
+    "name": "APIOL"
+  },
+  {
+    "id": 122,
+    "name": "APIS MELLIFICA"
+  },
+  {
+    "id": 123,
+    "name": "APIUM GRAVEOLENS"
+  },
+  {
+    "id": 124,
+    "name": "APIUM VIRUS"
+  },
+  {
+    "id": 125,
+    "name": "APOCYNUM ANDROS"
+  },
+  {
+    "id": 126,
+    "name": "APOCYNUM CANNAB."
+  },
+  {
+    "id": 127,
+    "name": "APOMORPHIA"
+  },
+  {
+    "id": 130,
+    "name": "AQUA MARINA"
+  },
+  {
+    "id": 133,
+    "name": "AQUILAGIA"
+  },
+  {
+    "id": 134,
+    "name": "ARAGALLUS"
+  },
+  {
+    "id": 135,
+    "name": "ARALIA HISPIDA"
+  },
+  {
+    "id": 137,
+    "name": "ARALIA RACEMOSA"
+  },
+  {
+    "id": 138,
+    "name": "ARANEA DIADEMA"
+  },
+  {
+    "id": 139,
+    "name": "ARANEASCINENCIA"
+  },
+  {
+    "id": 141,
+    "name": "ARBUTIN"
+  },
+  {
+    "id": 142,
+    "name": "ARBUTUS"
+  },
+  {
+    "id": 144,
+    "name": "ARCTIUM LAPPA"
+  },
+  {
+    "id": 145,
+    "name": "ARECA"
+  },
+  {
+    "id": 146,
+    "name": "ARGEMONE"
+  },
+  {
+    "id": 147,
+    "name": "ARGENTUM CYAN"
+  },
+  {
+    "id": 148,
+    "name": "ARGENTUM IOD."
+  },
+  {
+    "id": 149,
+    "name": "ARGENTUM METALLICUM"
+  },
+  {
+    "id": 150,
+    "name": "ARGENTUM NITRIC"
+  },
+  {
+    "id": 152,
+    "name": "ARGENTUM PHOS"
+  },
+  {
+    "id": 153,
+    "name": "ARISTOLOCHIA MIL."
+  },
+  {
+    "id": 156,
+    "name": "ARNICA MONTANA"
+  },
+  {
+    "id": 157,
+    "name": "ARSENICUM ALBUM"
+  },
+  {
+    "id": 158,
+    "name": "ARSENICUM BROM."
+  },
+  {
+    "id": 159,
+    "name": "ARSENICUM HYDROG"
+  },
+  {
+    "id": 160,
+    "name": "ARSENICUM IODATUM"
+  },
+  {
+    "id": 161,
+    "name": "ARSENICUM METALLICUM"
+  },
+  {
+    "id": 163,
+    "name": "ARSENICUM SULPH. FLAV."
+  },
+  {
+    "id": 169,
+    "name": "ARTEMISIA VULGARIS"
+  },
+  {
+    "id": 170,
+    "name": "ARUM DRACONTIUM"
+  },
+  {
+    "id": 173,
+    "name": "ARUM TRIPHYLLUM"
+  },
+  {
+    "id": 174,
+    "name": "ARUNDO"
+  },
+  {
+    "id": 176,
+    "name": "ASAFOETIDA"
+  },
+  {
+    "id": 178,
+    "name": "ASARUM CAN."
+  },
+  {
+    "id": 179,
+    "name": "ASARUM EUROP."
+  },
+  {
+    "id": 181,
+    "name": "ASCLEPIAS SYRIACA"
+  },
+  {
+    "id": 183,
+    "name": "ASCLEPIAS VINCETOX"
+  },
+  {
+    "id": 182,
+    "name": "ASCLEPIASTUBEROSA"
+  },
+  {
+    "id": 184,
+    "name": "ASIMINA"
+  },
+  {
+    "id": 185,
+    "name": "ASPARAGUS"
+  },
+  {
+    "id": 186,
+    "name": "ASPERULA"
+  },
+  {
+    "id": 188,
+    "name": "ASPIDOSPERMA"
+  },
+  {
+    "id": 189,
+    "name": "ASTACUS FLUV."
+  },
+  {
+    "id": 190,
+    "name": "ASTERIAS RUBENS"
+  },
+  {
+    "id": 191,
+    "name": "ASTRAGALUS"
+  },
+  {
+    "id": 192,
+    "name": "ATHAMANTA"
+  },
+  {
+    "id": 193,
+    "name": "ATOXYL"
+  },
+  {
+    "id": 194,
+    "name": "ATROPIN"
+  },
+  {
+    "id": 196,
+    "name": "AURANTIUM"
+  },
+  {
+    "id": 197,
+    "name": "AURUM ARSENIC"
+  },
+  {
+    "id": 198,
+    "name": "AURUM BROM"
+  },
+  {
+    "id": 199,
+    "name": "AURUM IODATUM."
+  },
+  {
+    "id": 200,
+    "name": "AURUM METALLICUM"
+  },
+  {
+    "id": 201,
+    "name": "AURUM MUR."
+  },
+  {
+    "id": 202,
+    "name": "AURUM MUR. KAL."
+  },
+  {
+    "id": 203,
+    "name": "AURUM MUR. NAT."
+  },
+  {
+    "id": 204,
+    "name": "AURUM SULPH."
+  },
+  {
+    "id": 205,
+    "name": "AVENA SATIVA"
+  },
+  {
+    "id": 206,
+    "name": "AVIARE"
+  },
+  {
+    "id": 207,
+    "name": "AZADIRACHTA IND."
+  },
+  {
+    "id": 208,
+    "name": "BACILLINUM"
+  },
+  {
+    "id": 209,
+    "name": "BACILLINUM TESTIUM"
+  },
+  {
+    "id": 1475,
+    "name": "BACILLUS ACNE ET STAPHYLO"
+  },
+  {
+    "id": 1479,
+    "name": "BACILLUS COLI"
+  },
+  {
+    "id": 1462,
+    "name": "BACILLUS NO VII"
+  },
+  {
+    "id": 1463,
+    "name": "BACILLUS NO X"
+  },
+  {
+    "id": 210,
+    "name": "BADIAGA"
+  },
+  {
+    "id": 211,
+    "name": "BAJA"
+  },
+  {
+    "id": 212,
+    "name": "BALSAM PERU"
+  },
+  {
+    "id": 214,
+    "name": "BAPTISIA CONFUSA."
+  },
+  {
+    "id": 215,
+    "name": "BAPTISIA TINCTORIA"
+  },
+  {
+    "id": 216,
+    "name": "BAROSMA"
+  },
+  {
+    "id": 217,
+    "name": "BARYTA ACET."
+  },
+  {
+    "id": 218,
+    "name": "BARYTA CARB."
+  },
+  {
+    "id": 219,
+    "name": "BARYTA IOD."
+  },
+  {
+    "id": 220,
+    "name": "BARYTA MUR."
+  },
+  {
+    "id": 222,
+    "name": "BELLADONNA"
+  },
+  {
+    "id": 223,
+    "name": "BELLIS PERENNIS"
+  },
+  {
+    "id": 226,
+    "name": "BENZIN NIT."
+  },
+  {
+    "id": 225,
+    "name": "BENZIN. DINITRIC."
+  },
+  {
+    "id": 224,
+    "name": "BENZINUM"
+  },
+  {
+    "id": 227,
+    "name": "BENZOIC ACID"
+  },
+  {
+    "id": 228,
+    "name": "BENZOIN ODER"
+  },
+  {
+    "id": 229,
+    "name": "BENZOL"
+  },
+  {
+    "id": 230,
+    "name": "BERBERIS AQUIFOLIUM"
+  },
+  {
+    "id": 231,
+    "name": "BERBERIS VULGARIS"
+  },
+  {
+    "id": 232,
+    "name": "BETA VULG."
+  },
+  {
+    "id": 234,
+    "name": "BETONICA"
+  },
+  {
+    "id": 235,
+    "name": "BISMUTHUM"
+  },
+  {
+    "id": 237,
+    "name": "BLATTA AMERICANA"
+  },
+  {
+    "id": 238,
+    "name": "BLATTA ORIENTALIS"
+  },
+  {
+    "id": 240,
+    "name": "BOLETUS LARICIS"
+  },
+  {
+    "id": 241,
+    "name": "BOLETUS LURIDUS"
+  },
+  {
+    "id": 244,
+    "name": "BOMBYX"
+  },
+  {
+    "id": 245,
+    "name": "BORACIC ACID."
+  },
+  {
+    "id": 246,
+    "name": "BORAX"
+  },
+  {
+    "id": 247,
+    "name": "BOTHROPS"
+  },
+  {
+    "id": 248,
+    "name": "BOTULINUM"
+  },
+  {
+    "id": 250,
+    "name": "BOVISTA"
+  },
+  {
+    "id": 251,
+    "name": "BRACHYGLOTTIS"
+  },
+  {
+    "id": 252,
+    "name": "BRANCA"
+  },
+  {
+    "id": 254,
+    "name": "BRASSICA NIGRA"
+  },
+  {
+    "id": 256,
+    "name": "BROMIUM"
+  },
+  {
+    "id": 258,
+    "name": "BRYONIA ALBA"
+  },
+  {
+    "id": 259,
+    "name": "BUCHU"
+  },
+  {
+    "id": 260,
+    "name": "BUFO RANA"
+  },
+  {
+    "id": 263,
+    "name": "BUTYRIC ACID"
+  },
+  {
+    "id": 265,
+    "name": "CACTUS GRANDIFLORUS"
+  },
+  {
+    "id": 266,
+    "name": "CADMIUM BROM."
+  },
+  {
+    "id": 267,
+    "name": "CADMIUM IOD."
+  },
+  {
+    "id": 269,
+    "name": "CADMIUM SULPH."
+  },
+  {
+    "id": 271,
+    "name": "CAFFEIN"
+  },
+  {
+    "id": 272,
+    "name": "CAHINCA"
+  },
+  {
+    "id": 273,
+    "name": "CAJUPUTUM"
+  },
+  {
+    "id": 274,
+    "name": "CALADIUM"
+  },
+  {
+    "id": 275,
+    "name": "CALCAREA ACETICA"
+  },
+  {
+    "id": 276,
+    "name": "CALCAREA ARSENICA"
+  },
+  {
+    "id": 277,
+    "name": "CALCAREA BROM"
+  },
+  {
+    "id": 278,
+    "name": "CALCAREA CALCINATA"
+  },
+  {
+    "id": 279,
+    "name": "CALCAREA CARBONICA"
+  },
+  {
+    "id": 280,
+    "name": "CALCAREA CAUSTICA"
+  },
+  {
+    "id": 281,
+    "name": "CALCAREA FLUORICA"
+  },
+  {
+    "id": 282,
+    "name": "CALCAREA HYPOPHOS"
+  },
+  {
+    "id": 283,
+    "name": "CALCAREA IOD"
+  },
+  {
+    "id": 285,
+    "name": "CALCAREA LACTIC."
+  },
+  {
+    "id": 287,
+    "name": "CALCAREA MURIATICA"
+  },
+  {
+    "id": 290,
+    "name": "CALCAREA OXALICA"
+  },
+  {
+    "id": 291,
+    "name": "CALCAREA PHOSPHORICA"
+  },
+  {
+    "id": 292,
+    "name": "CALCAREA PICRATA"
+  },
+  {
+    "id": 293,
+    "name": "CALCAREA RENALIS"
+  },
+  {
+    "id": 294,
+    "name": "CALCAREA SILICATA"
+  },
+  {
+    "id": 296,
+    "name": "CALCAREA SULPHURICA"
+  },
+  {
+    "id": 1454,
+    "name": "CALCAREAS"
+  },
+  {
+    "id": 1431,
+    "name": "CALENDULA"
+  },
+  {
+    "id": 299,
+    "name": "CALOTROPIS"
+  },
+  {
+    "id": 300,
+    "name": "CALTHA PALUSTRIS"
+  },
+  {
+    "id": 301,
+    "name": "CAMPHORA"
+  },
+  {
+    "id": 302,
+    "name": "CAMPHORA MONOBROM."
+  },
+  {
+    "id": 303,
+    "name": "CAMPHORIC ACID"
+  },
+  {
+    "id": 305,
+    "name": "CANCHALAGUA"
+  },
+  {
+    "id": 306,
+    "name": "CANNABIS INDICA"
+  },
+  {
+    "id": 307,
+    "name": "CANNABIS SATIVA"
+  },
+  {
+    "id": 308,
+    "name": "CANTHARIDIN"
+  },
+  {
+    "id": 309,
+    "name": "CANTHARIS"
+  },
+  {
+    "id": 311,
+    "name": "CAPSELLA"
+  },
+  {
+    "id": 312,
+    "name": "CAPSICUM"
+  },
+  {
+    "id": 314,
+    "name": "CARBO ANIMALIS"
+  },
+  {
+    "id": 315,
+    "name": "CARBO VEGETABILIS"
+  },
+  {
+    "id": 316,
+    "name": "CARBOLIC ACID"
+  },
+  {
+    "id": 318,
+    "name": "CARBON. HYDROG."
+  },
+  {
+    "id": 319,
+    "name": "CARBON. OXYGENISATUM"
+  },
+  {
+    "id": 320,
+    "name": "CARBON. TETRACHOL."
+  },
+  {
+    "id": 1423,
+    "name": "CARBONEUM SULPHURATUM"
+  },
+  {
+    "id": 1432,
+    "name": "CARBONEUM SULPHURATUM"
+  },
+  {
+    "id": 321,
+    "name": "CARCINOSIN"
+  },
+  {
+    "id": 323,
+    "name": "CARDUUS MARIANUS"
+  },
+  {
+    "id": 325,
+    "name": "CARLSBAD"
+  },
+  {
+    "id": 326,
+    "name": "CASCARA SAGRADA"
+  },
+  {
+    "id": 327,
+    "name": "CASCARILLA"
+  },
+  {
+    "id": 329,
+    "name": "CASTANEA VESICA"
+  },
+  {
+    "id": 330,
+    "name": "CASTOR EQUI"
+  },
+  {
+    "id": 331,
+    "name": "CASTOREUM"
+  },
+  {
+    "id": 333,
+    "name": "CATARIA"
+  },
+  {
+    "id": 334,
+    "name": "CAULOPHYLLUM"
+  },
+  {
+    "id": 335,
+    "name": "CAUSTICUM"
+  },
+  {
+    "id": 336,
+    "name": "CEANOTHUS AMER."
+  },
+  {
+    "id": 338,
+    "name": "CEDRON"
+  },
+  {
+    "id": 339,
+    "name": "CENCHRIS"
+  },
+  {
+    "id": 340,
+    "name": "CENTAUREA"
+  },
+  {
+    "id": 341,
+    "name": "CEPA"
+  },
+  {
+    "id": 350,
+    "name": "CEREUS BONPLANDII"
+  },
+  {
+    "id": 1433,
+    "name": "CEREUS BONPLANDII"
+  },
+  {
+    "id": 345,
+    "name": "CEREUS SERPENTINUS"
+  },
+  {
+    "id": 344,
+    "name": "CERIUM OXALICUM."
+  },
+  {
+    "id": 346,
+    "name": "CETRARIA"
+  },
+  {
+    "id": 356,
+    "name": "CHAMOMILLA"
+  },
+  {
+    "id": 357,
+    "name": "CHAPARRO"
+  },
+  {
+    "id": 355,
+    "name": "CHAULMOOGRA"
+  },
+  {
+    "id": 358,
+    "name": "CHEIRANTHUS"
+  },
+  {
+    "id": 359,
+    "name": "CHELIDONIN"
+  },
+  {
+    "id": 360,
+    "name": "CHELIDONIUM MAJUS"
+  },
+  {
+    "id": 361,
+    "name": "CHELONE"
+  },
+  {
+    "id": 363,
+    "name": "CHENOPOD. APHIS."
+  },
+  {
+    "id": 364,
+    "name": "CHENOPOD. VULVAR."
+  },
+  {
+    "id": 362,
+    "name": "CHENOPODIUM"
+  },
+  {
+    "id": 1415,
+    "name": "CHENOPODIUM ANTHELMINTICUM"
+  },
+  {
+    "id": 1443,
+    "name": "CHENOPODIUM Gl."
+  },
+  {
+    "id": 365,
+    "name": "CHIMAPHILA MACULATA"
+  },
+  {
+    "id": 366,
+    "name": "CHIMAPHILA UMBEL."
+  },
+  {
+    "id": 368,
+    "name": "CHININUM ARSENICOSUM"
+  },
+  {
+    "id": 369,
+    "name": "CHININUM MURIATICUM"
+  },
+  {
+    "id": 370,
+    "name": "CHININUM SALICYLICUM"
+  },
+  {
+    "id": 371,
+    "name": "CHININUM SULPHURICUM"
+  },
+  {
+    "id": 373,
+    "name": "CHIONANTHUS"
+  },
+  {
+    "id": 374,
+    "name": "CHLORALUM"
+  },
+  {
+    "id": 1464,
+    "name": "CHLORMPHENICOL"
+  },
+  {
+    "id": 375,
+    "name": "CHLOROFORM"
+  },
+  {
+    "id": 376,
+    "name": "CHLORUM"
+  },
+  {
+    "id": 377,
+    "name": "CHOLAS TERRAPINA"
+  },
+  {
+    "id": 378,
+    "name": "CHOLESTERINUM"
+  },
+  {
+    "id": 1436,
+    "name": "CHROM OXY"
+  },
+  {
+    "id": 1442,
+    "name": "CHROM. OXY."
+  },
+  {
+    "id": 381,
+    "name": "CHROMIC ACID"
+  },
+  {
+    "id": 382,
+    "name": "CHROMIUM SULPH."
+  },
+  {
+    "id": 383,
+    "name": "CHRYSANTHEMUM"
+  },
+  {
+    "id": 384,
+    "name": "CHRYSAROBINUM"
+  },
+  {
+    "id": 386,
+    "name": "CICUTA VIROSA"
+  },
+  {
+    "id": 388,
+    "name": "CIMEX"
+  },
+  {
+    "id": 389,
+    "name": "CIMICIFUGA"
+  },
+  {
+    "id": 390,
+    "name": "CINA"
+  },
+  {
+    "id": 392,
+    "name": "CINARARIA"
+  },
+  {
+    "id": 391,
+    "name": "CINCHONA"
+  },
+  {
+    "id": 393,
+    "name": "CINNABARIS"
+  },
+  {
+    "id": 394,
+    "name": "CINNAMONUM"
+  },
+  {
+    "id": 395,
+    "name": "CISTUS"
+  },
+  {
+    "id": 399,
+    "name": "CITRUS VULGARIS"
+  },
+  {
+    "id": 401,
+    "name": "CLEMATIC VITALBA"
+  },
+  {
+    "id": 400,
+    "name": "CLEMATIS ERECTA"
+  },
+  {
+    "id": 1437,
+    "name": "COBALTUM METALLICUM"
+  },
+  {
+    "id": 403,
+    "name": "COCA"
+  },
+  {
+    "id": 1416,
+    "name": "COCA ERYTHROXYLON COCA"
+  },
+  {
+    "id": 404,
+    "name": "COCAINUM"
+  },
+  {
+    "id": 405,
+    "name": "COCCINELLA"
+  },
+  {
+    "id": 406,
+    "name": "COCCULUS"
+  },
+  {
+    "id": 407,
+    "name": "COCCUS CACTI."
+  },
+  {
+    "id": 408,
+    "name": "COCHLEARIA"
+  },
+  {
+    "id": 409,
+    "name": "CODEINUM"
+  },
+  {
+    "id": 410,
+    "name": "COFFEA CRUDA"
+  },
+  {
+    "id": 411,
+    "name": "COFFEA TOSTA"
+  },
+  {
+    "id": 413,
+    "name": "COLCHICIN"
+  },
+  {
+    "id": 412,
+    "name": "COLCHICUM"
+  },
+  {
+    "id": 414,
+    "name": "COLLINSONIA"
+  },
+  {
+    "id": 415,
+    "name": "COLOCYNTHIS"
+  },
+  {
+    "id": 416,
+    "name": "COLOSTRUM"
+  },
+  {
+    "id": 417,
+    "name": "COMOCLADIA"
+  },
+  {
+    "id": 418,
+    "name": "CONCHIOLIN"
+  },
+  {
+    "id": 419,
+    "name": "CONDURANGO"
+  },
+  {
+    "id": 420,
+    "name": "CONIUM MAC."
+  },
+  {
+    "id": 421,
+    "name": "CONVALLARIA"
+  },
+  {
+    "id": 423,
+    "name": "COPAIVA"
+  },
+  {
+    "id": 424,
+    "name": "COQUELUCHIN"
+  },
+  {
+    "id": 425,
+    "name": "CORALLIUM"
+  },
+  {
+    "id": 426,
+    "name": "CORALORHIZA"
+  },
+  {
+    "id": 428,
+    "name": "CORNUS CIRCINATA"
+  },
+  {
+    "id": 429,
+    "name": "CORNUS FLORIDA"
+  },
+  {
+    "id": 1483,
+    "name": "CORPUS LUTEUM"
+  },
+  {
+    "id": 430,
+    "name": "CORYDALIS"
+  },
+  {
+    "id": 431,
+    "name": "COTO"
+  },
+  {
+    "id": 432,
+    "name": "COTYLEDON"
+  },
+  {
+    "id": 434,
+    "name": "CRATAEGUS"
+  },
+  {
+    "id": 435,
+    "name": "CROCUS SATIVA"
+  },
+  {
+    "id": 436,
+    "name": "CROTALUS CASCAVELLA"
+  },
+  {
+    "id": 437,
+    "name": "CROTALUS HORRIDUS"
+  },
+  {
+    "id": 438,
+    "name": "CROTON TIGLIUM"
+  },
+  {
+    "id": 439,
+    "name": "CUBEBA"
+  },
+  {
+    "id": 440,
+    "name": "CUCURBITA"
+  },
+  {
+    "id": 441,
+    "name": "CUCURBITA CITRELLUS"
+  },
+  {
+    "id": 442,
+    "name": "CULEX"
+  },
+  {
+    "id": 443,
+    "name": "CUPHEA"
+  },
+  {
+    "id": 446,
+    "name": "CUPRUM ACETICUM"
+  },
+  {
+    "id": 447,
+    "name": "CUPRUM ARSENITUM"
+  },
+  {
+    "id": 448,
+    "name": "CUPRUM CYANATUM"
+  },
+  {
+    "id": 449,
+    "name": "CUPRUM METALLICUM"
+  },
+  {
+    "id": 450,
+    "name": "CUPRUM OXYD."
+  },
+  {
+    "id": 451,
+    "name": "CUPRUM SULPHURICUM"
+  },
+  {
+    "id": 452,
+    "name": "CURARE"
+  },
+  {
+    "id": 455,
+    "name": "CYCLAMEN"
+  },
+  {
+    "id": 458,
+    "name": "CYPRIPEDIUM"
+  },
+  {
+    "id": 461,
+    "name": "DAMIANA"
+  },
+  {
+    "id": 462,
+    "name": "DAPHNE INDICA"
+  },
+  {
+    "id": 463,
+    "name": "DATURA ARBOREA"
+  },
+  {
+    "id": 464,
+    "name": "DERRIS PIN."
+  },
+  {
+    "id": 465,
+    "name": "DIADEMA"
+  },
+  {
+    "id": 467,
+    "name": "DICTAMNUS"
+  },
+  {
+    "id": 468,
+    "name": "DIGITALIS"
+  },
+  {
+    "id": 469,
+    "name": "DIGITOXINUM"
+  },
+  {
+    "id": 470,
+    "name": "DIOSCOREA"
+  },
+  {
+    "id": 471,
+    "name": "DIOSMA"
+  },
+  {
+    "id": 472,
+    "name": "DIPHTHERINUM"
+  },
+  {
+    "id": 473,
+    "name": "DIPHTHEROTOXIN"
+  },
+  {
+    "id": 474,
+    "name": "DIPODIUM"
+  },
+  {
+    "id": 478,
+    "name": "DOLICHOS"
+  },
+  {
+    "id": 480,
+    "name": "DORYPHORA"
+  },
+  {
+    "id": 1459,
+    "name": "DOSCNTERY CO"
+  },
+  {
+    "id": 481,
+    "name": "DROSERA"
+  },
+  {
+    "id": 482,
+    "name": "DUBOISIA"
+  },
+  {
+    "id": 484,
+    "name": "DULCAMARA"
+  },
+  {
+    "id": 485,
+    "name": "ECHINACEA"
+  },
+  {
+    "id": 486,
+    "name": "EEL SERUM"
+  },
+  {
+    "id": 487,
+    "name": "EGG VACCINE"
+  },
+  {
+    "id": 488,
+    "name": "ELAEIS"
+  },
+  {
+    "id": 489,
+    "name": "ELAPS CORALLINUS"
+  },
+  {
+    "id": 490,
+    "name": "ELATERIUM"
+  },
+  {
+    "id": 1465,
+    "name": "ELECTRICITY"
+  },
+  {
+    "id": 491,
+    "name": "ELETRICITAS"
+  },
+  {
+    "id": 494,
+    "name": "EMETINE"
+  },
+  {
+    "id": 496,
+    "name": "EOSIN"
+  },
+  {
+    "id": 497,
+    "name": "EPHEDRA"
+  },
+  {
+    "id": 498,
+    "name": "EPIGEA"
+  },
+  {
+    "id": 1473,
+    "name": "EPIHYSTERINUM"
+  },
+  {
+    "id": 499,
+    "name": "EPILOBIUM"
+  },
+  {
+    "id": 500,
+    "name": "EPIPHEGUS"
+  },
+  {
+    "id": 501,
+    "name": "EQUISETUM"
+  },
+  {
+    "id": 503,
+    "name": "ERECHTITES"
+  },
+  {
+    "id": 504,
+    "name": "ERGOT"
+  },
+  {
+    "id": 505,
+    "name": "ERGOTIN"
+  },
+  {
+    "id": 506,
+    "name": "ERIGERON"
+  },
+  {
+    "id": 507,
+    "name": "ERIODICTYON"
+  },
+  {
+    "id": 508,
+    "name": "ERODIUM"
+  },
+  {
+    "id": 509,
+    "name": "ERYNGIUM"
+  },
+  {
+    "id": 1457,
+    "name": "ESCHSCHOLTZIA CALIFORNICA"
+  },
+  {
+    "id": 513,
+    "name": "ESERINE"
+  },
+  {
+    "id": 515,
+    "name": "ETHER"
+  },
+  {
+    "id": 516,
+    "name": "EUCALYPTOL"
+  },
+  {
+    "id": 517,
+    "name": "EUCALYPTUS"
+  },
+  {
+    "id": 520,
+    "name": "EUGENIA JAMBOS"
+  },
+  {
+    "id": 522,
+    "name": "EUONYMIN"
+  },
+  {
+    "id": 523,
+    "name": "EUONYMUS ATROP."
+  },
+  {
+    "id": 525,
+    "name": "EUPATORIUM AROMAT."
+  },
+  {
+    "id": 526,
+    "name": "EUPATORIUM PERFOL."
+  },
+  {
+    "id": 527,
+    "name": "EUPATORIUM PURPUR."
+  },
+  {
+    "id": 528,
+    "name": "EUPHORBIA AMYGDAL."
+  },
+  {
+    "id": 529,
+    "name": "EUPHORBIA COROLLATA"
+  },
+  {
+    "id": 531,
+    "name": "EUPHORBIA LATHYRIS."
+  },
+  {
+    "id": 533,
+    "name": "EUPHORBIA PILULIFERA."
+  },
+  {
+    "id": 1434,
+    "name": "EUPHORBIUM OFFICINARUM"
+  },
+  {
+    "id": 538,
+    "name": "EUPHRASIA"
+  },
+  {
+    "id": 539,
+    "name": "EUPION"
+  },
+  {
+    "id": 540,
+    "name": "FABIANA"
+  },
+  {
+    "id": 541,
+    "name": "FAGOPYRUM"
+  },
+  {
+    "id": 542,
+    "name": "FAGUS"
+  },
+  {
+    "id": 543,
+    "name": "FEL TAURI."
+  },
+  {
+    "id": 544,
+    "name": "FERRUM ACETICUM"
+  },
+  {
+    "id": 545,
+    "name": "FERRUM ARSENICUM"
+  },
+  {
+    "id": 546,
+    "name": "FERRUM BROMATUM"
+  },
+  {
+    "id": 547,
+    "name": "FERRUM CITRIC"
+  },
+  {
+    "id": 548,
+    "name": "FERRUM CYANATUM"
+  },
+  {
+    "id": 549,
+    "name": "FERRUM IODATUM"
+  },
+  {
+    "id": 550,
+    "name": "FERRUM MAGNATICUM"
+  },
+  {
+    "id": 551,
+    "name": "FERRUM METALLICUM"
+  },
+  {
+    "id": 552,
+    "name": "FERRUM MURIATICUM"
+  },
+  {
+    "id": 554,
+    "name": "FERRUM PHOSPHORICUM"
+  },
+  {
+    "id": 555,
+    "name": "FERRUM PICRICUM"
+  },
+  {
+    "id": 557,
+    "name": "FERRUM PYROPHOS"
+  },
+  {
+    "id": 558,
+    "name": "FERRUM SULPHURICUM"
+  },
+  {
+    "id": 559,
+    "name": "FERRUM TARTARICUM"
+  },
+  {
+    "id": 562,
+    "name": "FICUS INDICA"
+  },
+  {
+    "id": 563,
+    "name": "FICUS RELIG."
+  },
+  {
+    "id": 565,
+    "name": "FILIX MAS"
+  },
+  {
+    "id": 566,
+    "name": "FLUORIC ACID"
+  },
+  {
+    "id": 568,
+    "name": "FORMALIN"
+  },
+  {
+    "id": 569,
+    "name": "FORMIC ACID"
+  },
+  {
+    "id": 570,
+    "name": "FORMICA RUFA"
+  },
+  {
+    "id": 571,
+    "name": "FRAGARIA"
+  },
+  {
+    "id": 572,
+    "name": "FRANCISCEA"
+  },
+  {
+    "id": 574,
+    "name": "FRAXINUS"
+  },
+  {
+    "id": 1451,
+    "name": "FUCHSINUM"
+  },
+  {
+    "id": 575,
+    "name": "FUCUS VESICULOSUS"
+  },
+  {
+    "id": 576,
+    "name": "FULIGO LIGNI."
+  },
+  {
+    "id": 577,
+    "name": "FUSHINA"
+  },
+  {
+    "id": 578,
+    "name": "GADUS MORRHUA"
+  },
+  {
+    "id": 579,
+    "name": "GAERTNER"
+  },
+  {
+    "id": 580,
+    "name": "GALANTHUS NIV."
+  },
+  {
+    "id": 581,
+    "name": "GALEGA"
+  },
+  {
+    "id": 583,
+    "name": "GALIUM"
+  },
+  {
+    "id": 584,
+    "name": "GALLIC ACID"
+  },
+  {
+    "id": 585,
+    "name": "GAMBOGIA"
+  },
+  {
+    "id": 587,
+    "name": "GAULTHERIA"
+  },
+  {
+    "id": 588,
+    "name": "GELATIN"
+  },
+  {
+    "id": 589,
+    "name": "GELSEMIUM"
+  },
+  {
+    "id": 592,
+    "name": "GENTIANA LUTEA"
+  },
+  {
+    "id": 595,
+    "name": "GERANIN"
+  },
+  {
+    "id": 596,
+    "name": "GERANIUM MACULATUM"
+  },
+  {
+    "id": 594,
+    "name": "GETTYSBURG WATER"
+  },
+  {
+    "id": 598,
+    "name": "GINSENG"
+  },
+  {
+    "id": 601,
+    "name": "GLONOINE"
+  },
+  {
+    "id": 602,
+    "name": "GLYCERINUM"
+  },
+  {
+    "id": 603,
+    "name": "GNAPHALIUM"
+  },
+  {
+    "id": 604,
+    "name": "GOLONDRINA"
+  },
+  {
+    "id": 1478,
+    "name": "GONOCOCCUS"
+  },
+  {
+    "id": 605,
+    "name": "GOSSYPIUM"
+  },
+  {
+    "id": 606,
+    "name": "GRANATUM"
+  },
+  {
+    "id": 607,
+    "name": "GRAPHITES"
+  },
+  {
+    "id": 608,
+    "name": "GRATIOLA"
+  },
+  {
+    "id": 609,
+    "name": "GRINDELIA"
+  },
+  {
+    "id": 610,
+    "name": "GUACO"
+  },
+  {
+    "id": 613,
+    "name": "GUAIACOL"
+  },
+  {
+    "id": 611,
+    "name": "GUAIACUM"
+  },
+  {
+    "id": 612,
+    "name": "GUANO"
+  },
+  {
+    "id": 614,
+    "name": "GUAO"
+  },
+  {
+    "id": 615,
+    "name": "GUARANA"
+  },
+  {
+    "id": 616,
+    "name": "GUAREA"
+  },
+  {
+    "id": 618,
+    "name": "GUMMI GUTTI"
+  },
+  {
+    "id": 619,
+    "name": "GUNPOWDER"
+  },
+  {
+    "id": 620,
+    "name": "GYMNENMA"
+  },
+  {
+    "id": 621,
+    "name": "GYMNOCLADUS"
+  },
+  {
+    "id": 1425,
+    "name": "HAEMATOXYLON CAMPECHIANUM"
+  },
+  {
+    "id": 624,
+    "name": "HAMAMELIS VERGINICA"
+  },
+  {
+    "id": 625,
+    "name": "HEDEOMA"
+  },
+  {
+    "id": 629,
+    "name": "HEKLA LAVA"
+  },
+  {
+    "id": 630,
+    "name": "HELIANTHUS"
+  },
+  {
+    "id": 631,
+    "name": "HELIOTROPIUM"
+  },
+  {
+    "id": 632,
+    "name": "HELIX TOSTA"
+  },
+  {
+    "id": 633,
+    "name": "HELLEBORUS FOETIDUS"
+  },
+  {
+    "id": 634,
+    "name": "HELLEBORUS NIGER"
+  },
+  {
+    "id": 636,
+    "name": "HELMINTOCHORTOS"
+  },
+  {
+    "id": 637,
+    "name": "HELODERMA"
+  },
+  {
+    "id": 638,
+    "name": "HELONIAS"
+  },
+  {
+    "id": 640,
+    "name": "HEPAR SULPHURIS"
+  },
+  {
+    "id": 641,
+    "name": "HEPATICA"
+  },
+  {
+    "id": 642,
+    "name": "HERACLEUM"
+  },
+  {
+    "id": 643,
+    "name": "HIPPOMANES"
+  },
+  {
+    "id": 644,
+    "name": "HIPPOZAENINUM"
+  },
+  {
+    "id": 645,
+    "name": "HIPPURIC ACID"
+  },
+  {
+    "id": 646,
+    "name": "HOANG NUN"
+  },
+  {
+    "id": 648,
+    "name": "HOMARUS"
+  },
+  {
+    "id": 651,
+    "name": "HURA"
+  },
+  {
+    "id": 652,
+    "name": "HYDRANGEA"
+  },
+  {
+    "id": 654,
+    "name": "HYDRASTINUM MUR."
+  },
+  {
+    "id": 655,
+    "name": "HYDRASTIS CAN."
+  },
+  {
+    "id": 656,
+    "name": "HYDRASTIS SULPH."
+  },
+  {
+    "id": 657,
+    "name": "HYDROBROMIC ACID"
+  },
+  {
+    "id": 658,
+    "name": "HYDROCOTYLE"
+  },
+  {
+    "id": 659,
+    "name": "HYDROCYANIC ACID"
+  },
+  {
+    "id": 660,
+    "name": "HYDROPHOBINUM"
+  },
+  {
+    "id": 661,
+    "name": "HYDROPHYLLUM"
+  },
+  {
+    "id": 663,
+    "name": "HYOSCYAMUS"
+  },
+  {
+    "id": 664,
+    "name": "HYPERICUM"
+  },
+  {
+    "id": 665,
+    "name": "IBERIS"
+  },
+  {
+    "id": 666,
+    "name": "ICHTHYOLUM"
+  },
+  {
+    "id": 669,
+    "name": "IGNATIA AMARA"
+  },
+  {
+    "id": 670,
+    "name": "IKSHUGANDHA"
+  },
+  {
+    "id": 671,
+    "name": "ILEX AQUIF."
+  },
+  {
+    "id": 673,
+    "name": "ILLECEBRUM"
+  },
+  {
+    "id": 674,
+    "name": "ILLICIUM"
+  },
+  {
+    "id": 675,
+    "name": "INDIGO"
+  },
+  {
+    "id": 676,
+    "name": "INDIUM"
+  },
+  {
+    "id": 677,
+    "name": "INDOL"
+  },
+  {
+    "id": 1476,
+    "name": "INFLUENZINUM"
+  },
+  {
+    "id": 678,
+    "name": "INGLUVIN"
+  },
+  {
+    "id": 679,
+    "name": "INSULIN"
+  },
+  {
+    "id": 1417,
+    "name": "INULA"
+  },
+  {
+    "id": 1455,
+    "name": "IODIDES"
+  },
+  {
+    "id": 680,
+    "name": "IODOFORMUM"
+  },
+  {
+    "id": 681,
+    "name": "IODUM"
+  },
+  {
+    "id": 683,
+    "name": "IPECACUANHA"
+  },
+  {
+    "id": 684,
+    "name": "IPOMOEA"
+  },
+  {
+    "id": 685,
+    "name": "IRIDIUM"
+  },
+  {
+    "id": 687,
+    "name": "IRIS FACTISSIMA"
+  },
+  {
+    "id": 689,
+    "name": "IRIS GERMENICA"
+  },
+  {
+    "id": 690,
+    "name": "IRIS TENAX"
+  },
+  {
+    "id": 691,
+    "name": "IRIS VERSICOLOR"
+  },
+  {
+    "id": 694,
+    "name": "JACARANDA CAROBA"
+  },
+  {
+    "id": 695,
+    "name": "JACARANDA GUALANDAI"
+  },
+  {
+    "id": 697,
+    "name": "JALAPA"
+  },
+  {
+    "id": 699,
+    "name": "JATROPHA CURCAS"
+  },
+  {
+    "id": 701,
+    "name": "JEQUIRITOL"
+  },
+  {
+    "id": 702,
+    "name": "JEQUIRITY"
+  },
+  {
+    "id": 703,
+    "name": "JONOSIA"
+  },
+  {
+    "id": 1426,
+    "name": "JUGLANS CINEREA"
+  },
+  {
+    "id": 1444,
+    "name": "JUGLANS CINEREA"
+  },
+  {
+    "id": 705,
+    "name": "JUGLANS REGIA"
+  },
+  {
+    "id": 706,
+    "name": "JUNCUS EFFUSUS"
+  },
+  {
+    "id": 707,
+    "name": "JUNIPERUS COMMUNIS"
+  },
+  {
+    "id": 708,
+    "name": "JUNIPERUS VIRGINIANUS"
+  },
+  {
+    "id": 709,
+    "name": "JUSTICIA"
+  },
+  {
+    "id": 710,
+    "name": "KALAGUA"
+  },
+  {
+    "id": 711,
+    "name": "KALI ACETICUM"
+  },
+  {
+    "id": 712,
+    "name": "KALI ARSEN."
+  },
+  {
+    "id": 713,
+    "name": "KALI BICHROMICUM"
+  },
+  {
+    "id": 714,
+    "name": "KALI BROMATUM"
+  },
+  {
+    "id": 715,
+    "name": "KALI CABONICUM"
+  },
+  {
+    "id": 716,
+    "name": "KALI CHLORICUM"
+  },
+  {
+    "id": 717,
+    "name": "KALI CITRICUM"
+  },
+  {
+    "id": 718,
+    "name": "KALI CYANATUM"
+  },
+  {
+    "id": 719,
+    "name": "KALI FERROCYANATUM"
+  },
+  {
+    "id": 720,
+    "name": "KALI HYDROIODICUM"
+  },
+  {
+    "id": 721,
+    "name": "KALI HYPOPHOS."
+  },
+  {
+    "id": 722,
+    "name": "KALI MURIATICUM"
+  },
+  {
+    "id": 723,
+    "name": "KALI NITRICUM"
+  },
+  {
+    "id": 724,
+    "name": "KALI OXALICUM"
+  },
+  {
+    "id": 725,
+    "name": "KALI PERMANGANUM"
+  },
+  {
+    "id": 726,
+    "name": "KALI PHOSPHORICUM"
+  },
+  {
+    "id": 728,
+    "name": "KALI SALICYLICUM"
+  },
+  {
+    "id": 729,
+    "name": "KALI SILICUM"
+  },
+  {
+    "id": 731,
+    "name": "KALI SULPH. CHROM."
+  },
+  {
+    "id": 730,
+    "name": "KALI SULPHURICUM"
+  },
+  {
+    "id": 732,
+    "name": "KALI TARTARICUM"
+  },
+  {
+    "id": 733,
+    "name": "KALI TELLURICUM"
+  },
+  {
+    "id": 727,
+    "name": "KALI-PICRONITRICUM"
+  },
+  {
+    "id": 1424,
+    "name": "KALIUM IODATUM"
+  },
+  {
+    "id": 734,
+    "name": "KALMIA LAT."
+  },
+  {
+    "id": 735,
+    "name": "KAOLINUM"
+  },
+  {
+    "id": 736,
+    "name": "KAVA-KAVA"
+  },
+  {
+    "id": 737,
+    "name": "KINO"
+  },
+  {
+    "id": 738,
+    "name": "KOCH`S LYMPH"
+  },
+  {
+    "id": 740,
+    "name": "KOUSSO"
+  },
+  {
+    "id": 742,
+    "name": "KREOSOTUM"
+  },
+  {
+    "id": 743,
+    "name": "LABURNUM"
+  },
+  {
+    "id": 744,
+    "name": "LAC CANINUM"
+  },
+  {
+    "id": 745,
+    "name": "LAC DEFLORATUM"
+  },
+  {
+    "id": 746,
+    "name": "LAC FELINUM"
+  },
+  {
+    "id": 748,
+    "name": "LAC VACC.COAGULATUM"
+  },
+  {
+    "id": 747,
+    "name": "LAC VACCINUM"
+  },
+  {
+    "id": 750,
+    "name": "LACERTA"
+  },
+  {
+    "id": 751,
+    "name": "LACHESIS"
+  },
+  {
+    "id": 753,
+    "name": "LACHNANTES"
+  },
+  {
+    "id": 754,
+    "name": "LACTIC ACID"
+  },
+  {
+    "id": 755,
+    "name": "LACTUCA VIROSA"
+  },
+  {
+    "id": 757,
+    "name": "LAMINUM"
+  },
+  {
+    "id": 759,
+    "name": "LAPIS ALBUS"
+  },
+  {
+    "id": 761,
+    "name": "LAPPA"
+  },
+  {
+    "id": 763,
+    "name": "LATHYRUS"
+  },
+  {
+    "id": 764,
+    "name": "LATRODECTUS HASSELTI."
+  },
+  {
+    "id": 766,
+    "name": "LATRODECTUS MACTANS."
+  },
+  {
+    "id": 767,
+    "name": "LAUROCERASUS"
+  },
+  {
+    "id": 769,
+    "name": "LECITHIN"
+  },
+  {
+    "id": 770,
+    "name": "LEDUM PAL."
+  },
+  {
+    "id": 771,
+    "name": "LEMNA MINOR"
+  },
+  {
+    "id": 772,
+    "name": "LEONURUS"
+  },
+  {
+    "id": 773,
+    "name": "LEPIDIUM"
+  },
+  {
+    "id": 774,
+    "name": "LEPTANDRA"
+  },
+  {
+    "id": 777,
+    "name": "LIATRIS SPIC."
+  },
+  {
+    "id": 779,
+    "name": "LILLIUM TIGRINUM"
+  },
+  {
+    "id": 780,
+    "name": "LIMULUS"
+  },
+  {
+    "id": 781,
+    "name": "LINARIA"
+  },
+  {
+    "id": 782,
+    "name": "LINUM"
+  },
+  {
+    "id": 783,
+    "name": "LIPPIA MEXICANA"
+  },
+  {
+    "id": 784,
+    "name": "LITHINUM BENZOICUM"
+  },
+  {
+    "id": 786,
+    "name": "LITHIUM CARBONICUM"
+  },
+  {
+    "id": 787,
+    "name": "LITHIUM LACTICUM"
+  },
+  {
+    "id": 788,
+    "name": "LITHUM CHLOR."
+  },
+  {
+    "id": 790,
+    "name": "LOBELIA CARD."
+  },
+  {
+    "id": 791,
+    "name": "LOBELIA CERULIA"
+  },
+  {
+    "id": 792,
+    "name": "LOBELIA ERINUS"
+  },
+  {
+    "id": 793,
+    "name": "LOBELIA INFLATA"
+  },
+  {
+    "id": 794,
+    "name": "LOBELIA PURPURESCENS"
+  },
+  {
+    "id": 795,
+    "name": "LOBELIA SYPHILITICA"
+  },
+  {
+    "id": 796,
+    "name": "LOLIUM TEMULENTUM"
+  },
+  {
+    "id": 1452,
+    "name": "LONICERA XYLOSTEUM"
+  },
+  {
+    "id": 800,
+    "name": "LUPULIN"
+  },
+  {
+    "id": 801,
+    "name": "LUPULUS"
+  },
+  {
+    "id": 802,
+    "name": "LYCOPERSICUM"
+  },
+  {
+    "id": 803,
+    "name": "LYCOPODIUM CLAVAT."
+  },
+  {
+    "id": 804,
+    "name": "LYCOPUS"
+  },
+  {
+    "id": 805,
+    "name": "LYSSIN"
+  },
+  {
+    "id": 807,
+    "name": "MACROTIN"
+  },
+  {
+    "id": 812,
+    "name": "MAGNESIA CABONICA"
+  },
+  {
+    "id": 813,
+    "name": "MAGNESIA MURIATICA"
+  },
+  {
+    "id": 814,
+    "name": "MAGNESIA PHOSPHORICA"
+  },
+  {
+    "id": 815,
+    "name": "MAGNESIA SULPHURICA"
+  },
+  {
+    "id": 817,
+    "name": "MAGNET. P. AMBO."
+  },
+  {
+    "id": 818,
+    "name": "MAGNET. POL. AUSTRAL."
+  },
+  {
+    "id": 1467,
+    "name": "MAGNETIS POLUS ARCTICUS"
+  },
+  {
+    "id": 819,
+    "name": "MAGNOLIA"
+  },
+  {
+    "id": 821,
+    "name": "MALANDRINUM"
+  },
+  {
+    "id": 822,
+    "name": "MALARIA OFFICINALIS"
+  },
+  {
+    "id": 1470,
+    "name": "MAMMARY GLAND"
+  },
+  {
+    "id": 825,
+    "name": "MANCINELLA"
+  },
+  {
+    "id": 827,
+    "name": "MANGANUM ACETICUM"
+  },
+  {
+    "id": 829,
+    "name": "MANGANUM MUR."
+  },
+  {
+    "id": 830,
+    "name": "MANGANUM OX."
+  },
+  {
+    "id": 831,
+    "name": "MANGANUM SUL."
+  },
+  {
+    "id": 832,
+    "name": "MANGIFERA"
+  },
+  {
+    "id": 835,
+    "name": "MARRUBIUM"
+  },
+  {
+    "id": 837,
+    "name": "MATICO"
+  },
+  {
+    "id": 839,
+    "name": "MEDORRHINUM"
+  },
+  {
+    "id": 840,
+    "name": "MEDUSA"
+  },
+  {
+    "id": 841,
+    "name": "MEL. CUM. SEL"
+  },
+  {
+    "id": 842,
+    "name": "MELILOTUS"
+  },
+  {
+    "id": 844,
+    "name": "MENISPERMUM"
+  },
+  {
+    "id": 845,
+    "name": "MENTHA PIPERITA"
+  },
+  {
+    "id": 848,
+    "name": "MENTHOL"
+  },
+  {
+    "id": 849,
+    "name": "MENYANTHES"
+  },
+  {
+    "id": 850,
+    "name": "MEPHITIS"
+  },
+  {
+    "id": 851,
+    "name": "MERCURIALIS PERENNIS"
+  },
+  {
+    "id": 1456,
+    "name": "MERCURIES"
+  },
+  {
+    "id": 852,
+    "name": "MERCURIUS ACETIC"
+  },
+  {
+    "id": 853,
+    "name": "MERCURIUS AURATUS"
+  },
+  {
+    "id": 855,
+    "name": "MERCURIUS BROMATUS"
+  },
+  {
+    "id": 856,
+    "name": "MERCURIUS CORROSIV."
+  },
+  {
+    "id": 857,
+    "name": "MERCURIUS CUM. KALI."
+  },
+  {
+    "id": 858,
+    "name": "MERCURIUS CYANATUS"
+  },
+  {
+    "id": 859,
+    "name": "MERCURIUS DULCIS"
+  },
+  {
+    "id": 860,
+    "name": "MERCURIUS IOD. FLAV."
+  },
+  {
+    "id": 861,
+    "name": "MERCURIUS IODATUS. RUB"
+  },
+  {
+    "id": 862,
+    "name": "MERCURIUS NITROSUS"
+  },
+  {
+    "id": 863,
+    "name": "MERCURIUS PHOSPHOR"
+  },
+  {
+    "id": 864,
+    "name": "MERCURIUS PRAECIP.RUB."
+  },
+  {
+    "id": 866,
+    "name": "MERCURIUS SOL."
+  },
+  {
+    "id": 868,
+    "name": "MERCURIUS SULPHURICUS"
+  },
+  {
+    "id": 870,
+    "name": "MERCURIUS TANNICUS"
+  },
+  {
+    "id": 871,
+    "name": "MERCURIUS VIVUS"
+  },
+  {
+    "id": 872,
+    "name": "METHYLENE BLUE."
+  },
+  {
+    "id": 873,
+    "name": "METHYLIUM SALICYL."
+  },
+  {
+    "id": 874,
+    "name": "MEZEREUM"
+  },
+  {
+    "id": 876,
+    "name": "MICROMERIA"
+  },
+  {
+    "id": 878,
+    "name": "MILLEFOLIUM"
+  },
+  {
+    "id": 880,
+    "name": "MIMOSA"
+  },
+  {
+    "id": 882,
+    "name": "MITCHELLA"
+  },
+  {
+    "id": 883,
+    "name": "MOMORDICA BALS."
+  },
+  {
+    "id": 1477,
+    "name": "MORBILINUM"
+  },
+  {
+    "id": 1466,
+    "name": "MORGAN GAERTNER"
+  },
+  {
+    "id": 1461,
+    "name": "MORGAN PURE"
+  },
+  {
+    "id": 886,
+    "name": "MORPHINUM"
+  },
+  {
+    "id": 1453,
+    "name": "MORPHINUM ACET."
+  },
+  {
+    "id": 887,
+    "name": "MOSCHUS"
+  },
+  {
+    "id": 1474,
+    "name": "MUCOBACTOR"
+  },
+  {
+    "id": 889,
+    "name": "MUCUNA"
+  },
+  {
+    "id": 890,
+    "name": "MULLEIN OIL"
+  },
+  {
+    "id": 891,
+    "name": "MUREX"
+  },
+  {
+    "id": 892,
+    "name": "MURIATIC ACID"
+  },
+  {
+    "id": 893,
+    "name": "MUSCARIN"
+  },
+  {
+    "id": 1472,
+    "name": "MUTABILE, BACH"
+  },
+  {
+    "id": 894,
+    "name": "MYGALE"
+  },
+  {
+    "id": 895,
+    "name": "MYOSOTIS"
+  },
+  {
+    "id": 897,
+    "name": "MYRICA"
+  },
+  {
+    "id": 898,
+    "name": "MYRISTICA"
+  },
+  {
+    "id": 1447,
+    "name": "MYRTIS"
+  },
+  {
+    "id": 900,
+    "name": "MYRTUS CHECKAN"
+  },
+  {
+    "id": 901,
+    "name": "MYRTUS COMMUNIS"
+  },
+  {
+    "id": 902,
+    "name": "NABALUS"
+  },
+  {
+    "id": 903,
+    "name": "NAJA TRIPUDIANS"
+  },
+  {
+    "id": 904,
+    "name": "NAPHTHALINE"
+  },
+  {
+    "id": 905,
+    "name": "NARCISSUS"
+  },
+  {
+    "id": 906,
+    "name": "NASTURTIUM"
+  },
+  {
+    "id": 907,
+    "name": "NATRUM ARSENICUM"
+  },
+  {
+    "id": 908,
+    "name": "NATRUM CACODYL."
+  },
+  {
+    "id": 909,
+    "name": "NATRUM CARBONICUM"
+  },
+  {
+    "id": 910,
+    "name": "NATRUM CHLORATUM"
+  },
+  {
+    "id": 911,
+    "name": "NATRUM CHOLEINICUM"
+  },
+  {
+    "id": 912,
+    "name": "NATRUM HYPOSULPH."
+  },
+  {
+    "id": 913,
+    "name": "NATRUM IODATUM"
+  },
+  {
+    "id": 914,
+    "name": "NATRUM LACTICUM"
+  },
+  {
+    "id": 915,
+    "name": "NATRUM MURIATICUM"
+  },
+  {
+    "id": 916,
+    "name": "NATRUM NITRICUM"
+  },
+  {
+    "id": 918,
+    "name": "NATRUM PHOSPHORICUM"
+  },
+  {
+    "id": 919,
+    "name": "NATRUM SALICYLICUM"
+  },
+  {
+    "id": 920,
+    "name": "NATRUM SELENICUM"
+  },
+  {
+    "id": 921,
+    "name": "NATRUM SILICO. FLUOR"
+  },
+  {
+    "id": 922,
+    "name": "NATRUM SILICUM"
+  },
+  {
+    "id": 924,
+    "name": "NATRUM SULPHO-CARBOL"
+  },
+  {
+    "id": 925,
+    "name": "NATRUM SULPHURICUM"
+  },
+  {
+    "id": 926,
+    "name": "NATRUM SULPHUROSUM"
+  },
+  {
+    "id": 928,
+    "name": "NATRUM TELLURICUM"
+  },
+  {
+    "id": 930,
+    "name": "NEGUNDIUM"
+  },
+  {
+    "id": 931,
+    "name": "NEPATA"
+  },
+  {
+    "id": 932,
+    "name": "NERIUM ODORUM"
+  },
+  {
+    "id": 934,
+    "name": "NICCOLUM MET."
+  },
+  {
+    "id": 935,
+    "name": "NICCOLUM SULPH."
+  },
+  {
+    "id": 936,
+    "name": "NICOTINUM"
+  },
+  {
+    "id": 938,
+    "name": "NITRI SPIRITUS DULSIS"
+  },
+  {
+    "id": 937,
+    "name": "NITRIC ACID"
+  },
+  {
+    "id": 939,
+    "name": "NITRO-MURIATIC ACID"
+  },
+  {
+    "id": 940,
+    "name": "NITRUM"
+  },
+  {
+    "id": 941,
+    "name": "NUPHAR LUTEUM"
+  },
+  {
+    "id": 942,
+    "name": "NUX MOSCHATA"
+  },
+  {
+    "id": 943,
+    "name": "NUX VOMICA"
+  },
+  {
+    "id": 944,
+    "name": "NYCTANTHES"
+  },
+  {
+    "id": 946,
+    "name": "OCIMUM CANUM"
+  },
+  {
+    "id": 947,
+    "name": "OENANTHE"
+  },
+  {
+    "id": 948,
+    "name": "OENOTHERA"
+  },
+  {
+    "id": 950,
+    "name": "OLEANDER"
+  },
+  {
+    "id": 951,
+    "name": "OLEUM ANIMALE"
+  },
+  {
+    "id": 954,
+    "name": "OLEUM JACORIS"
+  },
+  {
+    "id": 955,
+    "name": "OLEUM MYRISTICA"
+  },
+  {
+    "id": 956,
+    "name": "OLEUM SANTALI"
+  },
+  {
+    "id": 957,
+    "name": "OLEUM SUCCINUM"
+  },
+  {
+    "id": 959,
+    "name": "ONISCUS ASELLUS"
+  },
+  {
+    "id": 961,
+    "name": "ONOSMODIUM"
+  },
+  {
+    "id": 962,
+    "name": "OOPHORINUM"
+  },
+  {
+    "id": 963,
+    "name": "OPERCULINA"
+  },
+  {
+    "id": 965,
+    "name": "OPIUM"
+  },
+  {
+    "id": 966,
+    "name": "OPUNTIA"
+  },
+  {
+    "id": 967,
+    "name": "ORCHITINUM"
+  },
+  {
+    "id": 968,
+    "name": "OREODAPHNE"
+  },
+  {
+    "id": 970,
+    "name": "ORIGANUM"
+  },
+  {
+    "id": 971,
+    "name": "ORNITHOGALUM"
+  },
+  {
+    "id": 974,
+    "name": "OSMIUM"
+  },
+  {
+    "id": 975,
+    "name": "OSTRYA"
+  },
+  {
+    "id": 977,
+    "name": "OVA TOSTA"
+  },
+  {
+    "id": 978,
+    "name": "OVI GALL. PELLICULA"
+  },
+  {
+    "id": 1484,
+    "name": "OVYRY"
+  },
+  {
+    "id": 979,
+    "name": "OXALIC ACID"
+  },
+  {
+    "id": 981,
+    "name": "OXYDENDRON"
+  },
+  {
+    "id": 982,
+    "name": "OXYTROPIS"
+  },
+  {
+    "id": 984,
+    "name": "PAEONIA"
+  },
+  {
+    "id": 986,
+    "name": "PALLADIUM"
+  },
+  {
+    "id": 987,
+    "name": "PAMBOTANO"
+  },
+  {
+    "id": 990,
+    "name": "PANCREATINUM"
+  },
+  {
+    "id": 992,
+    "name": "PARAFFINE"
+  },
+  {
+    "id": 1481,
+    "name": "PARATHYROID"
+  },
+  {
+    "id": 993,
+    "name": "PAREIRA BRAVA"
+  },
+  {
+    "id": 994,
+    "name": "PARIETARIA"
+  },
+  {
+    "id": 1441,
+    "name": "PARIS QUADRIFOLIA"
+  },
+  {
+    "id": 995,
+    "name": "PARTHENIUM"
+  },
+  {
+    "id": 996,
+    "name": "PASSIFLORA"
+  },
+  {
+    "id": 997,
+    "name": "PASTINACA"
+  },
+  {
+    "id": 1001,
+    "name": "PEDICULARIS"
+  },
+  {
+    "id": 1003,
+    "name": "PELIUS"
+  },
+  {
+    "id": 1004,
+    "name": "PELLETIERINE"
+  },
+  {
+    "id": 1468,
+    "name": "PENICILLIN"
+  },
+  {
+    "id": 1005,
+    "name": "PENTHORUM"
+  },
+  {
+    "id": 1011,
+    "name": "PERTUSSIN"
+  },
+  {
+    "id": 1009,
+    "name": "PETROLEUM"
+  },
+  {
+    "id": 1010,
+    "name": "PETROSELINUM"
+  },
+  {
+    "id": 1013,
+    "name": "PHASEOLUS"
+  },
+  {
+    "id": 1014,
+    "name": "PHELLANDRIUM"
+  },
+  {
+    "id": 1018,
+    "name": "PHLORIDZIN"
+  },
+  {
+    "id": 1019,
+    "name": "PHOSPHORIC ACID"
+  },
+  {
+    "id": 1020,
+    "name": "PHOSPHORUS"
+  },
+  {
+    "id": 1021,
+    "name": "PHOSPHORUS HYDROGEN"
+  },
+  {
+    "id": 1023,
+    "name": "PHYSALIS"
+  },
+  {
+    "id": 1024,
+    "name": "PHYSOSTIGMA"
+  },
+  {
+    "id": 1025,
+    "name": "PHYTOLACCA"
+  },
+  {
+    "id": 1027,
+    "name": "PICHI"
+  },
+  {
+    "id": 1028,
+    "name": "PICRIC ACID"
+  },
+  {
+    "id": 1029,
+    "name": "PICROTOXIN"
+  },
+  {
+    "id": 1031,
+    "name": "PILOCAPUS"
+  },
+  {
+    "id": 1030,
+    "name": "PILOCARP. MUR."
+  },
+  {
+    "id": 1419,
+    "name": "PILOCARPUS MICROPHYLLUS"
+  },
+  {
+    "id": 1033,
+    "name": "PIMPINELLA"
+  },
+  {
+    "id": 1449,
+    "name": "PINEAL GLAND EXT."
+  },
+  {
+    "id": 1034,
+    "name": "PINUS CANADENSIS"
+  },
+  {
+    "id": 1035,
+    "name": "PINUS LAMBERTINA"
+  },
+  {
+    "id": 1036,
+    "name": "PINUS SYLVESTRIS."
+  },
+  {
+    "id": 1039,
+    "name": "PIPER METHYSTICUM"
+  },
+  {
+    "id": 1427,
+    "name": "PIPER NIGRUM"
+  },
+  {
+    "id": 1038,
+    "name": "PIPERIZINE"
+  },
+  {
+    "id": 1040,
+    "name": "PISCIDIA"
+  },
+  {
+    "id": 1420,
+    "name": "PITUITARY GLAND"
+  },
+  {
+    "id": 1041,
+    "name": "PITUITRIN"
+  },
+  {
+    "id": 1042,
+    "name": "PIX LIQUIDA"
+  },
+  {
+    "id": 1469,
+    "name": "PLACENTA"
+  },
+  {
+    "id": 1044,
+    "name": "PLANTAGO"
+  },
+  {
+    "id": 1045,
+    "name": "PLANTANUS"
+  },
+  {
+    "id": 1046,
+    "name": "PLATINA METALLICUM"
+  },
+  {
+    "id": 1048,
+    "name": "PLATINA MUR. NAT."
+  },
+  {
+    "id": 1047,
+    "name": "PLATINA MURIATICUM"
+  },
+  {
+    "id": 1049,
+    "name": "PLECTRANTHUS"
+  },
+  {
+    "id": 1051,
+    "name": "PLUMBUM ACETICUM"
+  },
+  {
+    "id": 1052,
+    "name": "PLUMBUM CHROMICUM"
+  },
+  {
+    "id": 1053,
+    "name": "PLUMBUM IODATUM"
+  },
+  {
+    "id": 1054,
+    "name": "PLUMBUM METALLICUM"
+  },
+  {
+    "id": 1450,
+    "name": "PLUMBUM OXY."
+  },
+  {
+    "id": 1058,
+    "name": "PNEUMO TOXIN"
+  },
+  {
+    "id": 1060,
+    "name": "PODOPHYLLUM"
+  },
+  {
+    "id": 1061,
+    "name": "POLLATIN"
+  },
+  {
+    "id": 1062,
+    "name": "POLYGONUM AVICULAERE"
+  },
+  {
+    "id": 1064,
+    "name": "POLYGONUM PUNCTANUM"
+  },
+  {
+    "id": 1066,
+    "name": "POLYMNIA"
+  },
+  {
+    "id": 1068,
+    "name": "POLYPORUS PIN."
+  },
+  {
+    "id": 1070,
+    "name": "POPULUS CANDICANS"
+  },
+  {
+    "id": 1071,
+    "name": "POPULUS TREMIULOIDES"
+  },
+  {
+    "id": 1073,
+    "name": "POTHOS FOETIDUS"
+  },
+  {
+    "id": 1075,
+    "name": "PRIMULA FERINOSA"
+  },
+  {
+    "id": 1076,
+    "name": "PRIMULA OBCONIA"
+  },
+  {
+    "id": 1077,
+    "name": "PRIMULA VERIS"
+  },
+  {
+    "id": 1078,
+    "name": "PROPYLAMIN"
+  },
+  {
+    "id": 1460,
+    "name": "PROTEUS"
+  },
+  {
+    "id": 1081,
+    "name": "PRUNUS PADUS"
+  },
+  {
+    "id": 1082,
+    "name": "PRUNUS SPINOSA"
+  },
+  {
+    "id": 1083,
+    "name": "PRUNUS VIRGINIANA"
+  },
+  {
+    "id": 1084,
+    "name": "PSORALIA"
+  },
+  {
+    "id": 1085,
+    "name": "PSORINUM"
+  },
+  {
+    "id": 1086,
+    "name": "PTELEA"
+  },
+  {
+    "id": 1087,
+    "name": "PULEX IRRITANS"
+  },
+  {
+    "id": 1088,
+    "name": "PULMO VULPIS"
+  },
+  {
+    "id": 1422,
+    "name": "PULSATILLA"
+  },
+  {
+    "id": 1089,
+    "name": "PULSATILLA NUTTALIANA"
+  },
+  {
+    "id": 1092,
+    "name": "PYROGENIUM"
+  },
+  {
+    "id": 1093,
+    "name": "PYRUS"
+  },
+  {
+    "id": 1094,
+    "name": "QUASSIA"
+  },
+  {
+    "id": 1095,
+    "name": "QUEBRACHO"
+  },
+  {
+    "id": 1096,
+    "name": "QUERCUS GLAND. SPIRITUS"
+  },
+  {
+    "id": 1097,
+    "name": "QUILLAYA"
+  },
+  {
+    "id": 1100,
+    "name": "RADIUM"
+  },
+  {
+    "id": 1101,
+    "name": "RANA BUFO"
+  },
+  {
+    "id": 1102,
+    "name": "RANANCULUS ACRIS"
+  },
+  {
+    "id": 1103,
+    "name": "RANANCULUS BULBOSUS"
+  },
+  {
+    "id": 1106,
+    "name": "RANANCULUS REPENS"
+  },
+  {
+    "id": 1104,
+    "name": "RANUNCULUS FLAMMULA"
+  },
+  {
+    "id": 1107,
+    "name": "RANUNCULUS SCLERATUS"
+  },
+  {
+    "id": 1108,
+    "name": "RAPHANUS"
+  },
+  {
+    "id": 1109,
+    "name": "RATANHIA"
+  },
+  {
+    "id": 1110,
+    "name": "RESORCIN"
+  },
+  {
+    "id": 1112,
+    "name": "RHAMNUS CATH."
+  },
+  {
+    "id": 1111,
+    "name": "RHAMNUSCALIF."
+  },
+  {
+    "id": 1421,
+    "name": "RHANMUS CALIFORNICA"
+  },
+  {
+    "id": 1114,
+    "name": "RHEUM"
+  },
+  {
+    "id": 1116,
+    "name": "RHODIUM"
+  },
+  {
+    "id": 1117,
+    "name": "RHODODENDRON"
+  },
+  {
+    "id": 1118,
+    "name": "RHUS AROMATICA"
+  },
+  {
+    "id": 1120,
+    "name": "RHUS DIVERSILOBA"
+  },
+  {
+    "id": 1121,
+    "name": "RHUS GLABRA"
+  },
+  {
+    "id": 1122,
+    "name": "RHUS RADICANS"
+  },
+  {
+    "id": 1123,
+    "name": "RHUS TOXICODENDRON"
+  },
+  {
+    "id": 1124,
+    "name": "RHUS VENENATA"
+  },
+  {
+    "id": 1125,
+    "name": "RICINUS COMMUNIS"
+  },
+  {
+    "id": 1126,
+    "name": "ROBINIA"
+  },
+  {
+    "id": 1127,
+    "name": "ROSA DAMASCENA"
+  },
+  {
+    "id": 1128,
+    "name": "ROSMARINUS"
+  },
+  {
+    "id": 1129,
+    "name": "RUBIA TINCTOR"
+  },
+  {
+    "id": 1132,
+    "name": "RUMEX CRISPUS"
+  },
+  {
+    "id": 1134,
+    "name": "RUTA GRAVEOLENS"
+  },
+  {
+    "id": 1135,
+    "name": "SABADILLA"
+  },
+  {
+    "id": 1136,
+    "name": "SABAL SERRULATA"
+  },
+  {
+    "id": 1137,
+    "name": "SABINA"
+  },
+  {
+    "id": 1139,
+    "name": "SACCHARUM OFFICINALIS"
+  },
+  {
+    "id": 1144,
+    "name": "SAL MARINUM"
+  },
+  {
+    "id": 1140,
+    "name": "SALAGINELLA"
+  },
+  {
+    "id": 1142,
+    "name": "SALICYLICUM ACIDUM"
+  },
+  {
+    "id": 1143,
+    "name": "SALIX NIGRA"
+  },
+  {
+    "id": 1145,
+    "name": "SALOL"
+  },
+  {
+    "id": 1147,
+    "name": "SALVIA OFFICNALIS"
+  },
+  {
+    "id": 1149,
+    "name": "SAMBUCUS CANADENSIS"
+  },
+  {
+    "id": 1150,
+    "name": "SAMBUCUS NIGRA"
+  },
+  {
+    "id": 1151,
+    "name": "SANGUINARIA CANADENSIS"
+  },
+  {
+    "id": 1152,
+    "name": "SANGUINARIA NITRICA"
+  },
+  {
+    "id": 1154,
+    "name": "SANGUISORBA OFF."
+  },
+  {
+    "id": 1156,
+    "name": "SANICULA"
+  },
+  {
+    "id": 1158,
+    "name": "SANTALUM"
+  },
+  {
+    "id": 1159,
+    "name": "SANTONIUM"
+  },
+  {
+    "id": 1160,
+    "name": "SAPONARIA"
+  },
+  {
+    "id": 1161,
+    "name": "SAPONIN"
+  },
+  {
+    "id": 1162,
+    "name": "SARACA INDICA"
+  },
+  {
+    "id": 1163,
+    "name": "SARCO LACTIC ACID"
+  },
+  {
+    "id": 1164,
+    "name": "SARRACENIA"
+  },
+  {
+    "id": 1435,
+    "name": "SARSAPARILLA OFFICINALIS"
+  },
+  {
+    "id": 1165,
+    "name": "SAURURUS"
+  },
+  {
+    "id": 1446,
+    "name": "SCILLA"
+  },
+  {
+    "id": 1167,
+    "name": "SCIRRHINUM"
+  },
+  {
+    "id": 1168,
+    "name": "SCOLOPENDRA"
+  },
+  {
+    "id": 1170,
+    "name": "SCOPOLA"
+  },
+  {
+    "id": 1173,
+    "name": "SCROPHULARIA"
+  },
+  {
+    "id": 1174,
+    "name": "SCUTELLARIA"
+  },
+  {
+    "id": 1175,
+    "name": "SECALE CORNUTUM"
+  },
+  {
+    "id": 1176,
+    "name": "SEDUM ACRE"
+  },
+  {
+    "id": 1182,
+    "name": "SELENIUM"
+  },
+  {
+    "id": 1183,
+    "name": "SEMPERVIVUM TECTOR."
+  },
+  {
+    "id": 1184,
+    "name": "SENECIO"
+  },
+  {
+    "id": 1185,
+    "name": "SENECIO JACOBOEA"
+  },
+  {
+    "id": 1186,
+    "name": "SENEGA"
+  },
+  {
+    "id": 1187,
+    "name": "SENNA"
+  },
+  {
+    "id": 1188,
+    "name": "SEPIA"
+  },
+  {
+    "id": 1189,
+    "name": "SEPSIN"
+  },
+  {
+    "id": 1191,
+    "name": "SERUM ANGUILLAE"
+  },
+  {
+    "id": 1193,
+    "name": "SILICA MARINA"
+  },
+  {
+    "id": 1194,
+    "name": "SILICEA"
+  },
+  {
+    "id": 1198,
+    "name": "SILPHION CYRENAICUM."
+  },
+  {
+    "id": 1199,
+    "name": "SILPHIUM"
+  },
+  {
+    "id": 1203,
+    "name": "SINAPSIS ALBA."
+  },
+  {
+    "id": 1204,
+    "name": "SINAPSIS NIGRA"
+  },
+  {
+    "id": 1205,
+    "name": "SISYRINCHIUM"
+  },
+  {
+    "id": 1206,
+    "name": "SKATOL"
+  },
+  {
+    "id": 1207,
+    "name": "SKOOKUM- CHUCK"
+  },
+  {
+    "id": 1208,
+    "name": "SLAG"
+  },
+  {
+    "id": 1214,
+    "name": "SOLANUM CAROLINESE"
+  },
+  {
+    "id": 1215,
+    "name": "SOLANUM LYCOPERSICUM"
+  },
+  {
+    "id": 1217,
+    "name": "SOLANUM NIGRUM"
+  },
+  {
+    "id": 1218,
+    "name": "SOLANUM OLERACEUM"
+  },
+  {
+    "id": 1220,
+    "name": "SOLANUM TUBEROSUM"
+  },
+  {
+    "id": 1223,
+    "name": "SOLIDAGO"
+  },
+  {
+    "id": 1224,
+    "name": "SPARTEIN SULPH."
+  },
+  {
+    "id": 1225,
+    "name": "SPARTIUM SCOPARIUM"
+  },
+  {
+    "id": 1226,
+    "name": "SPHINGURUS"
+  },
+  {
+    "id": 1228,
+    "name": "SPIGEL. MAR."
+  },
+  {
+    "id": 1227,
+    "name": "SPIGELIA"
+  },
+  {
+    "id": 1229,
+    "name": "SPIRAEA"
+  },
+  {
+    "id": 1230,
+    "name": "SPIRANTHES"
+  },
+  {
+    "id": 1234,
+    "name": "SPONGIA TOSTA"
+  },
+  {
+    "id": 1235,
+    "name": "SQUILLA"
+  },
+  {
+    "id": 1236,
+    "name": "STANNUM IODATUM"
+  },
+  {
+    "id": 1237,
+    "name": "STANNUM METALLICUM"
+  },
+  {
+    "id": 1239,
+    "name": "STAPHYSAGRIA"
+  },
+  {
+    "id": 1240,
+    "name": "STELLARIA"
+  },
+  {
+    "id": 1241,
+    "name": "STERCULIA"
+  },
+  {
+    "id": 1242,
+    "name": "STICTA PULMONARIA"
+  },
+  {
+    "id": 1243,
+    "name": "STIGMATA MAYDIS"
+  },
+  {
+    "id": 1244,
+    "name": "STILLINGIA"
+  },
+  {
+    "id": 1246,
+    "name": "STRAMONIUM"
+  },
+  {
+    "id": 1247,
+    "name": "STREPTOCCOCIN"
+  },
+  {
+    "id": 1480,
+    "name": "STREPTOMYCIN"
+  },
+  {
+    "id": 1248,
+    "name": "STRONTIA BROM."
+  },
+  {
+    "id": 1249,
+    "name": "STRONTIA CARB."
+  },
+  {
+    "id": 1250,
+    "name": "STRONTIA IODATUM"
+  },
+  {
+    "id": 1252,
+    "name": "STROPHANTHUS"
+  },
+  {
+    "id": 1255,
+    "name": "STRYCH. ET.FER. CIT."
+  },
+  {
+    "id": 1254,
+    "name": "STRYCHNIN. ARS."
+  },
+  {
+    "id": 1257,
+    "name": "STRYCHNIN. PHOS."
+  },
+  {
+    "id": 1258,
+    "name": "STRYCHNIN.SULPH."
+  },
+  {
+    "id": 1253,
+    "name": "STRYCHNINUM"
+  },
+  {
+    "id": 1263,
+    "name": "SUCCINUM"
+  },
+  {
+    "id": 1265,
+    "name": "SULFONAL"
+  },
+  {
+    "id": 1266,
+    "name": "SULPHUR"
+  },
+  {
+    "id": 1267,
+    "name": "SULPHUR HYDROGEN."
+  },
+  {
+    "id": 1268,
+    "name": "SULPHUR IODATUM"
+  },
+  {
+    "id": 1269,
+    "name": "SULPHUR TEREBINTHIN"
+  },
+  {
+    "id": 1270,
+    "name": "SULPHURIC ACID"
+  },
+  {
+    "id": 1271,
+    "name": "SULPHUROUS ACID"
+  },
+  {
+    "id": 1272,
+    "name": "SUMBUL"
+  },
+  {
+    "id": 1273,
+    "name": "SUPRA RENAL EXTRACT."
+  },
+  {
+    "id": 1482,
+    "name": "SUPRENAL"
+  },
+  {
+    "id": 1458,
+    "name": "SYCOTIC CO."
+  },
+  {
+    "id": 1274,
+    "name": "SYMPHORICARPUS"
+  },
+  {
+    "id": 1275,
+    "name": "SYMPHYTUM"
+  },
+  {
+    "id": 1276,
+    "name": "SYPHILINUM"
+  },
+  {
+    "id": 1277,
+    "name": "SYZYGIUM JAM."
+  },
+  {
+    "id": 1278,
+    "name": "TABACUM"
+  },
+  {
+    "id": 1279,
+    "name": "TAMUS"
+  },
+  {
+    "id": 1280,
+    "name": "TANACETUM"
+  },
+  {
+    "id": 1429,
+    "name": "TANACETUM VULGARE"
+  },
+  {
+    "id": 1281,
+    "name": "TANNIC ACID"
+  },
+  {
+    "id": 1282,
+    "name": "TARAXACUM"
+  },
+  {
+    "id": 1283,
+    "name": "TARENTULA CUBENSIS"
+  },
+  {
+    "id": 1284,
+    "name": "TARENTULA HISPANIA"
+  },
+  {
+    "id": 1286,
+    "name": "TARTARIC ACID"
+  },
+  {
+    "id": 1287,
+    "name": "TAXUS BACCATA"
+  },
+  {
+    "id": 1288,
+    "name": "TELA ARANEA"
+  },
+  {
+    "id": 1289,
+    "name": "TELLURIUM"
+  },
+  {
+    "id": 1290,
+    "name": "TEREBENE"
+  },
+  {
+    "id": 1291,
+    "name": "TEREBINTHINA"
+  },
+  {
+    "id": 1471,
+    "name": "TESTIS"
+  },
+  {
+    "id": 1294,
+    "name": "TETRADYMITE"
+  },
+  {
+    "id": 1295,
+    "name": "TEUCRIUM MARUM"
+  },
+  {
+    "id": 1296,
+    "name": "TEUCRIUM SCRODONIA"
+  },
+  {
+    "id": 1297,
+    "name": "THALLIUM"
+  },
+  {
+    "id": 1298,
+    "name": "THASPIUM"
+  },
+  {
+    "id": 1299,
+    "name": "THEA"
+  },
+  {
+    "id": 1301,
+    "name": "THERIDION"
+  },
+  {
+    "id": 1302,
+    "name": "THIOSINAMINUM"
+  },
+  {
+    "id": 1303,
+    "name": "THLASPI BURSA P."
+  },
+  {
+    "id": 1304,
+    "name": "THUJA OCC."
+  },
+  {
+    "id": 1305,
+    "name": "THYMOL"
+  },
+  {
+    "id": 1306,
+    "name": "THYMUS"
+  },
+  {
+    "id": 1308,
+    "name": "THYROIDINE"
+  },
+  {
+    "id": 1309,
+    "name": "TILIA EUROPPOEA"
+  },
+  {
+    "id": 1312,
+    "name": "TITANIUM"
+  },
+  {
+    "id": 1314,
+    "name": "TONGO"
+  },
+  {
+    "id": 1315,
+    "name": "TORULA"
+  },
+  {
+    "id": 1316,
+    "name": "TOXICOPHIS"
+  },
+  {
+    "id": 1320,
+    "name": "TRIBULUS"
+  },
+  {
+    "id": 1321,
+    "name": "TRIFOLIUM PRATENSE"
+  },
+  {
+    "id": 1322,
+    "name": "TRIFOLIUM REPENS"
+  },
+  {
+    "id": 1323,
+    "name": "TRILLIUM CERNUM"
+  },
+  {
+    "id": 1324,
+    "name": "TRILLIUM PENDULUM"
+  },
+  {
+    "id": 1326,
+    "name": "TRINITROPHENOL"
+  },
+  {
+    "id": 1327,
+    "name": "TRINITROTOLUENE"
+  },
+  {
+    "id": 1328,
+    "name": "TRIONAL"
+  },
+  {
+    "id": 1329,
+    "name": "TRIOSTEUM PERFOL."
+  },
+  {
+    "id": 1330,
+    "name": "TRITICUM"
+  },
+  {
+    "id": 1331,
+    "name": "TROMBIDIUM"
+  },
+  {
+    "id": 1332,
+    "name": "TROPAELUM"
+  },
+  {
+    "id": 1334,
+    "name": "TRYCHNOS GAULTHERIANA"
+  },
+  {
+    "id": 1336,
+    "name": "TUBERCULINUM"
+  },
+  {
+    "id": 1337,
+    "name": "TURNERA"
+  },
+  {
+    "id": 1339,
+    "name": "TUSSILAGO FARFARA"
+  },
+  {
+    "id": 1340,
+    "name": "TUSSILAGO FRAGRANS"
+  },
+  {
+    "id": 1341,
+    "name": "TUSSILAGO PETASITES."
+  },
+  {
+    "id": 1344,
+    "name": "ULMUS"
+  },
+  {
+    "id": 1345,
+    "name": "UPAS ANTIARIS"
+  },
+  {
+    "id": 1346,
+    "name": "UPAS TIENTE"
+  },
+  {
+    "id": 1347,
+    "name": "URANIUM NITRICUM"
+  },
+  {
+    "id": 1348,
+    "name": "UREA"
+  },
+  {
+    "id": 1349,
+    "name": "URIC ACID"
+  },
+  {
+    "id": 1350,
+    "name": "URINUM"
+  },
+  {
+    "id": 1352,
+    "name": "URTICA URENS"
+  },
+  {
+    "id": 1353,
+    "name": "USNEA"
+  },
+  {
+    "id": 1354,
+    "name": "USTILAGO"
+  },
+  {
+    "id": 1355,
+    "name": "UVA URSI"
+  },
+  {
+    "id": 1445,
+    "name": "VACCININUM"
+  },
+  {
+    "id": 1356,
+    "name": "VACCINIUM MYRTYLLUS."
+  },
+  {
+    "id": 1357,
+    "name": "VACCINUM"
+  },
+  {
+    "id": 1358,
+    "name": "VALERIANA"
+  },
+  {
+    "id": 1359,
+    "name": "VANADIUM"
+  },
+  {
+    "id": 1360,
+    "name": "VANILLA"
+  },
+  {
+    "id": 1361,
+    "name": "VARIOLINUM"
+  },
+  {
+    "id": 1362,
+    "name": "VERATRINA"
+  },
+  {
+    "id": 1363,
+    "name": "VERATRINUM"
+  },
+  {
+    "id": 1364,
+    "name": "VERATRUM ALBUM"
+  },
+  {
+    "id": 1365,
+    "name": "VERATRUM VIRIDE"
+  },
+  {
+    "id": 1366,
+    "name": "VERBASCUM"
+  },
+  {
+    "id": 1367,
+    "name": "VERBENA"
+  },
+  {
+    "id": 1368,
+    "name": "VERONAL"
+  },
+  {
+    "id": 1369,
+    "name": "VESICARIA"
+  },
+  {
+    "id": 1370,
+    "name": "VESPA CRABRO"
+  },
+  {
+    "id": 1371,
+    "name": "VIBURNUM OPULUS"
+  },
+  {
+    "id": 1372,
+    "name": "VIBURNUM PRUNIFOL"
+  },
+  {
+    "id": 1373,
+    "name": "VINCA MINOR"
+  },
+  {
+    "id": 1375,
+    "name": "VIOLA ODORATA"
+  },
+  {
+    "id": 1376,
+    "name": "VIOLA TRICOLOR"
+  },
+  {
+    "id": 1377,
+    "name": "VIPERA"
+  },
+  {
+    "id": 1378,
+    "name": "VISCUM ALBUM"
+  },
+  {
+    "id": 1381,
+    "name": "VITRUM"
+  },
+  {
+    "id": 1383,
+    "name": "WYETHIA"
+  },
+  {
+    "id": 1390,
+    "name": "X- RAY"
+  },
+  {
+    "id": 1387,
+    "name": "XANTHOXYLUM"
+  },
+  {
+    "id": 1388,
+    "name": "XEROPHYLLUM"
+  },
+  {
+    "id": 1391,
+    "name": "YERBA BUENA"
+  },
+  {
+    "id": 1395,
+    "name": "YOHIMBINUM"
+  },
+  {
+    "id": 1396,
+    "name": "YUCCA FILAMENTOSA"
+  },
+  {
+    "id": 1397,
+    "name": "ZEA"
+  },
+  {
+    "id": 1400,
+    "name": "ZINCUM ACETICUM"
+  },
+  {
+    "id": 1401,
+    "name": "ZINCUM ARS."
+  },
+  {
+    "id": 1402,
+    "name": "ZINCUM BROMATUM."
+  },
+  {
+    "id": 1404,
+    "name": "ZINCUM CARB"
+  },
+  {
+    "id": 1405,
+    "name": "ZINCUM CYANATUM"
+  },
+  {
+    "id": 1406,
+    "name": "ZINCUM METALLICUM"
+  },
+  {
+    "id": 1407,
+    "name": "ZINCUM MURIATICUM"
+  },
+  {
+    "id": 1408,
+    "name": "ZINCUM OXYDATUM"
+  },
+  {
+    "id": 1409,
+    "name": "ZINCUM PHOSPHORICUM"
+  },
+  {
+    "id": 1410,
+    "name": "ZINCUM PICRICUM"
+  },
+  {
+    "id": 1411,
+    "name": "ZINCUM SULPHURICUM"
+  },
+  {
+    "id": 1412,
+    "name": "ZINCUM VALERIAN"
+  },
+  {
+    "id": 1413,
+    "name": "ZINGIBER"
+  }
+]
