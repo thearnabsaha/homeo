@@ -11,7 +11,6 @@ import {
   ChevronDown,
   Trophy,
   Target,
-  Star,
   Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -36,18 +35,18 @@ interface NeoRightPanelProps {
   onAiAnalysisChange?: (a: AIAnalysis | null) => void;
 }
 
-function GradeIndicator({ grade }: { grade: number }) {
+function GradeIndicator({ grade, isBn }: { grade: number; isBn?: boolean }) {
+  const colorClass =
+    grade >= 3 ? "text-green-500" : grade >= 2 ? "text-yellow-500" : "text-red-400";
+  const display = isBn ? toBengaliNumeral(grade) : String(grade);
   return (
-    <span className="inline-flex gap-0.5">
-      {[1, 2, 3].map((g) => (
-        <Star
-          key={g}
-          className={cn(
-            "h-2.5 w-2.5",
-            g <= grade ? "fill-foreground text-foreground" : "text-muted-foreground/30"
-          )}
-        />
-      ))}
+    <span
+      className={cn(
+        "inline-flex items-center justify-center min-w-[1.25rem] h-4 px-1 rounded text-[10px] font-bold tabular-nums bg-muted/50",
+        colorClass
+      )}
+    >
+      {display}
     </span>
   );
 }
@@ -170,7 +169,7 @@ function RankedRemedyCard({
                   key={i}
                   className="flex items-center gap-2 text-[10px] text-muted-foreground"
                 >
-                  <GradeIndicator grade={cd.grade} />
+                  <GradeIndicator grade={cd.grade} isBn={isBn} />
                   <span>{tr(cd.symptomName)}</span>
                 </div>
               ))}
