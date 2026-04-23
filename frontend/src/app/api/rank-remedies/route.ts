@@ -38,24 +38,33 @@ export function POST(request: NextRequest) {
             entry = { totalScore: 0, symptomsCovered: 0, maxGrade: 0, details: [] };
             scores.set(rem.remedyId, entry);
           }
-          entry.totalScore += rem.grade;
+          // totalScore sums the RAW rank (the actual database value like 5, 8, 10) — matches reference site's {{obj.Rank}}.
+          // maxGrade tracks the 1–3 clamped grade, used for the High/Medium/Low badge color.
+          entry.totalScore += rem.rawRank;
           entry.symptomsCovered++;
           if (rem.grade > entry.maxGrade) entry.maxGrade = rem.grade;
           const sym = symptomById.get(rubric.symptomId);
-          entry.details.push({ symptomId: rubric.symptomId, symptomName: sym?.name || rubric.symptomId, grade: rem.grade });
+          // details[].grade carries the per-symptom rawRank for display in the "Medicine Rank List All" table.
+          entry.details.push({ symptomId: rubric.symptomId, symptomName: sym?.name || rubric.symptomId, grade: rem.rawRank });
         }
       }
     }
 
     const totalSymptoms = symptomIds.length;
-    const maxPossibleScore = totalSymptoms * 3;
+    // Use the largest observed rawRank per matched remedy-symptom to define the ceiling for scoreRatio,
+    // so the confidence calculation stays sane regardless of how big raw ranks are in the database.
+    let maxObservedRawRank = 1;
+    for (const entry of scores.values()) {
+      for (const d of entry.details) if (d.grade > maxObservedRawRank) maxObservedRawRank = d.grade;
+    }
+    const maxPossibleScore = totalSymptoms * maxObservedRawRank;
 
     const ranked = [];
     for (const [remedyId, entry] of scores) {
       const remedy = remedyById.get(remedyId);
       if (!remedy) continue;
       const coverageRatio = entry.symptomsCovered / totalSymptoms;
-      const scoreRatio = entry.totalScore / maxPossibleScore;
+      const scoreRatio = maxPossibleScore > 0 ? entry.totalScore / maxPossibleScore : 0;
       ranked.push({
         id: remedy.id,
         name: remedy.name,
