@@ -9,8 +9,6 @@ import {
   Loader2,
   ChevronUp,
   ChevronDown,
-  Trophy,
-  Target,
   Check,
   ArrowUp,
   ArrowRight,
@@ -23,7 +21,6 @@ import { useTranslation } from "@/i18n/useTranslation";
 import { neoApi } from "@/lib/neoApi";
 import { cn } from "@/lib/utils";
 import { translateRepertory, toBengaliNumeral, medDescBn, medDosageBn, medWorseBn, medBetterBn } from "@/i18n/repertoryBn";
-import { ConfidenceBar } from "@/components/ConfidenceBar";
 import { AudioReader } from "@/components/AudioReader";
 import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/types";
 
@@ -130,27 +127,14 @@ function RankedRemedyCard({
             </span>
             <AudioReader text={`${remedy.name}. ${remedy.description?.substring(0, 80)}`} />
           </div>
-          <div className="flex items-center gap-3 mt-1 flex-wrap">
-            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-              <Target className="h-2.5 w-2.5" />
-              {toBengaliNum(remedy.symptomsCovered)}/{toBengaliNum(remedy.totalSymptoms)}{" "}
-              {t("rank.covered")}
-            </div>
-            <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-              <Trophy className="h-2.5 w-2.5" />
-              {t("rank.score")}: {toBengaliNum(remedy.totalScore)}
-            </div>
-          </div>
           <div className="flex items-center gap-2 mt-1.5">
-            <div className="flex-1 min-w-0">
-              <ConfidenceBar confidence={remedy.confidence} />
-            </div>
             <span
               className="text-[10px] text-muted-foreground shrink-0 tabular-nums"
               title={t("repertory.totalSymptoms")}
             >
               {toBengaliNum(remedy.symptomsCovered)}x
             </span>
+            <div className="flex-1" />
             <span
               className="text-xs font-semibold bg-secondary text-foreground px-1.5 py-0.5 rounded shrink-0 tabular-nums"
               title={t("repertory.rank")}
