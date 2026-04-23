@@ -27,7 +27,7 @@ export function POST(request: NextRequest) {
     const remedyById = getNeoRemedyById();
     const symptomById = getNeoSymptomById();
 
-    const topN = Math.min(Math.max(rawTopN || 20, 5), 30);
+    const topN = Math.min(Math.max(rawTopN || 500, 1), 500);
     const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; grade: number }[] }>();
 
     for (const symId of symptomIds) {

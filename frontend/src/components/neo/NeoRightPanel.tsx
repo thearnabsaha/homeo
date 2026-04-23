@@ -285,8 +285,7 @@ export function NeoRightPanel({
     updateAiAnalysis(null);
     try {
       const result = await neoApi.rankRemedies(
-        selectedSymptoms.map((s) => s.id),
-        20
+        selectedSymptoms.map((s) => s.id)
       );
       updateRanking(result);
     } catch {

@@ -110,7 +110,7 @@ export const neoApi = {
       body: JSON.stringify({ history, language }),
     }),
 
-  rankRemedies: (symptomIds: string[], topN: number = 20) =>
+  rankRemedies: (symptomIds: string[], topN: number = 500) =>
     fetchNeoAPI<RankingResult>("/rank-remedies", {
       method: "POST",
       body: JSON.stringify({ symptomIds, topN }),
