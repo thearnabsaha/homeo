@@ -12,6 +12,9 @@ import {
   Trophy,
   Target,
   Check,
+  ArrowUp,
+  ArrowRight,
+  ArrowDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -23,6 +26,29 @@ import { translateRepertory, toBengaliNumeral, medDescBn, medDosageBn, medWorseB
 import { ConfidenceBar } from "@/components/ConfidenceBar";
 import { AudioReader } from "@/components/AudioReader";
 import type { AIAnalysis, RankingResult, RankedRemedy } from "@/lib/types";
+
+function getRankLabel(
+  grade: number,
+  t: (k: string) => string
+): { label: string; color: string; icon: React.ElementType } {
+  if (grade >= 3)
+    return {
+      label: t("remedy.high"),
+      color: "text-green-500 bg-green-500/10 border-green-500/30",
+      icon: ArrowUp,
+    };
+  if (grade === 2)
+    return {
+      label: t("remedy.medium"),
+      color: "text-yellow-500 bg-yellow-500/10 border-yellow-500/30",
+      icon: ArrowRight,
+    };
+  return {
+    label: t("remedy.low"),
+    color: "text-red-400 bg-red-400/10 border-red-400/30",
+    icon: ArrowDown,
+  };
+}
 
 interface NeoRightPanelProps {
   selectedSymptoms: { id: string; name: string }[];
@@ -120,24 +146,32 @@ function RankedRemedyCard({
               <ConfidenceBar confidence={remedy.confidence} />
             </div>
             <span
+              className="text-[10px] text-muted-foreground shrink-0 tabular-nums"
+              title={t("repertory.totalSymptoms")}
+            >
+              {toBengaliNum(remedy.symptomsCovered)}x
+            </span>
+            <span
               className="text-xs font-semibold bg-secondary text-foreground px-1.5 py-0.5 rounded shrink-0 tabular-nums"
               title={t("repertory.rank")}
             >
-              {toBengaliNum(remedy.maxGrade)}
+              {toBengaliNum(remedy.totalScore)}
             </span>
-            <Badge
-              variant={remedy.maxGrade >= 3 ? "default" : "secondary"}
-              className={cn(
-                "text-[10px] shrink-0",
-                remedy.maxGrade >= 3
-                  ? "bg-green-500/15 text-green-500 border-green-500/30"
-                  : remedy.maxGrade >= 2
-                    ? "bg-yellow-500/15 text-yellow-500 border-yellow-500/30"
-                    : "bg-red-400/15 text-red-400 border-red-400/30"
-              )}
-            >
-              {remedy.maxGrade >= 3 ? t("remedy.high") : remedy.maxGrade >= 2 ? t("remedy.medium") : t("remedy.low")}
-            </Badge>
+            {(() => {
+              const rl = getRankLabel(remedy.maxGrade, t);
+              const RankIcon = rl.icon;
+              return (
+                <span
+                  className={cn(
+                    "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold shrink-0",
+                    rl.color
+                  )}
+                >
+                  <RankIcon className="h-2 w-2" />
+                  {rl.label}
+                </span>
+              );
+            })()}
           </div>
         </div>
       </div>
@@ -415,6 +449,98 @@ export function NeoRightPanel({
                 onClick={() => onViewRemedy?.(rem.id)}
               />
             ))}
+          </div>
+
+          {/* Top Medicine Rank List - mirrors reference site */}
+          <div className="border-t border-border pt-3 mt-4">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              {t("repertory.topMedicineRank")}
+            </h4>
+            <div className="overflow-x-auto -mx-1">
+              <table className="w-full text-[10px]">
+                <thead>
+                  <tr className="border-b border-border text-left">
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.index")}</th>
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.totalSymptoms")}</th>
+                    <th className="pb-1.5 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ranking.rankedRemedies.slice(0, 10).map((rem, i) => {
+                    const rl = getRankLabel(rem.maxGrade, t);
+                    const RankIcon = rl.icon;
+                    return (
+                      <tr key={rem.id} className="border-b border-border/30">
+                        <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
+                        <td className="py-1.5 pr-2 font-medium">{tr(rem.name)}</td>
+                        <td className="py-1.5 pr-2 text-muted-foreground text-center">{toBengaliNum(rem.symptomsCovered)}</td>
+                        <td className="py-1.5">
+                          <span
+                            className={cn(
+                              "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
+                              rl.color
+                            )}
+                          >
+                            <RankIcon className="h-2 w-2" />
+                            {toBengaliNum(rem.totalScore)} - {rl.label}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Medicine Rank List All - per-symptom breakdown, mirrors reference site */}
+          <div className="border-t border-border pt-3 mt-4">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              {t("repertory.allMedicineRank")}
+            </h4>
+            <div className="overflow-x-auto -mx-1">
+              <table className="w-full text-[10px]">
+                <thead>
+                  <tr className="border-b border-border text-left">
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.index")}</th>
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.symptoms")}</th>
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
+                    <th className="pb-1.5 font-medium text-muted-foreground">{t("repertory.rank")}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {(() => {
+                    let idx = 0;
+                    return ranking.rankedRemedies.flatMap((rem) =>
+                      rem.coverageDetails.map((cd) => {
+                        idx++;
+                        const rl = getRankLabel(cd.grade, t);
+                        const RankIcon = rl.icon;
+                        return (
+                          <tr key={`${rem.id}-${cd.symptomId}-${idx}`} className="border-b border-border/30">
+                            <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(idx)}</td>
+                            <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[110px]">{tr(cd.symptomName)}</td>
+                            <td className="py-1.5 pr-2 font-medium">{tr(rem.name)}</td>
+                            <td className="py-1.5">
+                              <span
+                                className={cn(
+                                  "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
+                                  rl.color
+                                )}
+                              >
+                                <RankIcon className="h-2 w-2" />
+                                {toBengaliNum(cd.grade)} - {rl.label}
+                              </span>
+                            </td>
+                          </tr>
+                        );
+                      })
+                    );
+                  })()}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       )}
