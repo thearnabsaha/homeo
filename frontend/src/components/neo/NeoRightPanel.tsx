@@ -119,11 +119,11 @@ function RankedRemedyCard({
             <div className="flex-1 min-w-0">
               <ConfidenceBar confidence={remedy.confidence} />
             </div>
-            <span className={cn(
-              "text-sm font-bold tabular-nums min-w-[1.5rem] text-center",
-              remedy.maxGrade >= 3 ? "text-green-500" : remedy.maxGrade >= 2 ? "text-yellow-500" : "text-red-400"
-            )}>
-              {toBengaliNum(remedy.totalScore)}
+            <span
+              className="text-xs font-semibold bg-secondary text-foreground px-1.5 py-0.5 rounded shrink-0 tabular-nums"
+              title={t("repertory.rank")}
+            >
+              {toBengaliNum(remedy.maxGrade)}
             </span>
             <Badge
               variant={remedy.maxGrade >= 3 ? "default" : "secondary"}
