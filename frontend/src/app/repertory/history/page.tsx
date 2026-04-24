@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowLeft, Clock, Trash2, Pill, ChevronDown, ChevronUp,
-  Loader2, X, Edit3, Save, Star, BookOpen, Database,
+  Loader2, X, Edit3, Save, Star, BookOpen, Database, Search,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -61,6 +61,7 @@ function HistoryContent() {
   const [loading, setLoading] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [confirmClear, setConfirmClear] = useState(false);
+  const [query, setQuery] = useState("");
 
   const fetchSessions = useCallback(async () => {
     if (!token) return;
@@ -114,6 +115,24 @@ function HistoryContent() {
   const toggle = (id: string) => setExpandedId((prev) => (prev === id ? null : id));
   const isEmpty = sessions.length === 0;
 
+  // Search across session name, symptom/sub-symptom names, and aggregated medicine names.
+  // Matches both English and Bengali forms so the same query works in either language.
+  const filteredSessions = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return sessions;
+    const hit = (s: string | undefined) => {
+      if (!s) return false;
+      return s.toLowerCase().includes(q) || bn(s).toLowerCase().includes(q);
+    };
+    return sessions.filter((session) => {
+      if (hit(session.name)) return true;
+      if ((session.selections || []).some((sel) => hit(sel.symptomName) || hit(sel.subSymptomName))) return true;
+      if ((session.aggregated || []).some((med) => hit(med.name))) return true;
+      return false;
+    });
+  }, [sessions, query, bn]);
+  const noMatches = !isEmpty && filteredSessions.length === 0;
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <div className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
@@ -127,7 +146,13 @@ function HistoryContent() {
               {isBn ? "রেপার্টরি ইতিহাস" : "Repertory History"}
             </h1>
             <p className="text-[10px] text-muted-foreground">
-              {isBn ? `${toBengaliNumeral(sessions.length)}টি সেশন` : `${sessions.length} sessions`}
+              {query.trim()
+                ? isBn
+                  ? `${toBengaliNumeral(filteredSessions.length)} / ${toBengaliNumeral(sessions.length)} সেশন`
+                  : `${filteredSessions.length} / ${sessions.length} sessions`
+                : isBn
+                ? `${toBengaliNumeral(sessions.length)}টি সেশন`
+                : `${sessions.length} sessions`}
             </p>
           </div>
           {!isEmpty && (
@@ -178,18 +203,52 @@ function HistoryContent() {
               </Link>
             </div>
           ) : (
-            sessions.map((session) => (
-              <SwipeCard key={session.id} onSwipeDelete={() => deleteSession(session.id)}>
-                <SessionCard
-                  session={session}
-                  expanded={expandedId === session.id}
-                  onToggle={() => toggle(session.id)}
-                  onDelete={() => deleteSession(session.id)}
-                  onRename={(n) => renameSession(session.id, n)}
-                  isBn={isBn} bn={bn} num={num}
+            <>
+              {/* Search across sessions: name, symptoms/sub-symptoms, and top medicines */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={isBn ? "নাম, লক্ষণ বা ওষুধ দিয়ে খুঁজুন..." : "Search by name, symptom, or medicine..."}
+                  className="w-full h-10 pl-9 pr-9 rounded-xl border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
-              </SwipeCard>
-            ))
+                {query && (
+                  <button
+                    onClick={() => setQuery("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg hover:bg-muted text-muted-foreground"
+                    aria-label={isBn ? "মুছুন" : "Clear"}
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                )}
+              </div>
+
+              {noMatches ? (
+                <div className="flex flex-col items-center text-center pt-12 animate-fade-in">
+                  <div className="h-14 w-14 rounded-xl bg-muted/50 flex items-center justify-center mb-3">
+                    <Search className="h-6 w-6 text-muted-foreground/40" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {isBn ? "কোনো মিল পাওয়া যায়নি" : "No matches found"}
+                  </p>
+                </div>
+              ) : (
+                filteredSessions.map((session) => (
+                  <SwipeCard key={session.id} onSwipeDelete={() => deleteSession(session.id)}>
+                    <SessionCard
+                      session={session}
+                      expanded={expandedId === session.id}
+                      onToggle={() => toggle(session.id)}
+                      onDelete={() => deleteSession(session.id)}
+                      onRename={(n) => renameSession(session.id, n)}
+                      isBn={isBn} bn={bn} num={num}
+                    />
+                  </SwipeCard>
+                ))
+              )}
+            </>
           )}
         </div>
       </div>

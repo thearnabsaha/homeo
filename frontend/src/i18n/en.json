@@ -118,7 +118,9 @@
     "title": "History",
     "save": "Save to history",
     "empty": "No history yet",
-    "restored": "Analysis restored"
+    "restored": "Analysis restored",
+    "searchPlaceholder": "Search history...",
+    "noMatches": "No matching entries"
   },
   "chat": {
     "title": "AI Assistant",

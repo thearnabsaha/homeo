@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
-import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope, Loader2, Trash2 } from "lucide-react";
+import { ChevronRight, BookmarkIcon, History, Clock, Pill, Layers, FolderOpen, Stethoscope, Loader2, Trash2, Search, X } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTranslation } from "@/i18n/useTranslation";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
@@ -104,6 +104,7 @@ export function NeoSidebar({
   const [expandedSym, setExpandedSym] = useState<string | null>(null);
   const [showHistory, setShowHistory] = useState(false);
   const [filter, setFilter] = useState("");
+  const [historyFilter, setHistoryFilter] = useState("");
 
   const [childrenCache, setChildrenCache] = useState<Record<string, ChildItem[]>>({});
   const [loadingId, setLoadingId] = useState<string | null>(null);
@@ -127,6 +128,21 @@ export function NeoSidebar({
     const fl = filter.toLowerCase();
     return items.filter((r) => r._sort.toLowerCase().includes(fl));
   }, [repertories, isBn, filter, tr]);
+
+  // Filter history by top remedy name + any symptom name (both raw and translated forms).
+  const filteredHistory = useMemo(() => {
+    const q = historyFilter.trim().toLowerCase();
+    if (!q) return history;
+    return history.filter((entry) => {
+      if ((entry.topRemedy || "").toLowerCase().includes(q)) return true;
+      if (tr(entry.topRemedy || "").toLowerCase().includes(q)) return true;
+      return entry.symptoms.some(
+        (s) =>
+          (s.name || "").toLowerCase().includes(q) ||
+          tr(s.name || "").toLowerCase().includes(q)
+      );
+    });
+  }, [history, historyFilter, tr]);
 
   const sortChildren = useCallback((items: ChildItem[]): (ChildItem & { _sort: string })[] => {
     const locale = isBn ? "bn" : "en";
@@ -368,7 +384,11 @@ export function NeoSidebar({
                     className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     <History className="h-3 w-3" />
-                    {t("history.title")} ({num(history.length)})
+                    {t("history.title")} (
+                    {historyFilter.trim()
+                      ? `${num(filteredHistory.length)}/${num(history.length)}`
+                      : num(history.length)}
+                    )
                     <ChevronRight className={cn("h-3 w-3 transition-transform", showHistory && "rotate-90")} />
                   </button>
                   {showHistory && onClearHistory && (
@@ -384,34 +404,63 @@ export function NeoSidebar({
                 </div>
 
                 {showHistory && (
-                  <div className="space-y-1.5 animate-fade-in">
-                    {history.slice(0, 10).map((entry) => (
-                      <SwipeItem key={entry.id} onDelete={() => onDeleteHistory?.(entry.id)}>
+                  <div className="animate-fade-in">
+                    {/* Search input — always visible so users can narrow long histories */}
+                    <div className="relative mb-2">
+                      <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3 w-3 text-muted-foreground pointer-events-none" />
+                      <input
+                        type="text"
+                        value={historyFilter}
+                        onChange={(e) => setHistoryFilter(e.target.value)}
+                        placeholder={t("history.searchPlaceholder")}
+                        className="w-full h-7 pl-7 pr-6 rounded-md border border-border bg-background text-[11px] focus:outline-none focus:ring-1 focus:ring-primary/40"
+                      />
+                      {historyFilter && (
                         <button
-                          onClick={() => onRestoreHistory?.(entry)}
-                          className="w-full text-left p-2 rounded border border-border hover:border-foreground/20 hover:bg-accent/50 transition-colors"
+                          onClick={() => setHistoryFilter("")}
+                          className="absolute right-1.5 top-1/2 -translate-y-1/2 p-0.5 rounded hover:bg-muted text-muted-foreground"
+                          aria-label="Clear search"
                         >
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <Pill className="h-2.5 w-2.5 text-muted-foreground flex-shrink-0" />
-                            <span className="text-[11px] font-medium truncate">{tr(entry.topRemedy)}</span>
-                          </div>
-                          <div className="flex flex-wrap gap-1 mb-1">
-                            {entry.symptoms.slice(0, 3).map((s) => (
-                              <span key={s.id} className="text-[9px] px-1 py-0.5 bg-secondary rounded truncate max-w-[100px]">
-                                {tr(s.name)}
-                              </span>
-                            ))}
-                            {entry.symptoms.length > 3 && (
-                              <span className="text-[9px] text-muted-foreground">+{num(entry.symptoms.length - 3)}</span>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
-                            <Clock className="h-2 w-2" />
-                            {formatTimestamp(entry.timestamp, language)}
-                          </div>
+                          <X className="h-3 w-3" />
                         </button>
-                      </SwipeItem>
-                    ))}
+                      )}
+                    </div>
+
+                    {filteredHistory.length === 0 ? (
+                      <p className="text-[10px] text-muted-foreground text-center py-3">
+                        {t("history.noMatches")}
+                      </p>
+                    ) : (
+                      <div className="space-y-1.5 max-h-[320px] overflow-y-auto pr-1 -mr-1">
+                        {filteredHistory.map((entry) => (
+                          <SwipeItem key={entry.id} onDelete={() => onDeleteHistory?.(entry.id)}>
+                            <button
+                              onClick={() => onRestoreHistory?.(entry)}
+                              className="w-full text-left p-2 rounded border border-border hover:border-foreground/20 hover:bg-accent/50 transition-colors"
+                            >
+                              <div className="flex items-center gap-1.5 mb-1">
+                                <Pill className="h-2.5 w-2.5 text-muted-foreground flex-shrink-0" />
+                                <span className="text-[11px] font-medium truncate">{tr(entry.topRemedy)}</span>
+                              </div>
+                              <div className="flex flex-wrap gap-1 mb-1">
+                                {entry.symptoms.slice(0, 3).map((s) => (
+                                  <span key={s.id} className="text-[9px] px-1 py-0.5 bg-secondary rounded truncate max-w-[100px]">
+                                    {tr(s.name)}
+                                  </span>
+                                ))}
+                                {entry.symptoms.length > 3 && (
+                                  <span className="text-[9px] text-muted-foreground">+{num(entry.symptoms.length - 3)}</span>
+                                )}
+                              </div>
+                              <div className="flex items-center gap-1 text-[9px] text-muted-foreground">
+                                <Clock className="h-2 w-2" />
+                                {formatTimestamp(entry.timestamp, language)}
+                              </div>
+                            </button>
+                          </SwipeItem>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
