@@ -434,7 +434,7 @@ export function NeoRightPanel({
             ))}
           </div>
 
-          {/* Top Medicine Rank List - mirrors reference site */}
+          {/* Top Medicine Rank List - top 2 medicines per selected symptom/sub-symptom */}
           <div className="border-t border-border pt-3 mt-4">
             <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
               {t("repertory.topMedicineRank")}
@@ -444,40 +444,73 @@ export function NeoRightPanel({
                 <thead>
                   <tr className="border-b border-border text-left">
                     <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.index")}</th>
+                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.symptoms")}</th>
                     <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.medicine")}</th>
-                    <th className="pb-1.5 pr-2 font-medium text-muted-foreground">{t("repertory.totalSymptoms")}</th>
                     <th className="pb-1.5 font-medium text-muted-foreground">{t("repertory.rank")}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {ranking.rankedRemedies.slice(0, 10).map((rem, i) => {
-                    const rl = getRankLabel(rem.maxGrade, t);
-                    const RankIcon = rl.icon;
-                    return (
-                      <tr key={rem.id} className="border-b border-border/30">
-                        <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
-                        <td className="py-1.5 pr-2 font-medium">{tr(rem.name)}</td>
-                        <td className="py-1.5 pr-2 text-muted-foreground text-center">{toBengaliNum(rem.symptomsCovered)}</td>
-                        <td className="py-1.5">
-                          <span
-                            className={cn(
-                              "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
-                              rl.color
-                            )}
-                          >
-                            <RankIcon className="h-2 w-2" />
-                            {toBengaliNum(rem.totalScore)} - {rl.label}
-                          </span>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {(() => {
+                    // Group ranking entries by the specific matched symptom/sub-symptom, pick top 2 per group by rank desc.
+                    type Row = {
+                      symptomId: string;
+                      symptomLabel: string;
+                      remedyId: string;
+                      remedyName: string;
+                      rawRank: number;
+                    };
+                    const groups = new Map<string, Row[]>();
+                    for (const rem of ranking.rankedRemedies) {
+                      for (const cd of rem.coverageDetails) {
+                        const label = cd.parentSymptomName
+                          ? `${cd.parentSymptomName} > ${cd.symptomName}`
+                          : cd.symptomName;
+                        const row: Row = {
+                          symptomId: cd.symptomId,
+                          symptomLabel: label,
+                          remedyId: rem.id,
+                          remedyName: rem.name,
+                          rawRank: cd.grade,
+                        };
+                        const list = groups.get(cd.symptomId);
+                        if (list) list.push(row);
+                        else groups.set(cd.symptomId, [row]);
+                      }
+                    }
+                    const flat: Row[] = [];
+                    for (const list of groups.values()) {
+                      list.sort((a, b) => b.rawRank - a.rawRank);
+                      flat.push(...list.slice(0, 2));
+                    }
+                    return flat.map((row, i) => {
+                      const rl = getRankLabel(row.rawRank, t);
+                      const RankIcon = rl.icon;
+                      return (
+                        <tr key={`${row.symptomId}-${row.remedyId}-${i}`} className="border-b border-border/30">
+                          <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
+                          <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[140px]">{tr(row.symptomLabel)}</td>
+                          <td className="py-1.5 pr-2 font-medium">{tr(row.remedyName)}</td>
+                          <td className="py-1.5">
+                            <span
+                              className={cn(
+                                "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
+                                rl.color
+                              )}
+                            >
+                              <RankIcon className="h-2 w-2" />
+                              {toBengaliNum(row.rawRank)} - {rl.label}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    });
+                  })()}
                 </tbody>
               </table>
             </div>
           </div>
 
-          {/* Medicine Rank List All - per-symptom breakdown, mirrors reference site */}
+          {/* Medicine Rank List All - flat, sorted so same-symptom rows sit together */}
           <div className="border-t border-border pt-3 mt-4">
             <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
               {t("repertory.allMedicineRank")}
@@ -494,32 +527,72 @@ export function NeoRightPanel({
                 </thead>
                 <tbody>
                   {(() => {
-                    let idx = 0;
-                    return ranking.rankedRemedies.flatMap((rem) =>
-                      rem.coverageDetails.map((cd) => {
-                        idx++;
-                        const rl = getRankLabel(cd.grade, t);
-                        const RankIcon = rl.icon;
-                        return (
-                          <tr key={`${rem.id}-${cd.symptomId}-${idx}`} className="border-b border-border/30">
-                            <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(idx)}</td>
-                            <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[110px]">{tr(cd.symptomName)}</td>
-                            <td className="py-1.5 pr-2 font-medium">{tr(rem.name)}</td>
-                            <td className="py-1.5">
-                              <span
-                                className={cn(
-                                  "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
-                                  rl.color
-                                )}
-                              >
-                                <RankIcon className="h-2 w-2" />
-                                {toBengaliNum(cd.grade)} - {rl.label}
-                              </span>
-                            </td>
-                          </tr>
-                        );
-                      })
-                    );
+                    type Row = {
+                      symptomId: string;
+                      symptomLabel: string;
+                      remedyId: string;
+                      remedyName: string;
+                      rawRank: number;
+                    };
+                    // Flatten once, then sort by symptom label (so same-symptom rows cluster), then by rank desc inside each symptom.
+                    const rows: Row[] = [];
+                    for (const rem of ranking.rankedRemedies) {
+                      for (const cd of rem.coverageDetails) {
+                        rows.push({
+                          symptomId: cd.symptomId,
+                          symptomLabel: cd.parentSymptomName
+                            ? `${cd.parentSymptomName} > ${cd.symptomName}`
+                            : cd.symptomName,
+                          remedyId: rem.id,
+                          remedyName: rem.name,
+                          rawRank: cd.grade,
+                        });
+                      }
+                    }
+                    rows.sort((a, b) => {
+                      const s = a.symptomLabel.localeCompare(b.symptomLabel);
+                      if (s !== 0) return s;
+                      if (b.rawRank !== a.rawRank) return b.rawRank - a.rawRank;
+                      return a.remedyName.localeCompare(b.remedyName);
+                    });
+
+                    let prevSymptomId: string | null = null;
+                    return rows.map((row, i) => {
+                      const rl = getRankLabel(row.rawRank, t);
+                      const RankIcon = rl.icon;
+                      const newGroup = row.symptomId !== prevSymptomId;
+                      prevSymptomId = row.symptomId;
+                      return (
+                        <tr
+                          key={`${row.symptomId}-${row.remedyId}-${i}`}
+                          className={cn(
+                            "border-b border-border/30",
+                            newGroup && i > 0 && "border-t-2 border-t-border/60"
+                          )}
+                        >
+                          <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
+                          <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[140px]">
+                            {newGroup ? (
+                              <span className="font-medium text-foreground/80">{tr(row.symptomLabel)}</span>
+                            ) : (
+                              <span aria-hidden="true" className="opacity-30">·</span>
+                            )}
+                          </td>
+                          <td className="py-1.5 pr-2 font-medium">{tr(row.remedyName)}</td>
+                          <td className="py-1.5">
+                            <span
+                              className={cn(
+                                "inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full border text-[9px] font-semibold",
+                                rl.color
+                              )}
+                            >
+                              <RankIcon className="h-2 w-2" />
+                              {toBengaliNum(row.rawRank)} - {rl.label}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    });
                   })()}
                 </tbody>
               </table>

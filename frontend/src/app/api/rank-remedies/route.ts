@@ -28,7 +28,7 @@ export function POST(request: NextRequest) {
     const symptomById = getNeoSymptomById();
 
     const topN = Math.min(Math.max(rawTopN || 500, 1), 500);
-    const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; grade: number }[] }>();
+    const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; parentSymptomName?: string; grade: number }[] }>();
 
     for (const symId of symptomIds) {
       for (const rubric of findMatchingRubrics(symId, rubrics)) {
@@ -44,8 +44,18 @@ export function POST(request: NextRequest) {
           entry.symptomsCovered++;
           if (rem.grade > entry.maxGrade) entry.maxGrade = rem.grade;
           const sym = symptomById.get(rubric.symptomId);
+          // When the matched node is a sub-symptom, sym.symptomName holds its parent symptom's display name.
+          const parentName =
+            sym?.type === "subSymptom" && sym.symptomName && sym.symptomName !== sym.name
+              ? sym.symptomName
+              : undefined;
           // details[].grade carries the per-symptom rawRank for display in the "Medicine Rank List All" table.
-          entry.details.push({ symptomId: rubric.symptomId, symptomName: sym?.name || rubric.symptomId, grade: rem.rawRank });
+          entry.details.push({
+            symptomId: rubric.symptomId,
+            symptomName: sym?.name || rubric.symptomId,
+            parentSymptomName: parentName,
+            grade: rem.rawRank,
+          });
         }
       }
     }
