@@ -28,7 +28,7 @@ export function POST(request: NextRequest) {
     const symptomById = getNeoSymptomById();
 
     const topN = Math.min(Math.max(rawTopN || 500, 1), 500);
-    const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; parentSymptomName?: string; grade: number }[] }>();
+    const scores = new Map<string, { totalScore: number; symptomsCovered: number; maxGrade: number; details: { symptomId: string; symptomName: string; parentSymptomName?: string; conditionName?: string; grade: number }[] }>();
 
     for (const symId of symptomIds) {
       for (const rubric of findMatchingRubrics(symId, rubrics)) {
@@ -54,6 +54,7 @@ export function POST(request: NextRequest) {
             symptomId: rubric.symptomId,
             symptomName: sym?.name || rubric.symptomId,
             parentSymptomName: parentName,
+            conditionName: sym?.conditionName,
             grade: rem.rawRank,
           });
         }

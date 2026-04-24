@@ -462,9 +462,13 @@ export function NeoRightPanel({
                     const groups = new Map<string, Row[]>();
                     for (const rem of ranking.rankedRemedies) {
                       for (const cd of rem.coverageDetails) {
-                        const label = cd.parentSymptomName
-                          ? `${cd.parentSymptomName} > ${cd.symptomName}`
-                          : cd.symptomName;
+                        // Build the full hierarchy label: Condition > Symptom > Sub-symptom.
+                        // parentSymptomName is only set when the matched node is a sub-symptom.
+                        const parts: string[] = [];
+                        if (cd.conditionName) parts.push(cd.conditionName);
+                        if (cd.parentSymptomName) parts.push(cd.parentSymptomName);
+                        parts.push(cd.symptomName);
+                        const label = parts.join(" > ");
                         const row: Row = {
                           symptomId: cd.symptomId,
                           symptomLabel: label,
@@ -488,7 +492,12 @@ export function NeoRightPanel({
                       return (
                         <tr key={`${row.symptomId}-${row.remedyId}-${i}`} className="border-b border-border/30">
                           <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
-                          <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[140px]">{tr(row.symptomLabel)}</td>
+                          <td
+                            className="py-1.5 pr-2 text-muted-foreground truncate max-w-[200px]"
+                            title={tr(row.symptomLabel)}
+                          >
+                            {tr(row.symptomLabel)}
+                          </td>
                           <td className="py-1.5 pr-2 font-medium">{tr(row.remedyName)}</td>
                           <td className="py-1.5">
                             <span
@@ -538,11 +547,13 @@ export function NeoRightPanel({
                     const rows: Row[] = [];
                     for (const rem of ranking.rankedRemedies) {
                       for (const cd of rem.coverageDetails) {
+                        const parts: string[] = [];
+                        if (cd.conditionName) parts.push(cd.conditionName);
+                        if (cd.parentSymptomName) parts.push(cd.parentSymptomName);
+                        parts.push(cd.symptomName);
                         rows.push({
                           symptomId: cd.symptomId,
-                          symptomLabel: cd.parentSymptomName
-                            ? `${cd.parentSymptomName} > ${cd.symptomName}`
-                            : cd.symptomName,
+                          symptomLabel: parts.join(" > "),
                           remedyId: rem.id,
                           remedyName: rem.name,
                           rawRank: cd.grade,
@@ -571,7 +582,10 @@ export function NeoRightPanel({
                           )}
                         >
                           <td className="py-1.5 pr-2 text-muted-foreground font-mono">{toBengaliNum(i + 1)}</td>
-                          <td className="py-1.5 pr-2 text-muted-foreground truncate max-w-[140px]">
+                          <td
+                            className="py-1.5 pr-2 text-muted-foreground truncate max-w-[200px]"
+                            title={tr(row.symptomLabel)}
+                          >
                             {newGroup ? (
                               <span className="font-medium text-foreground/80">{tr(row.symptomLabel)}</span>
                             ) : (

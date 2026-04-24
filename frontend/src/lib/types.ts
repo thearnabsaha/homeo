@@ -122,7 +122,7 @@ export interface RankedRemedy {
   totalSymptoms: number;
   maxGrade: number;
   confidence: number;
-  coverageDetails: { symptomId: string; symptomName: string; parentSymptomName?: string; grade: number }[];
+  coverageDetails: { symptomId: string; symptomName: string; parentSymptomName?: string; conditionName?: string; grade: number }[];
 }
 
 export interface RankingResult {
