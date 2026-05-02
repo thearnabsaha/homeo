@@ -80,7 +80,8 @@ export const neoApi = {
       `/symptoms?parent=${encodeURIComponent(parentId)}`
     ),
 
-  getSymptomById: (id: string) => fetchNeoAPI<SymptomDetail>(`/symptoms/${id}`),
+  getSymptomById: (id: string) =>
+    fetchNeoAPI<SymptomDetail>(`/symptoms/${id}?v=2`),
 
   searchSymptoms: (q: string) =>
     fetchNeoAPI<{ results: SearchResult["symptoms"] }>(`/symptoms/search?q=${encodeURIComponent(q)}`),
