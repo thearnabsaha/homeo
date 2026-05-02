@@ -208,16 +208,22 @@ export function NeoSymptomTree({
                   return (
                     <div key={sub.id}>
                       <div className="flex items-center gap-2 group">
-                        <button
-                          onClick={() => onToggleSymptom(sub.id, sub.name)}
-                          className="p-0.5 text-muted-foreground hover:text-foreground"
-                        >
-                          {isSelected ? (
-                            <CheckSquare className="h-4 w-4 text-foreground" />
-                          ) : (
-                            <Square className="h-4 w-4" />
-                          )}
-                        </button>
+                        {hasChildren ? (
+                          // Rows with children aren't directly selectable — the user picks a leaf child instead.
+                          // A same-width spacer keeps the name column aligned with checkbox-bearing rows.
+                          <span aria-hidden="true" className="w-5 shrink-0" />
+                        ) : (
+                          <button
+                            onClick={() => onToggleSymptom(sub.id, sub.name)}
+                            className="p-0.5 text-muted-foreground hover:text-foreground"
+                          >
+                            {isSelected ? (
+                              <CheckSquare className="h-4 w-4 text-foreground" />
+                            ) : (
+                              <Square className="h-4 w-4" />
+                            )}
+                          </button>
+                        )}
                         <button
                           onClick={() => onViewRemedies(sub.id)}
                           className="flex-1 text-left text-sm py-1.5 px-2 rounded hover:bg-accent/50 transition-colors"
