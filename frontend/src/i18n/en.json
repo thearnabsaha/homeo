@@ -72,9 +72,7 @@
     "remediesFor": "Remedies for",
     "filterChapters": "Filter chapters...",
     "expandSubs": "Show sub-symptoms",
-    "collapseSubs": "Hide sub-symptoms",
-    "expandRemedies": "Show remedies",
-    "collapseRemedies": "Hide remedies"
+    "collapseSubs": "Hide sub-symptoms"
   },
   "remedy": {
     "title": "Remedy",

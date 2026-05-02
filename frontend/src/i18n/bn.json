@@ -72,9 +72,7 @@
     "remediesFor": "ওষুধসমূহ -",
     "filterChapters": "অধ্যায় খুঁজুন...",
     "expandSubs": "উপ-লক্ষণ দেখান",
-    "collapseSubs": "উপ-লক্ষণ লুকান",
-    "expandRemedies": "ওষুধ দেখান",
-    "collapseRemedies": "ওষুধ লুকান"
+    "collapseSubs": "উপ-লক্ষণ লুকান"
   },
   "remedy": {
     "title": "ওষুধ",
