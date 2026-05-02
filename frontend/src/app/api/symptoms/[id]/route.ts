@@ -49,20 +49,30 @@ export function GET(
       return NextResponse.json({ error: "Symptom not found" }, { status: 404 });
     }
 
-    let subSymptoms: { id: string; name: string }[] = [];
+    // Each child entry carries hasSubSymptoms so the UI can show an expand affordance only when there is a deeper level.
+    let subSymptoms: { id: string; name: string; hasSubSymptoms: boolean }[] = [];
     const allRubricEntries: { remedyId: string; grade: number; rawRank: number }[] = [];
 
     if (found.type === "repertory") {
       const ch = chapterById.get(id);
       if (ch) {
-        subSymptoms = ch.conditions.map((c) => ({ id: c.id, name: c.name }));
+        // Conditions effectively always have child symptoms in the dataset, but compute it honestly.
+        subSymptoms = ch.conditions.map((c) => ({
+          id: c.id,
+          name: c.name,
+          hasSubSymptoms: c.symptoms.length > 0,
+        }));
         for (const cond of ch.conditions) collectChildRubrics(cond.symptoms, rubrics, allRubricEntries);
       }
     } else if (found.type === "condition") {
       outer_cond: for (const ch of chapters) {
         for (const cond of ch.conditions) {
           if (cond.id === id) {
-            subSymptoms = cond.symptoms.map((s) => ({ id: s.id, name: s.name }));
+            subSymptoms = cond.symptoms.map((s) => ({
+              id: s.id,
+              name: s.name,
+              hasSubSymptoms: s.subSymptoms.length > 0,
+            }));
             collectChildRubrics(cond.symptoms, rubrics, allRubricEntries);
             break outer_cond;
           }
@@ -73,7 +83,12 @@ export function GET(
         for (const cond of ch.conditions) {
           for (const sym of cond.symptoms) {
             if (sym.id === id) {
-              subSymptoms = sym.subSymptoms.map((s) => ({ id: s.id, name: s.name }));
+              // sym.subSymptoms are leaf nodes in the data model; they never have deeper children.
+              subSymptoms = sym.subSymptoms.map((s) => ({
+                id: s.id,
+                name: s.name,
+                hasSubSymptoms: false,
+              }));
               const r = rubrics[sym.id];
               if (r) allRubricEntries.push(...r);
               for (const sub of sym.subSymptoms) {

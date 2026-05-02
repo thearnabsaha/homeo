@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronRight, ChevronDown, Square, CheckSquare, Bookmark, BookmarkCheck } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { ChevronRight, ChevronDown, Square, CheckSquare, Bookmark, BookmarkCheck, Loader2 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 import { translateRepertory, medDescBn } from "@/i18n/repertoryBn";
 import { useNeoBookmarks } from "@/hooks/useNeoBookmarks";
 import type { SymptomDetail } from "@/lib/types";
+
+type SubChild = NonNullable<SymptomDetail["symptom"]["subSymptoms"]>[number];
 
 interface NeoSymptomTreeProps {
   selectedSymptomId: string | null;
@@ -58,8 +60,10 @@ export function NeoSymptomTree({
   const { t, language } = useTranslation();
   const [symptomDetail, setSymptomDetail] = useState<SymptomDetail | null>(null);
   const [loading, setLoading] = useState(false);
-  // Sub-symptoms are expanded by default; toggled via the down-arrow on the symptom heading.
-  const [subsExpanded, setSubsExpanded] = useState(true);
+  // Per-row tree state: which child rows are expanded inline + their lazy-loaded grandchildren.
+  const [expandedChildIds, setExpandedChildIds] = useState<Set<string>>(new Set());
+  const [childrenCache, setChildrenCache] = useState<Record<string, SubChild[]>>({});
+  const [loadingChildId, setLoadingChildId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!selectedSymptomId) {
@@ -67,7 +71,7 @@ export function NeoSymptomTree({
       return;
     }
     setLoading(true);
-    setSubsExpanded(true); // reset: new symptom → show its sub-symptoms by default
+    setExpandedChildIds(new Set()); // collapse any previously expanded rows when a different node opens
     neoApi
       .getSymptomById(selectedSymptomId)
       .then((data) => {
@@ -76,6 +80,37 @@ export function NeoSymptomTree({
       })
       .catch(() => setLoading(false));
   }, [selectedSymptomId]);
+
+  // Toggle inline expansion of a child row; lazy-loads its grandchildren on first expand.
+  const toggleChildExpand = useCallback(
+    (childId: string) => {
+      setExpandedChildIds((prev) => {
+        const next = new Set(prev);
+        if (next.has(childId)) {
+          next.delete(childId);
+          return next;
+        }
+        next.add(childId);
+        if (!childrenCache[childId]) {
+          setLoadingChildId(childId);
+          neoApi
+            .getSymptomById(childId)
+            .then((data) => {
+              setChildrenCache((cache) => ({
+                ...cache,
+                [childId]: data.symptom.subSymptoms || [],
+              }));
+            })
+            .catch(() => {
+              setChildrenCache((cache) => ({ ...cache, [childId]: [] }));
+            })
+            .finally(() => setLoadingChildId((id) => (id === childId ? null : id)));
+        }
+        return next;
+      });
+    },
+    [childrenCache]
+  );
 
   if (!selectedSymptomId) {
     return (
@@ -152,32 +187,12 @@ export function NeoSymptomTree({
                 )}
               </button>
               <h2 className="text-lg font-semibold truncate">{tr(symptom.name)}</h2>
-              {sortedSubSymptoms.length > 0 && (
-                <button
-                  type="button"
-                  onClick={() => setSubsExpanded((v) => !v)}
-                  className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-accent/40 transition-colors shrink-0"
-                  aria-expanded={subsExpanded}
-                  aria-label={
-                    subsExpanded ? t("symptom.collapseSubs") : t("symptom.expandSubs")
-                  }
-                  title={
-                    subsExpanded ? t("symptom.collapseSubs") : t("symptom.expandSubs")
-                  }
-                >
-                  {subsExpanded ? (
-                    <ChevronDown className="h-4 w-4" />
-                  ) : (
-                    <ChevronRight className="h-4 w-4" />
-                  )}
-                </button>
-              )}
             </div>
             <NeoBookmarkButton id={symptom.id} name={symptom.name} type="symptom" />
           </div>
 
-          {/* Sub-symptoms (collapsible via the chevron next to the symptom title) */}
-          {sortedSubSymptoms.length > 0 && subsExpanded && (
+          {/* Sub-symptoms list. Rows with deeper children get a chevron toggle that expands inline. */}
+          {sortedSubSymptoms.length > 0 && (
             <div className="mb-6 animate-fade-in">
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
                 {t("symptom.subSymptoms")}
@@ -186,24 +201,95 @@ export function NeoSymptomTree({
               <div className="space-y-1">
                 {sortedSubSymptoms.map((sub) => {
                   const isSelected = selectedSymptoms.includes(sub.id);
+                  const hasChildren = !!sub.hasSubSymptoms;
+                  const isExpanded = expandedChildIds.has(sub.id);
+                  const grandChildren = childrenCache[sub.id];
+                  const isLoadingThis = loadingChildId === sub.id;
                   return (
-                    <div key={sub.id} className="flex items-center gap-2 group">
-                      <button
-                        onClick={() => onToggleSymptom(sub.id, sub.name)}
-                        className="p-0.5 text-muted-foreground hover:text-foreground"
-                      >
-                        {isSelected ? (
-                          <CheckSquare className="h-4 w-4 text-foreground" />
+                    <div key={sub.id}>
+                      <div className="flex items-center gap-2 group">
+                        <button
+                          onClick={() => onToggleSymptom(sub.id, sub.name)}
+                          className="p-0.5 text-muted-foreground hover:text-foreground"
+                        >
+                          {isSelected ? (
+                            <CheckSquare className="h-4 w-4 text-foreground" />
+                          ) : (
+                            <Square className="h-4 w-4" />
+                          )}
+                        </button>
+                        <button
+                          onClick={() => onViewRemedies(sub.id)}
+                          className="flex-1 text-left text-sm py-1.5 px-2 rounded hover:bg-accent/50 transition-colors"
+                        >
+                          {tr(sub.name)}
+                        </button>
+                        {hasChildren ? (
+                          <button
+                            type="button"
+                            onClick={() => toggleChildExpand(sub.id)}
+                            className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-accent/40 transition-colors shrink-0"
+                            aria-expanded={isExpanded}
+                            aria-label={isExpanded ? t("tree.collapse") : t("tree.expand")}
+                            title={isExpanded ? t("tree.collapse") : t("tree.expand")}
+                          >
+                            {isExpanded ? (
+                              <ChevronDown className="h-4 w-4" />
+                            ) : (
+                              <ChevronRight className="h-4 w-4" />
+                            )}
+                          </button>
                         ) : (
-                          <Square className="h-4 w-4" />
+                          // Spacer to keep checkbox/name columns aligned across rows that do/don't have a chevron.
+                          <span aria-hidden="true" className="w-6 shrink-0" />
                         )}
-                      </button>
-                      <button
-                        onClick={() => onViewRemedies(sub.id)}
-                        className="flex-1 text-left text-sm py-1.5 px-2 rounded hover:bg-accent/50 transition-colors"
-                      >
-                        {tr(sub.name)}
-                      </button>
+                      </div>
+
+                      {hasChildren && isExpanded && (
+                        <div className="ml-6 mt-1 mb-2 pl-3 border-l border-border/60 animate-fade-in">
+                          {isLoadingThis && !grandChildren && (
+                            <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground py-2">
+                              <Loader2 className="h-3 w-3 animate-spin" />
+                              {t("common.loading")}
+                            </div>
+                          )}
+                          {grandChildren && grandChildren.length === 0 && (
+                            <p className="text-[11px] text-muted-foreground py-2">
+                              {t("common.error")}
+                            </p>
+                          )}
+                          {grandChildren && grandChildren.length > 0 && (
+                            <div className="space-y-0.5 py-1">
+                              {[...grandChildren]
+                                .map((g) => ({ ...g, _sort: tr(g.name) }))
+                                .sort((a, b) => a._sort.localeCompare(b._sort))
+                                .map((gc) => {
+                                  const gcSelected = selectedSymptoms.includes(gc.id);
+                                  return (
+                                    <div key={gc.id} className="flex items-center gap-2 group">
+                                      <button
+                                        onClick={() => onToggleSymptom(gc.id, gc.name)}
+                                        className="p-0.5 text-muted-foreground hover:text-foreground"
+                                      >
+                                        {gcSelected ? (
+                                          <CheckSquare className="h-3.5 w-3.5 text-foreground" />
+                                        ) : (
+                                          <Square className="h-3.5 w-3.5" />
+                                        )}
+                                      </button>
+                                      <button
+                                        onClick={() => onViewRemedies(gc.id)}
+                                        className="flex-1 text-left text-xs py-1 px-2 rounded hover:bg-accent/40 transition-colors"
+                                      >
+                                        {tr(gc.name)}
+                                      </button>
+                                    </div>
+                                  );
+                                })}
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
                   );
                 })}

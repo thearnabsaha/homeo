@@ -70,9 +70,11 @@
     "clearSelection": "নির্বাচন মুছুন",
     "noRemedies": "এই লক্ষণের জন্য কোনো ওষুধ পাওয়া যায়নি",
     "remediesFor": "ওষুধসমূহ -",
-    "filterChapters": "অধ্যায় খুঁজুন...",
-    "expandSubs": "উপ-লক্ষণ দেখান",
-    "collapseSubs": "উপ-লক্ষণ লুকান"
+    "filterChapters": "অধ্যায় খুঁজুন..."
+  },
+  "tree": {
+    "expand": "প্রসারিত করুন",
+    "collapse": "সংকুচিত করুন"
   },
   "remedy": {
     "title": "ওষুধ",

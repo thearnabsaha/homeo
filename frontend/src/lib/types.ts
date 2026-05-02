@@ -18,7 +18,7 @@ export interface SymptomDetail {
     id: string;
     name: string;
     type: string;
-    subSymptoms?: { id: string; name: string }[];
+    subSymptoms?: { id: string; name: string; hasSubSymptoms?: boolean }[];
   };
   breadcrumb: { id: string; name: string }[];
   remedies: RemedyMatch[];
