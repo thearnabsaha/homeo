@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronRight, Square, CheckSquare, Bookmark, BookmarkCheck } from "lucide-react";
+import { ChevronRight, ChevronDown, Square, CheckSquare, Bookmark, BookmarkCheck } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -58,6 +58,8 @@ export function NeoSymptomTree({
   const { t, language } = useTranslation();
   const [symptomDetail, setSymptomDetail] = useState<SymptomDetail | null>(null);
   const [loading, setLoading] = useState(false);
+  // Sub-symptoms are expanded by default; toggled via the down-arrow on the symptom heading.
+  const [subsExpanded, setSubsExpanded] = useState(true);
 
   useEffect(() => {
     if (!selectedSymptomId) {
@@ -65,6 +67,7 @@ export function NeoSymptomTree({
       return;
     }
     setLoading(true);
+    setSubsExpanded(true); // reset: new symptom → show its sub-symptoms by default
     neoApi
       .getSymptomById(selectedSymptomId)
       .then((data) => {
@@ -149,15 +152,36 @@ export function NeoSymptomTree({
                 )}
               </button>
               <h2 className="text-lg font-semibold truncate">{tr(symptom.name)}</h2>
+              {sortedSubSymptoms.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setSubsExpanded((v) => !v)}
+                  className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-accent/40 transition-colors shrink-0"
+                  aria-expanded={subsExpanded}
+                  aria-label={
+                    subsExpanded ? t("symptom.collapseSubs") : t("symptom.expandSubs")
+                  }
+                  title={
+                    subsExpanded ? t("symptom.collapseSubs") : t("symptom.expandSubs")
+                  }
+                >
+                  {subsExpanded ? (
+                    <ChevronDown className="h-4 w-4" />
+                  ) : (
+                    <ChevronRight className="h-4 w-4" />
+                  )}
+                </button>
+              )}
             </div>
             <NeoBookmarkButton id={symptom.id} name={symptom.name} type="symptom" />
           </div>
 
-          {/* Sub-symptoms */}
-          {sortedSubSymptoms.length > 0 && (
-            <div className="mb-6">
+          {/* Sub-symptoms (collapsible via the chevron next to the symptom title) */}
+          {sortedSubSymptoms.length > 0 && subsExpanded && (
+            <div className="mb-6 animate-fade-in">
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
                 {t("symptom.subSymptoms")}
+                <span className="ml-1 text-muted-foreground/60">({sortedSubSymptoms.length})</span>
               </h3>
               <div className="space-y-1">
                 {sortedSubSymptoms.map((sub) => {

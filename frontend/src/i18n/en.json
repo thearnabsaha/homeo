@@ -70,7 +70,9 @@
     "clearSelection": "Clear Selection",
     "noRemedies": "No remedies found for this symptom",
     "remediesFor": "Remedies for",
-    "filterChapters": "Filter chapters..."
+    "filterChapters": "Filter chapters...",
+    "expandSubs": "Show sub-symptoms",
+    "collapseSubs": "Hide sub-symptoms"
   },
   "remedy": {
     "title": "Remedy",
